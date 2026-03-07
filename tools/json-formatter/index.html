@@ -3,16 +3,16 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>JSON Formatter - Free Online Tool</title>
+  <title>JSON Formatter - Free Online Developer Tool</title>
   <meta
     name="description"
-    content="JSON Formatter with this free online tool. Fast, simple, and easy to use."
+    content="Format and beautify JSON instantly with this free online JSON formatter. Validate JSON, prettify output, and copy the result in one click."
   />
   <meta name="robots" content="index,follow" />
-  <meta property="og:title" content="JSON Formatter - Free Online Tool" />
+  <meta property="og:title" content="JSON Formatter - Free Online Developer Tool" />
   <meta
     property="og:description"
-    content="Use JSON Formatter instantly with this free online tool."
+    content="Beautify and validate JSON instantly in your browser."
   />
   <meta property="og:type" content="website" />
   <style>
@@ -25,6 +25,7 @@
       --primary: #1463ff;
       --primary-hover: #0f52d6;
       --success: #137333;
+      --error: #b42318;
       --shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
       --radius: 16px;
     }
@@ -110,16 +111,17 @@
     }
     textarea {
       width: 100%;
-      min-height: 280px;
+      min-height: 320px;
       resize: vertical;
       border: 1px solid var(--border);
       border-radius: 12px;
       padding: 14px;
-      font-size: 15px;
+      font-size: 14px;
       line-height: 1.5;
       color: var(--text);
       background: #fff;
       outline: none;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
     }
     textarea:focus {
       border-color: var(--primary);
@@ -163,6 +165,10 @@
     }
     .status.success {
       color: var(--success);
+      font-weight: 700;
+    }
+    .status.error {
+      color: var(--error);
       font-weight: 700;
     }
     .meta-bar {
@@ -230,12 +236,51 @@
       font-size: 14px;
     }
     @media (max-width: 860px) {
-      .tool-layout { grid-template-columns: 1fr; }
-      .related-tools { grid-template-columns: 1fr; }
-      .hero h1 { font-size: 28px; }
-      textarea { min-height: 220px; }
+      .tool-layout,
+      .related-tools {
+        grid-template-columns: 1fr;
+      }
+      .hero h1 {
+        font-size: 28px;
+      }
+      textarea {
+        min-height: 220px;
+      }
     }
   </style>
+
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"FAQPage",
+    "mainEntity":[
+      {
+        "@type":"Question",
+        "name":"What does this JSON formatter do?",
+        "acceptedAnswer":{
+          "@type":"Answer",
+          "text":"This tool validates JSON input and formats it into readable, properly indented output."
+        }
+      },
+      {
+        "@type":"Question",
+        "name":"Does it show invalid JSON errors?",
+        "acceptedAnswer":{
+          "@type":"Answer",
+          "text":"Yes. If your JSON is invalid, the tool shows an error message instead of formatted output."
+        }
+      },
+      {
+        "@type":"Question",
+        "name":"Is this JSON formatter free?",
+        "acceptedAnswer":{
+          "@type":"Answer",
+          "text":"Yes. You can use this JSON formatter for free in your browser."
+        }
+      }
+    ]
+  }
+  </script>
 </head>
 <body>
   <header class="site-header">
@@ -246,13 +291,14 @@
 
   <main class="container">
     <div class="breadcrumb">
-      <a href="/">Home</a> / <a href="/dev-tools/">Developer Tools</a> / JSON Formatter
+      <a href="/">Home</a> / <a href="/developer-tools/">Developer Tools</a> / JSON Formatter
     </div>
 
     <section class="hero">
       <h1>JSON Formatter</h1>
       <p>
-        Use this free online json formatter tool to process your text quickly and cleanly.
+        Format and validate JSON instantly in your browser. Paste raw JSON, beautify it,
+        and copy clean formatted output for debugging, development, and review.
       </p>
     </section>
 
@@ -264,11 +310,11 @@
           <div class="panel">
             <div class="panel-header">
               <h2>Input</h2>
-              <p>Paste your source text</p>
+              <p>Paste raw JSON</p>
             </div>
-            <textarea id="inputText" placeholder="Paste your text here..."></textarea>
+            <textarea id="inputText" placeholder='{"name":"John","roles":["admin","editor"]}'></textarea>
             <div class="actions">
-              <button class="btn-primary" id="processBtn">Process</button>
+              <button class="btn-primary" id="formatBtn">Format JSON</button>
               <button class="btn-secondary" id="sampleBtn">Load Example</button>
               <button class="btn-secondary" id="clearBtn">Clear</button>
             </div>
@@ -281,9 +327,9 @@
           <div class="panel">
             <div class="panel-header">
               <h2>Output</h2>
-              <p>Your processed result</p>
+              <p>Formatted JSON result</p>
             </div>
-            <textarea id="outputText" placeholder="Your result will appear here..."></textarea>
+            <textarea id="outputText" placeholder="Formatted JSON will appear here..."></textarea>
             <div class="actions">
               <button class="btn-primary" id="copyBtn">Copy Result</button>
             </div>
@@ -301,20 +347,22 @@
       <div class="card content-section">
         <h2>How it works</h2>
         <p>
-          This tool lets users transform text quickly in the browser without sign-up or installation.
+          This tool parses your JSON input and reformats it with consistent indentation so it is easier to read.
+          It is useful for debugging APIs, reviewing payloads, checking configuration files, and cleaning copied JSON.
         </p>
         <p>
-          Replace the processing logic and supporting content for each specific tool while keeping the same page structure.
+          If the JSON is invalid, the tool shows an error instead of producing broken output.
         </p>
       </div>
 
       <div class="card content-section">
         <h2>Common use cases</h2>
         <ul>
-          <li>Clean or normalize pasted text</li>
-          <li>Prepare content for forms, spreadsheets, or CMS editors</li>
-          <li>Transform text before sending to AI tools</li>
-          <li>Improve copy and paste workflows</li>
+          <li>Beautify minified JSON</li>
+          <li>Check whether JSON syntax is valid</li>
+          <li>Review API responses more clearly</li>
+          <li>Prepare configuration files for editing</li>
+          <li>Copy clean JSON into documentation or code reviews</li>
         </ul>
       </div>
 
@@ -322,23 +370,23 @@
         <h2>Frequently asked questions</h2>
 
         <div class="faq-item">
-          <h3>What does json formatter do?</h3>
+          <h3>What does this JSON formatter do?</h3>
           <p>
-            It processes your pasted text directly in the browser and returns the transformed result instantly.
+            It validates JSON input and formats it into clean, readable output with indentation.
           </p>
         </div>
 
         <div class="faq-item">
-          <h3>Is json formatter free to use?</h3>
+          <h3>Does it show invalid JSON errors?</h3>
           <p>
-            Yes. You can use this tool for free without registration.
+            Yes. Invalid JSON will trigger an error message instead of formatted output.
           </p>
         </div>
 
         <div class="faq-item">
-          <h3>Does my text leave my browser?</h3>
+          <h3>Is this JSON formatter free?</h3>
           <p>
-            In this static version, text is processed in the browser using client-side JavaScript.
+            Yes. You can use it for free without signing up.
           </p>
         </div>
       </div>
@@ -346,17 +394,17 @@
       <div class="card content-section">
         <h2>Related tools</h2>
         <div class="related-tools">
-          <a href="/tools/remove-line-breaks/">
-            Remove Line Breaks
-            <span>Join broken lines into one clean paragraph</span>
+          <a href="/tools/regex-tester/">
+            Regex Tester
+            <span>Test regular expressions directly in the browser</span>
           </a>
-          <a href="/tools/remove-extra-spaces/">
-            Remove Extra Spaces
-            <span>Clean repeated spaces from text</span>
+          <a href="/tools/base64-encoder/">
+            Base64 Encoder
+            <span>Encode text to Base64 for quick development tasks</span>
           </a>
-          <a href="/tools/word-counter/">
-            Word Counter
-            <span>Count words, characters, and lines</span>
+          <a href="/tools/url-encoder/">
+            URL Encoder
+            <span>Encode special characters for URL-safe text</span>
           </a>
         </div>
       </div>
@@ -374,7 +422,7 @@
   <script>
     const inputText = document.getElementById('inputText');
     const outputText = document.getElementById('outputText');
-    const processBtn = document.getElementById('processBtn');
+    const formatBtn = document.getElementById('formatBtn');
     const sampleBtn = document.getElementById('sampleBtn');
     const clearBtn = document.getElementById('clearBtn');
     const copyBtn = document.getElementById('copyBtn');
@@ -397,33 +445,38 @@
       outputLines.textContent = `${countLines(outputText.value)} lines`;
     }
 
-    function processText(text) {
-      return text;
-    }
-
-    function setStatus(message, isSuccess = false) {
+    function setStatus(message, type = '') {
       statusMessage.textContent = message;
-      statusMessage.className = isSuccess ? 'status success' : 'status';
+      statusMessage.className = type ? `status ${type}` : 'status';
     }
 
-    processBtn.addEventListener('click', () => {
-      const source = inputText.value;
-      const result = processText(source);
-      outputText.value = result;
+    formatBtn.addEventListener('click', () => {
+      const source = inputText.value.trim();
 
-      if (!source.trim()) {
-        setStatus('Please paste some text first.');
-      } else {
-        setStatus('Processed successfully.', true);
+      if (!source) {
+        outputText.value = '';
+        setStatus('Please paste some JSON first.');
+        updateStats();
+        return;
+      }
+
+      try {
+        const parsed = JSON.parse(source);
+        const formatted = JSON.stringify(parsed, null, 2);
+        outputText.value = formatted;
+        setStatus('JSON formatted successfully.', 'success');
+      } catch (error) {
+        outputText.value = '';
+        setStatus(`Invalid JSON: ${error.message}`, 'error');
       }
 
       updateStats();
     });
 
     sampleBtn.addEventListener('click', () => {
-      inputText.value = 'Sample text goes here. Replace this with a better example for each tool.';
+      inputText.value = '{"name":"Alice","active":true,"roles":["admin","editor"],"profile":{"country":"US","age":28}}';
       outputText.value = '';
-      setStatus('Example text loaded.');
+      setStatus('Example JSON loaded.');
       updateStats();
     });
 
@@ -437,15 +490,15 @@
 
     copyBtn.addEventListener('click', async () => {
       if (!outputText.value.trim()) {
-        setStatus('There is no result to copy yet.');
+        setStatus('There is no formatted JSON to copy.');
         return;
       }
 
       try {
         await navigator.clipboard.writeText(outputText.value);
-        setStatus('Result copied to clipboard.', true);
+        setStatus('Result copied to clipboard.', 'success');
       } catch (error) {
-        setStatus('Copy failed. Please copy the result manually.');
+        setStatus('Copy failed. Please copy the result manually.', 'error');
       }
     });
 

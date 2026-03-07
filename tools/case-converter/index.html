@@ -3,16 +3,16 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Case Converter - Free Online Tool</title>
+  <title>Case Converter - Free Online Text Tool</title>
   <meta
     name="description"
-    content="Case Converter with this free online tool. Fast, simple, and easy to use."
+    content="Convert text to uppercase, lowercase, title case, and sentence case instantly with this free online case converter."
   />
   <meta name="robots" content="index,follow" />
-  <meta property="og:title" content="Case Converter - Free Online Tool" />
+  <meta property="og:title" content="Case Converter - Free Online Text Tool" />
   <meta
     property="og:description"
-    content="Use Case Converter instantly with this free online tool."
+    content="Convert text case instantly in your browser with uppercase, lowercase, title case, and sentence case options."
   />
   <meta property="og:type" content="website" />
   <style>
@@ -173,6 +173,12 @@
       font-size: 13px;
       color: var(--muted);
     }
+    .case-actions {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px;
+      margin-top: 14px;
+    }
     .ad-slot {
       display: grid;
       place-items: center;
@@ -230,12 +236,52 @@
       font-size: 14px;
     }
     @media (max-width: 860px) {
-      .tool-layout { grid-template-columns: 1fr; }
-      .related-tools { grid-template-columns: 1fr; }
-      .hero h1 { font-size: 28px; }
-      textarea { min-height: 220px; }
+      .tool-layout,
+      .related-tools,
+      .case-actions {
+        grid-template-columns: 1fr;
+      }
+      .hero h1 {
+        font-size: 28px;
+      }
+      textarea {
+        min-height: 220px;
+      }
     }
   </style>
+
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"FAQPage",
+    "mainEntity":[
+      {
+        "@type":"Question",
+        "name":"What does this case converter do?",
+        "acceptedAnswer":{
+          "@type":"Answer",
+          "text":"This tool converts text to uppercase, lowercase, title case, and sentence case instantly in your browser."
+        }
+      },
+      {
+        "@type":"Question",
+        "name":"Can I use it for headings and titles?",
+        "acceptedAnswer":{
+          "@type":"Answer",
+          "text":"Yes. It is useful for headings, titles, copied text cleanup, and general formatting tasks."
+        }
+      },
+      {
+        "@type":"Question",
+        "name":"Is this tool free?",
+        "acceptedAnswer":{
+          "@type":"Answer",
+          "text":"Yes. You can use this case converter for free without signing up."
+        }
+      }
+    ]
+  }
+  </script>
 </head>
 <body>
   <header class="site-header">
@@ -252,7 +298,8 @@
     <section class="hero">
       <h1>Case Converter</h1>
       <p>
-        Use this free online case converter tool to process your text quickly and cleanly.
+        Convert text to uppercase, lowercase, title case, or sentence case instantly.
+        Useful for editing, publishing, headlines, forms, and content cleanup.
       </p>
     </section>
 
@@ -264,14 +311,22 @@
           <div class="panel">
             <div class="panel-header">
               <h2>Input</h2>
-              <p>Paste your source text</p>
+              <p>Paste or type your text</p>
             </div>
             <textarea id="inputText" placeholder="Paste your text here..."></textarea>
+
+            <div class="case-actions">
+              <button class="btn-primary" id="upperBtn">UPPERCASE</button>
+              <button class="btn-primary" id="lowerBtn">lowercase</button>
+              <button class="btn-secondary" id="titleBtn">Title Case</button>
+              <button class="btn-secondary" id="sentenceBtn">Sentence case</button>
+            </div>
+
             <div class="actions">
-              <button class="btn-primary" id="processBtn">Process</button>
               <button class="btn-secondary" id="sampleBtn">Load Example</button>
               <button class="btn-secondary" id="clearBtn">Clear</button>
             </div>
+
             <div class="meta-bar">
               <span id="inputChars">0 characters</span>
               <span id="inputLines">0 lines</span>
@@ -281,9 +336,9 @@
           <div class="panel">
             <div class="panel-header">
               <h2>Output</h2>
-              <p>Your processed result</p>
+              <p>Converted text result</p>
             </div>
-            <textarea id="outputText" placeholder="Your result will appear here..."></textarea>
+            <textarea id="outputText" placeholder="Your converted text will appear here..."></textarea>
             <div class="actions">
               <button class="btn-primary" id="copyBtn">Copy Result</button>
             </div>
@@ -301,20 +356,23 @@
       <div class="card content-section">
         <h2>How it works</h2>
         <p>
-          This tool lets users transform text quickly in the browser without sign-up or installation.
+          This case converter transforms your input text into a selected letter case format directly in the browser.
+          It is useful when text has inconsistent capitalization or when you need to quickly prepare headings,
+          titles, labels, or cleaned copy.
         </p>
         <p>
-          Replace the processing logic and supporting content for each specific tool while keeping the same page structure.
+          You can switch between uppercase, lowercase, title case, and sentence case in one place without using extra software.
         </p>
       </div>
 
       <div class="card content-section">
         <h2>Common use cases</h2>
         <ul>
-          <li>Clean or normalize pasted text</li>
-          <li>Prepare content for forms, spreadsheets, or CMS editors</li>
-          <li>Transform text before sending to AI tools</li>
-          <li>Improve copy and paste workflows</li>
+          <li>Format titles and headlines</li>
+          <li>Clean copied text with inconsistent capitalization</li>
+          <li>Prepare content for forms and CMS editors</li>
+          <li>Convert labels, buttons, or UI text</li>
+          <li>Standardize text before publishing</li>
         </ul>
       </div>
 
@@ -322,23 +380,23 @@
         <h2>Frequently asked questions</h2>
 
         <div class="faq-item">
-          <h3>What does case converter do?</h3>
+          <h3>What does this case converter do?</h3>
           <p>
-            It processes your pasted text directly in the browser and returns the transformed result instantly.
+            It converts text into uppercase, lowercase, title case, or sentence case directly in your browser.
           </p>
         </div>
 
         <div class="faq-item">
-          <h3>Is case converter free to use?</h3>
+          <h3>Can I use it for headings and titles?</h3>
           <p>
-            Yes. You can use this tool for free without registration.
+            Yes. It is useful for headings, titles, content cleanup, and general text formatting.
           </p>
         </div>
 
         <div class="faq-item">
-          <h3>Does my text leave my browser?</h3>
+          <h3>Is this tool free?</h3>
           <p>
-            In this static version, text is processed in the browser using client-side JavaScript.
+            Yes. You can use it for free without registration.
           </p>
         </div>
       </div>
@@ -346,6 +404,10 @@
       <div class="card content-section">
         <h2>Related tools</h2>
         <div class="related-tools">
+          <a href="/tools/word-counter/">
+            Word Counter
+            <span>Count words, characters, and lines</span>
+          </a>
           <a href="/tools/remove-line-breaks/">
             Remove Line Breaks
             <span>Join broken lines into one clean paragraph</span>
@@ -353,10 +415,6 @@
           <a href="/tools/remove-extra-spaces/">
             Remove Extra Spaces
             <span>Clean repeated spaces from text</span>
-          </a>
-          <a href="/tools/word-counter/">
-            Word Counter
-            <span>Count words, characters, and lines</span>
           </a>
         </div>
       </div>
@@ -374,7 +432,10 @@
   <script>
     const inputText = document.getElementById('inputText');
     const outputText = document.getElementById('outputText');
-    const processBtn = document.getElementById('processBtn');
+    const upperBtn = document.getElementById('upperBtn');
+    const lowerBtn = document.getElementById('lowerBtn');
+    const titleBtn = document.getElementById('titleBtn');
+    const sentenceBtn = document.getElementById('sentenceBtn');
     const sampleBtn = document.getElementById('sampleBtn');
     const clearBtn = document.getElementById('clearBtn');
     const copyBtn = document.getElementById('copyBtn');
@@ -397,8 +458,40 @@
       outputLines.textContent = `${countLines(outputText.value)} lines`;
     }
 
-    function processText(text) {
-      return text;
+    function toTitleCase(text) {
+      return text.toLowerCase().replace(/\b([a-z])/g, match => match.toUpperCase());
+    }
+
+    function toSentenceCase(text) {
+      const lower = text.toLowerCase();
+      return lower.replace(/(^\s*[a-z])|([.!?]\s+[a-z])/g, match => match.toUpperCase());
+    }
+
+    function convertText(type) {
+      const source = inputText.value;
+
+      if (!source.trim()) {
+        outputText.value = '';
+        setStatus('Please paste or type some text first.');
+        updateStats();
+        return;
+      }
+
+      let result = source;
+
+      if (type === 'upper') {
+        result = source.toUpperCase();
+      } else if (type === 'lower') {
+        result = source.toLowerCase();
+      } else if (type === 'title') {
+        result = toTitleCase(source);
+      } else if (type === 'sentence') {
+        result = toSentenceCase(source);
+      }
+
+      outputText.value = result;
+      setStatus('Text converted successfully.', true);
+      updateStats();
     }
 
     function setStatus(message, isSuccess = false) {
@@ -406,22 +499,15 @@
       statusMessage.className = isSuccess ? 'status success' : 'status';
     }
 
-    processBtn.addEventListener('click', () => {
-      const source = inputText.value;
-      const result = processText(source);
-      outputText.value = result;
-
-      if (!source.trim()) {
-        setStatus('Please paste some text first.');
-      } else {
-        setStatus('Processed successfully.', true);
-      }
-
-      updateStats();
-    });
+    upperBtn.addEventListener('click', () => convertText('upper'));
+    lowerBtn.addEventListener('click', () => convertText('lower'));
+    titleBtn.addEventListener('click', () => convertText('title'));
+    sentenceBtn.addEventListener('click', () => convertText('sentence'));
 
     sampleBtn.addEventListener('click', () => {
-      inputText.value = 'Sample text goes here. Replace this with a better example for each tool.';
+      inputText.value = `this is a sample headline.
+here is ANOTHER line with MIXED capitalization.
+this tool helps clean it up.`;
       outputText.value = '';
       setStatus('Example text loaded.');
       updateStats();

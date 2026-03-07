@@ -1,35 +1,46 @@
-<!DOCTYPE html>
+const fs = require('fs');
+const path = require('path');
+
+const root = process.cwd();
+const toolsPath = path.join(root, 'data', 'tools.json');
+const tools = JSON.parse(fs.readFileSync(toolsPath, 'utf8'));
+
+const textTools = tools.filter(t => t.category === 'text');
+const devTools = tools.filter(t => t.category === 'dev');
+const liveTools = tools.filter(t => t.status === 'live');
+
+function statusLabel(status) {
+  return status === 'live' ? 'Live Tool' : 'Coming Next';
+}
+
+function escapeHtml(str) {
+  return String(str)
+    .replaceAll('&', '&amp;')
+    .replaceAll('<', '&lt;')
+    .replaceAll('>', '&gt;')
+    .replaceAll('"', '&quot;')
+    .replaceAll("'", '&#39;');
+}
+
+function toolCard(tool, tagLabel) {
+  return `
+        <a class="tool-card" href="/tools/${escapeHtml(tool.slug)}/">
+          <h3>${escapeHtml(tool.title)}</h3>
+          <p>${escapeHtml(tool.description)}</p>
+          ${tagLabel ? `<span class="tool-tag">${escapeHtml(tagLabel)}</span>` : `<span class="tool-status">${statusLabel(tool.status)}</span>`}
+        </a>`;
+}
+
+function layout({ title, description, body, extraHead = '' }) {
+  return `<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Text Dev Tools - Free Online Text &amp; Developer Tools</title>
-  <meta name="description" content="Free online text and developer tools for cleaning, formatting, and converting content." />
+  <title>${escapeHtml(title)}</title>
+  <meta name="description" content="${escapeHtml(description)}" />
   <meta name="robots" content="index,follow" />
-  
-  <script type="application/ld+json">
-  {
-    "@context":"https://schema.org",
-    "@type":"FAQPage",
-    "mainEntity":[
-      {
-        "@type":"Question",
-        "name":"Are these tools free to use?",
-        "acceptedAnswer":{"@type":"Answer","text":"Yes. The tools on this site are free to use without creating an account."}
-      },
-      {
-        "@type":"Question",
-        "name":"Do I need to install anything?",
-        "acceptedAnswer":{"@type":"Answer","text":"No. These tools work directly in your browser, so there is nothing to install."}
-      },
-      {
-        "@type":"Question",
-        "name":"Is my text processed in the browser?",
-        "acceptedAnswer":{"@type":"Answer","text":"For the current static tools, text is processed in the browser with client-side JavaScript."}
-      }
-    ]
-  }
-  </script>
+  ${extraHead}
   <style>
     :root {
       --bg: #f6f8fb;
@@ -337,7 +348,45 @@
   </style>
 </head>
 <body>
+${body}
+</body>
+</html>`;
+}
 
+function renderHome() {
+  const popular = tools.slice(0, 6).map(t => {
+    const tag = t.category === 'dev' ? 'Developer Tool' : 'Text Tool';
+    return toolCard(t, tag);
+  }).join('\n');
+
+  return layout({
+    title: 'Text Dev Tools - Free Online Text & Developer Tools',
+    description: 'Free online text and developer tools for cleaning, formatting, and converting content.',
+    extraHead: `
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"FAQPage",
+    "mainEntity":[
+      {
+        "@type":"Question",
+        "name":"Are these tools free to use?",
+        "acceptedAnswer":{"@type":"Answer","text":"Yes. The tools on this site are free to use without creating an account."}
+      },
+      {
+        "@type":"Question",
+        "name":"Do I need to install anything?",
+        "acceptedAnswer":{"@type":"Answer","text":"No. These tools work directly in your browser, so there is nothing to install."}
+      },
+      {
+        "@type":"Question",
+        "name":"Is my text processed in the browser?",
+        "acceptedAnswer":{"@type":"Answer","text":"For the current static tools, text is processed in the browser with client-side JavaScript."}
+      }
+    ]
+  }
+  </script>`,
+    body: `
   <header class="site-header">
     <div class="container header-inner">
       <a class="brand" href="/">Text Dev Tools</a>
@@ -374,42 +423,7 @@
           <p>Start with the most useful tools currently listed in the catalog.</p>
         </div>
         <div class="tools-grid">
-
-        <a class="tool-card" href="/tools/remove-line-breaks/">
-          <h3>Remove Line Breaks</h3>
-          <p>Join broken lines into one clean paragraph for easier editing and pasting.</p>
-          <span class="tool-tag">Text Tool</span>
-        </a>
-
-        <a class="tool-card" href="/tools/remove-extra-spaces/">
-          <h3>Remove Extra Spaces</h3>
-          <p>Clean repeated spaces while keeping your text readable and consistent.</p>
-          <span class="tool-tag">Text Tool</span>
-        </a>
-
-        <a class="tool-card" href="/tools/word-counter/">
-          <h3>Word Counter</h3>
-          <p>Count words, characters, and lines for writing, editing, and content checks.</p>
-          <span class="tool-tag">Text Tool</span>
-        </a>
-
-        <a class="tool-card" href="/tools/case-converter/">
-          <h3>Case Converter</h3>
-          <p>Convert text to uppercase, lowercase, and title case in one place.</p>
-          <span class="tool-tag">Text Tool</span>
-        </a>
-
-        <a class="tool-card" href="/tools/text-sorter/">
-          <h3>Text Sorter</h3>
-          <p>Sort lines of text alphabetically for quick cleanup and organization.</p>
-          <span class="tool-tag">Text Tool</span>
-        </a>
-
-        <a class="tool-card" href="/tools/duplicate-line-remover/">
-          <h3>Duplicate Line Remover</h3>
-          <p>Remove repeated lines from text lists and exported content.</p>
-          <span class="tool-tag">Text Tool</span>
-        </a>
+${popular}
         </div>
       </div>
     </section>
@@ -479,6 +493,107 @@
         <a href="/developer-tools/">Developer Tools</a>
       </div>
     </div>
-  </footer>
-</body>
-</html>
+  </footer>`
+  });
+}
+
+function renderCategoryPage(categoryKey, pageTitle, pageDescription, heroTitle, heroText) {
+  const list = tools.filter(t => t.category === categoryKey);
+  const cards = list.map(t => toolCard(t, null)).join('\n');
+
+  return layout({
+    title: pageTitle,
+    description: pageDescription,
+    body: `
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="/">Text Dev Tools</a>
+      <nav class="nav" aria-label="Primary">
+        <a href="/">Home</a>
+        <a href="/text-tools/">Text Tools</a>
+        <a href="/developer-tools/">Developer Tools</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <div class="breadcrumb">
+      <a href="/">Home</a> / ${escapeHtml(heroTitle)}
+    </div>
+
+    <section class="hero">
+      <h1>${escapeHtml(heroTitle)}</h1>
+      <p>${escapeHtml(heroText)}</p>
+    </section>
+
+    <section class="section">
+      <div class="ad-slot">Category Ad Slot</div>
+    </section>
+
+    <section class="section">
+      <div class="section-head">
+        <h2>Available tools</h2>
+        <p>Tools in this category are generated from the central site catalog.</p>
+      </div>
+      <div class="tools-grid">
+${cards}
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="card">
+        <div class="section-head">
+          <h2>About this category</h2>
+          <p>This section grows automatically as more tools are added to the catalog.</p>
+        </div>
+        <ul class="info-list">
+          <li>Consistent layout across all tool pages</li>
+          <li>Clear category grouping for users and search engines</li>
+          <li>Expandable structure for future tools</li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div>© 2026 Text Dev Tools</div>
+      <div class="footer-links">
+        <a href="/">Home</a>
+        <a href="/text-tools/">Text Tools</a>
+        <a href="/developer-tools/">Developer Tools</a>
+      </div>
+    </div>
+  </footer>`
+  });
+}
+
+fs.writeFileSync(path.join(root, 'index.html'), renderHome(), 'utf8');
+
+fs.mkdirSync(path.join(root, 'text-tools'), { recursive: true });
+fs.writeFileSync(
+  path.join(root, 'text-tools', 'index.html'),
+  renderCategoryPage(
+    'text',
+    'Text Tools - Free Online Text Cleanup & Formatting Tools',
+    'Browse free online text tools for removing line breaks, removing extra spaces, counting words, converting case, and more.',
+    'Text Tools',
+    'Free browser-based tools for cleaning, converting, and preparing text.'
+  ),
+  'utf8'
+);
+
+fs.mkdirSync(path.join(root, 'developer-tools'), { recursive: true });
+fs.writeFileSync(
+  path.join(root, 'developer-tools', 'index.html'),
+  renderCategoryPage(
+    'dev',
+    'Developer Tools - Free Online Formatting & Utility Tools',
+    'Browse free online developer tools for formatting JSON, testing regex, encoding text, and handling common browser-based utility tasks.',
+    'Developer Tools',
+    'Free browser-based utility tools for formatting, testing, encoding, and handling structured text in technical workflows.'
+  ),
+  'utf8'
+);
+
+console.log('Rendered: index.html, text-tools/index.html, developer-tools/index.html');

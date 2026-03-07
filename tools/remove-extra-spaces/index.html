@@ -265,6 +265,43 @@
     ]
   }
   </script>
+
+  <style id="related-tools-style">
+    .related-tools-section {
+      margin-top: 32px;
+    }
+    .related-tools-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 14px;
+      margin-top: 16px;
+    }
+    .related-tool-card {
+      display: block;
+      text-decoration: none;
+      color: inherit;
+      background: #fff;
+      border: 1px solid #d9e2ef;
+      border-radius: 14px;
+      padding: 16px;
+      transition: 0.18s ease;
+    }
+    .related-tool-card:hover {
+      transform: translateY(-2px);
+      border-color: #bfd0ea;
+    }
+    .related-tool-card strong {
+      display: block;
+      font-size: 15px;
+      margin-bottom: 8px;
+    }
+    .related-tool-card span {
+      display: block;
+      font-size: 13px;
+      line-height: 1.5;
+      color: #5f6f86;
+    }
+  </style>
 </head>
 <body>
   <header class="site-header">
@@ -396,6 +433,30 @@
       </div>
 
       <div class="ad-slot">Bottom Ad Slot</div>
+    </section>
+  
+    <section class="related-tools-section" aria-labelledby="related-tools-title">
+      <div class="section-card">
+        <h2 id="related-tools-title">Related Tools</h2>
+        <p>Explore more tools that work well with this page.</p>
+        <div class="related-tools-grid">
+
+        <a class="related-tool-card" href="/tools/word-counter/">
+          <strong>Word Counter</strong>
+          <span>Count words, characters, and lines for writing, editing, and content checks.</span>
+        </a>
+
+        <a class="related-tool-card" href="/tools/case-converter/">
+          <strong>Case Converter</strong>
+          <span>Convert text to uppercase, lowercase, and title case in one place.</span>
+        </a>
+
+        <a class="related-tool-card" href="/tools/text-sorter/">
+          <strong>Text Sorter</strong>
+          <span>Sort lines of text alphabetically for quick cleanup and organization.</span>
+        </a>
+        </div>
+      </div>
     </section>
   </main>
 

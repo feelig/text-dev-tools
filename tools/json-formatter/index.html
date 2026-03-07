@@ -277,6 +277,43 @@
     ]
   }
   </script>
+
+  <style id="related-tools-style">
+    .related-tools-section {
+      margin-top: 32px;
+    }
+    .related-tools-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 14px;
+      margin-top: 16px;
+    }
+    .related-tool-card {
+      display: block;
+      text-decoration: none;
+      color: inherit;
+      background: #fff;
+      border: 1px solid #d9e2ef;
+      border-radius: 14px;
+      padding: 16px;
+      transition: 0.18s ease;
+    }
+    .related-tool-card:hover {
+      transform: translateY(-2px);
+      border-color: #bfd0ea;
+    }
+    .related-tool-card strong {
+      display: block;
+      font-size: 15px;
+      margin-bottom: 8px;
+    }
+    .related-tool-card span {
+      display: block;
+      font-size: 13px;
+      line-height: 1.5;
+      color: #5f6f86;
+    }
+  </style>
 </head>
 <body>
   <header class="site-header">
@@ -406,6 +443,30 @@
       </div>
 
       <div class="ad-slot">Bottom Ad Slot</div>
+    </section>
+  
+    <section class="related-tools-section" aria-labelledby="related-tools-title">
+      <div class="section-card">
+        <h2 id="related-tools-title">Related Tools</h2>
+        <p>Explore more tools that work well with this page.</p>
+        <div class="related-tools-grid">
+
+        <a class="related-tool-card" href="/tools/regex-tester/">
+          <strong>Regex Tester</strong>
+          <span>Test regular expressions in a focused browser workflow.</span>
+        </a>
+
+        <a class="related-tool-card" href="/tools/base64-encoder/">
+          <strong>Base64 Encoder</strong>
+          <span>Encode and decode Base64 text instantly in your browser.</span>
+        </a>
+
+        <a class="related-tool-card" href="/tools/url-encoder/">
+          <strong>Url Encoder</strong>
+          <span>Encode and decode URLs instantly for web development tasks.</span>
+        </a>
+        </div>
+      </div>
     </section>
   </main>
 

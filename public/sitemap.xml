@@ -28,9 +28,45 @@
     <loc>https://text-dev-tools.pages.dev/tools/duplicate-line-remover/</loc>
   </url>
   <url>
+    <loc>https://text-dev-tools.pages.dev/tools/character-counter/</loc>
+  </url>
+  <url>
+    <loc>https://text-dev-tools.pages.dev/tools/paragraph-counter/</loc>
+  </url>
+  <url>
     <loc>https://text-dev-tools.pages.dev/tools/json-formatter/</loc>
   </url>
   <url>
     <loc>https://text-dev-tools.pages.dev/tools/regex-tester/</loc>
+  </url>
+  <url>
+    <loc>https://text-dev-tools.pages.dev/tools/base64-encoder/</loc>
+  </url>
+  <url>
+    <loc>https://text-dev-tools.pages.dev/tools/url-encoder/</loc>
+  </url>
+  <url>
+    <loc>https://text-dev-tools.pages.dev/tools/password-generator/</loc>
+  </url>
+  <url>
+    <loc>https://text-dev-tools.pages.dev/tools/uuid-generator/</loc>
+  </url>
+  <url>
+    <loc>https://text-dev-tools.pages.dev/tools/timestamp-converter/</loc>
+  </url>
+  <url>
+    <loc>https://text-dev-tools.pages.dev/tools/json-to-csv/</loc>
+  </url>
+  <url>
+    <loc>https://text-dev-tools.pages.dev/tools/csv-to-json/</loc>
+  </url>
+  <url>
+    <loc>https://text-dev-tools.pages.dev/tools/html-escape/</loc>
+  </url>
+  <url>
+    <loc>https://text-dev-tools.pages.dev/tools/html-unescape/</loc>
+  </url>
+  <url>
+    <loc>https://text-dev-tools.pages.dev/tools/text-diff/</loc>
   </url>
 </urlset>

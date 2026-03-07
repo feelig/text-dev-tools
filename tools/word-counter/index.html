@@ -3,16 +3,16 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Word Counter - Free Online Tool</title>
+  <title>Word Counter - Free Online Text Tool</title>
   <meta
     name="description"
-    content="Word Counter with this free online tool. Fast, simple, and easy to use."
+    content="Count words, characters, characters without spaces, and lines instantly with this free online word counter tool."
   />
   <meta name="robots" content="index,follow" />
-  <meta property="og:title" content="Word Counter - Free Online Tool" />
+  <meta property="og:title" content="Word Counter - Free Online Text Tool" />
   <meta
     property="og:description"
-    content="Use Word Counter instantly with this free online tool."
+    content="Count words, characters, and lines instantly in your browser."
   />
   <meta property="og:type" content="website" />
   <style>
@@ -224,18 +224,79 @@
       color: var(--muted);
       font-size: 14px;
     }
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+      margin-top: 14px;
+    }
+    .stat-box {
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 14px;
+      background: #fbfcfe;
+    }
+    .stat-box strong {
+      display: block;
+      font-size: 24px;
+      margin-bottom: 4px;
+    }
+    .stat-box span {
+      color: var(--muted);
+      font-size: 13px;
+    }
     .site-footer {
       padding: 28px 0 50px;
       color: var(--muted);
       font-size: 14px;
     }
     @media (max-width: 860px) {
-      .tool-layout { grid-template-columns: 1fr; }
-      .related-tools { grid-template-columns: 1fr; }
-      .hero h1 { font-size: 28px; }
-      textarea { min-height: 220px; }
+      .tool-layout,
+      .related-tools,
+      .stats-grid {
+        grid-template-columns: 1fr;
+      }
+      .hero h1 {
+        font-size: 28px;
+      }
+      textarea {
+        min-height: 220px;
+      }
     }
   </style>
+
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"FAQPage",
+    "mainEntity":[
+      {
+        "@type":"Question",
+        "name":"What does this word counter do?",
+        "acceptedAnswer":{
+          "@type":"Answer",
+          "text":"This tool counts words, characters, characters without spaces, and lines instantly in your browser."
+        }
+      },
+      {
+        "@type":"Question",
+        "name":"Is this word counter free?",
+        "acceptedAnswer":{
+          "@type":"Answer",
+          "text":"Yes. You can use this word counter for free without creating an account."
+        }
+      },
+      {
+        "@type":"Question",
+        "name":"Can I count lines and characters too?",
+        "acceptedAnswer":{
+          "@type":"Answer",
+          "text":"Yes. The tool also shows total characters, characters without spaces, and line count."
+        }
+      }
+    ]
+  }
+  </script>
 </head>
 <body>
   <header class="site-header">
@@ -252,7 +313,8 @@
     <section class="hero">
       <h1>Word Counter</h1>
       <p>
-        Use this free online word counter tool to process your text quickly and cleanly.
+        Count words, characters, characters without spaces, and lines instantly.
+        Great for writing, editing, SEO checks, forms, and content preparation.
       </p>
     </section>
 
@@ -264,11 +326,11 @@
           <div class="panel">
             <div class="panel-header">
               <h2>Input</h2>
-              <p>Paste your source text</p>
+              <p>Paste or type your text</p>
             </div>
             <textarea id="inputText" placeholder="Paste your text here..."></textarea>
             <div class="actions">
-              <button class="btn-primary" id="processBtn">Process</button>
+              <button class="btn-primary" id="processBtn">Count Now</button>
               <button class="btn-secondary" id="sampleBtn">Load Example</button>
               <button class="btn-secondary" id="clearBtn">Clear</button>
             </div>
@@ -280,17 +342,19 @@
 
           <div class="panel">
             <div class="panel-header">
-              <h2>Output</h2>
-              <p>Your processed result</p>
+              <h2>Result</h2>
+              <p>Text statistics</p>
             </div>
-            <textarea id="outputText" placeholder="Your result will appear here..."></textarea>
+            <textarea id="outputText" placeholder="Your text statistics will appear here..."></textarea>
             <div class="actions">
               <button class="btn-primary" id="copyBtn">Copy Result</button>
             </div>
             <div class="status" id="statusMessage"></div>
-            <div class="meta-bar">
-              <span id="outputChars">0 characters</span>
-              <span id="outputLines">0 lines</span>
+            <div class="stats-grid">
+              <div class="stat-box"><strong id="statWords">0</strong><span>Words</span></div>
+              <div class="stat-box"><strong id="statChars">0</strong><span>Characters</span></div>
+              <div class="stat-box"><strong id="statCharsNoSpaces">0</strong><span>Characters (no spaces)</span></div>
+              <div class="stat-box"><strong id="statLines">0</strong><span>Lines</span></div>
             </div>
           </div>
         </div>
@@ -301,20 +365,23 @@
       <div class="card content-section">
         <h2>How it works</h2>
         <p>
-          This tool lets users transform text quickly in the browser without sign-up or installation.
+          This word counter analyzes the text you paste into the input box and instantly calculates
+          word count, character count, characters without spaces, and line count.
         </p>
         <p>
-          Replace the processing logic and supporting content for each specific tool while keeping the same page structure.
+          It is useful for writers, editors, students, marketers, and anyone who needs fast text statistics
+          without opening a separate app.
         </p>
       </div>
 
       <div class="card content-section">
         <h2>Common use cases</h2>
         <ul>
-          <li>Clean or normalize pasted text</li>
-          <li>Prepare content for forms, spreadsheets, or CMS editors</li>
-          <li>Transform text before sending to AI tools</li>
-          <li>Improve copy and paste workflows</li>
+          <li>Check article and paragraph length</li>
+          <li>Count characters for forms or text limits</li>
+          <li>Review copy length for SEO and publishing</li>
+          <li>Measure prompt size before using AI tools</li>
+          <li>Track writing progress quickly</li>
         </ul>
       </div>
 
@@ -322,23 +389,23 @@
         <h2>Frequently asked questions</h2>
 
         <div class="faq-item">
-          <h3>What does word counter do?</h3>
+          <h3>What does this word counter do?</h3>
           <p>
-            It processes your pasted text directly in the browser and returns the transformed result instantly.
+            It counts words, characters, characters without spaces, and lines directly in your browser.
           </p>
         </div>
 
         <div class="faq-item">
-          <h3>Is word counter free to use?</h3>
+          <h3>Is this word counter free?</h3>
           <p>
-            Yes. You can use this tool for free without registration.
+            Yes. You can use it for free without registration.
           </p>
         </div>
 
         <div class="faq-item">
-          <h3>Does my text leave my browser?</h3>
+          <h3>Can I count lines and characters too?</h3>
           <p>
-            In this static version, text is processed in the browser using client-side JavaScript.
+            Yes. The tool also shows total characters, characters without spaces, and line count.
           </p>
         </div>
       </div>
@@ -354,9 +421,9 @@
             Remove Extra Spaces
             <span>Clean repeated spaces from text</span>
           </a>
-          <a href="/tools/word-counter/">
-            Word Counter
-            <span>Count words, characters, and lines</span>
+          <a href="/tools/case-converter/">
+            Case Converter
+            <span>Convert text to upper, lower, or title case</span>
           </a>
         </div>
       </div>
@@ -382,23 +449,51 @@
 
     const inputChars = document.getElementById('inputChars');
     const inputLines = document.getElementById('inputLines');
-    const outputChars = document.getElementById('outputChars');
-    const outputLines = document.getElementById('outputLines');
+
+    const statWords = document.getElementById('statWords');
+    const statChars = document.getElementById('statChars');
+    const statCharsNoSpaces = document.getElementById('statCharsNoSpaces');
+    const statLines = document.getElementById('statLines');
 
     function countLines(text) {
       if (!text) return 0;
       return text.split(/\r\n|\r|\n/).length;
     }
 
-    function updateStats() {
-      inputChars.textContent = `${inputText.value.length} characters`;
-      inputLines.textContent = `${countLines(inputText.value)} lines`;
-      outputChars.textContent = `${outputText.value.length} characters`;
-      outputLines.textContent = `${countLines(outputText.value)} lines`;
+    function getStats(text) {
+      const trimmed = text.trim();
+      return {
+        words: trimmed ? trimmed.split(/\s+/).filter(Boolean).length : 0,
+        characters: text.length,
+        charactersNoSpaces: text.replace(/\s/g, '').length,
+        lines: countLines(text)
+      };
     }
 
-    function processText(text) {
-      return text;
+    function updateInputStats() {
+      inputChars.textContent = `${inputText.value.length} characters`;
+      inputLines.textContent = `${countLines(inputText.value)} lines`;
+    }
+
+    function renderOutput(stats) {
+      outputText.value =
+`Words: ${stats.words}
+Characters: ${stats.characters}
+Characters (no spaces): ${stats.charactersNoSpaces}
+Lines: ${stats.lines}`;
+
+      statWords.textContent = stats.words;
+      statChars.textContent = stats.characters;
+      statCharsNoSpaces.textContent = stats.charactersNoSpaces;
+      statLines.textContent = stats.lines;
+    }
+
+    function resetOutput() {
+      outputText.value = '';
+      statWords.textContent = '0';
+      statChars.textContent = '0';
+      statCharsNoSpaces.textContent = '0';
+      statLines.textContent = '0';
     }
 
     function setStatus(message, isSuccess = false) {
@@ -408,30 +503,34 @@
 
     processBtn.addEventListener('click', () => {
       const source = inputText.value;
-      const result = processText(source);
-      outputText.value = result;
-
       if (!source.trim()) {
-        setStatus('Please paste some text first.');
-      } else {
-        setStatus('Processed successfully.', true);
+        resetOutput();
+        setStatus('Please paste or type some text first.');
+        updateInputStats();
+        return;
       }
 
-      updateStats();
+      const stats = getStats(source);
+      renderOutput(stats);
+      setStatus('Text counted successfully.', true);
+      updateInputStats();
     });
 
     sampleBtn.addEventListener('click', () => {
-      inputText.value = 'Sample text goes here. Replace this with a better example for each tool.';
-      outputText.value = '';
+      inputText.value = `This is a sample paragraph.
+
+It helps demonstrate how the word counter works
+across multiple lines of text.`;
+      resetOutput();
       setStatus('Example text loaded.');
-      updateStats();
+      updateInputStats();
     });
 
     clearBtn.addEventListener('click', () => {
       inputText.value = '';
-      outputText.value = '';
+      resetOutput();
       setStatus('');
-      updateStats();
+      updateInputStats();
       inputText.focus();
     });
 
@@ -449,10 +548,9 @@
       }
     });
 
-    inputText.addEventListener('input', updateStats);
-    outputText.addEventListener('input', updateStats);
+    inputText.addEventListener('input', updateInputStats);
 
-    updateStats();
+    updateInputStats();
   </script>
 </body>
 </html>

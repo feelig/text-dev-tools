@@ -13,11 +13,7 @@ const tools = JSON.parse(fs.readFileSync(toolsPath, 'utf8'));
 const staticPages = [
   '/',
   '/text-tools/',
-  '/developer-tools/',
-  '/about/',
-  '/privacy/',
-  '/terms/',
-  '/contact/'
+  '/developer-tools/'
 ];
 
 const toolPages = tools.map(tool => `/tools/${tool.slug}/`);

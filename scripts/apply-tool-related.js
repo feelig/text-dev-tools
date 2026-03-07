@@ -106,7 +106,7 @@ for (const tool of tools) {
   if (!relatedHtml) continue;
 
   if (/<\/main>/i.test(html)) {
-    html = html.replace(/<\/main>/i, `${relatedHtml}\n  </main>`);
+    html = html.replace(/<\/main>/i, `${relatedHtml}\n</main>`);
     fs.writeFileSync(filePath, html, 'utf8');
     console.log(`✅ Related tools added: tools/${tool.slug}/index.html`);
     updated++;

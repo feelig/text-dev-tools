@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Remove Line Breaks Tool</title>
+  <meta name="description" content="Remove line breaks from text instantly with this free online tool." />
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 24px;
+      line-height: 1.5;
+    }
+    h1 {
+      margin-bottom: 8px;
+    }
+    p {
+      color: #444;
+    }
+    textarea {
+      width: 100%;
+      min-height: 180px;
+      margin: 12px 0;
+      padding: 12px;
+      font-size: 14px;
+      box-sizing: border-box;
+    }
+    button {
+      padding: 10px 16px;
+      font-size: 14px;
+      cursor: pointer;
+      margin-right: 8px;
+    }
+    .section {
+      margin-top: 24px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Remove Line Breaks</h1>
+  <p>Paste your text below and remove all line breaks instantly.</p>
+
+  <div class="section">
+    <textarea id="input" placeholder="Paste text here..."></textarea>
+    <div>
+      <button onclick="processText()">Remove Line Breaks</button>
+      <button onclick="copyResult()">Copy Result</button>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>Result</h2>
+    <textarea id="output" placeholder="Result will appear here..."></textarea>
+  </div>
+
+  <script>
+    function processText() {
+      const text = document.getElementById('input').value;
+      const result = text.replace(/\r?\n+/g, ' ').replace(/\s{2,}/g, ' ').trim();
+      document.getElementById('output').value = result;
+    }
+
+    async function copyResult() {
+      const output = document.getElementById('output').value;
+      if (!output) return;
+      await navigator.clipboard.writeText(output);
+      alert('Copied!');
+    }
+  </script>
+</body>
+</html>

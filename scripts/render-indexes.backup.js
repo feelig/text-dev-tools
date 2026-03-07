@@ -491,10 +491,6 @@ ${popular}
       <div class="footer-links">
         <a href="/text-tools/">Text Tools</a>
         <a href="/developer-tools/">Developer Tools</a>
-        <a href="/about/">About</a>
-        <a href="/privacy/">Privacy</a>
-        <a href="/terms/">Terms</a>
-        <a href="/contact/">Contact</a>
       </div>
     </div>
   </footer>`
@@ -516,10 +512,6 @@ function renderCategoryPage(categoryKey, pageTitle, pageDescription, heroTitle, 
         <a href="/">Home</a>
         <a href="/text-tools/">Text Tools</a>
         <a href="/developer-tools/">Developer Tools</a>
-        <a href="/about/">About</a>
-        <a href="/privacy/">Privacy</a>
-        <a href="/terms/">Terms</a>
-        <a href="/contact/">Contact</a>
       </nav>
     </div>
   </header>

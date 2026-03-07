@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Remove Extra Spaces - Free Online Text Tool</title>
+  <meta
+    name="description"
+    content="Remove extra spaces from text instantly with this free online tool. Clean repeated spaces, tidy pasted content, and copy the result in one click."
+  />
+  <meta name="robots" content="index,follow" />
+  <meta property="og:title" content="Remove Extra Spaces - Free Online Text Tool" />
+  <meta
+    property="og:description"
+    content="Clean repeated spaces from text instantly. Free, fast, and easy to use."
+  />
+  <meta property="og:type" content="website" />
+  <style>
+    :root {
+      --bg: #f6f8fb;
+      --card: #ffffff;
+      --text: #16202a;
+      --muted: #5c6773;
+      --border: #d9e0e7;
+      --primary: #1463ff;
+      --primary-hover: #0f52d6;
+      --success: #137333;
+      --shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
+      --radius: 16px;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.55;
+    }
+    .container {
+      width: min(1100px, calc(100% - 32px));
+      margin: 0 auto;
+    }
+    .site-header {
+      padding: 20px 0;
+      border-bottom: 1px solid rgba(0,0,0,0.05);
+      background: #fff;
+    }
+    .site-header .brand {
+      font-size: 20px;
+      font-weight: 700;
+      text-decoration: none;
+      color: var(--text);
+    }
+    .breadcrumb {
+      font-size: 14px;
+      color: var(--muted);
+      margin: 20px 0 8px;
+    }
+    .breadcrumb a {
+      color: var(--muted);
+      text-decoration: none;
+    }
+    .hero {
+      padding: 12px 0 24px;
+    }
+    .hero h1 {
+      margin: 0 0 10px;
+      font-size: 34px;
+      line-height: 1.15;
+    }
+    .hero p {
+      margin: 0;
+      max-width: 760px;
+      color: var(--muted);
+      font-size: 17px;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 24px;
+      margin-bottom: 32px;
+    }
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 20px;
+    }
+    .tool-layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+    }
+    .panel h2 {
+      margin: 0 0 12px;
+      font-size: 20px;
+    }
+    .panel-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 10px;
+    }
+    .panel-header p {
+      margin: 0;
+      font-size: 14px;
+      color: var(--muted);
+    }
+    textarea {
+      width: 100%;
+      min-height: 280px;
+      resize: vertical;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 14px;
+      font-size: 15px;
+      line-height: 1.5;
+      color: var(--text);
+      background: #fff;
+      outline: none;
+    }
+    textarea:focus {
+      border-color: var(--primary);
+      box-shadow: 0 0 0 3px rgba(20, 99, 255, 0.12);
+    }
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 14px;
+    }
+    button {
+      appearance: none;
+      border: 0;
+      border-radius: 12px;
+      padding: 11px 16px;
+      font-size: 14px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: 0.18s ease;
+    }
+    .btn-primary {
+      background: var(--primary);
+      color: #fff;
+    }
+    .btn-primary:hover {
+      background: var(--primary-hover);
+    }
+    .btn-secondary {
+      background: #eef3f8;
+      color: var(--text);
+    }
+    .btn-secondary:hover {
+      background: #e3ebf4;
+    }
+    .status {
+      margin-top: 12px;
+      min-height: 22px;
+      font-size: 14px;
+      color: var(--muted);
+    }
+    .status.success {
+      color: var(--success);
+      font-weight: 700;
+    }
+    .meta-bar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      margin-top: 14px;
+      font-size: 13px;
+      color: var(--muted);
+    }
+    .ad-slot {
+      display: grid;
+      place-items: center;
+      min-height: 120px;
+      border: 1px dashed #b9c6d3;
+      border-radius: 14px;
+      color: #7a8794;
+      font-size: 14px;
+      background: #fbfcfe;
+    }
+    .content-section h2 {
+      margin-top: 0;
+      font-size: 24px;
+    }
+    .content-section p, .content-section li {
+      color: #31404f;
+    }
+    .faq-item {
+      padding: 14px 0;
+      border-top: 1px solid #ebeff4;
+    }
+    .faq-item:first-child {
+      border-top: 0;
+      padding-top: 0;
+    }
+    .faq-item h3 {
+      margin: 0 0 8px;
+      font-size: 18px;
+    }
+    .related-tools {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+    }
+    .related-tools a {
+      display: block;
+      padding: 16px;
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      background: #fff;
+      text-decoration: none;
+      color: var(--text);
+      font-weight: 700;
+    }
+    .related-tools a span {
+      display: block;
+      margin-top: 6px;
+      font-weight: 400;
+      color: var(--muted);
+      font-size: 14px;
+    }
+    .site-footer {
+      padding: 28px 0 50px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+    @media (max-width: 860px) {
+      .tool-layout { grid-template-columns: 1fr; }
+      .related-tools { grid-template-columns: 1fr; }
+      .hero h1 { font-size: 28px; }
+      textarea { min-height: 220px; }
+    }
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"FAQPage",
+    "mainEntity":[
+      {
+        "@type":"Question",
+        "name":"What does this remove extra spaces tool do?",
+        "acceptedAnswer":{
+          "@type":"Answer",
+          "text":"This tool removes repeated spaces from text and normalizes spacing to make the content cleaner and easier to use."
+        }
+      },
+      {
+        "@type":"Question",
+        "name":"Does it remove line breaks too?",
+        "acceptedAnswer":{
+          "@type":"Answer",
+          "text":"No. This version focuses on cleaning repeated spaces while keeping line breaks in place."
+        }
+      },
+      {
+        "@type":"Question",
+        "name":"Is this tool free?",
+        "acceptedAnswer":{
+          "@type":"Answer",
+          "text":"Yes. You can use it for free without creating an account."
+        }
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <a class="brand" href="/">Text Dev Tools</a>
+    </div>
+  </header>
+
+  <main class="container">
+    <div class="breadcrumb">
+      <a href="/">Home</a> / <a href="/text-tools/">Text Tools</a> / Remove Extra Spaces
+    </div>
+
+    <section class="hero">
+      <h1>Remove Extra Spaces</h1>
+      <p>
+        Clean repeated spaces from pasted text instantly. Great for content copied from websites,
+        spreadsheets, emails, or documents that contain uneven spacing.
+      </p>
+    </section>
+
+    <section class="grid">
+      <div class="ad-slot">Top Ad Slot</div>
+
+      <div class="card">
+        <div class="tool-layout">
+          <div class="panel">
+            <div class="panel-header">
+              <h2>Input</h2>
+              <p>Paste text with extra spaces</p>
+            </div>
+            <textarea id="inputText" placeholder="Paste your text here..."></textarea>
+            <div class="actions">
+              <button class="btn-primary" id="processBtn">Remove Extra Spaces</button>
+              <button class="btn-secondary" id="sampleBtn">Load Example</button>
+              <button class="btn-secondary" id="clearBtn">Clear</button>
+            </div>
+            <div class="meta-bar">
+              <span id="inputChars">0 characters</span>
+              <span id="inputLines">0 lines</span>
+            </div>
+          </div>
+
+          <div class="panel">
+            <div class="panel-header">
+              <h2>Output</h2>
+              <p>Cleaned text result</p>
+            </div>
+            <textarea id="outputText" placeholder="Your cleaned text will appear here..."></textarea>
+            <div class="actions">
+              <button class="btn-primary" id="copyBtn">Copy Result</button>
+            </div>
+            <div class="status" id="statusMessage"></div>
+            <div class="meta-bar">
+              <span id="outputChars">0 characters</span>
+              <span id="outputLines">0 lines</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="ad-slot">Middle Ad Slot</div>
+
+      <div class="card content-section">
+        <h2>How it works</h2>
+        <p>
+          This tool finds repeated spaces in your text and reduces them to single spaces.
+          It helps clean messy copy before you paste it into forms, editors, spreadsheets,
+          websites, or AI prompts.
+        </p>
+        <p>
+          It keeps normal line structure while improving spacing quality, so your text becomes
+          easier to read and more consistent.
+        </p>
+      </div>
+
+      <div class="card content-section">
+        <h2>Common use cases</h2>
+        <ul>
+          <li>Clean copied text from websites or PDFs</li>
+          <li>Fix uneven spacing in documents</li>
+          <li>Normalize text before publishing</li>
+          <li>Prepare cleaner prompts for AI tools</li>
+          <li>Improve text pasted into forms or spreadsheets</li>
+        </ul>
+      </div>
+
+      <div class="card content-section">
+        <h2>Frequently asked questions</h2>
+
+        <div class="faq-item">
+          <h3>What does this remove extra spaces tool do?</h3>
+          <p>
+            It removes repeated spaces and normalizes spacing so your text is cleaner and more readable.
+          </p>
+        </div>
+
+        <div class="faq-item">
+          <h3>Does it remove line breaks too?</h3>
+          <p>
+            No. This version keeps line breaks and focuses only on repeated spaces.
+          </p>
+        </div>
+
+        <div class="faq-item">
+          <h3>Is this tool free?</h3>
+          <p>
+            Yes. You can use it any time for free.
+          </p>
+        </div>
+      </div>
+
+      <div class="card content-section">
+        <h2>Related tools</h2>
+        <div class="related-tools">
+          <a href="/tools/remove-line-breaks/">
+            Remove Line Breaks
+            <span>Join broken lines into one clean paragraph</span>
+          </a>
+          <a href="/tools/word-counter/">
+            Word Counter
+            <span>Count words, characters, and lines</span>
+          </a>
+          <a href="/tools/case-converter/">
+            Case Converter
+            <span>Convert text to upper, lower, or title case</span>
+          </a>
+        </div>
+      </div>
+
+      <div class="ad-slot">Bottom Ad Slot</div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      © 2026 Text Dev Tools
+    </div>
+  </footer>
+
+  <script>
+    const inputText = document.getElementById('inputText');
+    const outputText = document.getElementById('outputText');
+    const processBtn = document.getElementById('processBtn');
+    const sampleBtn = document.getElementById('sampleBtn');
+    const clearBtn = document.getElementById('clearBtn');
+    const copyBtn = document.getElementById('copyBtn');
+    const statusMessage = document.getElementById('statusMessage');
+
+    const inputChars = document.getElementById('inputChars');
+    const inputLines = document.getElementById('inputLines');
+    const outputChars = document.getElementById('outputChars');
+    const outputLines = document.getElementById('outputLines');
+
+    function countLines(text) {
+      if (!text) return 0;
+      return text.split(/\r\n|\r|\n/).length;
+    }
+
+    function updateStats() {
+      inputChars.textContent = `${inputText.value.length} characters`;
+      inputLines.textContent = `${countLines(inputText.value)} lines`;
+      outputChars.textContent = `${outputText.value.length} characters`;
+      outputLines.textContent = `${countLines(outputText.value)} lines`;
+    }
+
+    function removeExtraSpaces(text) {
+      return text
+        .split(/\r\n|\r|\n/)
+        .map(line => line.replace(/[ \t]+/g, ' ').trim())
+        .join('\n')
+        .trim();
+    }
+
+    function setStatus(message, isSuccess = false) {
+      statusMessage.textContent = message;
+      statusMessage.className = isSuccess ? 'status success' : 'status';
+    }
+
+    processBtn.addEventListener('click', () => {
+      const source = inputText.value;
+      const result = removeExtraSpaces(source);
+      outputText.value = result;
+
+      if (!source.trim()) {
+        setStatus('Please paste some text first.');
+      } else {
+        setStatus('Extra spaces removed successfully.', true);
+      }
+
+      updateStats();
+    });
+
+    sampleBtn.addEventListener('click', () => {
+      inputText.value = `This   is    a    sample    text.
+
+It     contains   repeated      spaces
+that should   be cleaned   up.`;
+      outputText.value = '';
+      setStatus('Example text loaded.');
+      updateStats();
+    });
+
+    clearBtn.addEventListener('click', () => {
+      inputText.value = '';
+      outputText.value = '';
+      setStatus('');
+      updateStats();
+      inputText.focus();
+    });
+
+    copyBtn.addEventListener('click', async () => {
+      if (!outputText.value.trim()) {
+        setStatus('There is no result to copy yet.');
+        return;
+      }
+
+      try {
+        await navigator.clipboard.writeText(outputText.value);
+        setStatus('Result copied to clipboard.', true);
+      } catch (error) {
+        setStatus('Copy failed. Please copy the result manually.');
+      }
+    });
+
+    inputText.addEventListener('input', updateStats);
+    outputText.addEventListener('input', updateStats);
+
+    updateStats();
+  </script>
+</body>
+</html>

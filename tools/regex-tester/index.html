@@ -3,16 +3,16 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Regex Tester - Free Online Tool</title>
+  <title>Regex Tester - Free Online Developer Tool</title>
   <meta
     name="description"
-    content="Regex Tester with this free online tool. Fast, simple, and easy to use."
+    content="Test regular expressions instantly with this free online regex tester. Enter a pattern, flags, and sample text to find matches in your browser."
   />
   <meta name="robots" content="index,follow" />
-  <meta property="og:title" content="Regex Tester - Free Online Tool" />
+  <meta property="og:title" content="Regex Tester - Free Online Developer Tool" />
   <meta
     property="og:description"
-    content="Use Regex Tester instantly with this free online tool."
+    content="Test regex patterns and flags instantly in your browser."
   />
   <meta property="og:type" content="website" />
   <style>
@@ -25,6 +25,7 @@
       --primary: #1463ff;
       --primary-hover: #0f52d6;
       --success: #137333;
+      --error: #b42318;
       --shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
       --radius: 16px;
     }
@@ -108,22 +109,31 @@
       font-size: 14px;
       color: var(--muted);
     }
-    textarea {
+    textarea, input {
       width: 100%;
-      min-height: 280px;
-      resize: vertical;
       border: 1px solid var(--border);
       border-radius: 12px;
       padding: 14px;
-      font-size: 15px;
+      font-size: 14px;
       line-height: 1.5;
       color: var(--text);
       background: #fff;
       outline: none;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
     }
-    textarea:focus {
+    textarea {
+      min-height: 280px;
+      resize: vertical;
+    }
+    textarea:focus, input:focus {
       border-color: var(--primary);
       box-shadow: 0 0 0 3px rgba(20, 99, 255, 0.12);
+    }
+    .field-row {
+      display: grid;
+      grid-template-columns: 1fr 180px;
+      gap: 12px;
+      margin-bottom: 12px;
     }
     .actions {
       display: flex;
@@ -165,6 +175,10 @@
       color: var(--success);
       font-weight: 700;
     }
+    .status.error {
+      color: var(--error);
+      font-weight: 700;
+    }
     .meta-bar {
       display: flex;
       flex-wrap: wrap;
@@ -172,6 +186,21 @@
       margin-top: 14px;
       font-size: 13px;
       color: var(--muted);
+    }
+    .match-list {
+      margin-top: 14px;
+      border-top: 1px solid #ebeff4;
+      padding-top: 14px;
+    }
+    .match-item {
+      padding: 10px 12px;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      background: #fbfcfe;
+      margin-bottom: 10px;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+      font-size: 13px;
+      word-break: break-word;
     }
     .ad-slot {
       display: grid;
@@ -230,12 +259,52 @@
       font-size: 14px;
     }
     @media (max-width: 860px) {
-      .tool-layout { grid-template-columns: 1fr; }
-      .related-tools { grid-template-columns: 1fr; }
-      .hero h1 { font-size: 28px; }
-      textarea { min-height: 220px; }
+      .tool-layout,
+      .related-tools,
+      .field-row {
+        grid-template-columns: 1fr;
+      }
+      .hero h1 {
+        font-size: 28px;
+      }
+      textarea {
+        min-height: 220px;
+      }
     }
   </style>
+
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"FAQPage",
+    "mainEntity":[
+      {
+        "@type":"Question",
+        "name":"What does this regex tester do?",
+        "acceptedAnswer":{
+          "@type":"Answer",
+          "text":"This tool lets you test regular expressions against sample text and view the matches directly in your browser."
+        }
+      },
+      {
+        "@type":"Question",
+        "name":"Can I use regex flags like g, i, and m?",
+        "acceptedAnswer":{
+          "@type":"Answer",
+          "text":"Yes. You can enter common JavaScript regex flags such as g, i, and m in the flags input field."
+        }
+      },
+      {
+        "@type":"Question",
+        "name":"Does this tool validate invalid regex patterns?",
+        "acceptedAnswer":{
+          "@type":"Answer",
+          "text":"Yes. Invalid regex syntax will show an error message instead of running the test."
+        }
+      }
+    ]
+  }
+  </script>
 </head>
 <body>
   <header class="site-header">
@@ -246,13 +315,14 @@
 
   <main class="container">
     <div class="breadcrumb">
-      <a href="/">Home</a> / <a href="/dev-tools/">Developer Tools</a> / Regex Tester
+      <a href="/">Home</a> / <a href="/developer-tools/">Developer Tools</a> / Regex Tester
     </div>
 
     <section class="hero">
       <h1>Regex Tester</h1>
       <p>
-        Use this free online regex tester tool to process your text quickly and cleanly.
+        Test regular expressions directly in your browser. Enter a regex pattern,
+        optional flags, and sample text to see matches instantly.
       </p>
     </section>
 
@@ -260,15 +330,26 @@
       <div class="ad-slot">Top Ad Slot</div>
 
       <div class="card">
+        <div class="field-row">
+          <div>
+            <label for="patternInput">Pattern</label>
+            <input id="patternInput" type="text" placeholder="e.g. \\b\\w+@\\w+\\.\\w+\\b" />
+          </div>
+          <div>
+            <label for="flagsInput">Flags</label>
+            <input id="flagsInput" type="text" placeholder="e.g. gi" />
+          </div>
+        </div>
+
         <div class="tool-layout">
           <div class="panel">
             <div class="panel-header">
-              <h2>Input</h2>
-              <p>Paste your source text</p>
+              <h2>Input Text</h2>
+              <p>Paste sample text to test</p>
             </div>
-            <textarea id="inputText" placeholder="Paste your text here..."></textarea>
+            <textarea id="inputText" placeholder="Paste sample text here..."></textarea>
             <div class="actions">
-              <button class="btn-primary" id="processBtn">Process</button>
+              <button class="btn-primary" id="testBtn">Run Regex</button>
               <button class="btn-secondary" id="sampleBtn">Load Example</button>
               <button class="btn-secondary" id="clearBtn">Clear</button>
             </div>
@@ -280,10 +361,10 @@
 
           <div class="panel">
             <div class="panel-header">
-              <h2>Output</h2>
-              <p>Your processed result</p>
+              <h2>Results</h2>
+              <p>Matched values</p>
             </div>
-            <textarea id="outputText" placeholder="Your result will appear here..."></textarea>
+            <textarea id="outputText" placeholder="Regex results will appear here..."></textarea>
             <div class="actions">
               <button class="btn-primary" id="copyBtn">Copy Result</button>
             </div>
@@ -291,7 +372,9 @@
             <div class="meta-bar">
               <span id="outputChars">0 characters</span>
               <span id="outputLines">0 lines</span>
+              <span id="matchCount">0 matches</span>
             </div>
+            <div class="match-list" id="matchList"></div>
           </div>
         </div>
       </div>
@@ -301,20 +384,23 @@
       <div class="card content-section">
         <h2>How it works</h2>
         <p>
-          This tool lets users transform text quickly in the browser without sign-up or installation.
+          This regex tester builds a JavaScript regular expression from your pattern and flags,
+          then runs it against the input text to show matches.
         </p>
         <p>
-          Replace the processing logic and supporting content for each specific tool while keeping the same page structure.
+          It is useful for testing validation patterns, extracting values, debugging text processing logic,
+          and checking whether a regex behaves as expected before using it in code.
         </p>
       </div>
 
       <div class="card content-section">
         <h2>Common use cases</h2>
         <ul>
-          <li>Clean or normalize pasted text</li>
-          <li>Prepare content for forms, spreadsheets, or CMS editors</li>
-          <li>Transform text before sending to AI tools</li>
-          <li>Improve copy and paste workflows</li>
+          <li>Test email or phone number patterns</li>
+          <li>Extract IDs, tokens, or numeric values</li>
+          <li>Check JavaScript regex behavior quickly</li>
+          <li>Debug matching rules before coding</li>
+          <li>Validate text parsing logic in the browser</li>
         </ul>
       </div>
 
@@ -322,23 +408,23 @@
         <h2>Frequently asked questions</h2>
 
         <div class="faq-item">
-          <h3>What does regex tester do?</h3>
+          <h3>What does this regex tester do?</h3>
           <p>
-            It processes your pasted text directly in the browser and returns the transformed result instantly.
+            It lets you test regex patterns against sample text and view matches directly in your browser.
           </p>
         </div>
 
         <div class="faq-item">
-          <h3>Is regex tester free to use?</h3>
+          <h3>Can I use regex flags like g, i, and m?</h3>
           <p>
-            Yes. You can use this tool for free without registration.
+            Yes. You can enter common JavaScript regex flags such as g, i, and m.
           </p>
         </div>
 
         <div class="faq-item">
-          <h3>Does my text leave my browser?</h3>
+          <h3>Does this tool validate invalid regex patterns?</h3>
           <p>
-            In this static version, text is processed in the browser using client-side JavaScript.
+            Yes. Invalid patterns show an error message instead of running the test.
           </p>
         </div>
       </div>
@@ -346,17 +432,17 @@
       <div class="card content-section">
         <h2>Related tools</h2>
         <div class="related-tools">
-          <a href="/tools/remove-line-breaks/">
-            Remove Line Breaks
-            <span>Join broken lines into one clean paragraph</span>
+          <a href="/tools/json-formatter/">
+            JSON Formatter
+            <span>Beautify and validate JSON instantly</span>
           </a>
-          <a href="/tools/remove-extra-spaces/">
-            Remove Extra Spaces
-            <span>Clean repeated spaces from text</span>
+          <a href="/tools/base64-encoder/">
+            Base64 Encoder
+            <span>Encode text to Base64 for quick development tasks</span>
           </a>
-          <a href="/tools/word-counter/">
-            Word Counter
-            <span>Count words, characters, and lines</span>
+          <a href="/tools/url-encoder/">
+            URL Encoder
+            <span>Encode special characters for URL-safe text</span>
           </a>
         </div>
       </div>
@@ -372,18 +458,22 @@
   </footer>
 
   <script>
+    const patternInput = document.getElementById('patternInput');
+    const flagsInput = document.getElementById('flagsInput');
     const inputText = document.getElementById('inputText');
     const outputText = document.getElementById('outputText');
-    const processBtn = document.getElementById('processBtn');
+    const testBtn = document.getElementById('testBtn');
     const sampleBtn = document.getElementById('sampleBtn');
     const clearBtn = document.getElementById('clearBtn');
     const copyBtn = document.getElementById('copyBtn');
     const statusMessage = document.getElementById('statusMessage');
+    const matchList = document.getElementById('matchList');
 
     const inputChars = document.getElementById('inputChars');
     const inputLines = document.getElementById('inputLines');
     const outputChars = document.getElementById('outputChars');
     const outputLines = document.getElementById('outputLines');
+    const matchCount = document.getElementById('matchCount');
 
     function countLines(text) {
       if (!text) return 0;
@@ -397,55 +487,127 @@
       outputLines.textContent = `${countLines(outputText.value)} lines`;
     }
 
-    function processText(text) {
-      return text;
-    }
-
-    function setStatus(message, isSuccess = false) {
+    function setStatus(message, type = '') {
       statusMessage.textContent = message;
-      statusMessage.className = isSuccess ? 'status success' : 'status';
+      statusMessage.className = type ? `status ${type}` : 'status';
     }
 
-    processBtn.addEventListener('click', () => {
+    function escapeHtml(text) {
+      return text
+        .replaceAll('&', '&amp;')
+        .replaceAll('<', '&lt;')
+        .replaceAll('>', '&gt;')
+        .replaceAll('"', '&quot;')
+        .replaceAll("'", '&#39;');
+    }
+
+    function renderMatches(matches) {
+      matchList.innerHTML = '';
+
+      if (!matches.length) {
+        matchList.innerHTML = '<div class="match-item">No matches found.</div>';
+        return;
+      }
+
+      matches.forEach((item, index) => {
+        const div = document.createElement('div');
+        div.className = 'match-item';
+        div.innerHTML = `<strong>Match ${index + 1}:</strong> ${escapeHtml(item.value)}<br><strong>Index:</strong> ${item.index}`;
+        matchList.appendChild(div);
+      });
+    }
+
+    function runRegexTest() {
+      const pattern = patternInput.value;
+      const flags = flagsInput.value;
       const source = inputText.value;
-      const result = processText(source);
-      outputText.value = result;
+
+      outputText.value = '';
+      matchList.innerHTML = '';
+      matchCount.textContent = '0 matches';
+
+      if (!pattern.trim()) {
+        setStatus('Please enter a regex pattern first.');
+        updateStats();
+        return;
+      }
 
       if (!source.trim()) {
-        setStatus('Please paste some text first.');
-      } else {
-        setStatus('Processed successfully.', true);
+        setStatus('Please paste sample text first.');
+        updateStats();
+        return;
+      }
+
+      try {
+        const safeFlags = flags.includes('g') ? flags : flags + 'g';
+        const regex = new RegExp(pattern, safeFlags);
+
+        const matches = [];
+        let match;
+
+        while ((match = regex.exec(source)) !== null) {
+          matches.push({ value: match[0], index: match.index });
+
+          if (match[0] === '') {
+            regex.lastIndex++;
+          }
+        }
+
+        const resultText = matches.length
+          ? matches.map((m, i) => `Match ${i + 1}: ${m.value} (index ${m.index})`).join('\n')
+          : 'No matches found.';
+
+        outputText.value = resultText;
+        matchCount.textContent = `${matches.length} matches`;
+        renderMatches(matches);
+        setStatus('Regex tested successfully.', 'success');
+      } catch (error) {
+        outputText.value = '';
+        matchList.innerHTML = '';
+        matchCount.textContent = '0 matches';
+        setStatus(`Invalid regex: ${error.message}`, 'error');
       }
 
       updateStats();
-    });
+    }
+
+    testBtn.addEventListener('click', runRegexTest);
 
     sampleBtn.addEventListener('click', () => {
-      inputText.value = 'Sample text goes here. Replace this with a better example for each tool.';
+      patternInput.value = '\\b\\w+@\\w+\\.\\w+\\b';
+      flagsInput.value = 'g';
+      inputText.value = `Contact alice@example.com or bob@demo.org for access.
+Ignore this invalid address: test@demo`;
       outputText.value = '';
-      setStatus('Example text loaded.');
+      matchList.innerHTML = '';
+      matchCount.textContent = '0 matches';
+      setStatus('Example regex and sample text loaded.');
       updateStats();
     });
 
     clearBtn.addEventListener('click', () => {
+      patternInput.value = '';
+      flagsInput.value = '';
       inputText.value = '';
       outputText.value = '';
+      matchList.innerHTML = '';
+      matchCount.textContent = '0 matches';
       setStatus('');
       updateStats();
-      inputText.focus();
+      patternInput.focus();
     });
 
     copyBtn.addEventListener('click', async () => {
       if (!outputText.value.trim()) {
-        setStatus('There is no result to copy yet.');
+        setStatus('There is no result to copy.');
         return;
       }
 
       try {
         await navigator.clipboard.writeText(outputText.value);
-        setStatus('Result copied to clipboard.', true);
+        setStatus('Result copied to clipboard.', 'success');
       } catch (error) {
-        setStatus('Copy failed. Please copy the result manually.');
+        setStatus('Copy failed. Please copy the result manually.', 'error');
       }
     });
 

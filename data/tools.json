@@ -31,7 +31,7 @@
     "slug": "text-sorter",
     "title": "Text Sorter",
     "category": "text",
-    "status": "planned",
+    "status": "live",
     "description": "Sort lines of text alphabetically for quick cleanup and organization."
   },
   {
@@ -45,7 +45,7 @@
     "slug": "character-counter",
     "title": "Character Counter",
     "category": "text",
-    "status": "planned",
+    "status": "live",
     "description": "Count characters instantly for forms, limits, and content editing."
   },
   {
@@ -87,14 +87,14 @@
     "slug": "password-generator",
     "title": "Password Generator",
     "category": "dev",
-    "status": "planned",
+    "status": "live",
     "description": "Generate random passwords for quick security and testing needs."
   },
   {
     "slug": "uuid-generator",
     "title": "UUID Generator",
     "category": "dev",
-    "status": "planned",
+    "status": "live",
     "description": "Generate UUIDs instantly for application and database workflows."
   },
   {

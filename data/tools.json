@@ -1,0 +1,58 @@
+[
+  {
+    "slug": "remove-line-breaks",
+    "title": "Remove Line Breaks",
+    "category": "text",
+    "status": "live",
+    "description": "Join broken lines into one clean paragraph for easier editing and pasting."
+  },
+  {
+    "slug": "remove-extra-spaces",
+    "title": "Remove Extra Spaces",
+    "category": "text",
+    "status": "live",
+    "description": "Clean repeated spaces while keeping your text readable and consistent."
+  },
+  {
+    "slug": "word-counter",
+    "title": "Word Counter",
+    "category": "text",
+    "status": "planned",
+    "description": "Count words, characters, and lines for writing, editing, and content checks."
+  },
+  {
+    "slug": "case-converter",
+    "title": "Case Converter",
+    "category": "text",
+    "status": "planned",
+    "description": "Convert text to uppercase, lowercase, and title case in one place."
+  },
+  {
+    "slug": "text-sorter",
+    "title": "Text Sorter",
+    "category": "text",
+    "status": "planned",
+    "description": "Sort lines of text alphabetically for quick cleanup and organization."
+  },
+  {
+    "slug": "duplicate-line-remover",
+    "title": "Duplicate Line Remover",
+    "category": "text",
+    "status": "planned",
+    "description": "Remove repeated lines from text lists and exported content."
+  },
+  {
+    "slug": "json-formatter",
+    "title": "JSON Formatter",
+    "category": "dev",
+    "status": "planned",
+    "description": "Beautify JSON for easier reading, debugging, and review."
+  },
+  {
+    "slug": "regex-tester",
+    "title": "Regex Tester",
+    "category": "dev",
+    "status": "planned",
+    "description": "Test regular expressions in a focused browser workflow."
+  }
+]

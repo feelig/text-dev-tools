@@ -372,6 +372,37 @@
       line-height: 1.7;
     }
   </style>
+
+  <style id="tool-example-style">
+    .tool-example-section {
+      margin-top: 32px;
+    }
+    .tool-example-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 16px;
+      margin-top: 16px;
+    }
+    .example-box {
+      background: #fff;
+      border: 1px solid #d9e2ef;
+      border-radius: 14px;
+      padding: 16px;
+    }
+    .example-box h3 {
+      margin: 0 0 10px;
+      font-size: 16px;
+    }
+    .example-box pre {
+      margin: 0;
+      white-space: pre-wrap;
+      word-break: break-word;
+      font-size: 13px;
+      line-height: 1.6;
+      color: #5f6f86;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+    }
+  </style>
 </head>
 <body>
   <header class="site-header">
@@ -567,6 +598,23 @@
           <li>Handle quick cleanup tasks without installing extra software.</li>
           <li>Prepare content or data before copying it into your next workflow step.</li>
         </ul>
+      </div>
+    </section>
+
+    <section class="tool-example-section" aria-labelledby="tool-example-title">
+      <div class="section-card">
+        <h2 id="tool-example-title">Example</h2>
+        <p>A quick example of how this tool works.</p>
+        <div class="tool-example-grid">
+          <div class="example-box">
+            <h3>Input</h3>
+            <pre>name,age\nAlex,30\nSam,28</pre>
+          </div>
+          <div class="example-box">
+            <h3>Output</h3>
+            <pre>[{"name":"Alex","age":"30"},{"name":"Sam","age":"28"}]</pre>
+          </div>
+        </div>
       </div>
     </section>
 </main>

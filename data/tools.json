@@ -21,139 +21,558 @@
       "remove-extra-spaces",
       "text-sorter",
       "word-counter"
-    ]
+    ],
+    "name": "Remove Line Breaks"
   },
   {
     "slug": "remove-extra-spaces",
     "title": "Remove Extra Spaces",
     "category": "text",
     "status": "live",
-    "description": "Clean repeated spaces while keeping your text readable and consistent."
+    "description": "Clean repeated spaces while keeping your text readable and consistent.",
+    "name": "Remove Extra Spaces",
+    "intro": "This free Remove Extra Spaces tool helps you clean, format, and transform text directly in your browser.",
+    "keywords": [
+      "remove extra spaces",
+      "remove extra spaces online",
+      "remove extra spaces tool"
+    ],
+    "faq": [
+      {
+        "q": "What does the Remove Extra Spaces tool do?",
+        "a": "It helps you clean or transform text using the remove extra spaces function."
+      },
+      {
+        "q": "Is the Remove Extra Spaces tool free to use?",
+        "a": "Yes. You can use it online for free."
+      }
+    ],
+    "related": [
+      "word-counter",
+      "case-converter",
+      "text-sorter"
+    ]
   },
   {
     "slug": "word-counter",
     "title": "Word Counter",
     "category": "text",
     "status": "live",
-    "description": "Count words, characters, and lines for writing, editing, and content checks."
+    "description": "Count words, characters, and lines for writing, editing, and content checks.",
+    "name": "Word Counter",
+    "intro": "This free Word Counter tool helps you clean, format, and transform text directly in your browser.",
+    "keywords": [
+      "word counter",
+      "word counter online",
+      "word counter tool"
+    ],
+    "faq": [
+      {
+        "q": "What does the Word Counter tool do?",
+        "a": "It helps you clean or transform text using the word counter function."
+      },
+      {
+        "q": "Is the Word Counter tool free to use?",
+        "a": "Yes. You can use it online for free."
+      }
+    ],
+    "related": [
+      "remove-extra-spaces",
+      "case-converter",
+      "text-sorter"
+    ]
   },
   {
     "slug": "case-converter",
     "title": "Case Converter",
     "category": "text",
     "status": "live",
-    "description": "Convert text to uppercase, lowercase, and title case in one place."
+    "description": "Convert text to uppercase, lowercase, and title case in one place.",
+    "name": "Case Converter",
+    "intro": "This free Case Converter tool helps you clean, format, and transform text directly in your browser.",
+    "keywords": [
+      "case converter",
+      "case converter online",
+      "case converter tool"
+    ],
+    "faq": [
+      {
+        "q": "What does the Case Converter tool do?",
+        "a": "It helps you clean or transform text using the case converter function."
+      },
+      {
+        "q": "Is the Case Converter tool free to use?",
+        "a": "Yes. You can use it online for free."
+      }
+    ],
+    "related": [
+      "remove-extra-spaces",
+      "word-counter",
+      "text-sorter"
+    ]
   },
   {
     "slug": "text-sorter",
     "title": "Text Sorter",
     "category": "text",
     "status": "live",
-    "description": "Sort lines of text alphabetically for quick cleanup and organization."
+    "description": "Sort lines of text alphabetically for quick cleanup and organization.",
+    "name": "Text Sorter",
+    "intro": "This free Text Sorter tool helps you clean, format, and transform text directly in your browser.",
+    "keywords": [
+      "text sorter",
+      "text sorter online",
+      "text sorter tool"
+    ],
+    "faq": [
+      {
+        "q": "What does the Text Sorter tool do?",
+        "a": "It helps you clean or transform text using the text sorter function."
+      },
+      {
+        "q": "Is the Text Sorter tool free to use?",
+        "a": "Yes. You can use it online for free."
+      }
+    ],
+    "related": [
+      "remove-extra-spaces",
+      "word-counter",
+      "case-converter"
+    ]
   },
   {
     "slug": "duplicate-line-remover",
     "title": "Duplicate Line Remover",
     "category": "text",
     "status": "planned",
-    "description": "Remove repeated lines from text lists and exported content."
+    "description": "Remove repeated lines from text lists and exported content.",
+    "name": "Duplicate Line Remover",
+    "intro": "This free Duplicate Line Remover tool helps you clean, format, and transform text directly in your browser.",
+    "keywords": [
+      "duplicate line remover",
+      "duplicate line remover online",
+      "duplicate line remover tool"
+    ],
+    "faq": [
+      {
+        "q": "What does the Duplicate Line Remover tool do?",
+        "a": "It helps you clean or transform text using the duplicate line remover function."
+      },
+      {
+        "q": "Is the Duplicate Line Remover tool free to use?",
+        "a": "Yes. You can use it online for free."
+      }
+    ],
+    "related": [
+      "remove-extra-spaces",
+      "word-counter",
+      "case-converter"
+    ]
   },
   {
     "slug": "character-counter",
     "title": "Character Counter",
     "category": "text",
     "status": "live",
-    "description": "Count characters instantly for forms, limits, and content editing."
+    "description": "Count characters instantly for forms, limits, and content editing.",
+    "name": "Character Counter",
+    "intro": "This free Character Counter tool helps you clean, format, and transform text directly in your browser.",
+    "keywords": [
+      "character counter",
+      "character counter online",
+      "character counter tool"
+    ],
+    "faq": [
+      {
+        "q": "What does the Character Counter tool do?",
+        "a": "It helps you clean or transform text using the character counter function."
+      },
+      {
+        "q": "Is the Character Counter tool free to use?",
+        "a": "Yes. You can use it online for free."
+      }
+    ],
+    "related": [
+      "remove-extra-spaces",
+      "word-counter",
+      "case-converter"
+    ]
   },
   {
     "slug": "paragraph-counter",
     "title": "Paragraph Counter",
     "category": "text",
     "status": "planned",
-    "description": "Count paragraphs quickly for writing and formatting checks."
+    "description": "Count paragraphs quickly for writing and formatting checks.",
+    "name": "Paragraph Counter",
+    "intro": "This free Paragraph Counter tool helps you clean, format, and transform text directly in your browser.",
+    "keywords": [
+      "paragraph counter",
+      "paragraph counter online",
+      "paragraph counter tool"
+    ],
+    "faq": [
+      {
+        "q": "What does the Paragraph Counter tool do?",
+        "a": "It helps you clean or transform text using the paragraph counter function."
+      },
+      {
+        "q": "Is the Paragraph Counter tool free to use?",
+        "a": "Yes. You can use it online for free."
+      }
+    ],
+    "related": [
+      "remove-extra-spaces",
+      "word-counter",
+      "case-converter"
+    ]
   },
   {
     "slug": "json-formatter",
     "title": "JSON Formatter",
     "category": "dev",
     "status": "live",
-    "description": "Beautify JSON for easier reading, debugging, and review."
+    "description": "Beautify JSON for easier reading, debugging, and review.",
+    "name": "Json Formatter",
+    "intro": "This free Json Formatter tool helps you clean, format, and transform text directly in your browser.",
+    "keywords": [
+      "json formatter",
+      "json formatter online",
+      "json formatter tool"
+    ],
+    "faq": [
+      {
+        "q": "What does the Json Formatter tool do?",
+        "a": "It helps you clean or transform text using the json formatter function."
+      },
+      {
+        "q": "Is the Json Formatter tool free to use?",
+        "a": "Yes. You can use it online for free."
+      }
+    ],
+    "related": [
+      "regex-tester",
+      "base64-encoder",
+      "url-encoder"
+    ]
   },
   {
     "slug": "regex-tester",
     "title": "Regex Tester",
     "category": "dev",
     "status": "live",
-    "description": "Test regular expressions in a focused browser workflow."
+    "description": "Test regular expressions in a focused browser workflow.",
+    "name": "Regex Tester",
+    "intro": "This free Regex Tester tool helps you clean, format, and transform text directly in your browser.",
+    "keywords": [
+      "regex tester",
+      "regex tester online",
+      "regex tester tool"
+    ],
+    "faq": [
+      {
+        "q": "What does the Regex Tester tool do?",
+        "a": "It helps you clean or transform text using the regex tester function."
+      },
+      {
+        "q": "Is the Regex Tester tool free to use?",
+        "a": "Yes. You can use it online for free."
+      }
+    ],
+    "related": [
+      "json-formatter",
+      "base64-encoder",
+      "url-encoder"
+    ]
   },
   {
     "slug": "base64-encoder",
     "title": "Base64 Encoder / Decoder",
     "category": "dev",
     "status": "live",
-    "description": "Encode and decode Base64 text instantly in your browser."
+    "description": "Encode and decode Base64 text instantly in your browser.",
+    "name": "Base64 Encoder",
+    "intro": "This free Base64 Encoder tool helps you clean, format, and transform text directly in your browser.",
+    "keywords": [
+      "base64 encoder",
+      "base64 encoder online",
+      "base64 encoder tool"
+    ],
+    "faq": [
+      {
+        "q": "What does the Base64 Encoder tool do?",
+        "a": "It helps you clean or transform text using the base64 encoder function."
+      },
+      {
+        "q": "Is the Base64 Encoder tool free to use?",
+        "a": "Yes. You can use it online for free."
+      }
+    ],
+    "related": [
+      "json-formatter",
+      "regex-tester",
+      "url-encoder"
+    ]
   },
   {
     "slug": "url-encoder",
     "title": "URL Encoder / Decoder",
     "category": "dev",
     "status": "live",
-    "description": "Encode and decode URLs instantly for web development tasks."
+    "description": "Encode and decode URLs instantly for web development tasks.",
+    "name": "Url Encoder",
+    "intro": "This free Url Encoder tool helps you clean, format, and transform text directly in your browser.",
+    "keywords": [
+      "url encoder",
+      "url encoder online",
+      "url encoder tool"
+    ],
+    "faq": [
+      {
+        "q": "What does the Url Encoder tool do?",
+        "a": "It helps you clean or transform text using the url encoder function."
+      },
+      {
+        "q": "Is the Url Encoder tool free to use?",
+        "a": "Yes. You can use it online for free."
+      }
+    ],
+    "related": [
+      "json-formatter",
+      "regex-tester",
+      "base64-encoder"
+    ]
   },
   {
     "slug": "password-generator",
     "title": "Password Generator",
     "category": "dev",
     "status": "live",
-    "description": "Generate random passwords for quick security and testing needs."
+    "description": "Generate random passwords for quick security and testing needs.",
+    "name": "Password Generator",
+    "intro": "This free Password Generator tool helps you clean, format, and transform text directly in your browser.",
+    "keywords": [
+      "password generator",
+      "password generator online",
+      "password generator tool"
+    ],
+    "faq": [
+      {
+        "q": "What does the Password Generator tool do?",
+        "a": "It helps you clean or transform text using the password generator function."
+      },
+      {
+        "q": "Is the Password Generator tool free to use?",
+        "a": "Yes. You can use it online for free."
+      }
+    ],
+    "related": [
+      "json-formatter",
+      "regex-tester",
+      "base64-encoder"
+    ]
   },
   {
     "slug": "uuid-generator",
     "title": "UUID Generator",
     "category": "dev",
     "status": "live",
-    "description": "Generate UUIDs instantly for application and database workflows."
+    "description": "Generate UUIDs instantly for application and database workflows.",
+    "name": "Uuid Generator",
+    "intro": "This free Uuid Generator tool helps you clean, format, and transform text directly in your browser.",
+    "keywords": [
+      "uuid generator",
+      "uuid generator online",
+      "uuid generator tool"
+    ],
+    "faq": [
+      {
+        "q": "What does the Uuid Generator tool do?",
+        "a": "It helps you clean or transform text using the uuid generator function."
+      },
+      {
+        "q": "Is the Uuid Generator tool free to use?",
+        "a": "Yes. You can use it online for free."
+      }
+    ],
+    "related": [
+      "json-formatter",
+      "regex-tester",
+      "base64-encoder"
+    ]
   },
   {
     "slug": "timestamp-converter",
     "title": "Timestamp Converter",
     "category": "dev",
     "status": "planned",
-    "description": "Convert Unix timestamps into readable dates and times."
+    "description": "Convert Unix timestamps into readable dates and times.",
+    "name": "Timestamp Converter",
+    "intro": "This free Timestamp Converter tool helps you clean, format, and transform text directly in your browser.",
+    "keywords": [
+      "timestamp converter",
+      "timestamp converter online",
+      "timestamp converter tool"
+    ],
+    "faq": [
+      {
+        "q": "What does the Timestamp Converter tool do?",
+        "a": "It helps you clean or transform text using the timestamp converter function."
+      },
+      {
+        "q": "Is the Timestamp Converter tool free to use?",
+        "a": "Yes. You can use it online for free."
+      }
+    ],
+    "related": [
+      "json-formatter",
+      "regex-tester",
+      "base64-encoder"
+    ]
   },
   {
     "slug": "json-to-csv",
     "title": "JSON to CSV Converter",
     "category": "dev",
     "status": "planned",
-    "description": "Convert JSON data into CSV format for spreadsheets and exports."
+    "description": "Convert JSON data into CSV format for spreadsheets and exports.",
+    "name": "Json To Csv",
+    "intro": "This free Json To Csv tool helps you clean, format, and transform text directly in your browser.",
+    "keywords": [
+      "json to csv",
+      "json to csv online",
+      "json to csv tool"
+    ],
+    "faq": [
+      {
+        "q": "What does the Json To Csv tool do?",
+        "a": "It helps you clean or transform text using the json to csv function."
+      },
+      {
+        "q": "Is the Json To Csv tool free to use?",
+        "a": "Yes. You can use it online for free."
+      }
+    ],
+    "related": [
+      "json-formatter",
+      "regex-tester",
+      "base64-encoder"
+    ]
   },
   {
     "slug": "csv-to-json",
     "title": "CSV to JSON Converter",
     "category": "dev",
     "status": "planned",
-    "description": "Convert CSV data into JSON format for apps and APIs."
+    "description": "Convert CSV data into JSON format for apps and APIs.",
+    "name": "Csv To Json",
+    "intro": "This free Csv To Json tool helps you clean, format, and transform text directly in your browser.",
+    "keywords": [
+      "csv to json",
+      "csv to json online",
+      "csv to json tool"
+    ],
+    "faq": [
+      {
+        "q": "What does the Csv To Json tool do?",
+        "a": "It helps you clean or transform text using the csv to json function."
+      },
+      {
+        "q": "Is the Csv To Json tool free to use?",
+        "a": "Yes. You can use it online for free."
+      }
+    ],
+    "related": [
+      "json-formatter",
+      "regex-tester",
+      "base64-encoder"
+    ]
   },
   {
     "slug": "html-escape",
     "title": "HTML Escape",
     "category": "dev",
     "status": "planned",
-    "description": "Escape HTML special characters for safe display in markup."
+    "description": "Escape HTML special characters for safe display in markup.",
+    "name": "Html Escape",
+    "intro": "This free Html Escape tool helps you clean, format, and transform text directly in your browser.",
+    "keywords": [
+      "html escape",
+      "html escape online",
+      "html escape tool"
+    ],
+    "faq": [
+      {
+        "q": "What does the Html Escape tool do?",
+        "a": "It helps you clean or transform text using the html escape function."
+      },
+      {
+        "q": "Is the Html Escape tool free to use?",
+        "a": "Yes. You can use it online for free."
+      }
+    ],
+    "related": [
+      "json-formatter",
+      "regex-tester",
+      "base64-encoder"
+    ]
   },
   {
     "slug": "html-unescape",
     "title": "HTML Unescape",
     "category": "dev",
     "status": "planned",
-    "description": "Convert escaped HTML entities back into readable characters."
+    "description": "Convert escaped HTML entities back into readable characters.",
+    "name": "Html Unescape",
+    "intro": "This free Html Unescape tool helps you clean, format, and transform text directly in your browser.",
+    "keywords": [
+      "html unescape",
+      "html unescape online",
+      "html unescape tool"
+    ],
+    "faq": [
+      {
+        "q": "What does the Html Unescape tool do?",
+        "a": "It helps you clean or transform text using the html unescape function."
+      },
+      {
+        "q": "Is the Html Unescape tool free to use?",
+        "a": "Yes. You can use it online for free."
+      }
+    ],
+    "related": [
+      "json-formatter",
+      "regex-tester",
+      "base64-encoder"
+    ]
   },
   {
     "slug": "text-diff",
     "title": "Text Diff Checker",
     "category": "dev",
     "status": "planned",
-    "description": "Compare two blocks of text and check differences quickly."
+    "description": "Compare two blocks of text and check differences quickly.",
+    "name": "Text Diff",
+    "intro": "This free Text Diff tool helps you clean, format, and transform text directly in your browser.",
+    "keywords": [
+      "text diff",
+      "text diff online",
+      "text diff tool"
+    ],
+    "faq": [
+      {
+        "q": "What does the Text Diff tool do?",
+        "a": "It helps you clean or transform text using the text diff function."
+      },
+      {
+        "q": "Is the Text Diff tool free to use?",
+        "a": "Yes. You can use it online for free."
+      }
+    ],
+    "related": [
+      "json-formatter",
+      "regex-tester",
+      "base64-encoder"
+    ]
   }
 ]

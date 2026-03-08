@@ -1,0 +1,159 @@
+[
+  {
+    "slug": "remove-line-breaks",
+    "title": "Remove Line Breaks Tool",
+    "category": "text-tools",
+    "status": "live",
+    "description": "Remove line breaks from text instantly online.",
+    "intro": "Use this free Remove Line Breaks tool to convert multi-line text into a single line.",
+    "keywords": [
+      "remove line breaks",
+      "text line break remover",
+      "join lines online"
+    ],
+    "faq": [
+      {
+        "q": "What does this tool do?",
+        "a": "It removes newline characters from your input text."
+      }
+    ],
+    "related": [
+      "remove-extra-spaces",
+      "text-sorter",
+      "word-counter"
+    ]
+  },
+  {
+    "slug": "remove-extra-spaces",
+    "title": "Remove Extra Spaces",
+    "category": "text",
+    "status": "live",
+    "description": "Clean repeated spaces while keeping your text readable and consistent."
+  },
+  {
+    "slug": "word-counter",
+    "title": "Word Counter",
+    "category": "text",
+    "status": "live",
+    "description": "Count words, characters, and lines for writing, editing, and content checks."
+  },
+  {
+    "slug": "case-converter",
+    "title": "Case Converter",
+    "category": "text",
+    "status": "live",
+    "description": "Convert text to uppercase, lowercase, and title case in one place."
+  },
+  {
+    "slug": "text-sorter",
+    "title": "Text Sorter",
+    "category": "text",
+    "status": "live",
+    "description": "Sort lines of text alphabetically for quick cleanup and organization."
+  },
+  {
+    "slug": "duplicate-line-remover",
+    "title": "Duplicate Line Remover",
+    "category": "text",
+    "status": "planned",
+    "description": "Remove repeated lines from text lists and exported content."
+  },
+  {
+    "slug": "character-counter",
+    "title": "Character Counter",
+    "category": "text",
+    "status": "live",
+    "description": "Count characters instantly for forms, limits, and content editing."
+  },
+  {
+    "slug": "paragraph-counter",
+    "title": "Paragraph Counter",
+    "category": "text",
+    "status": "planned",
+    "description": "Count paragraphs quickly for writing and formatting checks."
+  },
+  {
+    "slug": "json-formatter",
+    "title": "JSON Formatter",
+    "category": "dev",
+    "status": "live",
+    "description": "Beautify JSON for easier reading, debugging, and review."
+  },
+  {
+    "slug": "regex-tester",
+    "title": "Regex Tester",
+    "category": "dev",
+    "status": "live",
+    "description": "Test regular expressions in a focused browser workflow."
+  },
+  {
+    "slug": "base64-encoder",
+    "title": "Base64 Encoder / Decoder",
+    "category": "dev",
+    "status": "live",
+    "description": "Encode and decode Base64 text instantly in your browser."
+  },
+  {
+    "slug": "url-encoder",
+    "title": "URL Encoder / Decoder",
+    "category": "dev",
+    "status": "live",
+    "description": "Encode and decode URLs instantly for web development tasks."
+  },
+  {
+    "slug": "password-generator",
+    "title": "Password Generator",
+    "category": "dev",
+    "status": "live",
+    "description": "Generate random passwords for quick security and testing needs."
+  },
+  {
+    "slug": "uuid-generator",
+    "title": "UUID Generator",
+    "category": "dev",
+    "status": "live",
+    "description": "Generate UUIDs instantly for application and database workflows."
+  },
+  {
+    "slug": "timestamp-converter",
+    "title": "Timestamp Converter",
+    "category": "dev",
+    "status": "planned",
+    "description": "Convert Unix timestamps into readable dates and times."
+  },
+  {
+    "slug": "json-to-csv",
+    "title": "JSON to CSV Converter",
+    "category": "dev",
+    "status": "planned",
+    "description": "Convert JSON data into CSV format for spreadsheets and exports."
+  },
+  {
+    "slug": "csv-to-json",
+    "title": "CSV to JSON Converter",
+    "category": "dev",
+    "status": "planned",
+    "description": "Convert CSV data into JSON format for apps and APIs."
+  },
+  {
+    "slug": "html-escape",
+    "title": "HTML Escape",
+    "category": "dev",
+    "status": "planned",
+    "description": "Escape HTML special characters for safe display in markup."
+  },
+  {
+    "slug": "html-unescape",
+    "title": "HTML Unescape",
+    "category": "dev",
+    "status": "planned",
+    "description": "Convert escaped HTML entities back into readable characters."
+  },
+  {
+    "slug": "text-diff",
+    "title": "Text Diff Checker",
+    "category": "dev",
+    "status": "planned",
+    "description": "Compare two blocks of text and check differences quickly."
+  }
+]

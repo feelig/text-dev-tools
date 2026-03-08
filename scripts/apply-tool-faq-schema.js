@@ -4,7 +4,7 @@ const path = require('path');
 const root = process.cwd();
 const toolsPath = path.join(root, 'data', 'tools.json');
 const toolsDir = path.join(root, 'tools');
-const SITE_URL = 'https://text-dev-tools.pages.dev';
+const SITE_URL = 'https://extformattools.com';
 
 const tools = JSON.parse(fs.readFileSync(toolsPath, 'utf8'));
 

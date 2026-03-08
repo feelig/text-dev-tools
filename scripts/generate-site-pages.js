@@ -3,7 +3,7 @@ const path = require('path');
 
 const root = process.cwd();
 const publicDir = path.join(root, 'public');
-const SITE_URL = 'https://text-dev-tools.pages.dev';
+const SITE_URL = 'https://extformattools.com';
 const SITE_NAME = 'Text Dev Tools';
 
 function ensureDir(dir) {

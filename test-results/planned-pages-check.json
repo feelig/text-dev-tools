@@ -1,0 +1,90 @@
+[
+  {
+    "slug": "duplicate-line-remover",
+    "checkStatus": "WARN",
+    "timeMs": 3636,
+    "title": "Duplicate Line Remover",
+    "h1Count": 1,
+    "buttonCount": 4,
+    "inputCount": 2,
+    "outputLikeCount": 4,
+    "notes": "Looks generic/placeholder"
+  },
+  {
+    "slug": "paragraph-counter",
+    "checkStatus": "WARN",
+    "timeMs": 994,
+    "title": "Paragraph Counter",
+    "h1Count": 1,
+    "buttonCount": 4,
+    "inputCount": 2,
+    "outputLikeCount": 4,
+    "notes": "Looks generic/placeholder"
+  },
+  {
+    "slug": "timestamp-converter",
+    "checkStatus": "WARN",
+    "timeMs": 1063,
+    "title": "Timestamp Converter",
+    "h1Count": 1,
+    "buttonCount": 3,
+    "inputCount": 1,
+    "outputLikeCount": 1,
+    "notes": "Looks generic/placeholder"
+  },
+  {
+    "slug": "json-to-csv",
+    "checkStatus": "WARN",
+    "timeMs": 1032,
+    "title": "JSON to CSV Converter",
+    "h1Count": 1,
+    "buttonCount": 4,
+    "inputCount": 2,
+    "outputLikeCount": 2,
+    "notes": "Looks generic/placeholder"
+  },
+  {
+    "slug": "csv-to-json",
+    "checkStatus": "WARN",
+    "timeMs": 1053,
+    "title": "CSV to JSON Converter",
+    "h1Count": 1,
+    "buttonCount": 4,
+    "inputCount": 2,
+    "outputLikeCount": 4,
+    "notes": "Looks generic/placeholder"
+  },
+  {
+    "slug": "html-escape",
+    "checkStatus": "WARN",
+    "timeMs": 1288,
+    "title": "HTML Escape",
+    "h1Count": 1,
+    "buttonCount": 4,
+    "inputCount": 2,
+    "outputLikeCount": 4,
+    "notes": "Looks generic/placeholder"
+  },
+  {
+    "slug": "html-unescape",
+    "checkStatus": "WARN",
+    "timeMs": 1028,
+    "title": "HTML Unescape",
+    "h1Count": 1,
+    "buttonCount": 4,
+    "inputCount": 2,
+    "outputLikeCount": 4,
+    "notes": "Looks generic/placeholder"
+  },
+  {
+    "slug": "text-diff",
+    "checkStatus": "WARN",
+    "timeMs": 1049,
+    "title": "Text Diff Checker",
+    "h1Count": 1,
+    "buttonCount": 4,
+    "inputCount": 2,
+    "outputLikeCount": 4,
+    "notes": "Looks generic/placeholder"
+  }
+]

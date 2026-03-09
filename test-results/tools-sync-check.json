@@ -1,0 +1,18 @@
+{
+  "summary": {
+    "jsonTools": 25,
+    "pageTools": 25,
+    "missingPagesCount": 0,
+    "orphanPagesCount": 0,
+    "plannedButPageExistsCount": 0,
+    "liveButPageMissingCount": 0,
+    "activeButPageMissingCount": 0,
+    "unknownStatusButPageExistsCount": 0
+  },
+  "missingPages": [],
+  "orphanPages": [],
+  "plannedButPageExists": [],
+  "liveButPageMissing": [],
+  "activeButPageMissing": [],
+  "unknownStatusButPageExists": []
+}

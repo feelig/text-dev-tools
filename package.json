@@ -6,7 +6,9 @@
     "build:indexes": "node scripts/render-indexes.js",
     "build:site": "node scripts/generate-site-pages.js",
     "build:sitemap": "node scripts/build-sitemap.js",
-    "build": "npm run build:tools && npm run build:indexes && npm run build:site && npm run build:sitemap"
+    "build": "npm run build:tools && npm run build:indexes && npm run build:site && npm run build:sitemap",
+    "test:smoke": "node scripts/smoke-test-tools.mjs",
+    "test:sync": "node scripts/tools-sync-check.mjs"
   },
   "devDependencies": {
     "@playwright/test": "^1.58.2"

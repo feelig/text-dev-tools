@@ -1,0 +1,239 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Text Reverser</title>
+    <meta name="description" content="Reverse text instantly online, character by character." />
+  <meta name="keywords" content="text reverser, text reverser online, text reverser tool" />
+    <link rel="canonical" href="https://extformattools.com/tools/text-reverser/" />
+  <meta property="og:title" content="Text Reverser" />
+  <meta property="og:description" content="Reverse text instantly online, character by character." />
+  <meta property="og:url" content="https://extformattools.com/tools/text-reverser/" />
+
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f7f8fb;
+      color: #1f2937;
+      line-height: 1.5;
+    }
+    .container {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 24px;
+    }
+    h1 {
+      font-size: 32px;
+      margin-bottom: 12px;
+    }
+    .subtext {
+      color: #4b5563;
+      margin-bottom: 24px;
+    }
+    .panel {
+      background: #fff;
+      border: 1px solid #e5e7eb;
+      border-radius: 12px;
+      padding: 20px;
+      margin-bottom: 20px;
+    }
+    textarea {
+      width: 100%;
+      min-height: 220px;
+      padding: 14px;
+      border: 1px solid #d1d5db;
+      border-radius: 10px;
+      resize: vertical;
+      font-size: 15px;
+      font-family: monospace;
+    }
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin: 16px 0;
+    }
+    button {
+      border: 0;
+      border-radius: 10px;
+      padding: 12px 18px;
+      font-size: 14px;
+      cursor: pointer;
+      background: #111827;
+      color: white;
+    }
+    button.secondary {
+      background: #e5e7eb;
+      color: #111827;
+    }
+    .meta {
+      font-size: 14px;
+      color: #6b7280;
+      margin-top: 8px;
+      white-space: pre-line;
+    }
+    h2 {
+      font-size: 22px;
+      margin-top: 0;
+    }
+    pre {
+      white-space: pre-wrap;
+      word-break: break-word;
+      background: #f9fafb;
+      border: 1px solid #e5e7eb;
+      border-radius: 10px;
+      padding: 14px;
+    }
+  </style>
+
+
+  <style id="tool-faq-style">
+    .tool-faq-section {
+      margin-top: 32px;
+    }
+    .faq-list {
+      display: grid;
+      gap: 14px;
+      margin-top: 16px;
+    }
+    .faq-item {
+      background: #fff;
+      border: 1px solid #d9e2ef;
+      border-radius: 14px;
+      padding: 16px;
+    }
+    .faq-item h3 {
+      margin: 0 0 8px;
+      font-size: 16px;
+    }
+    .faq-item p {
+      margin: 0;
+      font-size: 14px;
+      line-height: 1.6;
+      color: #5f6f86;
+    }
+  </style>
+  <script id="tool-webpage-schema" type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Text Reverser",
+  "description": "Reverse text instantly online, character by character.",
+  "url": "https://extformattools.com/tools/text-reverser/"
+}
+  </script>
+  <script id="tool-faq-schema" type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What does the Text Reverser tool do?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "It reverses the order of characters in your text."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I reverse text online for free?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. You can use this Text Reverser tool for free."
+      }
+    }
+  ]
+}
+  </script>
+
+  <style id="tool-intro-style">
+    .tool-intro {
+      margin: 12px 0 0;
+      max-width: 760px;
+      color: #5f6f86;
+      font-size: 16px;
+      line-height: 1.7;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="panel">
+      <h1>Text Reverser</h1>
+      <p class="tool-intro">Use this free Text Reverser tool to flip your text instantly and reverse character order directly in your browser.</p>
+      <p class="subtext">Reverse the order of characters in your text instantly.</p>
+
+      <label for="inputText"><strong>Input</strong></label>
+      <textarea id="inputText" placeholder="Paste your text here..."></textarea>
+
+      <div class="actions">
+        <button id="runBtn">Text Reverser</button>
+        <button id="copyBtn" class="secondary">Copy Output</button>
+        <button id="clearBtn" class="secondary">Clear</button>
+      </div>
+
+      <label for="outputText"><strong>Output</strong></label>
+      <textarea id="outputText" placeholder="Result will appear here..."></textarea>
+
+      <div class="meta" id="stats">Ready.</div>
+    </div>
+
+    <div class="panel">
+      <h2>Example</h2>
+      <p><strong>Input:</strong></p>
+      <pre>abcd 123</pre>
+      <p><strong>Output:</strong></p>
+      <pre>321 dcba</pre>
+    </div>
+
+    <div class="panel">
+      <h2>FAQ</h2>
+      
+<p><strong>What does the Text Reverser tool do?</strong><br>It reverses the order of characters in the text you paste.</p>
+<p><strong>Does it reverse words or all characters?</strong><br>This version reverses all characters in the full text.</p>
+
+    </div>
+  </div>
+
+<script>
+const inputText = document.getElementById('inputText');
+const outputText = document.getElementById('outputText');
+const runBtn = document.getElementById('runBtn');
+const copyBtn = document.getElementById('copyBtn');
+const clearBtn = document.getElementById('clearBtn');
+const stats = document.getElementById('stats');
+
+copyBtn.addEventListener('click', async () => {
+  try {
+    await navigator.clipboard.writeText(outputText.value);
+    copyBtn.textContent = 'Copied!';
+    setTimeout(() => copyBtn.textContent = 'Copy Output', 1200);
+  } catch (err) {
+    alert('Copy failed. Please copy manually.');
+  }
+});
+
+clearBtn.addEventListener('click', () => {
+  inputText.value = '';
+  outputText.value = '';
+  stats.textContent = 'Ready.';
+});
+
+
+function reverseText(text) {
+  return Array.from(text).reverse().join('');
+}
+
+runBtn.addEventListener('click', () => {
+  const reversed = reverseText(inputText.value);
+  outputText.value = reversed;
+  stats.textContent = `Characters reversed: ${inputText.value.length}`;
+});
+
+</script>
+</body>
+</html>

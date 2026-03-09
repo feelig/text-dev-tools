@@ -1,0 +1,242 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sentence Counter</title>
+    <meta name="description" content="Count sentences in text quickly and easily online." />
+  <meta name="keywords" content="sentence counter, sentence counter online, sentence counter tool" />
+    <link rel="canonical" href="https://extformattools.com/tools/sentence-counter/" />
+  <meta property="og:title" content="Sentence Counter" />
+  <meta property="og:description" content="Count sentences in text quickly and easily online." />
+  <meta property="og:url" content="https://extformattools.com/tools/sentence-counter/" />
+
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f7f8fb;
+      color: #1f2937;
+      line-height: 1.5;
+    }
+    .container {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 24px;
+    }
+    h1 {
+      font-size: 32px;
+      margin-bottom: 12px;
+    }
+    .subtext {
+      color: #4b5563;
+      margin-bottom: 24px;
+    }
+    .panel {
+      background: #fff;
+      border: 1px solid #e5e7eb;
+      border-radius: 12px;
+      padding: 20px;
+      margin-bottom: 20px;
+    }
+    textarea {
+      width: 100%;
+      min-height: 220px;
+      padding: 14px;
+      border: 1px solid #d1d5db;
+      border-radius: 10px;
+      resize: vertical;
+      font-size: 15px;
+      font-family: monospace;
+    }
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin: 16px 0;
+    }
+    button {
+      border: 0;
+      border-radius: 10px;
+      padding: 12px 18px;
+      font-size: 14px;
+      cursor: pointer;
+      background: #111827;
+      color: white;
+    }
+    button.secondary {
+      background: #e5e7eb;
+      color: #111827;
+    }
+    .meta {
+      font-size: 14px;
+      color: #6b7280;
+      margin-top: 8px;
+      white-space: pre-line;
+    }
+    h2 {
+      font-size: 22px;
+      margin-top: 0;
+    }
+    pre {
+      white-space: pre-wrap;
+      word-break: break-word;
+      background: #f9fafb;
+      border: 1px solid #e5e7eb;
+      border-radius: 10px;
+      padding: 14px;
+    }
+  </style>
+
+
+  <style id="tool-faq-style">
+    .tool-faq-section {
+      margin-top: 32px;
+    }
+    .faq-list {
+      display: grid;
+      gap: 14px;
+      margin-top: 16px;
+    }
+    .faq-item {
+      background: #fff;
+      border: 1px solid #d9e2ef;
+      border-radius: 14px;
+      padding: 16px;
+    }
+    .faq-item h3 {
+      margin: 0 0 8px;
+      font-size: 16px;
+    }
+    .faq-item p {
+      margin: 0;
+      font-size: 14px;
+      line-height: 1.6;
+      color: #5f6f86;
+    }
+  </style>
+  <script id="tool-webpage-schema" type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Sentence Counter",
+  "description": "Count sentences in text quickly and easily online.",
+  "url": "https://extformattools.com/tools/sentence-counter/"
+}
+  </script>
+  <script id="tool-faq-schema" type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What does the Sentence Counter tool do?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "It estimates the number of sentences in your text by detecting common sentence-ending punctuation."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is the Sentence Counter tool accurate?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "It works well for most normal text, but abbreviations or unusual punctuation may affect the count."
+      }
+    }
+  ]
+}
+  </script>
+
+  <style id="tool-intro-style">
+    .tool-intro {
+      margin: 12px 0 0;
+      max-width: 760px;
+      color: #5f6f86;
+      font-size: 16px;
+      line-height: 1.7;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="panel">
+      <h1>Sentence Counter</h1>
+      <p class="tool-intro">Use this free Sentence Counter tool to estimate the number of sentences in your text directly in your browser.</p>
+      <p class="subtext">Estimate how many sentences your text contains using punctuation such as periods, question marks, and exclamation marks.</p>
+
+      <label for="inputText"><strong>Input</strong></label>
+      <textarea id="inputText" placeholder="Paste your text here..."></textarea>
+
+      <div class="actions">
+        <button id="runBtn">Sentence Counter</button>
+        <button id="copyBtn" class="secondary">Copy Output</button>
+        <button id="clearBtn" class="secondary">Clear</button>
+      </div>
+
+      <label for="outputText"><strong>Output</strong></label>
+      <textarea id="outputText" placeholder="Result will appear here..."></textarea>
+
+      <div class="meta" id="stats">Ready.</div>
+    </div>
+
+    <div class="panel">
+      <h2>Example</h2>
+      <p><strong>Input:</strong></p>
+      <pre>Hello world. How are you? I am fine!</pre>
+      <p><strong>Output:</strong></p>
+      <pre>Sentence count: 3</pre>
+    </div>
+
+    <div class="panel">
+      <h2>FAQ</h2>
+      
+<p><strong>How does the Sentence Counter work?</strong><br>It estimates sentence boundaries based on common sentence-ending punctuation like ., !, and ?.</p>
+<p><strong>Is the count always perfect?</strong><br>No. Abbreviations and unusual punctuation can affect the estimate.</p>
+
+    </div>
+  </div>
+
+<script>
+const inputText = document.getElementById('inputText');
+const outputText = document.getElementById('outputText');
+const runBtn = document.getElementById('runBtn');
+const copyBtn = document.getElementById('copyBtn');
+const clearBtn = document.getElementById('clearBtn');
+const stats = document.getElementById('stats');
+
+copyBtn.addEventListener('click', async () => {
+  try {
+    await navigator.clipboard.writeText(outputText.value);
+    copyBtn.textContent = 'Copied!';
+    setTimeout(() => copyBtn.textContent = 'Copy Output', 1200);
+  } catch (err) {
+    alert('Copy failed. Please copy manually.');
+  }
+});
+
+clearBtn.addEventListener('click', () => {
+  inputText.value = '';
+  outputText.value = '';
+  stats.textContent = 'Ready.';
+});
+
+
+function countSentences(text) {
+  const cleaned = text.trim();
+  if (!cleaned) return 0;
+  const matches = cleaned.match(/[^.!?]+[.!?]+|[^.!?]+$/g);
+  return matches ? matches.length : 0;
+}
+
+runBtn.addEventListener('click', () => {
+  const count = countSentences(inputText.value);
+  outputText.value = `Sentence count: ${count}`;
+  stats.textContent = `Estimated sentences: ${count}`;
+});
+
+</script>
+</body>
+</html>

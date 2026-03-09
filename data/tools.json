@@ -604,5 +604,125 @@
       "json-formatter",
       "regex-tester"
     ]
+  },
+  {
+    "slug": "line-counter",
+    "title": "Line Counter",
+    "category": "text",
+    "status": "active",
+    "description": "Count the number of lines in your text instantly.",
+    "name": "Line Counter",
+    "intro": "Use this free Line Counter tool to quickly count total lines in any text directly in your browser.",
+    "keywords": [
+      "line counter",
+      "count lines online",
+      "text line counter",
+      "line count tool"
+    ],
+    "faq": [
+      {
+        "q": "What does the Line Counter tool do?",
+        "a": "It counts how many lines are in your text, including non-empty lines after splitting by line breaks."
+      },
+      {
+        "q": "Can I use the Line Counter tool for free?",
+        "a": "Yes. You can use it online for free."
+      }
+    ],
+    "related": [
+      "remove-blank-lines",
+      "sentence-counter",
+      "text-diff"
+    ]
+  },
+  {
+    "slug": "sentence-counter",
+    "title": "Sentence Counter",
+    "category": "text",
+    "status": "active",
+    "description": "Count sentences in text quickly and easily online.",
+    "name": "Sentence Counter",
+    "intro": "Use this free Sentence Counter tool to estimate the number of sentences in your text directly in your browser.",
+    "keywords": [
+      "sentence counter",
+      "count sentences online",
+      "text sentence counter",
+      "sentence count tool"
+    ],
+    "faq": [
+      {
+        "q": "What does the Sentence Counter tool do?",
+        "a": "It estimates the number of sentences in your text by detecting common sentence-ending punctuation."
+      },
+      {
+        "q": "Is the Sentence Counter tool accurate?",
+        "a": "It works well for most normal text, but abbreviations or unusual punctuation may affect the count."
+      }
+    ],
+    "related": [
+      "line-counter",
+      "remove-blank-lines",
+      "text-diff"
+    ]
+  },
+  {
+    "slug": "text-reverser",
+    "title": "Text Reverser",
+    "category": "text",
+    "status": "active",
+    "description": "Reverse text instantly online, character by character.",
+    "name": "Text Reverser",
+    "intro": "Use this free Text Reverser tool to flip your text instantly and reverse character order directly in your browser.",
+    "keywords": [
+      "text reverser",
+      "reverse text online",
+      "flip text tool",
+      "reverse string tool"
+    ],
+    "faq": [
+      {
+        "q": "What does the Text Reverser tool do?",
+        "a": "It reverses the order of characters in your text."
+      },
+      {
+        "q": "Can I reverse text online for free?",
+        "a": "Yes. You can use this Text Reverser tool for free."
+      }
+    ],
+    "related": [
+      "trim-text",
+      "line-counter",
+      "remove-blank-lines"
+    ]
+  },
+  {
+    "slug": "trim-text",
+    "title": "Trim Text",
+    "category": "text",
+    "status": "active",
+    "description": "Trim leading and trailing spaces from text online.",
+    "name": "Trim Text",
+    "intro": "Use this free Trim Text tool to remove leading and trailing whitespace from your text directly in your browser.",
+    "keywords": [
+      "trim text",
+      "remove leading trailing spaces",
+      "trim whitespace online",
+      "text trim tool"
+    ],
+    "faq": [
+      {
+        "q": "What does the Trim Text tool do?",
+        "a": "It removes unnecessary whitespace from the beginning and end of your text."
+      },
+      {
+        "q": "Does the Trim Text tool change the text content?",
+        "a": "It only removes leading and trailing whitespace and keeps the main text unchanged."
+      }
+    ],
+    "related": [
+      "remove-blank-lines",
+      "text-reverser",
+      "line-counter"
+    ]
   }
 ]

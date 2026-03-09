@@ -574,5 +574,35 @@
       "regex-tester",
       "base64-encoder"
     ]
+  },
+  {
+    "slug": "remove-blank-lines",
+    "title": "Remove Blank Lines",
+    "category": "text",
+    "status": "active",
+    "description": "Remove empty or blank lines from text instantly.",
+    "name": "Remove Blank Lines",
+    "intro": "Use this free Remove Blank Lines tool to clean up text by deleting empty lines directly in your browser.",
+    "keywords": [
+      "remove blank lines",
+      "remove empty lines",
+      "delete empty lines",
+      "text cleanup tool"
+    ],
+    "faq": [
+      {
+        "q": "What does the Remove Blank Lines tool do?",
+        "a": "It removes empty lines or lines containing only spaces from your text."
+      },
+      {
+        "q": "Is the Remove Blank Lines tool free?",
+        "a": "Yes. You can use it online for free."
+      }
+    ],
+    "related": [
+      "text-diff",
+      "json-formatter",
+      "regex-tester"
+    ]
   }
 ]

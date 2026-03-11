@@ -3,13 +3,13 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-                    <title>Password Generator</title>
-                    <meta name="description" content="Generate random passwords for quick security and testing needs." />
-                  <link rel="canonical" href="https://extformattools.com/tools/password-generator/" />
-                  <meta property="og:title" content="Password Generator" />
-                  <meta property="og:description" content="Generate random passwords for quick security and testing needs." />
-                  <meta property="og:url" content="https://extformattools.com/tools/password-generator/" />
-    <meta name="robots" content="index,follow" />
+                        <title>Password Generator</title>
+                        <meta name="description" content="Generate random passwords for quick security and testing needs." />
+                      <link rel="canonical" href="https://extformattools.com/tools/password-generator/" />
+                      <meta property="og:title" content="Password Generator" />
+                      <meta property="og:description" content="Generate random passwords for quick security and testing needs." />
+                      <meta property="og:url" content="https://extformattools.com/tools/password-generator/" />
+        <meta name="robots" content="index,follow" />
   <style>
     :root {
       --bg: #f6f8fb;
@@ -347,6 +347,9 @@
   
   
   
+  
+  
+  
   <script id="tool-webpage-schema" type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -354,30 +357,6 @@
   "name": "Password Generator",
   "description": "Generate random passwords for quick security and testing needs.",
   "url": "https://extformattools.com/tools/password-generator/"
-}
-  </script>
-  <script id="tool-faq-schema" type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "What does the Password Generator tool do?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "It helps you clean or transform text using the password generator function."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Is the Password Generator tool free to use?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Yes. You can use it online for free."
-      }
-    }
-  ]
 }
   </script>
 </head>
@@ -441,6 +420,26 @@
   
     
   
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
     
 
     
@@ -632,16 +631,29 @@
       statusMessage.className = ok ? 'status success' : 'status';
     }
 
+    function pickRandomChar(source) {
+      const index = crypto.getRandomValues(new Uint32Array(1))[0] % source.length;
+      return source[index];
+    }
+
+    function shuffle(chars) {
+      for (let i = chars.length - 1; i > 0; i--) {
+        const j = crypto.getRandomValues(new Uint32Array(1))[0] % (i + 1);
+        [chars[i], chars[j]] = [chars[j], chars[i]];
+      }
+      return chars;
+    }
+
     function generatePassword() {
       const length = Number(lengthInput.value);
-      let chars = '';
+      const selectedSets = [];
 
-      if (upperCheck.checked) chars += upper;
-      if (lowerCheck.checked) chars += lower;
-      if (numberCheck.checked) chars += numbers;
-      if (symbolCheck.checked) chars += symbols;
+      if (upperCheck.checked) selectedSets.push(upper);
+      if (lowerCheck.checked) selectedSets.push(lower);
+      if (numberCheck.checked) selectedSets.push(numbers);
+      if (symbolCheck.checked) selectedSets.push(symbols);
 
-      if (!chars) {
+      if (!selectedSets.length) {
         outputText.textContent = '';
         setStatus('Please select at least one character type.');
         return;
@@ -653,15 +665,22 @@
         return;
       }
 
-      let result = '';
-      const randomValues = new Uint32Array(length);
-      crypto.getRandomValues(randomValues);
-
-      for (let i = 0; i < length; i++) {
-        result += chars[randomValues[i] % chars.length];
+      if (length < selectedSets.length) {
+        outputText.textContent = '';
+        setStatus(`Choose a length of at least ${selectedSets.length} for the selected character types.`);
+        return;
       }
 
-      outputText.textContent = result;
+      const chars = selectedSets.join('');
+      const passwordChars = selectedSets.map((set) => pickRandomChar(set));
+      const randomValues = new Uint32Array(length - passwordChars.length);
+      crypto.getRandomValues(randomValues);
+
+      for (let i = 0; i < randomValues.length; i++) {
+        passwordChars.push(chars[randomValues[i] % chars.length]);
+      }
+
+      outputText.textContent = shuffle(passwordChars).join('');
       setStatus('Password generated successfully.', true);
     }
 

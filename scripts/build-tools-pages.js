@@ -7,7 +7,8 @@ const steps = [
   'node scripts/apply-tool-intro.js',
   'node scripts/apply-tool-howto.js',
   'node scripts/apply-tool-use-cases.js',
-  'node scripts/apply-tool-examples.js'
+  'node scripts/apply-tool-examples.js',
+  'node scripts/cleanup-tool-content.js'
 ];
 
 for (const step of steps) {

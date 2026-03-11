@@ -22,7 +22,7 @@ function buildRelatedHtml(tool) {
 
   const items = related
     .map(slug => bySlug.get(slug))
-    .filter(Boolean)
+    .filter(item => item && item.status === 'live')
     .map(item => {
       const name = escapeHtml(item.name || item.title || item.slug);
       const desc = escapeHtml(item.description || '');

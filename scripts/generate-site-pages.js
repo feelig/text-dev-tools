@@ -10,7 +10,7 @@ function ensureDir(dir) {
   fs.mkdirSync(dir, { recursive: true });
 }
 
-function pageTemplate({ title, description, canonical, body }) {
+function pageTemplate({ title, description, canonical, body, robots = 'noindex,follow' }) {
   return `<!doctype html>
 <html lang="en">
 <head>
@@ -19,7 +19,7 @@ function pageTemplate({ title, description, canonical, body }) {
   <title>${title}</title>
   <meta name="description" content="${description}" />
   <link rel="canonical" href="${canonical}" />
-  <meta name="robots" content="index,follow" />
+  <meta name="robots" content="${robots}" />
   <meta property="og:type" content="website" />
   <meta property="og:title" content="${title}" />
   <meta property="og:description" content="${description}" />
@@ -288,8 +288,6 @@ const pages = [
 ];
 
 for (const page of pages) {
-  const dir = path.join(publicDir, page.slug);
-  ensureDir(dir);
   const html = pageTemplate({
     title: page.title,
     description: page.description,
@@ -299,7 +297,13 @@ for (const page of pages) {
       sections: page.sections
     }
   });
-  fs.writeFileSync(path.join(dir, 'index.html'), html, 'utf8');
+
+  for (const baseDir of [root, publicDir]) {
+    const dir = path.join(baseDir, page.slug);
+    ensureDir(dir);
+    fs.writeFileSync(path.join(dir, 'index.html'), html, 'utf8');
+  }
+
   console.log(`Generated: /${page.slug}/`);
 }
 
@@ -309,5 +313,7 @@ Allow: /
 Sitemap: ${SITE_URL}/sitemap.xml
 `;
 
-fs.writeFileSync(path.join(publicDir, 'robots.txt'), robots, 'utf8');
+for (const robotsPath of [path.join(root, 'robots.txt'), path.join(publicDir, 'robots.txt')]) {
+  fs.writeFileSync(robotsPath, robots, 'utf8');
+}
 console.log('Generated: /robots.txt');

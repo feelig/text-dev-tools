@@ -4,24 +4,6 @@
     <loc>https://extformattools.com/</loc>
   </url>
   <url>
-    <loc>https://extformattools.com/text-tools/</loc>
-  </url>
-  <url>
-    <loc>https://extformattools.com/developer-tools/</loc>
-  </url>
-  <url>
-    <loc>https://extformattools.com/about/</loc>
-  </url>
-  <url>
-    <loc>https://extformattools.com/privacy/</loc>
-  </url>
-  <url>
-    <loc>https://extformattools.com/terms/</loc>
-  </url>
-  <url>
-    <loc>https://extformattools.com/contact/</loc>
-  </url>
-  <url>
     <loc>https://extformattools.com/tools/remove-line-breaks/</loc>
   </url>
   <url>
@@ -37,13 +19,7 @@
     <loc>https://extformattools.com/tools/text-sorter/</loc>
   </url>
   <url>
-    <loc>https://extformattools.com/tools/duplicate-line-remover/</loc>
-  </url>
-  <url>
     <loc>https://extformattools.com/tools/character-counter/</loc>
-  </url>
-  <url>
-    <loc>https://extformattools.com/tools/paragraph-counter/</loc>
   </url>
   <url>
     <loc>https://extformattools.com/tools/json-formatter/</loc>
@@ -62,23 +38,5 @@
   </url>
   <url>
     <loc>https://extformattools.com/tools/uuid-generator/</loc>
-  </url>
-  <url>
-    <loc>https://extformattools.com/tools/timestamp-converter/</loc>
-  </url>
-  <url>
-    <loc>https://extformattools.com/tools/json-to-csv/</loc>
-  </url>
-  <url>
-    <loc>https://extformattools.com/tools/csv-to-json/</loc>
-  </url>
-  <url>
-    <loc>https://extformattools.com/tools/html-escape/</loc>
-  </url>
-  <url>
-    <loc>https://extformattools.com/tools/html-unescape/</loc>
-  </url>
-  <url>
-    <loc>https://extformattools.com/tools/text-diff/</loc>
   </url>
 </urlset>

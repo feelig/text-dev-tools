@@ -4,23 +4,22 @@ const path = require('path');
 const root = process.cwd();
 const toolsPath = path.join(root, 'data', 'tools.json');
 const publicDir = path.join(root, 'public');
-const sitemapPath = path.join(publicDir, 'sitemap.xml');
+const sitemapPaths = [
+  path.join(root, 'sitemap.xml'),
+  path.join(publicDir, 'sitemap.xml')
+];
 
 const SITE_URL = 'https://extformattools.com';
 
 const tools = JSON.parse(fs.readFileSync(toolsPath, 'utf8'));
 
 const staticPages = [
-  '/',
-  '/text-tools/',
-  '/developer-tools/',
-  '/about/',
-  '/privacy/',
-  '/terms/',
-  '/contact/'
+  '/'
 ];
 
-const toolPages = tools.map(tool => `/tools/${tool.slug}/`);
+const toolPages = tools
+  .filter(tool => tool.status === 'live')
+  .map(tool => `/tools/${tool.slug}/`);
 
 const allPages = [...staticPages, ...toolPages];
 
@@ -33,7 +32,8 @@ ${allPages.map(url => `  <url>
 `;
 
 fs.mkdirSync(publicDir, { recursive: true });
-fs.writeFileSync(sitemapPath, xml, 'utf8');
-
-console.log(`Sitemap created: ${sitemapPath}`);
+for (const sitemapPath of sitemapPaths) {
+  fs.writeFileSync(sitemapPath, xml, 'utf8');
+  console.log(`Sitemap created: ${sitemapPath}`);
+}
 console.log(`Total URLs: ${allPages.length}`);

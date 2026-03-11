@@ -5,13 +5,17 @@ const root = process.cwd();
 const toolsPath = path.join(root, 'data', 'tools.json');
 const tools = JSON.parse(fs.readFileSync(toolsPath, 'utf8'));
 
-const textTools = tools.filter(t => t.category === 'text');
-const devTools = tools.filter(t => t.category === 'dev');
-const liveTools = tools.filter(t => t.status === 'live');
-
-function statusLabel(status) {
-  return status === 'live' ? 'Live Tool' : 'Coming Next';
+function normalizeCategory(category = '') {
+  if (category === 'text-tools') return 'text';
+  if (category === 'developer-tools') return 'dev';
+  return category;
 }
+
+function isLiveTool(tool) {
+  return normalizeCategory(tool.category) && tool.status === 'live';
+}
+
+const liveTools = tools.filter(isLiveTool);
 
 function escapeHtml(str) {
   return String(str)
@@ -27,11 +31,11 @@ function toolCard(tool, tagLabel) {
         <a class="tool-card" href="/tools/${escapeHtml(tool.slug)}/">
           <h3>${escapeHtml(tool.title)}</h3>
           <p>${escapeHtml(tool.description)}</p>
-          ${tagLabel ? `<span class="tool-tag">${escapeHtml(tagLabel)}</span>` : `<span class="tool-status">${statusLabel(tool.status)}</span>`}
+          ${tagLabel ? `<span class="tool-tag">${escapeHtml(tagLabel)}</span>` : `<span class="tool-status">Live Tool</span>`}
         </a>`;
 }
 
-function layout({ title, description, body, extraHead = '' }) {
+function layout({ title, description, body, extraHead = '', robots = 'index,follow' }) {
   return `<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -39,7 +43,7 @@ function layout({ title, description, body, extraHead = '' }) {
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>${escapeHtml(title)}</title>
   <meta name="description" content="${escapeHtml(description)}" />
-  <meta name="robots" content="index,follow" />
+  <meta name="robots" content="${robots}" />
   ${extraHead}
   <style>
     :root {
@@ -354,7 +358,7 @@ ${body}
 }
 
 function renderHome() {
-  const popular = tools.slice(0, 6).map(t => {
+  const popular = liveTools.slice(0, 6).map(t => {
     const tag = t.category === 'dev' ? 'Developer Tool' : 'Text Tool';
     return toolCard(t, tag);
   }).join('\n');
@@ -502,12 +506,13 @@ ${popular}
 }
 
 function renderCategoryPage(categoryKey, pageTitle, pageDescription, heroTitle, heroText) {
-  const list = tools.filter(t => t.category === categoryKey);
+  const list = liveTools.filter(t => normalizeCategory(t.category) === categoryKey);
   const cards = list.map(t => toolCard(t, null)).join('\n');
 
   return layout({
     title: pageTitle,
     description: pageDescription,
+    robots: 'noindex,follow',
     body: `
   <header class="site-header">
     <div class="container header-inner">
@@ -541,7 +546,7 @@ function renderCategoryPage(categoryKey, pageTitle, pageDescription, heroTitle, 
     <section class="section">
       <div class="section-head">
         <h2>Available tools</h2>
-        <p>Tools in this category are generated from the central site catalog.</p>
+        <p>Browse the fully available tools in this category.</p>
       </div>
       <div class="tools-grid">
 ${cards}
@@ -552,12 +557,12 @@ ${cards}
       <div class="card">
         <div class="section-head">
           <h2>About this category</h2>
-          <p>This section grows automatically as more tools are added to the catalog.</p>
+          <p>This category page is a simple navigation hub for the live tools currently available on the site.</p>
         </div>
         <ul class="info-list">
-          <li>Consistent layout across all tool pages</li>
-          <li>Clear category grouping for users and search engines</li>
-          <li>Expandable structure for future tools</li>
+          <li>Only completed tools are listed here</li>
+          <li>Each tool works directly in the browser</li>
+          <li>Use these pages to jump to the specific tool you need</li>
         </ul>
       </div>
     </section>

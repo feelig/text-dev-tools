@@ -16,6 +16,10 @@ function escapeHtml(str = '') {
     .replace(/>/g, '&gt;');
 }
 
+function robotsDirective(tool) {
+  return tool.status === 'live' ? 'index,follow' : 'noindex,follow';
+}
+
 function upsertTag(html, pattern, replacement, insertAfterPattern = null) {
   if (pattern.test(html)) {
     return html.replace(pattern, replacement);
@@ -47,6 +51,7 @@ for (const tool of tools) {
     tool.description || `Use this free online ${tool.name || slug} tool in your browser.`
   );
   const canonicalUrl = `${SITE_URL}/tools/${slug}/`;
+  const robots = robotsDirective(tool);
 
   html = upsertTag(
     html,
@@ -114,6 +119,13 @@ for (const tool of tools) {
       match => `${match}\n  <meta property="og:url" content="${canonicalUrl}" />`
     );
   }
+
+  html = upsertTag(
+    html,
+    /<meta\s+name=["']robots["'][^>]*>/i,
+    `  <meta name="robots" content="${robots}" />`,
+    /<meta\s+name=["']description["'][^>]*>/i
+  );
 
   fs.writeFileSync(filePath, html, 'utf8');
   console.log(`✅ Updated SEO: tools/${slug}/index.html`);

@@ -12,14 +12,14 @@ function stripSection(html, className) {
   return html.replace(pattern, '');
 }
 
-function hasLegacyContent(html) {
-  return /<div class="card content-section">/i.test(html);
+function countMatches(html, pattern) {
+  return (html.match(pattern) || []).length;
 }
 
-function hasLegacyFaqSchema(html) {
-  return /<script(?![^>]*id="tool-faq-schema")[^>]*type="application\/ld\+json"[^>]*>[\s\S]*?"@type"\s*:\s*"FAQPage"[\s\S]*?<\/script>/i.test(
-    html
-  );
+function hasDuplicateFaqSchema(html) {
+  const spaced = countMatches(html, /"@type"\s*:\s*"FAQPage"/gi);
+  const compact = countMatches(html, /"@type":"FAQPage"/gi);
+  return spaced + compact > 1;
 }
 
 let updated = 0;
@@ -33,15 +33,19 @@ for (const tool of tools) {
   let html = fs.readFileSync(filePath, 'utf8');
   const original = html;
 
-  if (hasLegacyContent(html)) {
+  const faqHeadingCount =
+    countMatches(html, /<h2[^>]*>\s*FAQ\s*<\/h2>/gi) +
+    countMatches(html, /<h2[^>]*>\s*Frequently asked questions\s*<\/h2>/gi);
+  const relatedHeadingCount = countMatches(html, /<h2[^>]*>\s*Related tools\s*<\/h2>/gi);
+
+  if (relatedHeadingCount > 1) {
     html = stripSection(html, 'related-tools-section');
+  }
+  if (faqHeadingCount > 1) {
     html = stripSection(html, 'tool-faq-section');
-    html = stripSection(html, 'tool-howto-section');
-    html = stripSection(html, 'tool-use-cases-section');
-    html = stripSection(html, 'tool-example-section');
   }
 
-  if (hasLegacyFaqSchema(html)) {
+  if (hasDuplicateFaqSchema(html)) {
     html = html.replace(
       /\s*<script id="tool-faq-schema" type="application\/ld\+json">[\s\S]*?<\/script>/i,
       ''

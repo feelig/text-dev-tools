@@ -118,7 +118,7 @@
     "status": "live",
     "description": "Sort lines of text alphabetically for quick cleanup and organization.",
     "name": "Text Sorter",
-    "intro": "This free Text Sorter tool helps you clean, format, and transform text directly in your browser.",
+    "intro": "Sort lists, keyword sets, names, or pasted rows alphabetically without opening a spreadsheet.",
     "keywords": [
       "text sorter",
       "text sorter online",
@@ -127,11 +127,11 @@
     "faq": [
       {
         "q": "What does the Text Sorter tool do?",
-        "a": "It helps you clean or transform text using the text sorter function."
+        "a": "It sorts one item per line so you can reorder lists from A to Z, Z to A, or remove blank lines before copying the result."
       },
       {
         "q": "Is the Text Sorter tool free to use?",
-        "a": "Yes. You can use it online for free."
+        "a": "Yes. It runs in your browser and does not require an account."
       }
     ],
     "related": [
@@ -147,7 +147,7 @@
     "status": "beta",
     "description": "Remove repeated lines from text lists and exported content.",
     "name": "Duplicate Line Remover",
-    "intro": "This free Duplicate Line Remover tool helps you clean, format, and transform text directly in your browser.",
+    "intro": "Remove repeated rows from pasted lists before you reuse them in spreadsheets, notes, or bulk edits.",
     "keywords": [
       "duplicate line remover",
       "duplicate line remover online",
@@ -156,11 +156,11 @@
     "faq": [
       {
         "q": "What does the Duplicate Line Remover tool do?",
-        "a": "It helps you clean or transform text using the duplicate line remover function."
+        "a": "It removes repeated lines while keeping the first occurrence, which helps when you paste duplicated list data."
       },
       {
         "q": "Is the Duplicate Line Remover tool free to use?",
-        "a": "Yes. You can use it online for free."
+        "a": "Yes. You can run quick de-duplication checks directly in the browser."
       }
     ],
     "related": [
@@ -176,7 +176,7 @@
     "status": "live",
     "description": "Count characters instantly for forms, limits, and content editing.",
     "name": "Character Counter",
-    "intro": "This free Character Counter tool helps you clean, format, and transform text directly in your browser.",
+    "intro": "Check character, word, line, sentence, and paragraph totals before you submit copy to forms, ads, or social posts.",
     "keywords": [
       "character counter",
       "character counter online",
@@ -185,11 +185,11 @@
     "faq": [
       {
         "q": "What does the Character Counter tool do?",
-        "a": "It helps you clean or transform text using the character counter function."
+        "a": "It measures characters with and without spaces, plus words, lines, paragraphs, and sentences from the text you paste."
       },
       {
         "q": "Is the Character Counter tool free to use?",
-        "a": "Yes. You can use it online for free."
+        "a": "Yes. You can run it in the browser whenever you need quick text-length checks."
       }
     ],
     "related": [
@@ -205,7 +205,7 @@
     "status": "beta",
     "description": "Count paragraphs quickly for writing and formatting checks.",
     "name": "Paragraph Counter",
-    "intro": "This free Paragraph Counter tool helps you clean, format, and transform text directly in your browser.",
+    "intro": "Count paragraph breaks in essays, drafts, and exported copy before you submit or reformat the text.",
     "keywords": [
       "paragraph counter",
       "paragraph counter online",
@@ -214,11 +214,11 @@
     "faq": [
       {
         "q": "What does the Paragraph Counter tool do?",
-        "a": "It helps you clean or transform text using the paragraph counter function."
+        "a": "It counts paragraph blocks based on blank-line separation so you can review document structure quickly."
       },
       {
         "q": "Is the Paragraph Counter tool free to use?",
-        "a": "Yes. You can use it online for free."
+        "a": "Yes. It works in the browser whenever you need a quick paragraph count."
       }
     ],
     "related": [
@@ -292,7 +292,7 @@
     "status": "live",
     "description": "Encode and decode Base64 text instantly in your browser.",
     "name": "Base64 Encoder",
-    "intro": "This free Base64 Encoder tool helps you clean, format, and transform text directly in your browser.",
+    "intro": "Encode plain text to Base64 or decode Base64 strings when you need to inspect payloads, config values, or test data.",
     "keywords": [
       "base64 encoder",
       "base64 encoder online",
@@ -301,11 +301,11 @@
     "faq": [
       {
         "q": "What does the Base64 Encoder tool do?",
-        "a": "It helps you clean or transform text using the base64 encoder function."
+        "a": "It converts plain text into Base64 and decodes Base64 strings back into readable text for quick checks."
       },
       {
         "q": "Is the Base64 Encoder tool free to use?",
-        "a": "Yes. You can use it online for free."
+        "a": "Yes. You can run quick encode and decode checks directly in the browser."
       }
     ],
     "related": [
@@ -320,8 +320,8 @@
     "category": "dev",
     "status": "live",
     "description": "Encode and decode URLs instantly for web development tasks.",
-    "name": "Url Encoder",
-    "intro": "This free Url Encoder tool helps you clean, format, and transform text directly in your browser.",
+    "name": "URL Encoder",
+    "intro": "Encode query parameters and URLs safely, or decode pasted links back into readable text while debugging.",
     "keywords": [
       "url encoder",
       "url encoder online",
@@ -329,12 +329,12 @@
     ],
     "faq": [
       {
-        "q": "What does the Url Encoder tool do?",
-        "a": "It helps you clean or transform text using the url encoder function."
+        "q": "What does the URL Encoder tool do?",
+        "a": "It encodes special characters for safe use in URLs and decodes encoded strings so you can inspect them more easily."
       },
       {
-        "q": "Is the Url Encoder tool free to use?",
-        "a": "Yes. You can use it online for free."
+        "q": "Is the URL Encoder tool free to use?",
+        "a": "Yes. It works in the browser for quick QA, debugging, and link-building tasks."
       }
     ],
     "related": [
@@ -350,7 +350,7 @@
     "status": "live",
     "description": "Generate random passwords for quick security and testing needs.",
     "name": "Password Generator",
-    "intro": "This free Password Generator tool helps you clean, format, and transform text directly in your browser.",
+    "intro": "Generate random passwords with configurable length and character sets for testing, provisioning, or temporary access.",
     "keywords": [
       "password generator",
       "password generator online",
@@ -359,11 +359,11 @@
     "faq": [
       {
         "q": "What does the Password Generator tool do?",
-        "a": "It helps you clean or transform text using the password generator function."
+        "a": "It creates random passwords and lets you choose whether to include uppercase letters, lowercase letters, numbers, and symbols."
       },
       {
         "q": "Is the Password Generator tool free to use?",
-        "a": "Yes. You can use it online for free."
+        "a": "Yes. You can generate passwords in the browser without signing up."
       }
     ],
     "related": [
@@ -378,8 +378,8 @@
     "category": "dev",
     "status": "live",
     "description": "Generate UUIDs instantly for application and database workflows.",
-    "name": "Uuid Generator",
-    "intro": "This free Uuid Generator tool helps you clean, format, and transform text directly in your browser.",
+    "name": "UUID Generator",
+    "intro": "Generate one or many UUID v4 values for databases, fixtures, API payloads, and application testing.",
     "keywords": [
       "uuid generator",
       "uuid generator online",
@@ -387,12 +387,12 @@
     ],
     "faq": [
       {
-        "q": "What does the Uuid Generator tool do?",
-        "a": "It helps you clean or transform text using the uuid generator function."
+        "q": "What does the UUID Generator tool do?",
+        "a": "It creates UUID v4 values in batches so you can copy fresh identifiers into development or testing workflows."
       },
       {
-        "q": "Is the Uuid Generator tool free to use?",
-        "a": "Yes. You can use it online for free."
+        "q": "Is the UUID Generator tool free to use?",
+        "a": "Yes. You can generate as many UUIDs as you need in the browser."
       }
     ],
     "related": [
@@ -408,7 +408,7 @@
     "status": "beta",
     "description": "Convert Unix timestamps into readable dates and times.",
     "name": "Timestamp Converter",
-    "intro": "This free Timestamp Converter tool helps you clean, format, and transform text directly in your browser.",
+    "intro": "Convert Unix timestamps into readable dates so you can inspect logs, event payloads, and stored time values faster.",
     "keywords": [
       "timestamp converter",
       "timestamp converter online",
@@ -417,11 +417,11 @@
     "faq": [
       {
         "q": "What does the Timestamp Converter tool do?",
-        "a": "It helps you clean or transform text using the timestamp converter function."
+        "a": "It converts Unix timestamps into readable date and time output for debugging, monitoring, and data review."
       },
       {
         "q": "Is the Timestamp Converter tool free to use?",
-        "a": "Yes. You can use it online for free."
+        "a": "Yes. You can use it in the browser whenever you need a quick timestamp check."
       }
     ],
     "related": [
@@ -436,8 +436,8 @@
     "category": "dev",
     "status": "beta",
     "description": "Convert JSON data into CSV format for spreadsheets and exports.",
-    "name": "Json To Csv",
-    "intro": "This free Json To Csv tool helps you clean, format, and transform text directly in your browser.",
+    "name": "JSON to CSV",
+    "intro": "Convert simple JSON arrays into CSV rows for spreadsheets, exports, and quick tabular review.",
     "keywords": [
       "json to csv",
       "json to csv online",
@@ -445,12 +445,12 @@
     ],
     "faq": [
       {
-        "q": "What does the Json To Csv tool do?",
-        "a": "It helps you clean or transform text using the json to csv function."
+        "q": "What does the JSON to CSV tool do?",
+        "a": "It turns JSON records into CSV output so you can move structured data into spreadsheet-friendly rows."
       },
       {
-        "q": "Is the Json To Csv tool free to use?",
-        "a": "Yes. You can use it online for free."
+        "q": "Is the JSON to CSV tool free to use?",
+        "a": "Yes. It runs in the browser for quick exports and review work."
       }
     ],
     "related": [
@@ -465,8 +465,8 @@
     "category": "dev",
     "status": "beta",
     "description": "Convert CSV data into JSON format for apps and APIs.",
-    "name": "Csv To Json",
-    "intro": "This free Csv To Json tool helps you clean, format, and transform text directly in your browser.",
+    "name": "CSV to JSON",
+    "intro": "Convert CSV rows into JSON objects so you can inspect imported data or reuse it in API and app workflows.",
     "keywords": [
       "csv to json",
       "csv to json online",
@@ -474,12 +474,12 @@
     ],
     "faq": [
       {
-        "q": "What does the Csv To Json tool do?",
-        "a": "It helps you clean or transform text using the csv to json function."
+        "q": "What does the CSV to JSON tool do?",
+        "a": "It turns CSV headers and rows into JSON objects so you can move table data into development workflows more easily."
       },
       {
-        "q": "Is the Csv To Json tool free to use?",
-        "a": "Yes. You can use it online for free."
+        "q": "Is the CSV to JSON tool free to use?",
+        "a": "Yes. It runs in the browser for quick conversion and inspection work."
       }
     ],
     "related": [
@@ -494,8 +494,8 @@
     "category": "dev",
     "status": "beta",
     "description": "Escape HTML special characters for safe display in markup.",
-    "name": "Html Escape",
-    "intro": "This free Html Escape tool helps you clean, format, and transform text directly in your browser.",
+    "name": "HTML Escape",
+    "intro": "Escape angle brackets, quotes, and other HTML characters before pasting text into markup or docs.",
     "keywords": [
       "html escape",
       "html escape online",
@@ -503,12 +503,12 @@
     ],
     "faq": [
       {
-        "q": "What does the Html Escape tool do?",
-        "a": "It helps you clean or transform text using the html escape function."
+        "q": "What does the HTML Escape tool do?",
+        "a": "It converts HTML-sensitive characters into safe entities so the text displays as literal markup instead of rendering."
       },
       {
-        "q": "Is the Html Escape tool free to use?",
-        "a": "Yes. You can use it online for free."
+        "q": "Is the HTML Escape tool free to use?",
+        "a": "Yes. It works in the browser for quick escaping while writing docs, code samples, or templates."
       }
     ],
     "related": [
@@ -523,8 +523,8 @@
     "category": "dev",
     "status": "beta",
     "description": "Convert escaped HTML entities back into readable characters.",
-    "name": "Html Unescape",
-    "intro": "This free Html Unescape tool helps you clean, format, and transform text directly in your browser.",
+    "name": "HTML Unescape",
+    "intro": "Decode escaped HTML entities back into readable characters when you're reviewing copied markup or stored content.",
     "keywords": [
       "html unescape",
       "html unescape online",
@@ -532,12 +532,12 @@
     ],
     "faq": [
       {
-        "q": "What does the Html Unescape tool do?",
-        "a": "It helps you clean or transform text using the html unescape function."
+        "q": "What does the HTML Unescape tool do?",
+        "a": "It converts escaped entities like &amp; and &lt; back into readable characters so you can inspect the original text."
       },
       {
-        "q": "Is the Html Unescape tool free to use?",
-        "a": "Yes. You can use it online for free."
+        "q": "Is the HTML Unescape tool free to use?",
+        "a": "Yes. You can use it in the browser for quick decoding while debugging or editing content."
       }
     ],
     "related": [
@@ -552,8 +552,8 @@
     "category": "dev",
     "status": "beta",
     "description": "Compare two blocks of text and check differences quickly.",
-    "name": "Text Diff",
-    "intro": "This free Text Diff tool helps you clean, format, and transform text directly in your browser.",
+    "name": "Text Diff Checker",
+    "intro": "Compare two text blocks side by side to spot edits, missing lines, and small wording changes faster.",
     "keywords": [
       "text diff",
       "text diff online",
@@ -561,12 +561,12 @@
     ],
     "faq": [
       {
-        "q": "What does the Text Diff tool do?",
-        "a": "It helps you clean or transform text using the text diff function."
+        "q": "What does the Text Diff Checker tool do?",
+        "a": "It compares two text inputs so you can review differences between versions without using a separate diff app."
       },
       {
-        "q": "Is the Text Diff tool free to use?",
-        "a": "Yes. You can use it online for free."
+        "q": "Is the Text Diff Checker tool free to use?",
+        "a": "Yes. It runs in the browser for quick review of drafts, config changes, or copied snippets."
       }
     ],
     "related": [

@@ -19,7 +19,55 @@ function getUseCases(tool) {
   const name = tool.name || tool.title || tool.slug || 'this tool';
   const lower = `${tool.slug} ${name} ${tool.category || ''}`.toLowerCase();
 
-  if ((tool.category || '').toLowerCase() === 'developer-tools') {
+  if (lower.includes('base64')) {
+    return [
+      `Convert API payload fragments or file metadata into Base64 without leaving the browser.`,
+      `Decode Base64 strings from logs, config files, or webhook samples during debugging.`,
+      `Quickly verify encoded text before pasting it into tests, docs, or implementation notes.`
+    ];
+  }
+
+  if (lower.includes('url encoder') || lower.includes('url-encoder') || lower.includes('url')) {
+    return [
+      `Encode query parameter values before adding them to links, redirects, or callback URLs.`,
+      `Decode pasted URLs when you need to inspect readable paths, params, or tracking values.`,
+      `Clean up encoded strings during debugging, QA, or documentation work.`
+    ];
+  }
+
+  if (lower.includes('password')) {
+    return [
+      `Generate temporary credentials for QA, demos, staging environments, or internal tools.`,
+      `Create stronger random passwords without relying on browser extensions or external apps.`,
+      `Test signup, reset, or account provisioning flows with configurable password lengths and symbols.`
+    ];
+  }
+
+  if (lower.includes('uuid')) {
+    return [
+      `Create UUID v4 values for database seeds, fixtures, API requests, or test payloads.`,
+      `Generate batches of identifiers quickly when you need unique values for development work.`,
+      `Copy fresh UUIDs into spreadsheets, tickets, migrations, or manual QA notes.`
+    ];
+  }
+
+  if (lower.includes('timestamp')) {
+    return [
+      `Convert Unix timestamps from logs or APIs into readable dates while debugging time-based events.`,
+      `Check whether a timestamp is stored in seconds or milliseconds before using it elsewhere.`,
+      `Compare timestamps quickly when reviewing monitoring output, exports, or audit trails.`
+    ];
+  }
+
+  if (lower.includes('json-to-csv')) {
+    return [
+      `Turn API responses or exported objects into CSV files for spreadsheet review and handoff.`,
+      `Flatten simple JSON arrays before sharing data with non-technical teammates.`,
+      `Prepare structured records for CSV imports, audits, or manual data checks.`
+    ];
+  }
+
+  if ((tool.category || '').toLowerCase() === 'dev' || (tool.category || '').toLowerCase() === 'developer-tools') {
     return [
       `Clean up developer input before using ${name} in debugging or implementation work.`,
       `Speed up routine formatting, conversion, or validation tasks directly in the browser.`,
@@ -75,7 +123,7 @@ function buildUseCasesSection(tool) {
     <section class="tool-use-cases-section" aria-labelledby="tool-use-cases-title">
       <div class="section-card">
         <h2 id="tool-use-cases-title">Use cases</h2>
-        <p>Common situations where this tool can help.</p>
+        <p>Typical workflows where this tool saves time.</p>
         <ul class="use-cases-list">
 ${items}
         </ul>

@@ -3,13 +3,13 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Duplicate Line Remover</title>
-  <meta name="description" content="Remove repeated lines from text while keeping the first occurrence in place." />
-  <link rel="canonical" href="https://extformattools.com/tools/duplicate-line-remover/" />
+  <title>Replace Tabs With Spaces</title>
+  <meta name="description" content="Convert every tab character into four spaces for cleaner formatting and consistent alignment." />
+  <link rel="canonical" href="https://extformattools.com/tools/replace-tabs-with-spaces/" />
   <meta name="robots" content="index,follow" />
-  <meta property="og:title" content="Duplicate Line Remover" />
-  <meta property="og:description" content="Remove repeated lines from text while keeping the first occurrence in place." />
-  <meta property="og:url" content="https://extformattools.com/tools/duplicate-line-remover/" />
+  <meta property="og:title" content="Replace Tabs With Spaces" />
+  <meta property="og:description" content="Convert every tab character into four spaces for cleaner formatting and consistent alignment." />
+  <meta property="og:url" content="https://extformattools.com/tools/replace-tabs-with-spaces/" />
   <meta property="og:type" content="website" />
 
   <script type="application/ld+json">
@@ -19,18 +19,18 @@
   "mainEntity": [
     {
       "@type": "Question",
-      "name": "Does it keep the first duplicate or the last one?",
+      "name": "How many spaces does each tab become?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "It keeps the first occurrence and removes later repeats."
+        "text": "This tool replaces each tab with four spaces."
       }
     },
     {
       "@type": "Question",
-      "name": "Does it ignore uppercase or lowercase differences?",
+      "name": "Does it change anything besides tabs?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "No. This version treats lines as exact matches, so different casing is considered different text."
+        "text": "No. It only replaces tab characters and leaves the rest of the content unchanged."
       }
     }
   ]
@@ -352,11 +352,11 @@
 
   <main>
     <section class="container">
-      <div class="breadcrumb"><a href="/">Home</a> / Duplicate Line Remover</div>
+      <div class="breadcrumb"><a href="/">Home</a> / Replace Tabs With Spaces</div>
 
       <div class="hero">
-        <h1>Duplicate Line Remover</h1>
-        <p>This tool removes exact duplicate lines from lists, exports, keyword sets, and copied content. It keeps the first matching line and removes later repeats.</p>
+        <h1>Replace Tabs With Spaces</h1>
+        <p>Replace Tabs With Spaces is useful when pasted content, TSV data, or copied code looks uneven between apps. This version converts each tab into four spaces.</p>
       </div>
 
       <div class="grid">
@@ -366,12 +366,12 @@
               <div class="panel-header">
                 <div>
                   <h2>Input</h2>
-                  <p>Paste one item per line...</p>
+                  <p>Paste tab-indented text here...</p>
                 </div>
               </div>
-              <textarea id="inputText" placeholder="Paste one item per line..."></textarea>
+              <textarea id="inputText" placeholder="Paste tab-indented text here..."></textarea>
               <div class="actions">
-                <button class="btn-primary" id="processBtn" type="button">Remove Duplicate Lines</button>
+                <button class="btn-primary" id="processBtn" type="button">Replace Tabs</button>
                 <button class="btn-secondary" id="sampleBtn" type="button">Load Example</button>
                 <button class="btn-secondary" id="clearBtn" type="button">Clear</button>
               </div>
@@ -385,10 +385,10 @@
               <div class="panel-header">
                 <div>
                   <h2>Output</h2>
-                  <p>Unique lines will appear here...</p>
+                  <p>Text with spaces instead of tabs will appear here...</p>
                 </div>
               </div>
-              <textarea id="outputText" placeholder="Unique lines will appear here..." readonly></textarea>
+              <textarea id="outputText" placeholder="Text with spaces instead of tabs will appear here..." readonly></textarea>
               <div class="actions">
                 <button class="btn-primary" id="copyBtn" type="button">Copy Result</button>
               </div>
@@ -405,16 +405,16 @@
 
         <div class="card content-section">
           <h2>How it works</h2>
-          <p>This tool removes exact duplicate lines from lists, exports, keyword sets, and copied content. It keeps the first matching line and removes later repeats.</p>
+          <p>Replace Tabs With Spaces is useful when pasted content, TSV data, or copied code looks uneven between apps. This version converts each tab into four spaces.</p>
           <p>This page runs directly in the browser so users can paste, process, and copy the result without leaving the site.</p>
         </div>
 
         <div class="card content-section">
           <h2>Common use cases</h2>
 <ul>
-          <li>Clean keyword lists before SEO or ad imports.</li>
-          <li>Remove repeated entries from exported reports.</li>
-          <li>Tidy line-based notes or content collections.</li>
+          <li>Prepare copied tables for plain text fields.</li>
+          <li>Normalize indentation before publishing code snippets.</li>
+          <li>Clean tabbed content for CMS or email editors.</li>
         </ul>
         </div>
 
@@ -422,13 +422,13 @@
           <h2>Frequently asked questions</h2>
 
           <div class="faq-item">
-            <h3>Does it keep the first duplicate or the last one?</h3>
-            <p>It keeps the first occurrence and removes later repeats.</p>
+            <h3>How many spaces does each tab become?</h3>
+            <p>This tool replaces each tab with four spaces.</p>
           </div>
 
           <div class="faq-item">
-            <h3>Does it ignore uppercase or lowercase differences?</h3>
-            <p>No. This version treats lines as exact matches, so different casing is considered different text.</p>
+            <h3>Does it change anything besides tabs?</h3>
+            <p>No. It only replaces tab characters and leaves the rest of the content unchanged.</p>
           </div>
         </div>
 
@@ -436,19 +436,19 @@
           <h2>Related tools</h2>
           <div class="related-tools">
 
-            <a href="/tools/remove-empty-lines/">
-              Remove Empty Lines
-              <span>Delete blank lines from pasted text while keeping your content order intact.</span>
-            </a>
-
             <a href="/tools/trim-lines/">
               Trim Lines
               <span>Remove leading and trailing spaces from every line without changing the line order.</span>
             </a>
 
-            <a href="/tools/replace-tabs-with-spaces/">
-              Replace Tabs With Spaces
-              <span>Convert every tab character into four spaces for cleaner formatting and consistent alignment.</span>
+            <a href="/tools/remove-empty-lines/">
+              Remove Empty Lines
+              <span>Delete blank lines from pasted text while keeping your content order intact.</span>
+            </a>
+
+            <a href="/tools/duplicate-line-remover/">
+              Duplicate Line Remover
+              <span>Remove repeated lines from text while keeping the first occurrence in place.</span>
             </a>
           </div>
         </div>
@@ -460,11 +460,11 @@
     <section class="container" aria-labelledby="tool-howto-title">
       <div class="section-card">
         <h2 id="tool-howto-title">How to use</h2>
-        <p>Use Duplicate Line Remover in three simple steps.</p>
+        <p>Use Replace Tabs With Spaces in three simple steps.</p>
 <ol>
-          <li>Paste a line-based list into the input box.</li>
-          <li>Run the tool to remove exact duplicates.</li>
-          <li>Copy the de-duplicated list into your workflow.</li>
+          <li>Paste content that includes tab characters.</li>
+          <li>Run the tool to replace each tab with four spaces.</li>
+          <li>Copy the output into the app that needs fixed-width spacing.</li>
         </ol>
       </div>
     </section>
@@ -476,17 +476,15 @@
         <div class="tool-example-grid">
           <div class="example-box">
             <h3>Input</h3>
-            <pre>apple
-banana
-apple
-carrot
-banana</pre>
+            <pre>name	role
+Alice	Editor
+Bob	Developer</pre>
           </div>
           <div class="example-box">
             <h3>Output</h3>
-            <pre>apple
-banana
-carrot</pre>
+            <pre>name    role
+Alice    Editor
+Bob    Developer</pre>
           </div>
         </div>
       </div>
@@ -531,19 +529,7 @@ carrot</pre>
 
 
     function processValue(text) {
-      const seen = new Set();
-
-      return normalizeNewlines(text)
-        .split('\n')
-        .filter((line) => {
-          if (seen.has(line)) {
-            return false;
-          }
-
-          seen.add(line);
-          return true;
-        })
-        .join('\n');
+      return String(text).replace(/\t/g, '    ');
     }
   
 
@@ -564,7 +550,7 @@ carrot</pre>
 
       try {
         outputText.value = processValue(source);
-        setStatus('Duplicate lines removed successfully.', 'success');
+        setStatus('Tabs replaced with spaces successfully.', 'success');
       } catch (error) {
         outputText.value = '';
         setStatus(error.message || 'Something went wrong.', 'error');
@@ -574,7 +560,7 @@ carrot</pre>
     });
 
     sampleBtn.addEventListener('click', () => {
-      inputText.value = "apple\nbanana\napple\ncarrot\nbanana";
+      inputText.value = "name\trole\nAlice\tEditor\nBob\tDeveloper";
       outputText.value = '';
       setStatus('Example text loaded.');
       updateStats();

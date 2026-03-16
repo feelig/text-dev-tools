@@ -19,10 +19,25 @@
     <loc>https://extformattools.com/tools/text-sorter/</loc>
   </url>
   <url>
+    <loc>https://extformattools.com/tools/duplicate-line-remover/</loc>
+  </url>
+  <url>
+    <loc>https://extformattools.com/tools/remove-empty-lines/</loc>
+  </url>
+  <url>
+    <loc>https://extformattools.com/tools/trim-lines/</loc>
+  </url>
+  <url>
+    <loc>https://extformattools.com/tools/replace-tabs-with-spaces/</loc>
+  </url>
+  <url>
     <loc>https://extformattools.com/tools/character-counter/</loc>
   </url>
   <url>
     <loc>https://extformattools.com/tools/json-formatter/</loc>
+  </url>
+  <url>
+    <loc>https://extformattools.com/tools/json-validator/</loc>
   </url>
   <url>
     <loc>https://extformattools.com/tools/regex-tester/</loc>

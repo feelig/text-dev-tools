@@ -41,6 +41,46 @@ const tools = [
     }
   },
   {
+    slug: 'remove-empty-lines',
+    path: '/tools/remove-empty-lines/',
+    async run(page) {
+      await page.locator('#inputText').fill('Apple\n\nBanana\n   \nCarrot');
+      await page.locator('#processBtn').click();
+      await expectValue(page, '#outputText', 'Apple\nBanana\nCarrot');
+      await expectText(page, '#statusMessage', 'Empty lines removed successfully.');
+    }
+  },
+  {
+    slug: 'duplicate-line-remover',
+    path: '/tools/duplicate-line-remover/',
+    async run(page) {
+      await page.locator('#inputText').fill('apple\nbanana\napple\ncarrot');
+      await page.locator('#processBtn').click();
+      await expectValue(page, '#outputText', 'apple\nbanana\ncarrot');
+      await expectText(page, '#statusMessage', 'Duplicate lines removed successfully.');
+    }
+  },
+  {
+    slug: 'trim-lines',
+    path: '/tools/trim-lines/',
+    async run(page) {
+      await page.locator('#inputText').fill('  first  \n\tsecond\t\n third ');
+      await page.locator('#processBtn').click();
+      await expectValue(page, '#outputText', 'first\nsecond\nthird');
+      await expectText(page, '#statusMessage', 'Line edges trimmed successfully.');
+    }
+  },
+  {
+    slug: 'replace-tabs-with-spaces',
+    path: '/tools/replace-tabs-with-spaces/',
+    async run(page) {
+      await page.locator('#inputText').fill('name\trole');
+      await page.locator('#processBtn').click();
+      await expectValue(page, '#outputText', 'name    role');
+      await expectText(page, '#statusMessage', 'Tabs replaced with spaces successfully.');
+    }
+  },
+  {
     slug: 'word-counter',
     path: '/tools/word-counter/',
     async run(page) {
@@ -106,6 +146,24 @@ const tools = [
       await page.locator('#inputText').fill('{"name": }');
       await page.locator('#formatBtn').click();
       await expectContainsText(page, '#statusMessage', 'Invalid JSON:');
+    }
+  },
+  {
+    slug: 'json-validator',
+    path: '/tools/json-validator/',
+    async run(page) {
+      await page.locator('#inputText').fill('{"name":"Alice","count":2,"active":true}');
+      await page.locator('#processBtn').click();
+      await expectValue(
+        page,
+        '#outputText',
+        '{\n  "name": "Alice",\n  "count": 2,\n  "active": true\n}'
+      );
+      await expectText(page, '#statusMessage', 'JSON is valid and has been formatted.');
+
+      await page.locator('#inputText').fill('{"name": }');
+      await page.locator('#processBtn').click();
+      await expectContainsText(page, '#statusMessage', 'Unexpected token');
     }
   },
   {

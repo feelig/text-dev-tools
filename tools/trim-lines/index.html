@@ -3,13 +3,13 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Duplicate Line Remover</title>
-  <meta name="description" content="Remove repeated lines from text while keeping the first occurrence in place." />
-  <link rel="canonical" href="https://extformattools.com/tools/duplicate-line-remover/" />
+  <title>Trim Lines</title>
+  <meta name="description" content="Remove leading and trailing spaces from every line without changing the line order." />
+  <link rel="canonical" href="https://extformattools.com/tools/trim-lines/" />
   <meta name="robots" content="index,follow" />
-  <meta property="og:title" content="Duplicate Line Remover" />
-  <meta property="og:description" content="Remove repeated lines from text while keeping the first occurrence in place." />
-  <meta property="og:url" content="https://extformattools.com/tools/duplicate-line-remover/" />
+  <meta property="og:title" content="Trim Lines" />
+  <meta property="og:description" content="Remove leading and trailing spaces from every line without changing the line order." />
+  <meta property="og:url" content="https://extformattools.com/tools/trim-lines/" />
   <meta property="og:type" content="website" />
 
   <script type="application/ld+json">
@@ -19,18 +19,18 @@
   "mainEntity": [
     {
       "@type": "Question",
-      "name": "Does it keep the first duplicate or the last one?",
+      "name": "Does this remove spaces inside a sentence?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "It keeps the first occurrence and removes later repeats."
+        "text": "No. It only removes whitespace from the start and end of each line."
       }
     },
     {
       "@type": "Question",
-      "name": "Does it ignore uppercase or lowercase differences?",
+      "name": "Will it preserve empty lines?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "No. This version treats lines as exact matches, so different casing is considered different text."
+        "text": "Yes. Empty lines stay in place; only leading and trailing whitespace is trimmed."
       }
     }
   ]
@@ -352,11 +352,11 @@
 
   <main>
     <section class="container">
-      <div class="breadcrumb"><a href="/">Home</a> / Duplicate Line Remover</div>
+      <div class="breadcrumb"><a href="/">Home</a> / Trim Lines</div>
 
       <div class="hero">
-        <h1>Duplicate Line Remover</h1>
-        <p>This tool removes exact duplicate lines from lists, exports, keyword sets, and copied content. It keeps the first matching line and removes later repeats.</p>
+        <h1>Trim Lines</h1>
+        <p>Use Trim Lines to clean whitespace around every line in a block of text while preserving the original line structure.</p>
       </div>
 
       <div class="grid">
@@ -366,12 +366,12 @@
               <div class="panel-header">
                 <div>
                   <h2>Input</h2>
-                  <p>Paste one item per line...</p>
+                  <p>Paste multi-line text here...</p>
                 </div>
               </div>
-              <textarea id="inputText" placeholder="Paste one item per line..."></textarea>
+              <textarea id="inputText" placeholder="Paste multi-line text here..."></textarea>
               <div class="actions">
-                <button class="btn-primary" id="processBtn" type="button">Remove Duplicate Lines</button>
+                <button class="btn-primary" id="processBtn" type="button">Trim Every Line</button>
                 <button class="btn-secondary" id="sampleBtn" type="button">Load Example</button>
                 <button class="btn-secondary" id="clearBtn" type="button">Clear</button>
               </div>
@@ -385,10 +385,10 @@
               <div class="panel-header">
                 <div>
                   <h2>Output</h2>
-                  <p>Unique lines will appear here...</p>
+                  <p>Trimmed lines will appear here...</p>
                 </div>
               </div>
-              <textarea id="outputText" placeholder="Unique lines will appear here..." readonly></textarea>
+              <textarea id="outputText" placeholder="Trimmed lines will appear here..." readonly></textarea>
               <div class="actions">
                 <button class="btn-primary" id="copyBtn" type="button">Copy Result</button>
               </div>
@@ -405,16 +405,16 @@
 
         <div class="card content-section">
           <h2>How it works</h2>
-          <p>This tool removes exact duplicate lines from lists, exports, keyword sets, and copied content. It keeps the first matching line and removes later repeats.</p>
+          <p>Use Trim Lines to clean whitespace around every line in a block of text while preserving the original line structure.</p>
           <p>This page runs directly in the browser so users can paste, process, and copy the result without leaving the site.</p>
         </div>
 
         <div class="card content-section">
           <h2>Common use cases</h2>
 <ul>
-          <li>Clean keyword lists before SEO or ad imports.</li>
-          <li>Remove repeated entries from exported reports.</li>
-          <li>Tidy line-based notes or content collections.</li>
+          <li>Clean copied lists before validation or import.</li>
+          <li>Normalize line endings before de-duplication.</li>
+          <li>Prepare pasted content for spreadsheets or scripts.</li>
         </ul>
         </div>
 
@@ -422,13 +422,13 @@
           <h2>Frequently asked questions</h2>
 
           <div class="faq-item">
-            <h3>Does it keep the first duplicate or the last one?</h3>
-            <p>It keeps the first occurrence and removes later repeats.</p>
+            <h3>Does this remove spaces inside a sentence?</h3>
+            <p>No. It only removes whitespace from the start and end of each line.</p>
           </div>
 
           <div class="faq-item">
-            <h3>Does it ignore uppercase or lowercase differences?</h3>
-            <p>No. This version treats lines as exact matches, so different casing is considered different text.</p>
+            <h3>Will it preserve empty lines?</h3>
+            <p>Yes. Empty lines stay in place; only leading and trailing whitespace is trimmed.</p>
           </div>
         </div>
 
@@ -441,9 +441,9 @@
               <span>Delete blank lines from pasted text while keeping your content order intact.</span>
             </a>
 
-            <a href="/tools/trim-lines/">
-              Trim Lines
-              <span>Remove leading and trailing spaces from every line without changing the line order.</span>
+            <a href="/tools/duplicate-line-remover/">
+              Duplicate Line Remover
+              <span>Remove repeated lines from text while keeping the first occurrence in place.</span>
             </a>
 
             <a href="/tools/replace-tabs-with-spaces/">
@@ -460,11 +460,11 @@
     <section class="container" aria-labelledby="tool-howto-title">
       <div class="section-card">
         <h2 id="tool-howto-title">How to use</h2>
-        <p>Use Duplicate Line Remover in three simple steps.</p>
+        <p>Use Trim Lines in three simple steps.</p>
 <ol>
-          <li>Paste a line-based list into the input box.</li>
-          <li>Run the tool to remove exact duplicates.</li>
-          <li>Copy the de-duplicated list into your workflow.</li>
+          <li>Paste your line-based content into the input box.</li>
+          <li>Run the tool to trim spaces around each line.</li>
+          <li>Copy the cleaned result where you need it.</li>
         </ol>
       </div>
     </section>
@@ -476,17 +476,15 @@
         <div class="tool-example-grid">
           <div class="example-box">
             <h3>Input</h3>
-            <pre>apple
-banana
-apple
-carrot
-banana</pre>
+            <pre>  first line  
+	second line	
+  third line</pre>
           </div>
           <div class="example-box">
             <h3>Output</h3>
-            <pre>apple
-banana
-carrot</pre>
+            <pre>first line
+second line
+third line</pre>
           </div>
         </div>
       </div>
@@ -531,18 +529,9 @@ carrot</pre>
 
 
     function processValue(text) {
-      const seen = new Set();
-
       return normalizeNewlines(text)
         .split('\n')
-        .filter((line) => {
-          if (seen.has(line)) {
-            return false;
-          }
-
-          seen.add(line);
-          return true;
-        })
+        .map((line) => line.trim())
         .join('\n');
     }
   
@@ -564,7 +553,7 @@ carrot</pre>
 
       try {
         outputText.value = processValue(source);
-        setStatus('Duplicate lines removed successfully.', 'success');
+        setStatus('Line edges trimmed successfully.', 'success');
       } catch (error) {
         outputText.value = '';
         setStatus(error.message || 'Something went wrong.', 'error');
@@ -574,7 +563,7 @@ carrot</pre>
     });
 
     sampleBtn.addEventListener('click', () => {
-      inputText.value = "apple\nbanana\napple\ncarrot\nbanana";
+      inputText.value = "  first line  \n\tsecond line\t\n  third line";
       outputText.value = '';
       setStatus('Example text loaded.');
       updateStats();

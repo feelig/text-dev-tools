@@ -144,7 +144,7 @@
     "slug": "duplicate-line-remover",
     "title": "Duplicate Line Remover",
     "category": "text",
-    "status": "beta",
+    "status": "live",
     "description": "Remove repeated lines from text lists and exported content.",
     "name": "Duplicate Line Remover",
     "intro": "Remove repeated rows from pasted lists before you reuse them in spreadsheets, notes, or bulk edits.",
@@ -164,9 +164,99 @@
       }
     ],
     "related": [
-      "remove-extra-spaces",
-      "word-counter",
-      "case-converter"
+      "remove-empty-lines",
+      "trim-lines",
+      "replace-tabs-with-spaces"
+    ]
+  },
+  {
+    "slug": "remove-empty-lines",
+    "title": "Remove Empty Lines",
+    "category": "text",
+    "status": "live",
+    "description": "Delete blank lines from pasted text while keeping your content order intact.",
+    "name": "Remove Empty Lines",
+    "intro": "Use this tool to strip empty or whitespace-only lines from notes, copied text, exported lists, and content pulled from PDFs or email threads.",
+    "keywords": [
+      "remove empty lines",
+      "delete blank lines",
+      "remove empty lines online",
+      "remove blank lines from text"
+    ],
+    "faq": [
+      {
+        "q": "Does it remove lines that only contain spaces?",
+        "a": "Yes. Whitespace-only lines are treated as empty lines and removed."
+      },
+      {
+        "q": "Does it change the order of my text?",
+        "a": "No. It only removes blank lines and keeps the original line order."
+      }
+    ],
+    "related": [
+      "duplicate-line-remover",
+      "trim-lines",
+      "replace-tabs-with-spaces"
+    ]
+  },
+  {
+    "slug": "trim-lines",
+    "title": "Trim Lines",
+    "category": "text",
+    "status": "live",
+    "description": "Remove leading and trailing spaces from every line without changing the line order.",
+    "name": "Trim Lines",
+    "intro": "Use Trim Lines to clean whitespace around every line in a block of text while preserving the original line structure.",
+    "keywords": [
+      "trim lines",
+      "trim each line",
+      "remove leading trailing spaces from each line",
+      "line trim tool"
+    ],
+    "faq": [
+      {
+        "q": "Does this remove spaces inside a sentence?",
+        "a": "No. It only removes whitespace from the start and end of each line."
+      },
+      {
+        "q": "Will it preserve empty lines?",
+        "a": "Yes. Empty lines stay in place; only leading and trailing whitespace is trimmed."
+      }
+    ],
+    "related": [
+      "remove-empty-lines",
+      "duplicate-line-remover",
+      "replace-tabs-with-spaces"
+    ]
+  },
+  {
+    "slug": "replace-tabs-with-spaces",
+    "title": "Replace Tabs With Spaces",
+    "category": "text",
+    "status": "live",
+    "description": "Convert every tab character into four spaces for cleaner formatting and consistent alignment.",
+    "name": "Replace Tabs With Spaces",
+    "intro": "Replace Tabs With Spaces is useful when pasted content, TSV data, or copied code looks uneven between apps. This version converts each tab into four spaces.",
+    "keywords": [
+      "replace tabs with spaces",
+      "tabs to spaces",
+      "convert tabs to spaces",
+      "tab replacer online"
+    ],
+    "faq": [
+      {
+        "q": "How many spaces does each tab become?",
+        "a": "This tool replaces each tab with four spaces."
+      },
+      {
+        "q": "Does it change anything besides tabs?",
+        "a": "No. It only replaces tab characters and leaves the rest of the content unchanged."
+      }
+    ],
+    "related": [
+      "trim-lines",
+      "remove-empty-lines",
+      "duplicate-line-remover"
     ]
   },
   {
@@ -253,6 +343,36 @@
     "related": [
       "regex-tester",
       "base64-encoder",
+      "url-encoder"
+    ]
+  },
+  {
+    "slug": "json-validator",
+    "title": "JSON Validator",
+    "category": "dev",
+    "status": "live",
+    "description": "Validate JSON instantly and return formatted output when the input is valid.",
+    "name": "JSON Validator",
+    "intro": "Paste JSON into the input panel to validate it in the browser. Valid JSON is formatted for readability. Invalid JSON returns a clear error message.",
+    "keywords": [
+      "json validator",
+      "validate json online",
+      "json validation tool",
+      "json checker"
+    ],
+    "faq": [
+      {
+        "q": "Does this tool fix invalid JSON automatically?",
+        "a": "No. It validates and formats valid JSON, but invalid JSON must be corrected manually."
+      },
+      {
+        "q": "Is the JSON processed in the browser?",
+        "a": "Yes. Validation and formatting happen client-side in your browser."
+      }
+    ],
+    "related": [
+      "json-formatter",
+      "regex-tester",
       "url-encoder"
     ]
   },

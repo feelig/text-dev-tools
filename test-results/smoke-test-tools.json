@@ -2,73 +2,103 @@
   {
     "tool": "remove-line-breaks",
     "status": "PASS",
-    "timeMs": 642,
+    "timeMs": 634,
     "notes": ""
   },
   {
     "tool": "remove-extra-spaces",
     "status": "PASS",
-    "timeMs": 546,
+    "timeMs": 547,
+    "notes": ""
+  },
+  {
+    "tool": "remove-empty-lines",
+    "status": "PASS",
+    "timeMs": 556,
+    "notes": ""
+  },
+  {
+    "tool": "duplicate-line-remover",
+    "status": "PASS",
+    "timeMs": 552,
+    "notes": ""
+  },
+  {
+    "tool": "trim-lines",
+    "status": "PASS",
+    "timeMs": 554,
+    "notes": ""
+  },
+  {
+    "tool": "replace-tabs-with-spaces",
+    "status": "PASS",
+    "timeMs": 564,
     "notes": ""
   },
   {
     "tool": "word-counter",
     "status": "PASS",
-    "timeMs": 577,
+    "timeMs": 557,
     "notes": ""
   },
   {
     "tool": "case-converter",
     "status": "PASS",
-    "timeMs": 550,
+    "timeMs": 561,
     "notes": ""
   },
   {
     "tool": "text-sorter",
     "status": "PASS",
-    "timeMs": 598,
+    "timeMs": 596,
     "notes": ""
   },
   {
     "tool": "character-counter",
     "status": "PASS",
-    "timeMs": 550,
+    "timeMs": 555,
     "notes": ""
   },
   {
     "tool": "json-formatter",
     "status": "PASS",
-    "timeMs": 618,
+    "timeMs": 603,
+    "notes": ""
+  },
+  {
+    "tool": "json-validator",
+    "status": "PASS",
+    "timeMs": 606,
     "notes": ""
   },
   {
     "tool": "regex-tester",
     "status": "PASS",
-    "timeMs": 614,
+    "timeMs": 615,
     "notes": ""
   },
   {
     "tool": "base64-encoder",
     "status": "PASS",
-    "timeMs": 610,
+    "timeMs": 605,
     "notes": ""
   },
   {
     "tool": "url-encoder",
     "status": "PASS",
-    "timeMs": 584,
+    "timeMs": 596,
     "notes": ""
   },
   {
     "tool": "password-generator",
     "status": "PASS",
-    "timeMs": 547,
+    "timeMs": 561,
     "notes": ""
   },
   {
     "tool": "uuid-generator",
     "status": "PASS",
-    "timeMs": 556,
+    "timeMs": 554,
     "notes": ""
   }
 ]

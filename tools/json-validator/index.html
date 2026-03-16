@@ -3,13 +3,13 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Duplicate Line Remover</title>
-  <meta name="description" content="Remove repeated lines from text while keeping the first occurrence in place." />
-  <link rel="canonical" href="https://extformattools.com/tools/duplicate-line-remover/" />
+  <title>JSON Validator</title>
+  <meta name="description" content="Validate JSON instantly and return formatted output when the input is valid." />
+  <link rel="canonical" href="https://extformattools.com/tools/json-validator/" />
   <meta name="robots" content="index,follow" />
-  <meta property="og:title" content="Duplicate Line Remover" />
-  <meta property="og:description" content="Remove repeated lines from text while keeping the first occurrence in place." />
-  <meta property="og:url" content="https://extformattools.com/tools/duplicate-line-remover/" />
+  <meta property="og:title" content="JSON Validator" />
+  <meta property="og:description" content="Validate JSON instantly and return formatted output when the input is valid." />
+  <meta property="og:url" content="https://extformattools.com/tools/json-validator/" />
   <meta property="og:type" content="website" />
 
   <script type="application/ld+json">
@@ -19,18 +19,18 @@
   "mainEntity": [
     {
       "@type": "Question",
-      "name": "Does it keep the first duplicate or the last one?",
+      "name": "Does this tool fix invalid JSON automatically?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "It keeps the first occurrence and removes later repeats."
+        "text": "No. It validates and formats valid JSON, but invalid JSON must be corrected manually."
       }
     },
     {
       "@type": "Question",
-      "name": "Does it ignore uppercase or lowercase differences?",
+      "name": "Is the JSON processed in the browser?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "No. This version treats lines as exact matches, so different casing is considered different text."
+        "text": "Yes. Validation and formatting happen client-side in your browser."
       }
     }
   ]
@@ -352,11 +352,11 @@
 
   <main>
     <section class="container">
-      <div class="breadcrumb"><a href="/">Home</a> / Duplicate Line Remover</div>
+      <div class="breadcrumb"><a href="/">Home</a> / JSON Validator</div>
 
       <div class="hero">
-        <h1>Duplicate Line Remover</h1>
-        <p>This tool removes exact duplicate lines from lists, exports, keyword sets, and copied content. It keeps the first matching line and removes later repeats.</p>
+        <h1>JSON Validator</h1>
+        <p>Paste JSON into the input panel to validate it in the browser. Valid JSON is formatted for readability. Invalid JSON returns a clear error message.</p>
       </div>
 
       <div class="grid">
@@ -366,12 +366,12 @@
               <div class="panel-header">
                 <div>
                   <h2>Input</h2>
-                  <p>Paste one item per line...</p>
+                  <p>Paste raw JSON here...</p>
                 </div>
               </div>
-              <textarea id="inputText" placeholder="Paste one item per line..."></textarea>
+              <textarea id="inputText" placeholder="Paste raw JSON here..."></textarea>
               <div class="actions">
-                <button class="btn-primary" id="processBtn" type="button">Remove Duplicate Lines</button>
+                <button class="btn-primary" id="processBtn" type="button">Validate JSON</button>
                 <button class="btn-secondary" id="sampleBtn" type="button">Load Example</button>
                 <button class="btn-secondary" id="clearBtn" type="button">Clear</button>
               </div>
@@ -385,10 +385,10 @@
               <div class="panel-header">
                 <div>
                   <h2>Output</h2>
-                  <p>Unique lines will appear here...</p>
+                  <p>Validated and formatted JSON will appear here...</p>
                 </div>
               </div>
-              <textarea id="outputText" placeholder="Unique lines will appear here..." readonly></textarea>
+              <textarea id="outputText" placeholder="Validated and formatted JSON will appear here..." readonly></textarea>
               <div class="actions">
                 <button class="btn-primary" id="copyBtn" type="button">Copy Result</button>
               </div>
@@ -405,16 +405,16 @@
 
         <div class="card content-section">
           <h2>How it works</h2>
-          <p>This tool removes exact duplicate lines from lists, exports, keyword sets, and copied content. It keeps the first matching line and removes later repeats.</p>
+          <p>Paste JSON into the input panel to validate it in the browser. Valid JSON is formatted for readability. Invalid JSON returns a clear error message.</p>
           <p>This page runs directly in the browser so users can paste, process, and copy the result without leaving the site.</p>
         </div>
 
         <div class="card content-section">
           <h2>Common use cases</h2>
 <ul>
-          <li>Clean keyword lists before SEO or ad imports.</li>
-          <li>Remove repeated entries from exported reports.</li>
-          <li>Tidy line-based notes or content collections.</li>
+          <li>Validate payloads before using them in APIs or config files.</li>
+          <li>Pretty-print minified JSON for easier review.</li>
+          <li>Catch syntax errors quickly when editing structured data.</li>
         </ul>
         </div>
 
@@ -422,13 +422,13 @@
           <h2>Frequently asked questions</h2>
 
           <div class="faq-item">
-            <h3>Does it keep the first duplicate or the last one?</h3>
-            <p>It keeps the first occurrence and removes later repeats.</p>
+            <h3>Does this tool fix invalid JSON automatically?</h3>
+            <p>No. It validates and formats valid JSON, but invalid JSON must be corrected manually.</p>
           </div>
 
           <div class="faq-item">
-            <h3>Does it ignore uppercase or lowercase differences?</h3>
-            <p>No. This version treats lines as exact matches, so different casing is considered different text.</p>
+            <h3>Is the JSON processed in the browser?</h3>
+            <p>Yes. Validation and formatting happen client-side in your browser.</p>
           </div>
         </div>
 
@@ -436,19 +436,19 @@
           <h2>Related tools</h2>
           <div class="related-tools">
 
-            <a href="/tools/remove-empty-lines/">
-              Remove Empty Lines
-              <span>Delete blank lines from pasted text while keeping your content order intact.</span>
+            <a href="/tools/json-formatter/">
+              JSON Formatter
+              <span>Beautify JSON for easier reading, debugging, and review.</span>
             </a>
 
-            <a href="/tools/trim-lines/">
-              Trim Lines
-              <span>Remove leading and trailing spaces from every line without changing the line order.</span>
+            <a href="/tools/regex-tester/">
+              Regex Tester
+              <span>Test patterns against sample text and inspect exact match results.</span>
             </a>
 
-            <a href="/tools/replace-tabs-with-spaces/">
-              Replace Tabs With Spaces
-              <span>Convert every tab character into four spaces for cleaner formatting and consistent alignment.</span>
+            <a href="/tools/url-encoder/">
+              URL Encoder
+              <span>Encode and decode URLs or query values directly in the browser.</span>
             </a>
           </div>
         </div>
@@ -460,11 +460,11 @@
     <section class="container" aria-labelledby="tool-howto-title">
       <div class="section-card">
         <h2 id="tool-howto-title">How to use</h2>
-        <p>Use Duplicate Line Remover in three simple steps.</p>
+        <p>Use JSON Validator in three simple steps.</p>
 <ol>
-          <li>Paste a line-based list into the input box.</li>
-          <li>Run the tool to remove exact duplicates.</li>
-          <li>Copy the de-duplicated list into your workflow.</li>
+          <li>Paste JSON into the input panel.</li>
+          <li>Run the validator to check whether the JSON parses correctly.</li>
+          <li>Copy the formatted result or fix the error shown in the status area.</li>
         </ol>
       </div>
     </section>
@@ -476,17 +476,18 @@
         <div class="tool-example-grid">
           <div class="example-box">
             <h3>Input</h3>
-            <pre>apple
-banana
-apple
-carrot
-banana</pre>
+            <pre>{&quot;name&quot;:&quot;Ada&quot;,&quot;roles&quot;:[&quot;admin&quot;,&quot;editor&quot;],&quot;active&quot;:true}</pre>
           </div>
           <div class="example-box">
             <h3>Output</h3>
-            <pre>apple
-banana
-carrot</pre>
+            <pre>{
+  &quot;name&quot;: &quot;Ada&quot;,
+  &quot;roles&quot;: [
+    &quot;admin&quot;,
+    &quot;editor&quot;
+  ],
+  &quot;active&quot;: true
+}</pre>
           </div>
         </div>
       </div>
@@ -531,19 +532,7 @@ carrot</pre>
 
 
     function processValue(text) {
-      const seen = new Set();
-
-      return normalizeNewlines(text)
-        .split('\n')
-        .filter((line) => {
-          if (seen.has(line)) {
-            return false;
-          }
-
-          seen.add(line);
-          return true;
-        })
-        .join('\n');
+      return JSON.stringify(JSON.parse(text), null, 2);
     }
   
 
@@ -557,14 +546,14 @@ carrot</pre>
 
       if (!source.trim()) {
         outputText.value = '';
-        setStatus('Paste some text first.');
+        setStatus('Paste some JSON first.');
         updateStats();
         return;
       }
 
       try {
         outputText.value = processValue(source);
-        setStatus('Duplicate lines removed successfully.', 'success');
+        setStatus('JSON is valid and has been formatted.', 'success');
       } catch (error) {
         outputText.value = '';
         setStatus(error.message || 'Something went wrong.', 'error');
@@ -574,7 +563,7 @@ carrot</pre>
     });
 
     sampleBtn.addEventListener('click', () => {
-      inputText.value = "apple\nbanana\napple\ncarrot\nbanana";
+      inputText.value = "{\"name\":\"Ada\",\"roles\":[\"admin\",\"editor\"],\"active\":true}";
       outputText.value = '';
       setStatus('Example text loaded.');
       updateStats();

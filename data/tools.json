@@ -700,9 +700,9 @@
     "title": "Remove Blank Lines",
     "category": "text",
     "status": "active",
-    "description": "Remove empty or blank lines from text instantly.",
+    "description": "Legacy URL for removing empty lines from text.",
     "name": "Remove Blank Lines",
-    "intro": "Use this free Remove Blank Lines tool to clean up text by deleting empty lines directly in your browser.",
+    "intro": "This legacy URL now forwards visitors to Remove Empty Lines so the site has one primary tool for the same job.",
     "keywords": [
       "remove blank lines",
       "remove empty lines",
@@ -720,9 +720,9 @@
       }
     ],
     "related": [
-      "text-diff",
-      "json-formatter",
-      "regex-tester"
+      "remove-empty-lines",
+      "trim-lines",
+      "duplicate-line-remover"
     ]
   },
   {
@@ -750,7 +750,7 @@
       }
     ],
     "related": [
-      "remove-blank-lines",
+      "remove-empty-lines",
       "sentence-counter",
       "text-diff"
     ]
@@ -781,7 +781,7 @@
     ],
     "related": [
       "line-counter",
-      "remove-blank-lines",
+      "remove-empty-lines",
       "text-diff"
     ]
   },
@@ -812,7 +812,7 @@
     "related": [
       "trim-text",
       "line-counter",
-      "remove-blank-lines"
+      "remove-empty-lines"
     ]
   },
   {
@@ -840,7 +840,7 @@
       }
     ],
     "related": [
-      "remove-blank-lines",
+      "remove-empty-lines",
       "text-reverser",
       "line-counter"
     ]

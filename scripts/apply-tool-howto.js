@@ -15,19 +15,43 @@ function escapeHtml(str = '') {
     .replace(/"/g, '&quot;');
 }
 
+function getHowToData(tool) {
+  const custom = tool.howTo || {};
+  const steps = Array.isArray(custom.steps) ? custom.steps.filter(Boolean) : [];
+
+  if (custom.lead && steps.length) {
+    return {
+      lead: custom.lead,
+      steps
+    };
+  }
+
+  return {
+    lead: 'Paste your input, run the tool, then copy the result you need.',
+    steps: [
+      'Paste or type the text or data you want to work with.',
+      'Click the main action button to generate the result.',
+      'Review the output and copy it into your next step.'
+    ]
+  };
+}
+
 function buildHowToSection(tool) {
-  const toolName = escapeHtml(tool.name || tool.title || tool.slug || 'this tool');
+  const howTo = getHowToData(tool);
+  const steps = howTo.steps
+    .map((step) => `          <li>${escapeHtml(step)}</li>`)
+    .join('\n');
 
   return `
     <section class="tool-howto-section" aria-labelledby="tool-howto-title">
-      <div class="section-card">
-        <h2 id="tool-howto-title">How to use</h2>
-        <p>Use ${toolName} in three simple steps.</p>
-        <ol class="howto-list">
-          <li><strong>Paste or enter your input.</strong> Add the text or data you want to process.</li>
-          <li><strong>Run the tool.</strong> Click the main action button to generate the result.</li>
-          <li><strong>Copy or reuse the output.</strong> Review the result and use it in your workflow.</li>
-        </ol>
+      <div class="container">
+        <div class="section-card">
+          <h2 id="tool-howto-title">How to use</h2>
+          <p>${escapeHtml(howTo.lead)}</p>
+          <ol class="howto-list">
+${steps}
+          </ol>
+        </div>
       </div>
     </section>`;
 }
@@ -37,6 +61,12 @@ function buildStyleBlock() {
   <style id="tool-howto-style">
     .tool-howto-section {
       margin-top: 32px;
+    }
+    .section-card {
+      background: #fff;
+      border: 1px solid #d9e2ef;
+      border-radius: 14px;
+      padding: 16px;
     }
     .howto-list {
       margin: 16px 0 0;
@@ -64,6 +94,7 @@ for (const tool of tools) {
   let html = fs.readFileSync(filePath, 'utf8');
 
   html = html.replace(/<section class="tool-howto-section"[\s\S]*?<\/section>/i, '');
+  html = html.replace(/<section[^>]*aria-labelledby="tool-howto-title"[\s\S]*?<\/section>/i, '');
 
   if (!html.includes('id="tool-howto-style"')) {
     html = html.replace(/<\/head>/i, `${buildStyleBlock()}\n</head>`);

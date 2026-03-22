@@ -8,8 +8,15 @@ const genericPhrases = [
   'helps you clean, format, and transform text directly in your browser',
   'use it online for free',
   'use this free',
-  'use in three simple steps',
+  'three simple steps',
   'common situations where this tool can help'
+];
+
+const placeholderPhrases = [
+  'top ad slot',
+  'middle ad slot',
+  'bottom ad slot',
+  'homepage ad slot'
 ];
 
 const pages = [
@@ -41,6 +48,9 @@ const pages = [
       path: `tools/${tool.slug}/index.html`,
       type: 'tool',
       status: tool.status || 'unknown',
+      faqCountFromData: Array.isArray(tool.faq) ? tool.faq.length : 0,
+      hasCustomHowTo: Boolean(tool.howTo && tool.howTo.lead && Array.isArray(tool.howTo.steps) && tool.howTo.steps.length),
+      hasCustomUseCases: Boolean(tool.useCases && tool.useCases.lead && Array.isArray(tool.useCases.items) && tool.useCases.items.length),
       expectedRobots: tool.status === 'live' ? 'index,follow' : 'noindex,follow',
       thinThreshold: tool.status === 'live' ? 120 : 80
     }))
@@ -100,6 +110,9 @@ for (const page of pages) {
   const genericHits = genericPhrases.reduce((count, phrase) => {
     return count + (html.toLowerCase().includes(phrase) ? 1 : 0);
   }, 0);
+  const placeholderHits = placeholderPhrases.reduce((count, phrase) => {
+    return count + (html.toLowerCase().includes(phrase) ? 1 : 0);
+  }, 0);
 
   const issues = [];
   const warnings = [];
@@ -110,6 +123,19 @@ for (const page of pages) {
   if (faqHeadingCount > 1) issues.push(`Duplicate FAQ headings (${faqHeadingCount})`);
   if (relatedHeadingCount > 1) issues.push(`Duplicate Related tools headings (${relatedHeadingCount})`);
   if (faqSchemaCount > 1) issues.push(`Duplicate FAQ schema blocks (${faqSchemaCount})`);
+  if (placeholderHits > 0) issues.push(`Placeholder UI copy present (${placeholderHits} hits)`);
+  if (page.type === 'tool' && page.status === 'live' && genericHits > 0) {
+    issues.push(`Live tool still uses template wording (${genericHits} generic phrase hits)`);
+  }
+  if (page.type === 'tool' && page.status === 'live' && page.faqCountFromData < 2) {
+    issues.push(`Live tool needs at least 2 FAQ items in data (${page.faqCountFromData})`);
+  }
+  if (page.type === 'tool' && page.status === 'live' && !page.hasCustomHowTo) {
+    issues.push('Live tool is missing custom how-to content');
+  }
+  if (page.type === 'tool' && page.status === 'live' && !page.hasCustomUseCases) {
+    issues.push('Live tool is missing custom use-case content');
+  }
 
   if (page.type === 'tool' && page.status === 'live' && !hasMain) {
     warnings.push('Missing <main> structure');
@@ -117,7 +143,11 @@ for (const page of pages) {
   if (wordCount < page.thinThreshold) {
     warnings.push(`Thin visible copy (${wordCount} words)`);
   }
-  if (genericHits >= 3) {
+  if (page.type !== 'tool' || page.status !== 'live') {
+    if (genericHits >= 3) {
+      warnings.push(`Heavy template wording (${genericHits} generic phrase hits)`);
+    }
+  } else if (genericHits > 0 && !issues.some((issue) => issue.startsWith('Live tool still uses template wording'))) {
     warnings.push(`Heavy template wording (${genericHits} generic phrase hits)`);
   }
   if (page.type === 'tool' && contentSectionCount === 0 && page.status === 'live' && wordCount < 170) {

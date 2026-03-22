@@ -2,103 +2,127 @@
   {
     "tool": "remove-line-breaks",
     "status": "PASS",
-    "timeMs": 634,
+    "timeMs": 651,
     "notes": ""
   },
   {
     "tool": "remove-extra-spaces",
     "status": "PASS",
-    "timeMs": 547,
+    "timeMs": 603,
     "notes": ""
   },
   {
     "tool": "remove-empty-lines",
     "status": "PASS",
-    "timeMs": 556,
+    "timeMs": 561,
     "notes": ""
   },
   {
     "tool": "duplicate-line-remover",
     "status": "PASS",
-    "timeMs": 552,
+    "timeMs": 556,
     "notes": ""
   },
   {
     "tool": "trim-lines",
     "status": "PASS",
-    "timeMs": 554,
+    "timeMs": 565,
     "notes": ""
   },
   {
     "tool": "replace-tabs-with-spaces",
     "status": "PASS",
-    "timeMs": 564,
+    "timeMs": 565,
     "notes": ""
   },
   {
     "tool": "word-counter",
     "status": "PASS",
-    "timeMs": 557,
+    "timeMs": 613,
     "notes": ""
   },
   {
     "tool": "case-converter",
     "status": "PASS",
-    "timeMs": 561,
+    "timeMs": 616,
     "notes": ""
   },
   {
     "tool": "text-sorter",
     "status": "PASS",
-    "timeMs": 596,
+    "timeMs": 602,
+    "notes": ""
+  },
+  {
+    "tool": "line-counter",
+    "status": "PASS",
+    "timeMs": 569,
     "notes": ""
   },
   {
     "tool": "character-counter",
     "status": "PASS",
-    "timeMs": 555,
+    "timeMs": 637,
+    "notes": ""
+  },
+  {
+    "tool": "sentence-counter",
+    "status": "PASS",
+    "timeMs": 558,
     "notes": ""
   },
   {
     "tool": "json-formatter",
     "status": "PASS",
-    "timeMs": 603,
+    "timeMs": 653,
     "notes": ""
   },
   {
     "tool": "json-validator",
     "status": "PASS",
-    "timeMs": 606,
+    "timeMs": 624,
     "notes": ""
   },
   {
     "tool": "regex-tester",
     "status": "PASS",
-    "timeMs": 615,
+    "timeMs": 666,
     "notes": ""
   },
   {
-    "tool": "base64-encoder",
-    "status": "PASS",
-    "timeMs": 605,
-    "notes": ""
-  },
-  {
-    "tool": "url-encoder",
-    "status": "PASS",
-    "timeMs": 596,
-    "notes": ""
-  },
-  {
-    "tool": "password-generator",
+    "tool": "text-reverser",
     "status": "PASS",
     "timeMs": 561,
     "notes": ""
   },
   {
+    "tool": "base64-encoder",
+    "status": "PASS",
+    "timeMs": 631,
+    "notes": ""
+  },
+  {
+    "tool": "url-encoder",
+    "status": "PASS",
+    "timeMs": 646,
+    "notes": ""
+  },
+  {
+    "tool": "trim-text",
+    "status": "PASS",
+    "timeMs": 562,
+    "notes": ""
+  },
+  {
+    "tool": "password-generator",
+    "status": "PASS",
+    "timeMs": 575,
+    "notes": ""
+  },
+  {
     "tool": "uuid-generator",
     "status": "PASS",
-    "timeMs": 554,
+    "timeMs": 563,
     "notes": ""
   }
 ]

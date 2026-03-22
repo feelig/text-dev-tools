@@ -155,17 +155,19 @@ function buildExampleSection(tool) {
 
   return `
     <section class="tool-example-section" aria-labelledby="tool-example-title">
-      <div class="section-card">
-        <h2 id="tool-example-title">Example</h2>
-        <p>A quick example of how this tool works.</p>
-        <div class="tool-example-grid">
-          <div class="example-box">
-            <h3>Input</h3>
-            <pre>${escapeHtml(example.input)}</pre>
-          </div>
-          <div class="example-box">
-            <h3>Output</h3>
-            <pre>${escapeHtml(example.output)}</pre>
+      <div class="container">
+        <div class="section-card">
+          <h2 id="tool-example-title">Example</h2>
+          <p>A quick example of how this tool works.</p>
+          <div class="tool-example-grid">
+            <div class="example-box">
+              <h3>Input</h3>
+              <pre>${escapeHtml(example.input)}</pre>
+            </div>
+            <div class="example-box">
+              <h3>Output</h3>
+              <pre>${escapeHtml(example.output)}</pre>
+            </div>
           </div>
         </div>
       </div>
@@ -177,6 +179,12 @@ function buildStyleBlock() {
   <style id="tool-example-style">
     .tool-example-section {
       margin-top: 32px;
+    }
+    .section-card {
+      background: #fff;
+      border: 1px solid #d9e2ef;
+      border-radius: 14px;
+      padding: 16px;
     }
     .tool-example-grid {
       display: grid;
@@ -217,6 +225,7 @@ for (const tool of tools) {
   let html = fs.readFileSync(filePath, 'utf8');
 
   html = html.replace(/<section class="tool-example-section"[\s\S]*?<\/section>/i, '');
+  html = html.replace(/\s*<div class="panel">\s*<h2>\s*Example\s*<\/h2>[\s\S]*?<\/div>/i, '');
 
   if (!html.includes('id="tool-example-style"')) {
     html = html.replace(/<\/head>/i, `${buildStyleBlock()}\n</head>`);

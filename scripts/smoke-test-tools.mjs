@@ -38,6 +38,10 @@ const tools = [
       await page.locator('#processBtn').click();
       await expectValue(page, '#outputText', 'Hello world\nfrom tool');
       await expectText(page, '#statusMessage', 'Extra spaces removed successfully.');
+
+      await page.locator('#inputText').fill('\tAlpha   beta  \n  gamma\t\t');
+      await page.locator('#processBtn').click();
+      await expectValue(page, '#outputText', 'Alpha beta\ngamma');
     }
   },
   {
@@ -95,6 +99,18 @@ const tools = [
       await expectText(page, '#statChars', '16');
       await expectText(page, '#statCharsNoSpaces', '14');
       await expectText(page, '#statLines', '2');
+
+      await page.locator('#inputText').fill('One\t two  \n\nthree ');
+      await page.locator('#processBtn').click();
+      await expectValue(
+        page,
+        '#outputText',
+        'Words: 3\nCharacters: 18\nCharacters (no spaces): 11\nLines: 3'
+      );
+      await expectText(page, '#statWords', '3');
+      await expectText(page, '#statChars', '18');
+      await expectText(page, '#statCharsNoSpaces', '11');
+      await expectText(page, '#statLines', '3');
     }
   },
   {
@@ -105,6 +121,10 @@ const tools = [
       await page.locator('#upperBtn').click();
       await expectValue(page, '#outputText', 'HELLO WORLD.\nSECOND LINE');
       await expectText(page, '#statusMessage', 'Text converted successfully.');
+
+      await page.locator('#inputText').fill('HELLO WORLD. SECOND LINE! third line?');
+      await page.locator('#sentenceBtn').click();
+      await expectValue(page, '#outputText', 'Hello world. Second line! Third line?');
     }
   },
   {
@@ -118,6 +138,16 @@ const tools = [
     }
   },
   {
+    slug: 'line-counter',
+    path: '/tools/line-counter/',
+    async run(page) {
+      await page.locator('#inputText').fill('apple\nbanana\n\norange');
+      await page.locator('#runBtn').click();
+      await expectValue(page, '#outputText', 'Total lines: 4\nNon-empty lines: 3\nEmpty lines: 1');
+      await expectText(page, '#stats', 'Total: 4 | Non-empty: 3 | Empty: 1');
+    }
+  },
+  {
     slug: 'character-counter',
     path: '/tools/character-counter/',
     async run(page) {
@@ -128,6 +158,25 @@ const tools = [
       await expectText(page, '#statWords', '3');
       await expectText(page, '#statLines', '2');
       await expectText(page, '#statusMessage', 'Text counted successfully.');
+
+      await page.locator('#inputText').fill('Hi 世界.\n\nNext line!');
+      await page.locator('#countBtn').click();
+      await expectText(page, '#statChars', '18');
+      await expectText(page, '#statCharsNoSpaces', '14');
+      await expectText(page, '#statWords', '4');
+      await expectText(page, '#statLines', '3');
+      await expectText(page, '#statParagraphs', '2');
+      await expectText(page, '#statSentences', '2');
+    }
+  },
+  {
+    slug: 'sentence-counter',
+    path: '/tools/sentence-counter/',
+    async run(page) {
+      await page.locator('#inputText').fill('Hello world. How are you? I am fine!');
+      await page.locator('#runBtn').click();
+      await expectValue(page, '#outputText', 'Sentence count: 3');
+      await expectText(page, '#stats', 'Estimated sentences: 3');
     }
   },
   {
@@ -143,7 +192,19 @@ const tools = [
       );
       await expectText(page, '#statusMessage', 'JSON formatted successfully.');
 
+      await page.locator('#inputText').fill('[{"id":1},{"id":2}]');
+      await page.locator('#formatBtn').click();
+      await expectValue(
+        page,
+        '#outputText',
+        '[\n  {\n    "id": 1\n  },\n  {\n    "id": 2\n  }\n]'
+      );
+
       await page.locator('#inputText').fill('{"name": }');
+      await page.locator('#formatBtn').click();
+      await expectContainsText(page, '#statusMessage', 'Invalid JSON:');
+
+      await page.locator('#inputText').fill('[1,2,]');
       await page.locator('#formatBtn').click();
       await expectContainsText(page, '#statusMessage', 'Invalid JSON:');
     }
@@ -160,6 +221,14 @@ const tools = [
         '{\n  "name": "Alice",\n  "count": 2,\n  "active": true\n}'
       );
       await expectText(page, '#statusMessage', 'JSON is valid and has been formatted.');
+
+      await page.locator('#inputText').fill('{"items":[1,2],"ok":false}');
+      await page.locator('#processBtn').click();
+      await expectValue(
+        page,
+        '#outputText',
+        '{\n  "items": [\n    1,\n    2\n  ],\n  "ok": false\n}'
+      );
 
       await page.locator('#inputText').fill('{"name": }');
       await page.locator('#processBtn').click();
@@ -182,9 +251,33 @@ const tools = [
       await expectText(page, '#matchCount', '4 matches');
       await expectText(page, '#statusMessage', 'Regex tested successfully.');
 
+      await page.locator('#patternInput').fill('^');
+      await page.locator('#flagsInput').fill('gm');
+      await page.locator('#inputText').fill('Alpha\nBeta');
+      await page.locator('#testBtn').click();
+      await expectValue(page, '#outputText', 'Match 1:  (index 0)\nMatch 2:  (index 6)');
+      await expectText(page, '#matchCount', '2 matches');
+
+      await page.locator('#patternInput').fill('\\d+');
+      await page.locator('#flagsInput').fill('g');
+      await page.locator('#inputText').fill('letters only');
+      await page.locator('#testBtn').click();
+      await expectValue(page, '#outputText', 'No matches found.');
+      await expectText(page, '#matchCount', '0 matches');
+
       await page.locator('#patternInput').fill('[');
       await page.locator('#testBtn').click();
       await expectContainsText(page, '#statusMessage', 'Invalid regex:');
+    }
+  },
+  {
+    slug: 'text-reverser',
+    path: '/tools/text-reverser/',
+    async run(page) {
+      await page.locator('#inputText').fill('abcd 123');
+      await page.locator('#runBtn').click();
+      await expectValue(page, '#outputText', '321 dcba');
+      await expectText(page, '#stats', 'Characters reversed: 8');
     }
   },
   {
@@ -198,6 +291,11 @@ const tools = [
       await page.locator('#input').fill('aGVsbG8gd29ybGQ=');
       await page.getByRole('button', { name: 'Decode' }).click();
       await expectValue(page, '#output', 'hello world');
+
+      await page.locator('#input').fill('not-base64%%%');
+      await expectDialog(page, 'Invalid Base64', async () => {
+        await page.getByRole('button', { name: 'Decode' }).click();
+      });
     }
   },
   {
@@ -211,6 +309,26 @@ const tools = [
       await page.locator('#input').fill('hello%20world%3Fx%3D1%26y%3D2');
       await page.getByRole('button', { name: 'Decode' }).click();
       await expectValue(page, '#output', 'hello world?x=1&y=2');
+
+      const unicodeUrl = 'https://example.com/搜索?q=你好 world';
+      await page.locator('#input').fill(unicodeUrl);
+      await page.getByRole('button', { name: 'Encode' }).click();
+      await expectValue(page, '#output', encodeURIComponent(unicodeUrl));
+
+      await page.locator('#input').fill('%');
+      await expectDialog(page, 'Invalid encoded URL', async () => {
+        await page.getByRole('button', { name: 'Decode' }).click();
+      });
+    }
+  },
+  {
+    slug: 'trim-text',
+    path: '/tools/trim-text/',
+    async run(page) {
+      await page.locator('#inputText').fill('   hello world   ');
+      await page.locator('#runBtn').click();
+      await expectValue(page, '#outputText', 'hello world');
+      await expectText(page, '#stats', 'Removed 6 leading/trailing whitespace characters.');
     }
   },
   {
@@ -368,6 +486,19 @@ async function expectContainsText(page, selector, expectedPart) {
   const actual = normalize(await page.locator(selector).innerText());
   if (!actual.includes(expectedPart)) {
     throw new Error(`Expected ${selector} to include ${JSON.stringify(expectedPart)} but got ${JSON.stringify(actual)}`);
+  }
+}
+
+async function expectDialog(page, expectedMessage, action) {
+  const dialogPromise = page.waitForEvent('dialog', { timeout: 5000 });
+  const actionPromise = action();
+  const dialog = await dialogPromise;
+  const actual = normalize(dialog.message());
+  await dialog.dismiss();
+  await actionPromise;
+
+  if (actual !== expectedMessage) {
+    throw new Error(`Dialog mismatch\nExpected: ${JSON.stringify(expectedMessage)}\nActual: ${JSON.stringify(actual)}`);
   }
 }
 

@@ -12,6 +12,17 @@ function stripSection(html, className) {
   return html.replace(pattern, '');
 }
 
+function stripPlaceholderAdSlots(html) {
+  return html.replace(/\s*<div class="ad-slot">\s*(Top|Middle|Bottom)\s+Ad Slot\s*<\/div>/gi, '');
+}
+
+function stripDuplicateIntroParagraph(html) {
+  return html.replace(
+    /(<p class="tool-intro">)([\s\S]*?)(<\/p>)\s*<p>\s*\2\s*<\/p>/i,
+    '$1$2$3'
+  );
+}
+
 function countMatches(html, pattern) {
   return (html.match(pattern) || []).length;
 }
@@ -52,6 +63,8 @@ for (const tool of tools) {
     );
   }
 
+  html = stripPlaceholderAdSlots(html);
+  html = stripDuplicateIntroParagraph(html);
   html = html.replace(/\n{4,}/g, '\n\n\n');
 
   if (html !== original) {

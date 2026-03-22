@@ -3,14 +3,14 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-              <title>Trim Text</title>
-              <meta name="description" content="Trim leading and trailing spaces from text online." />
-          <meta name="robots" content="noindex,follow" />
+                        <title>Trim Text</title>
+                        <meta name="description" content="Trim leading and trailing spaces from text online." />
+                    <meta name="robots" content="noindex,follow" />
   <meta name="keywords" content="trim text, trim text online, trim text tool" />
-              <link rel="canonical" href="https://extformattools.com/tools/trim-text/" />
-            <meta property="og:title" content="Trim Text" />
-            <meta property="og:description" content="Trim leading and trailing spaces from text online." />
-            <meta property="og:url" content="https://extformattools.com/tools/trim-text/" />
+                        <link rel="canonical" href="https://extformattools.com/tools/trim-text/" />
+                      <meta property="og:title" content="Trim Text" />
+                      <meta property="og:description" content="Trim leading and trailing spaces from text online." />
+                      <meta property="og:url" content="https://extformattools.com/tools/trim-text/" />
 
   <style>
     * { box-sizing: border-box; }
@@ -135,6 +135,141 @@
   
   
   
+  
+  
+  
+  
+  
+  
+  
+  
+
+  <style id="related-tools-style">
+    .related-tools-section {
+      margin-top: 32px;
+    }
+    .section-card {
+      background: #fff;
+      border: 1px solid #d9e2ef;
+      border-radius: 14px;
+      padding: 16px;
+    }
+    .related-tools-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 14px;
+      margin-top: 16px;
+    }
+    .related-tool-card {
+      display: block;
+      text-decoration: none;
+      color: inherit;
+      background: #fff;
+      border: 1px solid #d9e2ef;
+      border-radius: 14px;
+      padding: 16px;
+      transition: 0.18s ease;
+    }
+    .related-tool-card:hover {
+      transform: translateY(-2px);
+      border-color: #bfd0ea;
+    }
+    .related-tool-card strong {
+      display: block;
+      font-size: 15px;
+      margin-bottom: 8px;
+    }
+    .related-tool-card span {
+      display: block;
+      font-size: 13px;
+      line-height: 1.5;
+      color: #5f6f86;
+    }
+  </style>
+  
+  
+
+  <style id="tool-howto-style">
+    .tool-howto-section {
+      margin-top: 32px;
+    }
+    .section-card {
+      background: #fff;
+      border: 1px solid #d9e2ef;
+      border-radius: 14px;
+      padding: 16px;
+    }
+    .howto-list {
+      margin: 16px 0 0;
+      padding-left: 20px;
+      color: #5f6f86;
+    }
+    .howto-list li {
+      margin: 0 0 12px;
+      line-height: 1.7;
+    }
+    .howto-list strong {
+      color: #152033;
+    }
+  </style>
+
+  <style id="tool-use-cases-style">
+    .tool-use-cases-section {
+      margin-top: 32px;
+    }
+    .section-card {
+      background: #fff;
+      border: 1px solid #d9e2ef;
+      border-radius: 14px;
+      padding: 16px;
+    }
+    .use-cases-list {
+      margin: 16px 0 0;
+      padding-left: 20px;
+      color: #5f6f86;
+    }
+    .use-cases-list li {
+      margin: 0 0 12px;
+      line-height: 1.7;
+    }
+  </style>
+
+  <style id="tool-example-style">
+    .tool-example-section {
+      margin-top: 32px;
+    }
+    .section-card {
+      background: #fff;
+      border: 1px solid #d9e2ef;
+      border-radius: 14px;
+      padding: 16px;
+    }
+    .tool-example-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 16px;
+      margin-top: 16px;
+    }
+    .example-box {
+      background: #fff;
+      border: 1px solid #d9e2ef;
+      border-radius: 14px;
+      padding: 16px;
+    }
+    .example-box h3 {
+      margin: 0 0 10px;
+      font-size: 16px;
+    }
+    .example-box pre {
+      margin: 0;
+      white-space: pre-wrap;
+      word-break: break-word;
+      font-size: 13px;
+      line-height: 1.6;
+      color: #5f6f86;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+    }
+  </style>
   <script id="tool-webpage-schema" type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -151,18 +286,18 @@
   "mainEntity": [
     {
       "@type": "Question",
-      "name": "What does the Trim Text tool do?",
+      "name": "Does it trim every line separately?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "It removes unnecessary whitespace from the beginning and end of your text."
+        "text": "No. This version trims only the start and end of the full text block."
       }
     },
     {
       "@type": "Question",
-      "name": "Does the Trim Text tool change the text content?",
+      "name": "Does it change the text itself?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "It only removes leading and trailing whitespace and keeps the main text unchanged."
+        "text": "No. It only removes leading and trailing whitespace and keeps the actual content unchanged."
       }
     }
   ]
@@ -170,10 +305,11 @@
   </script>
 </head>
 <body>
+  <main>
   <div class="container">
     <div class="panel">
       <h1>Trim Text</h1>
-      <p class="tool-intro">Use this free Trim Text tool to remove leading and trailing whitespace from your text directly in your browser.</p>
+      <p class="tool-intro">Remove whitespace from the start and end of the full text block without changing the text in the middle.</p>
       <p class="subtext">Remove whitespace from the beginning and end of the full text block.</p>
 
       <label for="inputText"><strong>Input</strong></label>
@@ -192,14 +328,6 @@
     </div>
 
     <div class="panel">
-      <h2>Example</h2>
-      <p><strong>Input:</strong></p>
-      <pre>   hello world   </pre>
-      <p><strong>Output:</strong></p>
-      <pre>hello world</pre>
-    </div>
-
-    <div class="panel">
       <h2>FAQ</h2>
       
 <p><strong>What does the Trim Text tool do?</strong><br>It removes leading and trailing whitespace from the full text.</p>
@@ -207,6 +335,78 @@
 
     </div>
   </div>
+  
+    
+
+    
+
+    
+
+    
+
+    <section class="related-tools-section" aria-labelledby="related-tools-title">
+      <div class="container">
+        <div class="section-card">
+          <h2 id="related-tools-title">Related Tools</h2>
+          <p>Explore more tools that work well with this page.</p>
+          <div class="related-tools-grid">
+
+        <a class="related-tool-card" href="/tools/remove-empty-lines/">
+          <strong>Remove Empty Lines</strong>
+          <span>Delete blank lines from pasted text while keeping your content order intact.</span>
+        </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="tool-howto-section" aria-labelledby="tool-howto-title">
+      <div class="container">
+        <div class="section-card">
+          <h2 id="tool-howto-title">How to use</h2>
+          <p>Paste the full text block, trim it once, then copy the cleaned result.</p>
+          <ol class="howto-list">
+          <li>Paste the text that has unwanted whitespace at the start or end.</li>
+          <li>Click Trim Text to remove the outer whitespace.</li>
+          <li>Copy the trimmed block back into your document, field, or message.</li>
+          </ol>
+        </div>
+      </div>
+    </section>
+
+    <section class="tool-use-cases-section" aria-labelledby="tool-use-cases-title">
+      <div class="container">
+        <div class="section-card">
+          <h2 id="tool-use-cases-title">Use cases</h2>
+          <p>Use it when the full block needs cleanup but each line inside should stay untouched.</p>
+          <ul class="use-cases-list">
+          <li>Trim pasted text before putting it into a single form field.</li>
+          <li>Clean copied blocks before saving them in notes or docs.</li>
+          <li>Remove accidental leading or trailing whitespace from a text payload.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="tool-example-section" aria-labelledby="tool-example-title">
+      <div class="container">
+        <div class="section-card">
+          <h2 id="tool-example-title">Example</h2>
+          <p>A quick example of how this tool works.</p>
+          <div class="tool-example-grid">
+            <div class="example-box">
+              <h3>Input</h3>
+              <pre>Sample input for Trim Text</pre>
+            </div>
+            <div class="example-box">
+              <h3>Output</h3>
+              <pre>Processed output from Trim Text</pre>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+</main>
 
 <script>
 const inputText = document.getElementById('inputText');

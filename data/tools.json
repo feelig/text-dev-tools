@@ -5,7 +5,7 @@
     "category": "text",
     "status": "live",
     "description": "Remove line breaks from text instantly online.",
-    "intro": "Use this free Remove Line Breaks tool to convert multi-line text into a single line.",
+    "intro": "Turn multi-line text into a single line when copied text breaks across emails, PDFs, forms, or chat logs.",
     "keywords": [
       "remove line breaks",
       "text line break remover",
@@ -13,10 +13,30 @@
     ],
     "faq": [
       {
-        "q": "What does this tool do?",
-        "a": "It removes newline characters from your input text."
+        "q": "Does it join all lines into one paragraph?",
+        "a": "Yes. It removes the line breaks so the text becomes a single continuous line."
+      },
+      {
+        "q": "When is this useful?",
+        "a": "It is useful when pasted text is broken across many lines and needs to be reused in a form, document, or message."
       }
     ],
+    "howTo": {
+      "lead": "Paste the broken text, run the tool, then copy the single-line version.",
+      "steps": [
+        "Paste the text block that contains unwanted line breaks.",
+        "Click Remove Line Breaks to join the lines into one continuous string.",
+        "Copy the result into your form, document, message, or spreadsheet."
+      ]
+    },
+    "useCases": {
+      "lead": "This is most useful when line breaks are the only thing making the text hard to reuse.",
+      "items": [
+        "Join copied text from PDFs, emails, and exported reports into one line.",
+        "Clean multiline addresses or notes before pasting them into a form field.",
+        "Fix broken paragraphs before moving the text into a CMS or document."
+      ]
+    },
     "related": [
       "remove-extra-spaces",
       "text-sorter",
@@ -31,7 +51,7 @@
     "status": "live",
     "description": "Clean repeated spaces while keeping your text readable and consistent.",
     "name": "Remove Extra Spaces",
-    "intro": "This free Remove Extra Spaces tool helps you clean, format, and transform text directly in your browser.",
+    "intro": "Paste messy text from email, docs, or PDFs to collapse repeated spaces and tabs without removing line breaks.",
     "keywords": [
       "remove extra spaces",
       "remove extra spaces online",
@@ -39,14 +59,30 @@
     ],
     "faq": [
       {
-        "q": "What does the Remove Extra Spaces tool do?",
-        "a": "It helps you clean or transform text using the remove extra spaces function."
+        "q": "Does this tool keep line breaks?",
+        "a": "Yes. It cleans each line separately and keeps the existing line breaks in place."
       },
       {
-        "q": "Is the Remove Extra Spaces tool free to use?",
-        "a": "Yes. You can use it online for free."
+        "q": "Will it trim each line too?",
+        "a": "Yes. Leading and trailing spaces on each line are removed while repeated spaces inside the line are collapsed."
       }
     ],
+    "howTo": {
+      "lead": "Paste the text, run the cleaner, then copy the cleaned version.",
+      "steps": [
+        "Paste text that contains repeated spaces or tabs into the input box.",
+        "Click Remove Extra Spaces to clean each line without flattening the whole block.",
+        "Copy the cleaned result back into your document, form, or CMS."
+      ]
+    },
+    "useCases": {
+      "lead": "Most people use this when pasted text looks uneven or hard to reuse.",
+      "items": [
+        "Clean text copied from PDFs, emails, or chat threads before sharing it.",
+        "Fix inconsistent spacing before pasting content into spreadsheets or forms.",
+        "Tidy article drafts or CMS copy without removing line breaks."
+      ]
+    },
     "related": [
       "word-counter",
       "case-converter",
@@ -60,7 +96,7 @@
     "status": "live",
     "description": "Count words, characters, and lines for writing, editing, and content checks.",
     "name": "Word Counter",
-    "intro": "This free Word Counter tool helps you clean, format, and transform text directly in your browser.",
+    "intro": "Count words, characters, characters without spaces, and lines before you submit, publish, or edit copy.",
     "keywords": [
       "word counter",
       "word counter online",
@@ -68,14 +104,30 @@
     ],
     "faq": [
       {
-        "q": "What does the Word Counter tool do?",
-        "a": "It helps you clean or transform text using the word counter function."
+        "q": "What does this counter measure?",
+        "a": "It shows word count, total characters, characters without spaces, and line count from the text you paste."
       },
       {
-        "q": "Is the Word Counter tool free to use?",
-        "a": "Yes. You can use it online for free."
+        "q": "Can I use it for article drafts or form limits?",
+        "a": "Yes. It is useful for blog drafts, ad copy, assignments, product descriptions, and any field with a length limit."
       }
     ],
+    "howTo": {
+      "lead": "Paste your draft, click Count Text, then read the totals you need.",
+      "steps": [
+        "Paste or type the text you want to measure.",
+        "Click Count Text to calculate words, characters, characters without spaces, and lines.",
+        "Use the totals to edit your draft or confirm it fits the limit."
+      ]
+    },
+    "useCases": {
+      "lead": "Use it when you need a quick length check before the text goes somewhere else.",
+      "items": [
+        "Check article or landing-page drafts before publishing.",
+        "Measure captions, ads, or forms that have hard length limits.",
+        "Compare draft versions when you are cutting or expanding copy."
+      ]
+    },
     "related": [
       "remove-extra-spaces",
       "case-converter",
@@ -89,7 +141,7 @@
     "status": "live",
     "description": "Convert text to uppercase, lowercase, and title case in one place.",
     "name": "Case Converter",
-    "intro": "This free Case Converter tool helps you clean, format, and transform text directly in your browser.",
+    "intro": "Switch text between uppercase, lowercase, title case, and sentence case without editing line by line.",
     "keywords": [
       "case converter",
       "case converter online",
@@ -97,14 +149,30 @@
     ],
     "faq": [
       {
-        "q": "What does the Case Converter tool do?",
-        "a": "It helps you clean or transform text using the case converter function."
+        "q": "Which case styles are included?",
+        "a": "Uppercase, lowercase, title case, and sentence case are all available on the same page."
       },
       {
-        "q": "Is the Case Converter tool free to use?",
-        "a": "Yes. You can use it online for free."
+        "q": "Does it keep line breaks?",
+        "a": "Yes. The converter changes the casing while keeping your existing line breaks."
       }
     ],
+    "howTo": {
+      "lead": "Paste the text, choose the case you need, then copy the result.",
+      "steps": [
+        "Paste the text you want to standardize.",
+        "Click Uppercase, Lowercase, Title Case, or Sentence Case.",
+        "Review the converted version and copy it into your next draft or document."
+      ]
+    },
+    "useCases": {
+      "lead": "This is most useful when the wording is right but the capitalization is messy.",
+      "items": [
+        "Fix headings, titles, and labels copied from mixed sources.",
+        "Standardize notes, lists, or exports before sharing them with a team.",
+        "Convert large blocks of text faster than editing each line by hand."
+      ]
+    },
     "related": [
       "remove-extra-spaces",
       "word-counter",
@@ -126,14 +194,30 @@
     ],
     "faq": [
       {
-        "q": "What does the Text Sorter tool do?",
-        "a": "It sorts one item per line so you can reorder lists from A to Z, Z to A, or remove blank lines before copying the result."
+        "q": "How should I format the input?",
+        "a": "Put one item per line. The tool sorts line by line, which works well for names, keywords, and pasted lists."
       },
       {
-        "q": "Is the Text Sorter tool free to use?",
-        "a": "Yes. It runs in your browser and does not require an account."
+        "q": "Can it remove blank lines while sorting?",
+        "a": "Yes. Blank lines are removed from the sorted result so the list stays clean."
       }
     ],
+    "howTo": {
+      "lead": "Paste one item per line, choose the sort order, then copy the cleaned list.",
+      "steps": [
+        "Paste the list you want to sort into the input box.",
+        "Click the ascending or descending sort button.",
+        "Copy the ordered result into your spreadsheet, doc, or workflow."
+      ]
+    },
+    "useCases": {
+      "lead": "Use it when a list is valid already but still hard to scan or compare.",
+      "items": [
+        "Sort keyword lists before review or upload.",
+        "Reorder names, tags, or product lines without opening a spreadsheet.",
+        "Clean copied lists before sharing them with a team."
+      ]
+    },
     "related": [
       "remove-extra-spaces",
       "word-counter",
@@ -155,14 +239,30 @@
     ],
     "faq": [
       {
-        "q": "What does the Duplicate Line Remover tool do?",
-        "a": "It removes repeated lines while keeping the first occurrence, which helps when you paste duplicated list data."
+        "q": "Does it keep the first matching line?",
+        "a": "Yes. The first occurrence stays in place and later duplicate lines are removed."
       },
       {
-        "q": "Is the Duplicate Line Remover tool free to use?",
-        "a": "Yes. You can run quick de-duplication checks directly in the browser."
+        "q": "Does it work best with one item per line?",
+        "a": "Yes. It compares the text line by line, so it is best for lists, exports, and line-based content."
       }
     ],
+    "howTo": {
+      "lead": "Paste the list, remove duplicate lines, then copy the deduplicated version.",
+      "steps": [
+        "Paste the line-based list or export into the input box.",
+        "Click Remove Duplicates to keep the first instance of each line.",
+        "Copy the cleaned list back into your spreadsheet, editor, or bulk tool."
+      ]
+    },
+    "useCases": {
+      "lead": "This is useful when duplicated rows make a list harder to trust or reuse.",
+      "items": [
+        "Deduplicate keyword lists and outreach lists before upload.",
+        "Clean copied exports before sorting or filtering them elsewhere.",
+        "Remove repeated lines from notes, tags, or product data."
+      ]
+    },
     "related": [
       "remove-empty-lines",
       "trim-lines",
@@ -193,6 +293,22 @@
         "a": "No. It only removes blank lines and keeps the original line order."
       }
     ],
+    "howTo": {
+      "lead": "Paste the text, remove blank lines, then copy the tighter version.",
+      "steps": [
+        "Paste the text block that contains blank or whitespace-only lines.",
+        "Click Remove Empty Lines to strip those lines out.",
+        "Copy the cleaned result into your editor, form, or spreadsheet."
+      ]
+    },
+    "useCases": {
+      "lead": "Use it when copied text is padded with empty rows that make it messy or longer than needed.",
+      "items": [
+        "Clean notes or exports before sharing them.",
+        "Remove blank rows from lists before importing them elsewhere.",
+        "Tighten text copied from PDFs, emails, or CMS editors."
+      ]
+    },
     "related": [
       "duplicate-line-remover",
       "trim-lines",
@@ -223,6 +339,22 @@
         "a": "Yes. Empty lines stay in place; only leading and trailing whitespace is trimmed."
       }
     ],
+    "howTo": {
+      "lead": "Paste the block, trim each line, then copy the cleaned result.",
+      "steps": [
+        "Paste the line-based text that has extra spaces or tabs at the edges.",
+        "Click Trim Lines to clean every line without changing the order.",
+        "Copy the output back into your editor, config, or spreadsheet."
+      ]
+    },
+    "useCases": {
+      "lead": "This helps when the content is fine but each line carries messy edge whitespace.",
+      "items": [
+        "Clean copied code snippets or config lists before reuse.",
+        "Fix line-based data before comparing it in diffs or reviews.",
+        "Remove accidental edge spaces from pasted content blocks."
+      ]
+    },
     "related": [
       "remove-empty-lines",
       "duplicate-line-remover",
@@ -249,10 +381,26 @@
         "a": "This tool replaces each tab with four spaces."
       },
       {
-        "q": "Does it change anything besides tabs?",
-        "a": "No. It only replaces tab characters and leaves the rest of the content unchanged."
+        "q": "When is this useful?",
+        "a": "It is useful when tabs break alignment across editors, CMS fields, chat tools, or pasted code blocks."
       }
     ],
+    "howTo": {
+      "lead": "Paste the text, replace tabs with spaces, then copy the aligned result.",
+      "steps": [
+        "Paste the content that contains tab characters.",
+        "Click Replace Tabs to convert each tab into four spaces.",
+        "Copy the output into the app or field that needs consistent spacing."
+      ]
+    },
+    "useCases": {
+      "lead": "Use it when tabs display differently across the tools you work in.",
+      "items": [
+        "Normalize TSV-style text before pasting it into another editor.",
+        "Clean pasted code or plain-text tables for email or chat.",
+        "Replace tabs in copied data when you need predictable spacing."
+      ]
+    },
     "related": [
       "trim-lines",
       "remove-empty-lines",
@@ -274,14 +422,30 @@
     ],
     "faq": [
       {
-        "q": "What does the Character Counter tool do?",
-        "a": "It measures characters with and without spaces, plus words, lines, paragraphs, and sentences from the text you paste."
+        "q": "Does it count with and without spaces?",
+        "a": "Yes. It shows both totals, along with words, lines, paragraphs, and sentences."
       },
       {
-        "q": "Is the Character Counter tool free to use?",
-        "a": "Yes. You can run it in the browser whenever you need quick text-length checks."
+        "q": "Is it useful for forms and social posts?",
+        "a": "Yes. It is helpful when you need to stay inside character limits for forms, ads, titles, and social copy."
       }
     ],
+    "howTo": {
+      "lead": "Paste the text, click Count Text, then use the totals that matter for your limit.",
+      "steps": [
+        "Paste or type the text you want to measure.",
+        "Click Count Text to calculate characters, words, lines, paragraphs, and sentences.",
+        "Check the exact count you need before posting, submitting, or shortening the text."
+      ]
+    },
+    "useCases": {
+      "lead": "People usually open this when a form or platform tells them to stay under a limit.",
+      "items": [
+        "Check page titles, meta descriptions, captions, and ad copy.",
+        "Review product descriptions or short-form content before publishing.",
+        "Measure writing blocks when a client or CMS sets a character cap."
+      ]
+    },
     "related": [
       "remove-extra-spaces",
       "word-counter",
@@ -324,7 +488,7 @@
     "status": "live",
     "description": "Beautify JSON for easier reading, debugging, and review.",
     "name": "Json Formatter",
-    "intro": "This free Json Formatter tool helps you clean, format, and transform text directly in your browser.",
+    "intro": "Paste raw or minified JSON to format it with indentation and make nested data easier to read.",
     "keywords": [
       "json formatter",
       "json formatter online",
@@ -332,14 +496,30 @@
     ],
     "faq": [
       {
-        "q": "What does the Json Formatter tool do?",
-        "a": "It helps you clean or transform text using the json formatter function."
+        "q": "What happens if the JSON is invalid?",
+        "a": "The tool shows an error message instead of formatting the input, so you can fix the broken part first."
       },
       {
-        "q": "Is the Json Formatter tool free to use?",
-        "a": "Yes. You can use it online for free."
+        "q": "Does it support arrays and nested objects?",
+        "a": "Yes. Any valid JSON value, including arrays and nested objects, can be formatted."
       }
     ],
+    "howTo": {
+      "lead": "Paste the JSON, click Format JSON, then copy the formatted result or fix the error.",
+      "steps": [
+        "Paste raw or minified JSON into the input panel.",
+        "Click Format JSON to validate the syntax and apply indentation.",
+        "Copy the formatted output into your editor, ticket, or documentation."
+      ]
+    },
+    "useCases": {
+      "lead": "Use it when JSON is valid but too dense to read comfortably.",
+      "items": [
+        "Beautify API responses before inspecting nested values.",
+        "Clean config payloads or event samples before sharing them with a team.",
+        "Prepare readable JSON for code reviews, tickets, and internal docs."
+      ]
+    },
     "related": [
       "regex-tester",
       "base64-encoder",
@@ -370,6 +550,22 @@
         "a": "Yes. Validation and formatting happen client-side in your browser."
       }
     ],
+    "howTo": {
+      "lead": "Paste the JSON, click Validate JSON, then read either the formatted result or the error.",
+      "steps": [
+        "Paste the JSON you want to validate into the input panel.",
+        "Click Validate JSON to check the syntax.",
+        "Use the formatted output if it is valid, or fix the error shown in the status message."
+      ]
+    },
+    "useCases": {
+      "lead": "This is useful when you are not sure whether the JSON is valid yet.",
+      "items": [
+        "Check API payloads before sending them to a request or test tool.",
+        "Validate config snippets before committing them or sharing them.",
+        "Catch syntax mistakes like missing quotes, commas, or braces."
+      ]
+    },
     "related": [
       "json-formatter",
       "regex-tester",
@@ -383,7 +579,7 @@
     "status": "live",
     "description": "Test regular expressions in a focused browser workflow.",
     "name": "Regex Tester",
-    "intro": "This free Regex Tester tool helps you clean, format, and transform text directly in your browser.",
+    "intro": "Test a pattern against sample text, add flags, and review each match with its index.",
     "keywords": [
       "regex tester",
       "regex tester online",
@@ -391,14 +587,30 @@
     ],
     "faq": [
       {
-        "q": "What does the Regex Tester tool do?",
-        "a": "It helps you clean or transform text using the regex tester function."
+        "q": "Do I need to add the global flag myself?",
+        "a": "No. The tool adds the g flag automatically when needed so it can list every match."
       },
       {
-        "q": "Is the Regex Tester tool free to use?",
-        "a": "Yes. You can use it online for free."
+        "q": "What happens if the pattern is invalid?",
+        "a": "You get a clear error message instead of a partial result."
       }
     ],
+    "howTo": {
+      "lead": "Enter the pattern and flags, paste sample text, then inspect the matches.",
+      "steps": [
+        "Type the regex pattern you want to test and add any optional flags.",
+        "Paste the sample text you want to search.",
+        "Click Test Regex to review each match, its index, and any errors."
+      ]
+    },
+    "useCases": {
+      "lead": "Use it when you want to prove a pattern works before you move it into code.",
+      "items": [
+        "Test validation patterns against real sample strings.",
+        "Inspect matches from logs, exports, or copied text blocks.",
+        "Compare how different flags change the result before you ship a regex."
+      ]
+    },
     "related": [
       "json-formatter",
       "base64-encoder",
@@ -420,14 +632,30 @@
     ],
     "faq": [
       {
-        "q": "What does the Base64 Encoder tool do?",
-        "a": "It converts plain text into Base64 and decodes Base64 strings back into readable text for quick checks."
+        "q": "Can it both encode and decode?",
+        "a": "Yes. You can convert plain text to Base64 or decode a Base64 string back into readable text."
       },
       {
-        "q": "Is the Base64 Encoder tool free to use?",
-        "a": "Yes. You can run quick encode and decode checks directly in the browser."
+        "q": "Is the conversion done in the browser?",
+        "a": "Yes. It runs in the browser for quick checks without sending the text through a separate app."
       }
     ],
+    "howTo": {
+      "lead": "Paste text or Base64, choose Encode or Decode, then copy the result.",
+      "steps": [
+        "Paste the plain text or Base64 string into the input area.",
+        "Click Encode to convert plain text, or Decode to reverse a Base64 string.",
+        "Copy the result into your test payload, config, or notes."
+      ]
+    },
+    "useCases": {
+      "lead": "Most people use this for quick inspection rather than long-form conversion work.",
+      "items": [
+        "Decode Base64 values from configs, logs, or webhook samples.",
+        "Create Base64 strings for test payloads and debugging.",
+        "Check whether an encoded value turns back into the text you expect."
+      ]
+    },
     "related": [
       "json-formatter",
       "regex-tester",
@@ -449,14 +677,30 @@
     ],
     "faq": [
       {
-        "q": "What does the URL Encoder tool do?",
-        "a": "It encodes special characters for safe use in URLs and decodes encoded strings so you can inspect them more easily."
+        "q": "Should I use it for full URLs or parameter values?",
+        "a": "It works for both, but it is especially useful for query parameter values and redirect targets."
       },
       {
-        "q": "Is the URL Encoder tool free to use?",
-        "a": "Yes. It works in the browser for quick QA, debugging, and link-building tasks."
+        "q": "Can I decode an encoded URL here too?",
+        "a": "Yes. Paste the encoded text and use Decode to turn it back into readable text."
       }
     ],
+    "howTo": {
+      "lead": "Paste a URL or parameter value, choose Encode or Decode, then copy the result.",
+      "steps": [
+        "Paste the full URL, parameter value, or encoded string into the input box.",
+        "Click Encode for safe URL encoding, or Decode to inspect readable text again.",
+        "Copy the output into your redirect, test case, or documentation."
+      ]
+    },
+    "useCases": {
+      "lead": "This is most helpful when special characters are breaking a URL or hiding what it contains.",
+      "items": [
+        "Encode query parameters before adding them to links or redirects.",
+        "Decode pasted URLs so you can inspect readable paths and parameters.",
+        "Check already-encoded strings during QA, debugging, or documentation work."
+      ]
+    },
     "related": [
       "json-formatter",
       "regex-tester",
@@ -478,14 +722,30 @@
     ],
     "faq": [
       {
-        "q": "What does the Password Generator tool do?",
-        "a": "It creates random passwords and lets you choose whether to include uppercase letters, lowercase letters, numbers, and symbols."
+        "q": "Can I control the password length and character types?",
+        "a": "Yes. You can choose the length and turn uppercase, lowercase, numbers, and symbols on or off."
       },
       {
-        "q": "Is the Password Generator tool free to use?",
-        "a": "Yes. You can generate passwords in the browser without signing up."
+        "q": "Is it useful for temporary credentials and testing?",
+        "a": "Yes. It is useful for QA accounts, staging users, demos, and quick credential setup."
       }
     ],
+    "howTo": {
+      "lead": "Choose the length and character sets, generate a password, then copy it.",
+      "steps": [
+        "Set the password length and select the character types you want included.",
+        "Click Generate Password to create a new random value.",
+        "Copy the result into your password manager, test account, or setup flow."
+      ]
+    },
+    "useCases": {
+      "lead": "This is for times when you need a strong password quickly, not a full credential workflow.",
+      "items": [
+        "Create temporary credentials for QA or staging accounts.",
+        "Generate sample passwords for signup and reset flow testing.",
+        "Produce one-off strong passwords without leaving the browser."
+      ]
+    },
     "related": [
       "json-formatter",
       "regex-tester",
@@ -507,14 +767,30 @@
     ],
     "faq": [
       {
-        "q": "What does the UUID Generator tool do?",
-        "a": "It creates UUID v4 values in batches so you can copy fresh identifiers into development or testing workflows."
+        "q": "Can I generate more than one UUID at a time?",
+        "a": "Yes. You can choose how many UUID v4 values to generate in one run."
       },
       {
-        "q": "Is the UUID Generator tool free to use?",
-        "a": "Yes. You can generate as many UUIDs as you need in the browser."
+        "q": "What are these UUIDs good for?",
+        "a": "They are useful for fixtures, API payloads, database seeds, test records, and internal notes."
       }
     ],
+    "howTo": {
+      "lead": "Choose how many UUIDs you need, generate them, then copy the list.",
+      "steps": [
+        "Enter the number of UUID v4 values you want to create.",
+        "Click Generate UUIDs to produce the list.",
+        "Copy the generated IDs into your test data, payload, or documentation."
+      ]
+    },
+    "useCases": {
+      "lead": "Use it when you need unique IDs quickly and do not want to open a script or terminal.",
+      "items": [
+        "Generate IDs for fixtures, seeds, and example payloads.",
+        "Create multiple UUIDs for QA scenarios and manual testing.",
+        "Copy fresh IDs into tickets, spreadsheets, or internal docs."
+      ]
+    },
     "related": [
       "json-formatter",
       "regex-tester",
@@ -732,7 +1008,7 @@
     "status": "active",
     "description": "Count the number of lines in your text instantly.",
     "name": "Line Counter",
-    "intro": "Use this free Line Counter tool to quickly count total lines in any text directly in your browser.",
+    "intro": "Count total lines, non-empty lines, and blank lines from pasted text before you clean or reuse it.",
     "keywords": [
       "line counter",
       "count lines online",
@@ -741,14 +1017,30 @@
     ],
     "faq": [
       {
-        "q": "What does the Line Counter tool do?",
-        "a": "It counts how many lines are in your text, including non-empty lines after splitting by line breaks."
+        "q": "Does it count blank lines too?",
+        "a": "Yes. It reports total lines, non-empty lines, and empty lines separately."
       },
       {
-        "q": "Can I use the Line Counter tool for free?",
-        "a": "Yes. You can use it online for free."
+        "q": "What is it useful for?",
+        "a": "It is useful when you need to inspect exports, logs, pasted lists, or blocks of text before cleaning them."
       }
     ],
+    "howTo": {
+      "lead": "Paste the text, count the lines, then use the totals to decide what to clean next.",
+      "steps": [
+        "Paste the text block you want to inspect.",
+        "Click Line Counter to calculate total, non-empty, and empty lines.",
+        "Use the totals to review the text or copy the result into your notes."
+      ]
+    },
+    "useCases": {
+      "lead": "Use it when line count matters more than words or characters.",
+      "items": [
+        "Check exported lists before import or cleanup.",
+        "Count blank rows in copied spreadsheet-style text.",
+        "Inspect logs, datasets, or notes before deduping or trimming them."
+      ]
+    },
     "related": [
       "remove-empty-lines",
       "sentence-counter",
@@ -762,7 +1054,7 @@
     "status": "active",
     "description": "Count sentences in text quickly and easily online.",
     "name": "Sentence Counter",
-    "intro": "Use this free Sentence Counter tool to estimate the number of sentences in your text directly in your browser.",
+    "intro": "Estimate how many sentences are in a draft before editing, summarizing, or checking readability.",
     "keywords": [
       "sentence counter",
       "count sentences online",
@@ -771,14 +1063,30 @@
     ],
     "faq": [
       {
-        "q": "What does the Sentence Counter tool do?",
-        "a": "It estimates the number of sentences in your text by detecting common sentence-ending punctuation."
+        "q": "Is the result exact?",
+        "a": "It is an estimate based on common sentence-ending punctuation, so abbreviations and unusual punctuation can affect the count."
       },
       {
-        "q": "Is the Sentence Counter tool accurate?",
-        "a": "It works well for most normal text, but abbreviations or unusual punctuation may affect the count."
+        "q": "When is this useful?",
+        "a": "It is useful for draft review, readability checks, and quick writing analysis."
       }
     ],
+    "howTo": {
+      "lead": "Paste the draft, count the sentences, then use the estimate for editing or review.",
+      "steps": [
+        "Paste the text you want to analyze.",
+        "Click Sentence Counter to estimate the number of sentences.",
+        "Use the result to review structure, pacing, or readability."
+      ]
+    },
+    "useCases": {
+      "lead": "This helps when you want a quick sentence estimate without opening a writing app.",
+      "items": [
+        "Check draft structure before editing or summarizing.",
+        "Estimate sentence count in essays, emails, or product copy.",
+        "Compare versions of a draft during revisions."
+      ]
+    },
     "related": [
       "line-counter",
       "remove-empty-lines",
@@ -792,7 +1100,7 @@
     "status": "active",
     "description": "Reverse text instantly online, character by character.",
     "name": "Text Reverser",
-    "intro": "Use this free Text Reverser tool to flip your text instantly and reverse character order directly in your browser.",
+    "intro": "Reverse the full character order of a text block when you need a quick transform for testing or playful formatting.",
     "keywords": [
       "text reverser",
       "reverse text online",
@@ -801,14 +1109,30 @@
     ],
     "faq": [
       {
-        "q": "What does the Text Reverser tool do?",
-        "a": "It reverses the order of characters in your text."
+        "q": "Does it reverse words or every character?",
+        "a": "This version reverses every character in the full text block."
       },
       {
-        "q": "Can I reverse text online for free?",
-        "a": "Yes. You can use this Text Reverser tool for free."
+        "q": "When is this useful?",
+        "a": "It is useful for quick testing, puzzle-style formatting, and one-off text transformations."
       }
     ],
+    "howTo": {
+      "lead": "Paste the text, reverse it, then copy the transformed result.",
+      "steps": [
+        "Paste the text you want to reverse.",
+        "Click Text Reverser to flip the character order.",
+        "Copy the reversed output into your test, note, or message."
+      ]
+    },
+    "useCases": {
+      "lead": "This is for quick reverse-text jobs, not long-form editing.",
+      "items": [
+        "Reverse sample strings during testing or debugging.",
+        "Create puzzle-style or novelty text quickly.",
+        "Check how a text block looks when fully reversed."
+      ]
+    },
     "related": [
       "trim-text",
       "line-counter",
@@ -822,7 +1146,7 @@
     "status": "active",
     "description": "Trim leading and trailing spaces from text online.",
     "name": "Trim Text",
-    "intro": "Use this free Trim Text tool to remove leading and trailing whitespace from your text directly in your browser.",
+    "intro": "Remove whitespace from the start and end of the full text block without changing the text in the middle.",
     "keywords": [
       "trim text",
       "remove leading trailing spaces",
@@ -831,14 +1155,30 @@
     ],
     "faq": [
       {
-        "q": "What does the Trim Text tool do?",
-        "a": "It removes unnecessary whitespace from the beginning and end of your text."
+        "q": "Does it trim every line separately?",
+        "a": "No. This version trims only the start and end of the full text block."
       },
       {
-        "q": "Does the Trim Text tool change the text content?",
-        "a": "It only removes leading and trailing whitespace and keeps the main text unchanged."
+        "q": "Does it change the text itself?",
+        "a": "No. It only removes leading and trailing whitespace and keeps the actual content unchanged."
       }
     ],
+    "howTo": {
+      "lead": "Paste the full text block, trim it once, then copy the cleaned result.",
+      "steps": [
+        "Paste the text that has unwanted whitespace at the start or end.",
+        "Click Trim Text to remove the outer whitespace.",
+        "Copy the trimmed block back into your document, field, or message."
+      ]
+    },
+    "useCases": {
+      "lead": "Use it when the full block needs cleanup but each line inside should stay untouched.",
+      "items": [
+        "Trim pasted text before putting it into a single form field.",
+        "Clean copied blocks before saving them in notes or docs.",
+        "Remove accidental leading or trailing whitespace from a text payload."
+      ]
+    },
     "related": [
       "remove-empty-lines",
       "text-reverser",

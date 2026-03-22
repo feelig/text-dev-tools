@@ -107,6 +107,7 @@ function main() {
     unknownStatusButPageExists
   };
 
+  fs.mkdirSync(path.dirname(REPORT_PATH), { recursive: true });
   fs.writeFileSync(REPORT_PATH, JSON.stringify(report, null, 2));
 
   console.log('===== TOOLS SYNC CHECK =====');

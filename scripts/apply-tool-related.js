@@ -36,11 +36,13 @@ function buildRelatedHtml(tool) {
 
   return `
     <section class="related-tools-section" aria-labelledby="related-tools-title">
-      <div class="section-card">
-        <h2 id="related-tools-title">Related Tools</h2>
-        <p>Explore more tools that work well with this page.</p>
-        <div class="related-tools-grid">
+      <div class="container">
+        <div class="section-card">
+          <h2 id="related-tools-title">Related Tools</h2>
+          <p>Explore more tools that work well with this page.</p>
+          <div class="related-tools-grid">
 ${items}
+          </div>
         </div>
       </div>
     </section>`;
@@ -51,6 +53,12 @@ function buildStyleBlock() {
   <style id="related-tools-style">
     .related-tools-section {
       margin-top: 32px;
+    }
+    .section-card {
+      background: #fff;
+      border: 1px solid #d9e2ef;
+      border-radius: 14px;
+      padding: 16px;
     }
     .related-tools-grid {
       display: grid;

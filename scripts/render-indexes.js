@@ -365,7 +365,7 @@ function renderHome() {
 
   return layout({
     title: 'Text Dev Tools - Free Online Text & Developer Tools',
-    description: 'Free online text and developer tools for cleaning, formatting, and converting content.',
+    description: 'Free browser tools for text cleanup, quick counts, JSON formatting, regex testing, and everyday developer tasks.',
     extraHead: `
   <script type="application/ld+json">
   {
@@ -405,8 +405,8 @@ function renderHome() {
   <main>
     <section class="hero">
       <div class="container">
-        <h1>Simple browser tools for text cleanup, quick counts, and developer formatting</h1>
-        <p>Open a tool, paste your input, get the result, and move on. No sign-up, no install, and no extra steps.</p>
+        <h1>Free browser tools for text cleanup, quick counts, and developer formatting</h1>
+        <p>Open a tool, paste your input, get the result, and move on. No sign-up, no install, and no extra steps between you and the answer.</p>
         <div class="button-row">
           <a class="button button-primary" href="#popular-tools">Browse Popular Tools</a>
           <a class="button button-secondary" href="#categories">View Categories</a>
@@ -418,15 +418,15 @@ function renderHome() {
       <div class="container">
         <div class="benefits-grid">
           <div class="card">
-            <h3>Need a quick count?</h3>
-            <p>Use the word and character counters before you submit, publish, or edit copy.</p>
+            <h3>Check words, characters, and lines</h3>
+            <p>Use quick counters before you submit, publish, edit, or hand off text.</p>
           </div>
           <div class="card">
-            <h3>Need cleaner text?</h3>
-            <p>Fix extra spaces, line breaks, case, and repeated lines without opening another app.</p>
+            <h3>Clean text fast</h3>
+            <p>Fix spaces, line breaks, case, and repeated lines without opening another app.</p>
           </div>
           <div class="card">
-            <h3>Need a dev utility?</h3>
+            <h3>Format and test structured text</h3>
             <p>Format JSON, test regex, and encode text with focused browser-side tools.</p>
           </div>
         </div>
@@ -449,13 +449,13 @@ ${popular}
       <div class="container">
         <div class="section-head">
           <h2>Browse by category</h2>
-          <p>Pick the category that matches the job you need to finish.</p>
+          <p>Go straight to the category that matches the job you need to finish.</p>
         </div>
 
         <div class="category-grid">
           <div class="card">
             <h3>Text Tools</h3>
-            <p>Tools for cleaning, counting, converting, and preparing everyday text.</p>
+            <p>Cleanup, count, sort, and convert everyday text in one place.</p>
             <div class="button-row">
               <a class="button button-primary" href="/text-tools/">Browse Text Tools</a>
             </div>
@@ -463,7 +463,7 @@ ${popular}
 
           <div class="card">
             <h3>Developer Tools</h3>
-            <p>Tools for formatting and processing structured text used in technical workflows.</p>
+            <p>Format JSON, test regex, and encode text for common technical workflows.</p>
             <div class="button-row">
               <a class="button button-secondary" href="/developer-tools/">Browse Developer Tools</a>
             </div>
@@ -547,13 +547,13 @@ function renderCategoryPage(categoryKey, pageTitle, pageDescription, heroTitle, 
     </section>
 
     <section class="section">
-      <div class="ad-slot">Category Ad Slot</div>
+      <div class="ad-slot">Quick jump: choose the tool below that matches the job you need to finish.</div>
     </section>
 
     <section class="section">
       <div class="section-head">
-        <h2>Available tools</h2>
-        <p>Browse the fully available tools in this category.</p>
+        <h2>Choose a tool</h2>
+        <p>Pick the live tool that matches the task you need to finish.</p>
       </div>
       <div class="tools-grid">
 ${cards}
@@ -564,12 +564,12 @@ ${cards}
       <div class="card">
         <div class="section-head">
           <h2>About this category</h2>
-          <p>This category page is a simple navigation hub for the live tools currently available on the site.</p>
+          <p>This page groups the live tools in this category so you can get to the right tool faster.</p>
         </div>
         <ul class="info-list">
-          <li>Only completed tools are listed here</li>
+          <li>Only live tools are listed here</li>
           <li>Each tool works directly in the browser</li>
-          <li>Use these pages to jump to the specific tool you need</li>
+          <li>Use this page to jump straight to the exact tool you need</li>
         </ul>
       </div>
     </section>
@@ -596,9 +596,9 @@ fs.writeFileSync(
   renderCategoryPage(
     'text',
     'Text Tools - Free Online Text Cleanup & Formatting Tools',
-    'Browse free online text tools for removing line breaks, removing extra spaces, counting words, converting case, and more.',
+    'Browse free browser-based text tools for removing line breaks, cleaning spaces, counting words, converting case, and related cleanup work.',
     'Text Tools',
-    'Free browser-based tools for cleaning, converting, and preparing text.'
+    'Clean, count, sort, and convert text in your browser without extra steps.'
   ),
   'utf8'
 );
@@ -609,9 +609,9 @@ fs.writeFileSync(
   renderCategoryPage(
     'dev',
     'Developer Tools - Free Online Formatting & Utility Tools',
-    'Browse free online developer tools for formatting JSON, testing regex, encoding text, and handling common browser-based utility tasks.',
+    'Browse free browser-based developer tools for formatting JSON, testing regex, encoding text, and handling common utility tasks.',
     'Developer Tools',
-    'Free browser-based utility tools for formatting, testing, encoding, and handling structured text in technical workflows.'
+    'Format, test, and encode structured text in your browser without extra setup.'
   ),
   'utf8'
 );

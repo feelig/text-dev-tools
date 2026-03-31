@@ -137,6 +137,76 @@ function getExample(tool) {
     };
   }
 
+  if (slug === 'extract-numbers') {
+    return {
+      input: 'Order 15 ships in 2.5 days. Refund amount: -10.',
+      output: '15\\n2.5\\n-10'
+    };
+  }
+
+  if (slug === 'extract-urls') {
+    return {
+      input: 'Docs: https://example.com/docs and backup: http://status.example.net/report',
+      output: 'https://example.com/docs\\nhttp://status.example.net/report'
+    };
+  }
+
+  if (slug === 'extract-emails') {
+    return {
+      input: 'Sales: sales@example.com, Support: help@test.dev',
+      output: 'sales@example.com\\nhelp@test.dev'
+    };
+  }
+
+  if (slug === 'number-lines') {
+    return {
+      input: 'alpha\\nbeta\\ngamma',
+      output: '1. alpha\\n2. beta\\n3. gamma'
+    };
+  }
+
+  if (slug === 'add-quotes') {
+    return {
+      input: 'apple\\nbanana\\ncarrot',
+      output: '"apple"\\n"banana"\\n"carrot"'
+    };
+  }
+
+  if (slug === 'comma-to-newline') {
+    return {
+      input: 'apple, banana, carrot',
+      output: 'apple\\nbanana\\ncarrot'
+    };
+  }
+
+  if (slug === 'newline-to-comma') {
+    return {
+      input: 'apple\\nbanana\\ncarrot',
+      output: 'apple, banana, carrot'
+    };
+  }
+
+  if (slug === 'count-unique-words') {
+    return {
+      input: 'apple banana apple carrot',
+      output: 'apple\\nbanana\\ncarrot'
+    };
+  }
+
+  if (slug === 'text-to-slug') {
+    return {
+      input: 'Spring Launch: New Product Page 2026!',
+      output: 'spring-launch-new-product-page-2026'
+    };
+  }
+
+  if (slug === 'word-frequency') {
+    return {
+      input: 'apple banana apple carrot banana apple',
+      output: 'apple: 3\\nbanana: 2\\ncarrot: 1'
+    };
+  }
+
   if ((tool.category || '').toLowerCase() === 'developer-tools') {
     return {
       input: `Sample input for ${name}`,

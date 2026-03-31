@@ -42,7 +42,15 @@
       "text-sorter",
       "word-counter"
     ],
-    "name": "Remove Line Breaks"
+    "name": "Remove Line Breaks",
+    "primaryCategory": "text-cleanup",
+    "secondaryCategory": "whitespace-cleanup",
+    "tags": [
+      "cleanup",
+      "line breaks",
+      "paragraph",
+      "copy paste"
+    ]
   },
   {
     "slug": "remove-extra-spaces",
@@ -87,6 +95,14 @@
       "word-counter",
       "case-converter",
       "text-sorter"
+    ],
+    "primaryCategory": "text-cleanup",
+    "secondaryCategory": "whitespace-cleanup",
+    "tags": [
+      "cleanup",
+      "spaces",
+      "whitespace",
+      "copy paste"
     ]
   },
   {
@@ -132,6 +148,14 @@
       "remove-extra-spaces",
       "case-converter",
       "text-sorter"
+    ],
+    "primaryCategory": "text-analysis",
+    "secondaryCategory": "counting-metrics",
+    "tags": [
+      "analysis",
+      "word count",
+      "characters",
+      "writing"
     ]
   },
   {
@@ -177,6 +201,14 @@
       "remove-extra-spaces",
       "word-counter",
       "text-sorter"
+    ],
+    "primaryCategory": "text-conversion",
+    "secondaryCategory": "text-formatting",
+    "tags": [
+      "conversion",
+      "case",
+      "uppercase",
+      "lowercase"
     ]
   },
   {
@@ -222,6 +254,14 @@
       "remove-extra-spaces",
       "word-counter",
       "case-converter"
+    ],
+    "primaryCategory": "text-conversion",
+    "secondaryCategory": "list-formatting",
+    "tags": [
+      "conversion",
+      "sorting",
+      "lists",
+      "alphabetical"
     ]
   },
   {
@@ -267,6 +307,14 @@
       "remove-empty-lines",
       "trim-lines",
       "replace-tabs-with-spaces"
+    ],
+    "primaryCategory": "text-cleanup",
+    "secondaryCategory": "list-cleanup",
+    "tags": [
+      "cleanup",
+      "duplicates",
+      "lists",
+      "dedupe"
     ]
   },
   {
@@ -313,6 +361,14 @@
       "duplicate-line-remover",
       "trim-lines",
       "replace-tabs-with-spaces"
+    ],
+    "primaryCategory": "text-cleanup",
+    "secondaryCategory": "whitespace-cleanup",
+    "tags": [
+      "cleanup",
+      "blank lines",
+      "whitespace",
+      "text prep"
     ]
   },
   {
@@ -359,6 +415,14 @@
       "remove-empty-lines",
       "duplicate-line-remover",
       "replace-tabs-with-spaces"
+    ],
+    "primaryCategory": "text-cleanup",
+    "secondaryCategory": "whitespace-cleanup",
+    "tags": [
+      "cleanup",
+      "trim",
+      "line cleanup",
+      "whitespace"
     ]
   },
   {
@@ -405,6 +469,14 @@
       "trim-lines",
       "remove-empty-lines",
       "duplicate-line-remover"
+    ],
+    "primaryCategory": "text-cleanup",
+    "secondaryCategory": "whitespace-cleanup",
+    "tags": [
+      "cleanup",
+      "tabs",
+      "spaces",
+      "formatting"
     ]
   },
   {
@@ -450,6 +522,14 @@
       "remove-extra-spaces",
       "word-counter",
       "case-converter"
+    ],
+    "primaryCategory": "text-analysis",
+    "secondaryCategory": "counting-metrics",
+    "tags": [
+      "analysis",
+      "character count",
+      "length",
+      "writing"
     ]
   },
   {
@@ -479,6 +559,14 @@
       "remove-extra-spaces",
       "word-counter",
       "case-converter"
+    ],
+    "primaryCategory": "text-analysis",
+    "secondaryCategory": "counting-metrics",
+    "tags": [
+      "analysis",
+      "paragraphs",
+      "structure",
+      "writing"
     ]
   },
   {
@@ -524,6 +612,14 @@
       "regex-tester",
       "base64-encoder",
       "url-encoder"
+    ],
+    "primaryCategory": "data-json",
+    "secondaryCategory": "json-validation",
+    "tags": [
+      "json",
+      "formatting",
+      "developer",
+      "data"
     ]
   },
   {
@@ -570,6 +666,14 @@
       "json-formatter",
       "regex-tester",
       "url-encoder"
+    ],
+    "primaryCategory": "data-json",
+    "secondaryCategory": "json-validation",
+    "tags": [
+      "json",
+      "validation",
+      "developer",
+      "data"
     ]
   },
   {
@@ -615,6 +719,14 @@
       "json-formatter",
       "base64-encoder",
       "url-encoder"
+    ],
+    "primaryCategory": "developer-formatting",
+    "secondaryCategory": "escaping-testing",
+    "tags": [
+      "regex",
+      "testing",
+      "developer",
+      "validation"
     ]
   },
   {
@@ -660,6 +772,14 @@
       "json-formatter",
       "regex-tester",
       "url-encoder"
+    ],
+    "primaryCategory": "encoding-ids",
+    "secondaryCategory": "encoding-decoding",
+    "tags": [
+      "encoding",
+      "base64",
+      "developer",
+      "conversion"
     ]
   },
   {
@@ -705,6 +825,14 @@
       "json-formatter",
       "regex-tester",
       "base64-encoder"
+    ],
+    "primaryCategory": "encoding-ids",
+    "secondaryCategory": "encoding-decoding",
+    "tags": [
+      "encoding",
+      "url",
+      "developer",
+      "conversion"
     ]
   },
   {
@@ -750,6 +878,14 @@
       "json-formatter",
       "regex-tester",
       "base64-encoder"
+    ],
+    "primaryCategory": "encoding-ids",
+    "secondaryCategory": "generators",
+    "tags": [
+      "generator",
+      "password",
+      "security",
+      "utility"
     ]
   },
   {
@@ -795,6 +931,14 @@
       "json-formatter",
       "regex-tester",
       "base64-encoder"
+    ],
+    "primaryCategory": "encoding-ids",
+    "secondaryCategory": "generators",
+    "tags": [
+      "generator",
+      "uuid",
+      "ids",
+      "developer"
     ]
   },
   {
@@ -824,6 +968,14 @@
       "json-formatter",
       "regex-tester",
       "base64-encoder"
+    ],
+    "primaryCategory": "time-web",
+    "secondaryCategory": "time-conversion",
+    "tags": [
+      "timestamp",
+      "time",
+      "date",
+      "developer"
     ]
   },
   {
@@ -853,6 +1005,14 @@
       "json-formatter",
       "regex-tester",
       "base64-encoder"
+    ],
+    "primaryCategory": "data-json",
+    "secondaryCategory": "data-conversion",
+    "tags": [
+      "json",
+      "csv",
+      "conversion",
+      "data"
     ]
   },
   {
@@ -882,6 +1042,14 @@
       "json-formatter",
       "regex-tester",
       "base64-encoder"
+    ],
+    "primaryCategory": "data-json",
+    "secondaryCategory": "data-conversion",
+    "tags": [
+      "csv",
+      "json",
+      "conversion",
+      "data"
     ]
   },
   {
@@ -911,6 +1079,14 @@
       "json-formatter",
       "regex-tester",
       "base64-encoder"
+    ],
+    "primaryCategory": "developer-formatting",
+    "secondaryCategory": "escaping-testing",
+    "tags": [
+      "html",
+      "escape",
+      "encoding",
+      "developer"
     ]
   },
   {
@@ -940,6 +1116,14 @@
       "json-formatter",
       "regex-tester",
       "base64-encoder"
+    ],
+    "primaryCategory": "developer-formatting",
+    "secondaryCategory": "escaping-testing",
+    "tags": [
+      "html",
+      "unescape",
+      "encoding",
+      "developer"
     ]
   },
   {
@@ -969,6 +1153,14 @@
       "json-formatter",
       "regex-tester",
       "base64-encoder"
+    ],
+    "primaryCategory": "developer-formatting",
+    "secondaryCategory": "comparison-review",
+    "tags": [
+      "diff",
+      "comparison",
+      "review",
+      "developer"
     ]
   },
   {
@@ -999,6 +1191,14 @@
       "remove-empty-lines",
       "trim-lines",
       "duplicate-line-remover"
+    ],
+    "primaryCategory": "text-cleanup",
+    "secondaryCategory": "whitespace-cleanup",
+    "tags": [
+      "cleanup",
+      "blank lines",
+      "line cleanup",
+      "text prep"
     ]
   },
   {
@@ -1045,6 +1245,14 @@
       "remove-empty-lines",
       "sentence-counter",
       "text-diff"
+    ],
+    "primaryCategory": "text-analysis",
+    "secondaryCategory": "counting-metrics",
+    "tags": [
+      "analysis",
+      "lines",
+      "structure",
+      "metrics"
     ]
   },
   {
@@ -1091,6 +1299,14 @@
       "line-counter",
       "remove-empty-lines",
       "text-diff"
+    ],
+    "primaryCategory": "text-analysis",
+    "secondaryCategory": "counting-metrics",
+    "tags": [
+      "analysis",
+      "sentences",
+      "structure",
+      "metrics"
     ]
   },
   {
@@ -1137,6 +1353,14 @@
       "trim-text",
       "line-counter",
       "remove-empty-lines"
+    ],
+    "primaryCategory": "text-conversion",
+    "secondaryCategory": "text-formatting",
+    "tags": [
+      "conversion",
+      "reverse",
+      "strings",
+      "formatting"
     ]
   },
   {
@@ -1183,6 +1407,555 @@
       "remove-empty-lines",
       "text-reverser",
       "line-counter"
+    ],
+    "primaryCategory": "text-cleanup",
+    "secondaryCategory": "whitespace-cleanup",
+    "tags": [
+      "cleanup",
+      "trim",
+      "whitespace",
+      "copy paste"
+    ]
+  },
+  {
+    "slug": "extract-numbers",
+    "title": "Extract Numbers",
+    "category": "text",
+    "status": "live",
+    "description": "Extract all numbers from text instantly online.",
+    "name": "Extract Numbers",
+    "intro": "Paste text to extract every number and get a clean list of all digits found.",
+    "keywords": [
+      "extract numbers",
+      "extract numbers from text",
+      "extract numbers online",
+      "number extractor"
+    ],
+    "faq": [
+      {
+        "q": "Does it find all numbers including decimals?",
+        "a": "Yes. It extracts whole numbers, decimals, and negative numbers from the text."
+      },
+      {
+        "q": "Will it remove duplicates?",
+        "a": "No. It extracts every occurrence in order, so repeated numbers appear in the list."
+      }
+    ],
+    "howTo": {
+      "lead": "Paste the text, extract numbers, then copy the cleaned list.",
+      "steps": [
+        "Paste the text that contains numbers you need to collect.",
+        "Click Extract Numbers to pull every number from the text.",
+        "Copy the list into your notes, spreadsheet, or workflow."
+      ]
+    },
+    "useCases": {
+      "lead": "Use it when you need to collect all numbers from unstructured text.",
+      "items": [
+        "Pull phone numbers, IDs, and codes from emails or documents.",
+        "Extract price quotes and amounts from pasted text.",
+        "Collect all numbers from logs or data dumps for review."
+      ]
+    },
+    "related": [
+      "extract-urls",
+      "extract-emails",
+      "remove-extra-spaces"
+    ],
+    "primaryCategory": "text-extraction",
+    "secondaryCategory": "structured-extraction",
+    "tags": [
+      "extraction",
+      "numbers",
+      "entities",
+      "data pull"
+    ]
+  },
+  {
+    "slug": "extract-urls",
+    "title": "Extract URLs",
+    "category": "text",
+    "status": "live",
+    "description": "Extract all URLs from text instantly online.",
+    "name": "Extract URLs",
+    "intro": "Paste text to find and list every URL and link reference.",
+    "keywords": [
+      "extract urls",
+      "extract urls from text",
+      "extract links online",
+      "url extractor"
+    ],
+    "faq": [
+      {
+        "q": "Does it find all link types?",
+        "a": "Yes. It extracts http, https, and other common URL patterns from text."
+      },
+      {
+        "q": "When is this useful?",
+        "a": "It is useful when you need to collect links from emails, documents, or chat logs for quick review."
+      }
+    ],
+    "howTo": {
+      "lead": "Paste the text, extract URLs, then copy the link list.",
+      "steps": [
+        "Paste the text or email content that contains multiple links.",
+        "Click Extract URLs to find all web addresses.",
+        "Copy the list for bookmarking, review, or documentation."
+      ]
+    },
+    "useCases": {
+      "lead": "Use it when you need a quick list of all links from unstructured text.",
+      "items": [
+        "Collect links from email threads or chat conversations.",
+        "Extract reference URLs from documents or articles.",
+        "Pull all links from newsletters or pasted content for sharing."
+      ]
+    },
+    "related": [
+      "extract-emails",
+      "extract-numbers",
+      "text-diff"
+    ],
+    "primaryCategory": "text-extraction",
+    "secondaryCategory": "structured-extraction",
+    "tags": [
+      "extraction",
+      "urls",
+      "links",
+      "data pull"
+    ]
+  },
+  {
+    "slug": "extract-emails",
+    "title": "Extract Emails",
+    "category": "text",
+    "status": "live",
+    "description": "Extract all email addresses from text instantly online.",
+    "name": "Extract Emails",
+    "intro": "Paste text to find and list every email address it contains.",
+    "keywords": [
+      "extract emails",
+      "extract emails from text",
+      "extract email addresses",
+      "email extractor online"
+    ],
+    "faq": [
+      {
+        "q": "Does it find all email formats?",
+        "a": "Yes. It extracts standard email addresses and variations with common domains."
+      },
+      {
+        "q": "When is this useful?",
+        "a": "It is useful when collecting contact email addresses from documents, emails, or contact lists."
+      }
+    ],
+    "howTo": {
+      "lead": "Paste the text, extract emails, then copy the email list.",
+      "steps": [
+        "Paste the text, document, or email thread that contains email addresses.",
+        "Click Extract Emails to find all email addresses.",
+        "Copy the list into your contacts, mailing list, or spreadsheet."
+      ]
+    },
+    "useCases": {
+      "lead": "Use it when you need to collect all email addresses from unstructured text.",
+      "items": [
+        "Extract contacts from emails, documents, or exported lists.",
+        "Collect email addresses from websites or documents for outreach.",
+        "Pull all emails from chat logs or conversation threads."
+      ]
+    },
+    "related": [
+      "extract-urls",
+      "extract-numbers",
+      "duplicate-line-remover"
+    ],
+    "primaryCategory": "text-extraction",
+    "secondaryCategory": "structured-extraction",
+    "tags": [
+      "extraction",
+      "emails",
+      "contacts",
+      "data pull"
+    ]
+  },
+  {
+    "slug": "number-lines",
+    "title": "Number Lines",
+    "category": "text",
+    "status": "live",
+    "description": "Add line numbers to every line of text instantly.",
+    "name": "Number Lines",
+    "intro": "Automatically add sequential numbers to the start of each line for referencing and sharing code or lists.",
+    "keywords": [
+      "number lines",
+      "add line numbers",
+      "line numbering tool",
+      "number each line"
+    ],
+    "faq": [
+      {
+        "q": "Does it keep the line content unchanged?",
+        "a": "Yes. It only adds the line number at the start and keeps the rest of each line the same."
+      },
+      {
+        "q": "When is this useful?",
+        "a": "It is useful for code review, error reporting, and discussing specific lines when sharing text."
+      }
+    ],
+    "howTo": {
+      "lead": "Paste the text, number the lines, then copy the numbered result.",
+      "steps": [
+        "Paste the text block you want to number.",
+        "Click Number Lines to add sequential numbers to each line.",
+        "Copy the numbered output for sharing or error discussion."
+      ]
+    },
+    "useCases": {
+      "lead": "Use it when you need to reference specific lines by number during discussion or review.",
+      "items": [
+        "Number code snippets before sharing for code review.",
+        "Add line numbers to logs or error messages for easier reference.",
+        "Create numbered lists from unformatted text for documentation."
+      ]
+    },
+    "related": [
+      "add-quotes",
+      "line-counter",
+      "text-sorter"
+    ],
+    "primaryCategory": "text-conversion",
+    "secondaryCategory": "list-formatting",
+    "tags": [
+      "conversion",
+      "line numbers",
+      "lists",
+      "review"
+    ]
+  },
+  {
+    "slug": "add-quotes",
+    "title": "Add Quotes",
+    "category": "text",
+    "status": "live",
+    "description": "Wrap each line in quotes for lists and data exports.",
+    "name": "Add Quotes",
+    "intro": "Automatically wrap each line in double or single quotes when preparing text for code, SQL, or data formats.",
+    "keywords": [
+      "add quotes",
+      "quote each line",
+      "wrap quotes",
+      "add quotes to text"
+    ],
+    "faq": [
+      {
+        "q": "Can I choose single or double quotes?",
+        "a": "Yes. You can select either double quotes or single quotes for each line."
+      },
+      {
+        "q": "When is this useful?",
+        "a": "It is useful when preparing lists for SQL, arrays in code, or data that needs string literals."
+      }
+    ],
+    "howTo": {
+      "lead": "Paste the list, choose your quote type, then copy the quoted result.",
+      "steps": [
+        "Paste the text with one item per line.",
+        "Choose double or single quotes based on your format needs.",
+        "Click Add Quotes to wrap each line.",
+        "Copy the quoted output into your code or data file."
+      ]
+    },
+    "useCases": {
+      "lead": "Use it when converting simple lists into quoted format for SQL or code.",
+      "items": [
+        "Prepare lists for SQL IN clauses or WHERE conditions.",
+        "Format items as string literals for JavaScript, Python, or other code.",
+        "Create quoted CSV data or other quoted text formats."
+      ]
+    },
+    "related": [
+      "number-lines",
+      "comma-to-newline",
+      "text-sorter"
+    ],
+    "primaryCategory": "text-conversion",
+    "secondaryCategory": "text-formatting",
+    "tags": [
+      "conversion",
+      "quotes",
+      "lists",
+      "code prep"
+    ]
+  },
+  {
+    "slug": "comma-to-newline",
+    "title": "Comma to Newline",
+    "category": "text",
+    "status": "live",
+    "description": "Convert comma-separated items to one per line instantly.",
+    "name": "Comma to Newline",
+    "intro": "Split comma-separated text into separate lines for readable lists and easy comparison.",
+    "keywords": [
+      "comma to newline",
+      "comma separated to lines",
+      "split comma separated",
+      "convert comma to newline"
+    ],
+    "faq": [
+      {
+        "q": "Does it trim spaces around items?",
+        "a": "Yes. Leading and trailing spaces are removed from each item for a clean list."
+      },
+      {
+        "q": "What if items have commas inside them?",
+        "a": "It splits on every comma, so items with internal commas will be split. For complex CSV, use other tools."
+      }
+    ],
+    "howTo": {
+      "lead": "Paste comma-separated text, convert it, then copy the line-separated result.",
+      "steps": [
+        "Paste the comma-separated items.",
+        "Click Comma to Newline to split each item into its own line.",
+        "Copy the clean list into your editor, form, or spreadsheet."
+      ]
+    },
+    "useCases": {
+      "lead": "Use it when you have a single-line list and need each item on its own line.",
+      "items": [
+        "Split csv-style lists into readable vertical lists.",
+        "Convert comma-separated keywords to line-separated format.",
+        "Transform inline tag lists into one-per-line format for easier editing."
+      ]
+    },
+    "related": [
+      "newline-to-comma",
+      "remove-extra-spaces",
+      "text-sorter"
+    ],
+    "primaryCategory": "text-conversion",
+    "secondaryCategory": "list-formatting",
+    "tags": [
+      "conversion",
+      "comma separated",
+      "lists",
+      "formatting"
+    ]
+  },
+  {
+    "slug": "newline-to-comma",
+    "title": "Newline to Comma",
+    "category": "text",
+    "status": "live",
+    "description": "Convert line-separated items to comma-separated format instantly.",
+    "name": "Newline to Comma",
+    "intro": "Combine lines into comma-separated format for CSV, lists, and inline data.",
+    "keywords": [
+      "newline to comma",
+      "lines to comma separated",
+      "join lines with comma",
+      "convert lines to comma"
+    ],
+    "faq": [
+      {
+        "q": "Does it add spaces after commas?",
+        "a": "Yes. Each comma is followed by a space for readability."
+      },
+      {
+        "q": "Does it keep all text the same?",
+        "a": "Yes. It only joins lines with commas and does not remove or change the content."
+      }
+    ],
+    "howTo": {
+      "lead": "Paste line-separated items, convert them, then copy the comma-separated result.",
+      "steps": [
+        "Paste the text with one item per line.",
+        "Click Newline to Comma to join all items into comma-separated format.",
+        "Copy the result into your CSV, list, or inline data field."
+      ]
+    },
+    "useCases": {
+      "lead": "Use it when you need to convert vertical lists into horizontal comma-separated format.",
+      "items": [
+        "Convert line-separated tags into comma-separated format.",
+        "Prepare lists for inline use in SQL, code, or configuration.",
+        "Create CSV-style data from line-based text."
+      ]
+    },
+    "related": [
+      "comma-to-newline",
+      "remove-extra-spaces",
+      "duplicate-line-remover"
+    ],
+    "primaryCategory": "text-conversion",
+    "secondaryCategory": "list-formatting",
+    "tags": [
+      "conversion",
+      "comma separated",
+      "lists",
+      "formatting"
+    ]
+  },
+  {
+    "slug": "count-unique-words",
+    "title": "Count Unique Words",
+    "category": "text",
+    "status": "live",
+    "description": "Count total words and unique words in your text instantly.",
+    "name": "Count Unique Words",
+    "intro": "Analyze text to find how many unique words it contains and compare total vs. distinct word counts.",
+    "keywords": [
+      "count unique words",
+      "unique word counter",
+      "distinct words",
+      "word frequency counter"
+    ],
+    "faq": [
+      {
+        "q": "Is the count case-sensitive?",
+        "a": "No. Upper and lower case versions of the same word are counted as identical."
+      },
+      {
+        "q": "When is this useful?",
+        "a": "It is useful for vocabulary analysis, content review, and understanding text complexity."
+      }
+    ],
+    "howTo": {
+      "lead": "Paste the text, count unique words, then review the results.",
+      "steps": [
+        "Paste the text you want to analyze.",
+        "Click Count Unique Words to calculate total and unique word counts.",
+        "Review the totals to see how repetitive the text is."
+      ]
+    },
+    "useCases": {
+      "lead": "Use it when you want to understand word diversity and vocabulary in text.",
+      "items": [
+        "Check vocabulary richness in essays, articles, or blog posts.",
+        "Analyze how much you repeat certain words in your writing.",
+        "Compare word diversity between different text samples."
+      ]
+    },
+    "related": [
+      "word-counter",
+      "character-counter",
+      "duplicate-line-remover"
+    ],
+    "primaryCategory": "text-analysis",
+    "secondaryCategory": "vocabulary-analysis",
+    "tags": [
+      "analysis",
+      "unique words",
+      "vocabulary",
+      "content review"
+    ]
+  },
+  {
+    "slug": "text-to-slug",
+    "title": "Text to Slug",
+    "category": "dev",
+    "status": "live",
+    "description": "Convert text to URL-friendly slugs for SEO and web development.",
+    "name": "Text to Slug",
+    "intro": "Transform titles, names, and text into URL-friendly slugs for links, file names, and database fields.",
+    "keywords": [
+      "text to slug",
+      "slug generator",
+      "url slug converter",
+      "seo friendly slug"
+    ],
+    "faq": [
+      {
+        "q": "What characters are converted?",
+        "a": "Spaces become hyphens, uppercase letters become lowercase, and special characters are removed."
+      },
+      {
+        "q": "Is this useful for SEO?",
+        "a": "Yes. Clean slugs with keywords help with URL readability and SEO performance."
+      }
+    ],
+    "howTo": {
+      "lead": "Paste the text, convert it to a slug, then copy the result.",
+      "steps": [
+        "Paste the title, name, or text you want to convert.",
+        "Click Text to Slug to generate a clean URL-friendly version.",
+        "Copy the slug into your URL structure, filename, or database field."
+      ]
+    },
+    "useCases": {
+      "lead": "Use it when you need to create clean, readable URLs and slugs.",
+      "items": [
+        "Generate URL slugs from blog post titles for better URLs.",
+        "Create filename-safe slugs from document titles.",
+        "Convert product names and category names to slugs for URLs."
+      ]
+    },
+    "related": [
+      "case-converter",
+      "remove-extra-spaces",
+      "url-encoder"
+    ],
+    "primaryCategory": "time-web",
+    "secondaryCategory": "web-seo",
+    "tags": [
+      "slug",
+      "seo",
+      "urls",
+      "web"
+    ]
+  },
+  {
+    "slug": "word-frequency",
+    "title": "Word Frequency",
+    "category": "text",
+    "status": "live",
+    "description": "Analyze word frequency and show most common words in text.",
+    "name": "Word Frequency",
+    "intro": "Find the most frequently used words in your text to understand key themes and content focus.",
+    "keywords": [
+      "word frequency",
+      "word frequency analyzer",
+      "most common words",
+      "word frequency counter"
+    ],
+    "faq": [
+      {
+        "q": "Does it ignore common words like 'the' and 'and'?",
+        "a": "No. It counts all words. You can review the full list to identify patterns and themes."
+      },
+      {
+        "q": "How is the frequency ranked?",
+        "a": "Words are shown in order from most frequent to least frequent."
+      }
+    ],
+    "howTo": {
+      "lead": "Paste the text, analyze frequency, then review the word list in order.",
+      "steps": [
+        "Paste the text you want to analyze.",
+        "Click Analyze Word Frequency to count and rank all words.",
+        "Review the list to identify key themes and repetitive terms."
+      ]
+    },
+    "useCases": {
+      "lead": "Use it to understand content themes and identify writing patterns.",
+      "items": [
+        "Identify overused words that could be varied.",
+        "Find key themes and topics by analyzing word frequency.",
+        "Check content balance and keyword density for SEO review."
+      ]
+    },
+    "related": [
+      "count-unique-words",
+      "word-counter",
+      "case-converter"
+    ],
+    "primaryCategory": "text-analysis",
+    "secondaryCategory": "vocabulary-analysis",
+    "tags": [
+      "analysis",
+      "word frequency",
+      "keywords",
+      "content review"
     ]
   }
 ]

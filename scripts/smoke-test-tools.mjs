@@ -371,6 +371,127 @@ const tools = [
       }
       await expectText(page, '#statusMessage', 'UUIDs generated successfully.');
     }
+  },
+  {
+    slug: 'extract-numbers',
+    path: '/tools/extract-numbers/',
+    async run(page) {
+      await page.locator('#inputText').fill('Order 15 ships in 2.5 days. Refund amount: -10.');
+      await page.locator('#processBtn').click();
+      await expectValue(page, '#outputText', '15\n2.5\n-10');
+      await expectText(page, '#statusMessage', 'Numbers extracted successfully.');
+      await expectText(page, '#statMatches', '3');
+    }
+  },
+  {
+    slug: 'extract-urls',
+    path: '/tools/extract-urls/',
+    async run(page) {
+      await page.locator('#inputText').fill('Docs: https://example.com/docs and backup: http://status.example.net/report');
+      await page.locator('#processBtn').click();
+      await expectValue(page, '#outputText', 'https://example.com/docs\nhttp://status.example.net/report');
+      await expectText(page, '#statusMessage', 'URLs extracted successfully.');
+      await expectText(page, '#statMatches', '2');
+    }
+  },
+  {
+    slug: 'extract-emails',
+    path: '/tools/extract-emails/',
+    async run(page) {
+      await page.locator('#inputText').fill('Sales: sales@example.com, Support: help@test.dev');
+      await page.locator('#processBtn').click();
+      await expectValue(page, '#outputText', 'sales@example.com\nhelp@test.dev');
+      await expectText(page, '#statusMessage', 'Email addresses extracted successfully.');
+      await expectText(page, '#statMatches', '2');
+    }
+  },
+  {
+    slug: 'number-lines',
+    path: '/tools/number-lines/',
+    async run(page) {
+      await page.locator('#inputText').fill('alpha\nbeta\ngamma');
+      await page.locator('#processBtn').click();
+      await expectValue(page, '#outputText', '1. alpha\n2. beta\n3. gamma');
+      await expectText(page, '#statusMessage', 'Lines numbered successfully.');
+      await expectText(page, '#statLinesProcessed', '3');
+    }
+  },
+  {
+    slug: 'add-quotes',
+    path: '/tools/add-quotes/',
+    async run(page) {
+      await page.locator('#quoteType').selectOption('double');
+      await page.locator('#inputText').fill('apple\nbanana\ncarrot');
+      await page.locator('#processBtn').click();
+      await expectValue(page, '#outputText', '"apple"\n"banana"\n"carrot"');
+      await expectText(page, '#statusMessage', 'Quotes added successfully.');
+      await expectText(page, '#statItems', '3');
+
+      await page.locator('#quoteType').selectOption('single');
+      await page.locator('#processBtn').click();
+      await expectValue(page, '#outputText', "'apple'\n'banana'\n'carrot'");
+    }
+  },
+  {
+    slug: 'comma-to-newline',
+    path: '/tools/comma-to-newline/',
+    async run(page) {
+      await page.locator('#inputText').fill('apple, banana, carrot');
+      await page.locator('#processBtn').click();
+      await expectValue(page, '#outputText', 'apple\nbanana\ncarrot');
+      await expectText(page, '#statusMessage', 'Items split into lines successfully.');
+      await expectText(page, '#statItems', '3');
+    }
+  },
+  {
+    slug: 'newline-to-comma',
+    path: '/tools/newline-to-comma/',
+    async run(page) {
+      await page.locator('#inputText').fill('apple\nbanana\ncarrot');
+      await page.locator('#processBtn').click();
+      await expectValue(page, '#outputText', 'apple, banana, carrot');
+      await expectText(page, '#statusMessage', 'Lines joined successfully.');
+      await expectText(page, '#statItems', '3');
+    }
+  },
+  {
+    slug: 'count-unique-words',
+    path: '/tools/count-unique-words/',
+    async run(page) {
+      await page.locator('#inputText').fill('Apple banana apple carrot banana apple');
+      await page.locator('#processBtn').click();
+      await expectValue(page, '#outputText', 'apple\nbanana\ncarrot');
+      await expectText(page, '#statusMessage', 'Unique word count ready.');
+      await expectText(page, '#statTotalWords', '6');
+      await expectText(page, '#statUniqueWords', '3');
+      await expectText(page, '#statRepeatedWords', '3');
+      await expectText(page, '#statVariety', '50%');
+    }
+  },
+  {
+    slug: 'text-to-slug',
+    path: '/tools/text-to-slug/',
+    async run(page) {
+      await page.locator('#inputText').fill('Spring Launch: New Product Page 2026!');
+      await page.locator('#processBtn').click();
+      await expectValue(page, '#outputText', 'spring-launch-new-product-page-2026');
+      await expectText(page, '#statusMessage', 'Slug created successfully.');
+      await expectText(page, '#statSlugLength', '35');
+    }
+  },
+  {
+    slug: 'word-frequency',
+    path: '/tools/word-frequency/',
+    async run(page) {
+      await page.locator('#inputText').fill('apple banana apple carrot banana apple');
+      await page.locator('#processBtn').click();
+      await expectValue(page, '#outputText', 'apple: 3\nbanana: 2\ncarrot: 1');
+      await expectText(page, '#statusMessage', 'Word frequency analyzed successfully.');
+      await expectText(page, '#statTotalWords', '6');
+      await expectText(page, '#statUniqueWords', '3');
+      await expectText(page, '#statTopWord', 'apple');
+      await expectText(page, '#statTopCount', '3');
+    }
   }
 ];
 

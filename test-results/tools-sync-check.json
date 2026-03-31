@@ -1,18 +1,20 @@
 {
   "summary": {
-    "jsonTools": 29,
-    "pageTools": 29,
+    "jsonTools": 39,
+    "pageTools": 39,
     "missingPagesCount": 0,
     "orphanPagesCount": 0,
     "plannedButPageExistsCount": 0,
     "liveButPageMissingCount": 0,
     "activeButPageMissingCount": 0,
-    "unknownStatusButPageExistsCount": 0
+    "unknownStatusButPageExistsCount": 0,
+    "missingTaxonomyCount": 0
   },
   "missingPages": [],
   "orphanPages": [],
   "plannedButPageExists": [],
   "liveButPageMissing": [],
   "activeButPageMissing": [],
-  "unknownStatusButPageExists": []
+  "unknownStatusButPageExists": [],
+  "missingTaxonomy": []
 }

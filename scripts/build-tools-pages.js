@@ -1,6 +1,7 @@
 const { execSync } = require('child_process');
 
 const steps = [
+  'node scripts/generate-missing-live-tools.js',
   'node scripts/apply-tool-seo.js',
   'node scripts/apply-tool-related.js',
   'node scripts/apply-tool-faq-schema.js',

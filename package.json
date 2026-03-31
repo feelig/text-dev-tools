@@ -2,6 +2,7 @@
   "name": "text-dev-tools",
   "private": true,
   "scripts": {
+    "sync:taxonomy": "node scripts/sync-tool-taxonomy.js",
     "build:tools": "node scripts/build-tools-pages.js",
     "build:indexes": "node scripts/render-indexes.js",
     "build:site": "node scripts/generate-site-pages.js",

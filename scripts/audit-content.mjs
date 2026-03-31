@@ -31,14 +31,14 @@ const pages = [
     slug: 'text-tools',
     path: 'text-tools/index.html',
     type: 'category',
-    expectedRobots: 'noindex,follow',
+    expectedRobots: 'index,follow',
     thinThreshold: 90
   },
   {
     slug: 'developer-tools',
     path: 'developer-tools/index.html',
     type: 'category',
-    expectedRobots: 'noindex,follow',
+    expectedRobots: 'index,follow',
     thinThreshold: 90
   },
   ...tools

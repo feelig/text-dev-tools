@@ -17,6 +17,9 @@ function getJsonTools() {
       slug: item.slug,
       status: item.status || 'unknown',
       title: item.title || '',
+      primaryCategory: item.primaryCategory || '',
+      secondaryCategory: item.secondaryCategory || '',
+      tags: Array.isArray(item.tags) ? item.tags : [],
     }));
 }
 
@@ -51,9 +54,19 @@ function main() {
   const liveButPageMissing = [];
   const activeButPageMissing = [];
   const unknownStatusButPageExists = [];
+  const missingTaxonomy = [];
 
   for (const tool of jsonTools) {
     const hasPage = fileMap.has(tool.slug);
+
+    if (!tool.primaryCategory || !tool.secondaryCategory || !tool.tags.length) {
+      missingTaxonomy.push({
+        slug: tool.slug,
+        primaryCategory: tool.primaryCategory,
+        secondaryCategory: tool.secondaryCategory,
+        tagsCount: tool.tags.length
+      });
+    }
 
     if (!hasPage) {
       missingPages.push({
@@ -97,14 +110,16 @@ function main() {
       plannedButPageExistsCount: plannedButPageExists.length,
       liveButPageMissingCount: liveButPageMissing.length,
       activeButPageMissingCount: activeButPageMissing.length,
-      unknownStatusButPageExistsCount: unknownStatusButPageExists.length
+      unknownStatusButPageExistsCount: unknownStatusButPageExists.length,
+      missingTaxonomyCount: missingTaxonomy.length
     },
     missingPages,
     orphanPages,
     plannedButPageExists,
     liveButPageMissing,
     activeButPageMissing,
-    unknownStatusButPageExists
+    unknownStatusButPageExists,
+    missingTaxonomy
   };
 
   fs.mkdirSync(path.dirname(REPORT_PATH), { recursive: true });
@@ -119,6 +134,7 @@ function main() {
   console.log(`live but page missing: ${report.summary.liveButPageMissingCount}`);
   console.log(`active but page missing: ${report.summary.activeButPageMissingCount}`);
   console.log(`unknown status but page exists: ${report.summary.unknownStatusButPageExistsCount}`);
+  console.log(`missing taxonomy: ${report.summary.missingTaxonomyCount}`);
 
   if (missingPages.length) {
     console.log('\nMissing pages:');
@@ -162,9 +178,16 @@ function main() {
     }
   }
 
+  if (missingTaxonomy.length) {
+    console.log('\nMissing taxonomy:');
+    for (const item of missingTaxonomy) {
+      console.log(`- ${item.slug} [primary=${item.primaryCategory || 'missing'}, secondary=${item.secondaryCategory || 'missing'}, tags=${item.tagsCount}]`);
+    }
+  }
+
   console.log(`\nSaved report: ${REPORT_PATH}`);
 
-  if (missingPages.length || orphanPages.length || liveButPageMissing.length || activeButPageMissing.length) {
+  if (missingPages.length || orphanPages.length || liveButPageMissing.length || activeButPageMissing.length || missingTaxonomy.length) {
     process.exit(1);
   }
 }

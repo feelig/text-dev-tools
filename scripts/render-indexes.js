@@ -11,6 +11,7 @@ const {
 
 const SITE_URL = 'https://extformattools.com';
 const SITE_NAME = 'Text Dev Tools';
+const YANDEX_VERIFICATION_TOKEN = '3b38b8a52f66615d';
 const CURRENT_YEAR = new Date().getFullYear();
 
 function toolFilePath(slug) {
@@ -396,6 +397,7 @@ function layout({ title, description, canonical, body, extraHead = '', robots = 
   <meta property="og:description" content="${escapeHtml(description)}" />
   <meta property="og:url" content="${escapeHtml(canonical)}" />
   <meta property="og:site_name" content="${escapeHtml(SITE_NAME)}" />
+  <meta name="yandex-verification" content="${escapeHtml(YANDEX_VERIFICATION_TOKEN)}" />
   ${extraHead}
   <style>
     :root {

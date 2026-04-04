@@ -8,6 +8,8 @@
     "build:site": "node scripts/generate-site-pages.js",
     "build:sitemap": "node scripts/build-sitemap.js",
     "build": "npm run build:tools && npm run build:indexes && npm run build:site && npm run build:sitemap",
+    "indexnow:submit": "node scripts/submit-indexnow.mjs",
+    "indexnow:submit:all": "node scripts/submit-indexnow.mjs --all",
     "test:content": "node scripts/audit-content.mjs",
     "test:smoke": "node scripts/smoke-test-tools.mjs",
     "test:sync": "node scripts/tools-sync-check.mjs"

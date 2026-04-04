@@ -4,6 +4,7 @@ const path = require('path');
 const root = process.cwd();
 const toolsPath = path.join(root, 'data', 'tools.json');
 const toolsDir = path.join(root, 'tools');
+const SITE_NAME = 'ExtFormatTools';
 
 const tools = JSON.parse(fs.readFileSync(toolsPath, 'utf8'));
 const toolMap = new Map(tools.map((tool) => [tool.slug, tool]));
@@ -337,7 +338,7 @@ function pageTemplate(tool, config) {
 <body>
   <header class="site-header">
     <div class="container">
-      <a class="brand" href="/">Text Dev Tools</a>
+      <a class="brand" href="/">${SITE_NAME}</a>
     </div>
   </header>
 
@@ -399,7 +400,7 @@ ${buildStatsGrid(config.stats || [])}
 
   <footer class="site-footer">
     <div class="container">
-      © 2026 Text Dev Tools
+      © 2026 ${SITE_NAME}
     </div>
   </footer>
 

@@ -2,6 +2,7 @@ const fs = require('fs');
 const path = require('path');
 
 const [, , slug, title, category = 'text'] = process.argv;
+const SITE_NAME = 'ExtFormatTools';
 
 if (!slug || !title) {
   console.log('Usage: node scripts/generate-tool.js <slug> "<Title>" [text|dev]');
@@ -263,7 +264,7 @@ const html = `<!DOCTYPE html>
 <body>
   <header class="site-header">
     <div class="container">
-      <a class="brand" href="/">Text Dev Tools</a>
+      <a class="brand" href="/">${SITE_NAME}</a>
     </div>
   </header>
 
@@ -390,7 +391,7 @@ const html = `<!DOCTYPE html>
 
   <footer class="site-footer">
     <div class="container">
-      © 2026 Text Dev Tools
+      © 2026 ${SITE_NAME}
     </div>
   </footer>
 

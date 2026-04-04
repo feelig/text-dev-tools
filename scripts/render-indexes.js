@@ -10,7 +10,7 @@ const {
 } = require('./tool-taxonomy');
 
 const SITE_URL = 'https://extformattools.com';
-const SITE_NAME = 'Text Dev Tools';
+const SITE_NAME = 'ExtFormatTools';
 const YANDEX_VERIFICATION_TOKEN = '3b38b8a52f66615d';
 const CURRENT_YEAR = new Date().getFullYear();
 
@@ -1054,11 +1054,19 @@ function renderHome() {
   const homeSchemas = [
     {
       '@context': 'https://schema.org',
+      '@type': 'Organization',
+      name: SITE_NAME,
+      url: `${SITE_URL}/`,
+      alternateName: 'extformattools.com'
+    },
+    {
+      '@context': 'https://schema.org',
       '@type': 'WebSite',
       name: SITE_NAME,
       url: `${SITE_URL}/`,
+      alternateName: 'extformattools.com',
       description:
-        'Free browser tools for text cleanup, quick counts, JSON formatting, regex testing, and everyday developer tasks.'
+        'Use ExtFormatTools for browser-based text cleanup, counting, extraction, JSON formatting, regex testing, and quick developer utilities.'
     },
     buildItemListSchema('Live browser tools', `${SITE_URL}/#find-tools`, liveTools),
     {
@@ -1096,9 +1104,9 @@ function renderHome() {
     .join('\n');
 
   return layout({
-    title: 'Text Dev Tools - Free Online Text & Developer Tools',
+    title: 'ExtFormatTools | Free Online Text and Developer Tools',
     description:
-      'Free browser tools for text cleanup, quick counts, JSON formatting, regex testing, and everyday developer tasks.',
+      'Use ExtFormatTools for browser-based text cleanup, counting, extraction, JSON formatting, regex testing, and quick developer utilities.',
     canonical: `${SITE_URL}/`,
     extraHead: homeSchemas,
     body: `
@@ -1117,8 +1125,8 @@ function renderHome() {
   <main>
     <section class="hero">
       <div class="container">
-        <h1>Free browser tools for text cleanup and everyday developer work</h1>
-        <p>Open a tool, paste your input, get the result, and move on. No sign-up, no install, and no extra steps between the task and the answer.</p>
+        <h1>Free online text and developer tools from ${SITE_NAME}</h1>
+        <p>Open a tool, paste your input, get the result, and move on. ${SITE_NAME} keeps text cleanup, extraction, JSON work, regex checks, and quick utility tasks simple in the browser.</p>
         <div class="button-row">
           <a class="button button-primary" href="#find-tools">Find a Tool</a>
           <a class="button button-secondary" href="/text-tools/">Browse Text Tools</a>
@@ -1458,12 +1466,12 @@ fs.writeFileSync(
   renderCategoryPage({
     categoryKey: 'text',
     slug: 'text-tools',
-    pageTitle: 'Text Tools - Free Online Text Cleanup & Formatting Tools',
+    pageTitle: 'Text Tools | Cleanup, Counting, and Extraction Tools | ExtFormatTools',
     pageDescription:
-      'Browse free browser-based text tools for cleaning, counting, converting, and extracting text without changing your existing workflow.',
+      'Browse ExtFormatTools text tools for cleanup, counting, conversion, and extraction tasks in your browser with no install.',
     heroTitle: 'Text Tools',
     heroText:
-      'Clean, count, extract, and convert text in your browser without extra steps. This page now groups tools by task so the site can scale without changing tool URLs.',
+      'Clean, count, extract, and convert text in your browser without extra steps. ExtFormatTools groups related jobs together so you can find the right text tool fast.',
     searchPlaceholder: 'Try: cleanup, counter, whitespace, extract, quote, frequency',
     featuredSlugs: ['word-counter', 'remove-extra-spaces', 'text-sorter', 'duplicate-line-remover'],
     benefitCards: [
@@ -1497,12 +1505,12 @@ fs.writeFileSync(
   renderCategoryPage({
     categoryKey: 'dev',
     slug: 'developer-tools',
-    pageTitle: 'Developer Tools - Free Online Formatting & Utility Tools',
+    pageTitle: 'Developer Tools | JSON, Regex, Encoding, and Utility Tools | ExtFormatTools',
     pageDescription:
-      'Browse free browser-based developer tools for JSON, regex, encoding, IDs, timestamps, and common utility tasks.',
+      'Browse ExtFormatTools developer tools for JSON, regex, encoding, IDs, timestamps, and other quick browser-based utility tasks.',
     heroTitle: 'Developer Tools',
     heroText:
-      'Format, validate, encode, and convert developer-facing text in your browser without extra setup. This page now classifies tools into stable groups for future growth.',
+      'Format, validate, encode, and convert developer-facing text in your browser without extra setup. ExtFormatTools keeps these utility pages organized into stable groups for easier discovery.',
     searchPlaceholder: 'Try: json, encoding, uuid, regex, slug, timestamp',
     featuredSlugs: ['json-formatter', 'json-validator', 'regex-tester', 'base64-encoder'],
     benefitCards: [

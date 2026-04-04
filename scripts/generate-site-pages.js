@@ -4,7 +4,7 @@ const path = require('path');
 const root = process.cwd();
 const publicDir = path.join(root, 'public');
 const SITE_URL = 'https://extformattools.com';
-const SITE_NAME = 'Text Dev Tools';
+const SITE_NAME = 'ExtFormatTools';
 
 function ensureDir(dir) {
   fs.mkdirSync(dir, { recursive: true });
@@ -136,7 +136,7 @@ function pageTemplate({ title, description, canonical, body, robots = 'noindex,f
 <body>
   <header class="site-header">
     <div class="container header-inner">
-      <a class="brand" href="/">Text Dev Tools</a>
+      <a class="brand" href="/">${SITE_NAME}</a>
       <nav class="nav" aria-label="Primary">
         <a href="/">Home</a>
         <a href="/text-tools/">Text Tools</a>
@@ -180,11 +180,11 @@ function pageTemplate({ title, description, canonical, body, robots = 'noindex,f
 const pages = [
   {
     slug: 'about',
-    title: 'About Text Dev Tools',
-    description: 'Learn about Text Dev Tools and the free browser-based text and developer utilities available on the site.',
+    title: 'About ExtFormatTools',
+    description: 'Learn about ExtFormatTools and the free browser-based text and developer utilities available on the site.',
     hero: `
-      <h1>About Text Dev Tools</h1>
-      <p>Text Dev Tools is a growing collection of free browser-based utilities for text cleanup, formatting, conversion, and developer workflows.</p>
+      <h1>About ExtFormatTools</h1>
+      <p>ExtFormatTools is a growing collection of free browser-based utilities for text cleanup, formatting, conversion, extraction, and developer workflows.</p>
     `,
     sections: `
       <div class="content-card">
@@ -206,16 +206,16 @@ const pages = [
   },
   {
     slug: 'privacy',
-    title: 'Privacy Policy',
-    description: 'Read the privacy policy for Text Dev Tools, including general information about browser-based tools, analytics, and third-party advertising.',
+    title: 'Privacy Policy | ExtFormatTools',
+    description: 'Read the privacy policy for ExtFormatTools, including general information about browser-based tools, analytics, and third-party advertising.',
     hero: `
       <h1>Privacy Policy</h1>
-      <p>This page explains the general privacy practices for Text Dev Tools.</p>
+      <p>This page explains the general privacy practices for ExtFormatTools.</p>
     `,
     sections: `
       <div class="content-card">
         <h2>General use</h2>
-        <p>Text Dev Tools provides browser-based utilities. Tool inputs may be processed locally in the browser depending on the tool implementation.</p>
+        <p>ExtFormatTools provides browser-based utilities. Tool inputs may be processed locally in the browser depending on the tool implementation.</p>
       </div>
       <div class="content-card">
         <h2>Analytics and logs</h2>
@@ -237,11 +237,11 @@ const pages = [
   },
   {
     slug: 'terms',
-    title: 'Terms of Use',
-    description: 'Read the terms of use for Text Dev Tools and the general conditions for using the site.',
+    title: 'Terms of Use | ExtFormatTools',
+    description: 'Read the terms of use for ExtFormatTools and the general conditions for using the site.',
     hero: `
       <h1>Terms of Use</h1>
-      <p>These terms describe the general conditions for using Text Dev Tools.</p>
+      <p>These terms describe the general conditions for using ExtFormatTools.</p>
     `,
     sections: `
       <div class="content-card">
@@ -264,10 +264,10 @@ const pages = [
   },
   {
     slug: 'contact',
-    title: 'Contact',
-    description: 'Contact page for Text Dev Tools.',
+    title: 'Contact ExtFormatTools',
+    description: 'Contact page for ExtFormatTools feedback, tool suggestions, and future business inquiries.',
     hero: `
-      <h1>Contact</h1>
+      <h1>Contact ExtFormatTools</h1>
       <p>For general questions, feedback, or tool suggestions, use the contact details published for this site.</p>
     `,
     sections: `

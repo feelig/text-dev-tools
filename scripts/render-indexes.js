@@ -148,16 +148,15 @@ function getSecondaryGroups(primaryCategory, list = liveTools) {
 function toolSearchValue(tool) {
   const primaryMeta = getPrimaryMeta(tool.primaryCategory);
   const secondaryMeta = getSecondaryMeta(tool.secondaryCategory);
+  const searchName = String(tool.name || tool.title || tool.slug || '')
+    .replace(/\s+Tool$/i, '')
+    .trim();
 
   return [
-    tool.title,
-    tool.name,
+    searchName,
     tool.description,
-    tool.intro,
     primaryMeta ? primaryMeta.label : '',
-    secondaryMeta ? secondaryMeta.label : '',
-    ...(Array.isArray(tool.keywords) ? tool.keywords : []),
-    ...(Array.isArray(tool.tags) ? tool.tags : [])
+    secondaryMeta ? secondaryMeta.label : ''
   ]
     .filter(Boolean)
     .join(' ')

@@ -2,122 +2,186 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://extformattools.com/</loc>
-    <lastmod>2026-04-04</lastmod>
+    <lastmod>2026-04-19</lastmod>
   </url>
   <url>
     <loc>https://extformattools.com/text-tools/</loc>
-    <lastmod>2026-04-04</lastmod>
+    <lastmod>2026-04-19</lastmod>
   </url>
   <url>
     <loc>https://extformattools.com/developer-tools/</loc>
-    <lastmod>2026-04-04</lastmod>
+    <lastmod>2026-04-19</lastmod>
   </url>
   <url>
     <loc>https://extformattools.com/tools/remove-line-breaks/</loc>
-    <lastmod>2026-04-04</lastmod>
+    <lastmod>2026-04-19</lastmod>
   </url>
   <url>
     <loc>https://extformattools.com/tools/remove-extra-spaces/</loc>
-    <lastmod>2026-04-04</lastmod>
+    <lastmod>2026-04-19</lastmod>
   </url>
   <url>
     <loc>https://extformattools.com/tools/word-counter/</loc>
-    <lastmod>2026-04-04</lastmod>
+    <lastmod>2026-04-19</lastmod>
   </url>
   <url>
     <loc>https://extformattools.com/tools/case-converter/</loc>
-    <lastmod>2026-04-04</lastmod>
+    <lastmod>2026-04-19</lastmod>
   </url>
   <url>
     <loc>https://extformattools.com/tools/text-sorter/</loc>
-    <lastmod>2026-04-04</lastmod>
+    <lastmod>2026-04-19</lastmod>
   </url>
   <url>
     <loc>https://extformattools.com/tools/duplicate-line-remover/</loc>
-    <lastmod>2026-04-04</lastmod>
+    <lastmod>2026-04-19</lastmod>
   </url>
   <url>
     <loc>https://extformattools.com/tools/remove-empty-lines/</loc>
-    <lastmod>2026-04-04</lastmod>
+    <lastmod>2026-04-19</lastmod>
   </url>
   <url>
     <loc>https://extformattools.com/tools/trim-lines/</loc>
-    <lastmod>2026-04-04</lastmod>
+    <lastmod>2026-04-19</lastmod>
   </url>
   <url>
     <loc>https://extformattools.com/tools/replace-tabs-with-spaces/</loc>
-    <lastmod>2026-04-04</lastmod>
+    <lastmod>2026-04-19</lastmod>
   </url>
   <url>
     <loc>https://extformattools.com/tools/character-counter/</loc>
-    <lastmod>2026-04-04</lastmod>
+    <lastmod>2026-04-19</lastmod>
+  </url>
+  <url>
+    <loc>https://extformattools.com/tools/paragraph-counter/</loc>
+    <lastmod>2026-04-19</lastmod>
   </url>
   <url>
     <loc>https://extformattools.com/tools/json-formatter/</loc>
-    <lastmod>2026-04-04</lastmod>
+    <lastmod>2026-04-19</lastmod>
   </url>
   <url>
     <loc>https://extformattools.com/tools/json-validator/</loc>
-    <lastmod>2026-04-04</lastmod>
+    <lastmod>2026-04-19</lastmod>
   </url>
   <url>
     <loc>https://extformattools.com/tools/regex-tester/</loc>
-    <lastmod>2026-04-04</lastmod>
+    <lastmod>2026-04-19</lastmod>
   </url>
   <url>
     <loc>https://extformattools.com/tools/base64-encoder/</loc>
-    <lastmod>2026-04-04</lastmod>
+    <lastmod>2026-04-19</lastmod>
   </url>
   <url>
     <loc>https://extformattools.com/tools/url-encoder/</loc>
-    <lastmod>2026-04-04</lastmod>
+    <lastmod>2026-04-19</lastmod>
   </url>
   <url>
     <loc>https://extformattools.com/tools/password-generator/</loc>
-    <lastmod>2026-04-04</lastmod>
+    <lastmod>2026-04-19</lastmod>
   </url>
   <url>
     <loc>https://extformattools.com/tools/uuid-generator/</loc>
-    <lastmod>2026-04-04</lastmod>
+    <lastmod>2026-04-19</lastmod>
+  </url>
+  <url>
+    <loc>https://extformattools.com/tools/timestamp-converter/</loc>
+    <lastmod>2026-04-19</lastmod>
+  </url>
+  <url>
+    <loc>https://extformattools.com/tools/json-to-csv/</loc>
+    <lastmod>2026-04-19</lastmod>
+  </url>
+  <url>
+    <loc>https://extformattools.com/tools/csv-to-json/</loc>
+    <lastmod>2026-04-19</lastmod>
+  </url>
+  <url>
+    <loc>https://extformattools.com/tools/html-escape/</loc>
+    <lastmod>2026-04-19</lastmod>
+  </url>
+  <url>
+    <loc>https://extformattools.com/tools/html-unescape/</loc>
+    <lastmod>2026-04-19</lastmod>
+  </url>
+  <url>
+    <loc>https://extformattools.com/tools/text-diff/</loc>
+    <lastmod>2026-04-19</lastmod>
+  </url>
+  <url>
+    <loc>https://extformattools.com/tools/line-counter/</loc>
+    <lastmod>2026-04-19</lastmod>
+  </url>
+  <url>
+    <loc>https://extformattools.com/tools/sentence-counter/</loc>
+    <lastmod>2026-04-19</lastmod>
+  </url>
+  <url>
+    <loc>https://extformattools.com/tools/text-reverser/</loc>
+    <lastmod>2026-04-19</lastmod>
+  </url>
+  <url>
+    <loc>https://extformattools.com/tools/trim-text/</loc>
+    <lastmod>2026-04-19</lastmod>
   </url>
   <url>
     <loc>https://extformattools.com/tools/extract-numbers/</loc>
-    <lastmod>2026-04-04</lastmod>
+    <lastmod>2026-04-19</lastmod>
   </url>
   <url>
     <loc>https://extformattools.com/tools/extract-urls/</loc>
-    <lastmod>2026-04-04</lastmod>
+    <lastmod>2026-04-19</lastmod>
   </url>
   <url>
     <loc>https://extformattools.com/tools/extract-emails/</loc>
-    <lastmod>2026-04-04</lastmod>
+    <lastmod>2026-04-19</lastmod>
   </url>
   <url>
     <loc>https://extformattools.com/tools/number-lines/</loc>
-    <lastmod>2026-04-04</lastmod>
+    <lastmod>2026-04-19</lastmod>
   </url>
   <url>
     <loc>https://extformattools.com/tools/add-quotes/</loc>
-    <lastmod>2026-04-04</lastmod>
+    <lastmod>2026-04-19</lastmod>
   </url>
   <url>
     <loc>https://extformattools.com/tools/comma-to-newline/</loc>
-    <lastmod>2026-04-04</lastmod>
+    <lastmod>2026-04-19</lastmod>
   </url>
   <url>
     <loc>https://extformattools.com/tools/newline-to-comma/</loc>
-    <lastmod>2026-04-04</lastmod>
+    <lastmod>2026-04-19</lastmod>
   </url>
   <url>
     <loc>https://extformattools.com/tools/count-unique-words/</loc>
-    <lastmod>2026-04-04</lastmod>
+    <lastmod>2026-04-19</lastmod>
   </url>
   <url>
     <loc>https://extformattools.com/tools/text-to-slug/</loc>
-    <lastmod>2026-04-04</lastmod>
+    <lastmod>2026-04-19</lastmod>
   </url>
   <url>
     <loc>https://extformattools.com/tools/word-frequency/</loc>
-    <lastmod>2026-04-04</lastmod>
+    <lastmod>2026-04-19</lastmod>
+  </url>
+  <url>
+    <loc>https://extformattools.com/tools/extract-phone-numbers/</loc>
+    <lastmod>2026-04-19</lastmod>
+  </url>
+  <url>
+    <loc>https://extformattools.com/tools/extract-hashtags/</loc>
+    <lastmod>2026-04-19</lastmod>
+  </url>
+  <url>
+    <loc>https://extformattools.com/tools/extract-domains/</loc>
+    <lastmod>2026-04-19</lastmod>
+  </url>
+  <url>
+    <loc>https://extformattools.com/tools/json-minify/</loc>
+    <lastmod>2026-04-19</lastmod>
+  </url>
+  <url>
+    <loc>https://extformattools.com/tools/strip-html-tags/</loc>
+    <lastmod>2026-04-19</lastmod>
   </url>
 </urlset>

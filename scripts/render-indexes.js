@@ -13,6 +13,7 @@ const SITE_URL = 'https://extformattools.com';
 const SITE_NAME = 'ExtFormatTools';
 const YANDEX_VERIFICATION_TOKEN = '3b38b8a52f66615d';
 const CURRENT_YEAR = new Date().getFullYear();
+const INDEXABLE_STATUSES = new Set(['live', 'active', 'beta']);
 
 function toolFilePath(slug) {
   return path.join(root, 'tools', slug, 'index.html');
@@ -29,7 +30,10 @@ function normalizeCategory(category = '') {
 }
 
 function isLiveTool(tool) {
-  return normalizeCategory(tool.category) && tool.status === 'live' && hasToolPage(tool);
+  if (!normalizeCategory(tool.category)) return false;
+  if (tool.indexable === false) return false;
+  const status = String(tool.status || '').toLowerCase();
+  return INDEXABLE_STATUSES.has(status) && hasToolPage(tool);
 }
 
 const liveTools = tools.filter(isLiveTool);
@@ -289,7 +293,7 @@ function directoryRootCard(rootKey) {
               <h3>${escapeHtml(rootMeta.label)}</h3>
               <p>${escapeHtml(rootMeta.description)}</p>
             </div>
-            <div class="directory-root-stat">${list.length} live tools</div>
+            <div class="directory-root-stat">${list.length} tools available now</div>
           </div>
           <div class="button-row">
             <a class="button button-primary" href="${escapeHtml(rootMeta.href)}">${escapeHtml(rootMeta.buttonLabel)}</a>
@@ -1067,7 +1071,7 @@ function renderHome() {
       description:
         'Use ExtFormatTools for browser-based text cleanup, counting, extraction, JSON formatting, regex testing, and quick developer utilities.'
     },
-    buildItemListSchema('Live browser tools', `${SITE_URL}/#find-tools`, liveTools),
+    buildItemListSchema('Available browser tools', `${SITE_URL}/#find-tools`, liveTools),
     {
       '@context': 'https://schema.org',
       '@type': 'FAQPage',
@@ -1134,7 +1138,7 @@ function renderHome() {
         <div class="stats-grid">
           <div class="card stat-card">
             <h2>${liveTools.length}</h2>
-            <p>live tools linked from the main site</p>
+            <p>tools linked from the main site</p>
           </div>
           <div class="card stat-card">
             <h2>${textTools.length}</h2>
@@ -1219,7 +1223,7 @@ ${searchSection({
   inputLabel: 'Search tools',
   inputPlaceholder: 'Try: json, counter, whitespace, regex, email, slug',
   toolsList: liveTools,
-  emptyText: 'No live tools matched that search. Try a broader keyword like "text", "json", "cleanup", or "count".'
+  emptyText: 'No tools matched that search. Try a broader keyword like "text", "json", "cleanup", or "count".'
 })}
 
     <section class="section" id="faq">
@@ -1370,7 +1374,7 @@ function renderCategoryPage({
         <div class="stats-grid">
           <div class="card stat-card">
             <h2>${list.length}</h2>
-            <p>live tools in this category</p>
+            <p>tools in this category</p>
           </div>
           <div class="card stat-card">
             <h2>${primaryGroups.length}</h2>

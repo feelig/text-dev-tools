@@ -3,14 +3,14 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-                                                <title>CSV To JSON Online - Convert CSV data into JSON format</title>
-                                                <meta name="description" content="Convert CSV rows into JSON objects so you can inspect imported data or reuse it in API and app workflows. Free browser tool on ExtFormatTools." />
-                                              <link rel="canonical" href="https://extformattools.com/tools/csv-to-json/" />
-                                <meta name="robots" content="noindex,follow" />
-                                                <meta property="og:title" content="CSV To JSON Online - Convert CSV data into JSON format" />
-                                                <meta property="og:description" content="Convert CSV rows into JSON objects so you can inspect imported data or reuse it in API and app workflows. Free browser tool on ExtFormatTools." />
-                                              <meta property="og:url" content="https://extformattools.com/tools/csv-to-json/" />
-    <meta property="og:site_name" content="ExtFormatTools" />
+  <title>CSV To JSON Online - Convert CSV data into JSON format</title>
+  <meta name="description" content="Convert CSV rows into JSON objects so you can inspect imported data or reuse it in API and app workflows. Free browser tool on ExtFormatTools." />
+  <link rel="canonical" href="https://extformattools.com/tools/csv-to-json/" />
+  <meta name="robots" content="index,follow" />
+  <meta property="og:title" content="CSV To JSON Online - Convert CSV data into JSON format" />
+  <meta property="og:description" content="Convert CSV rows into JSON objects so you can inspect imported data or reuse it in API and app workflows. Free browser tool on ExtFormatTools." />
+  <meta property="og:url" content="https://extformattools.com/tools/csv-to-json/" />
+  <meta property="og:site_name" content="ExtFormatTools" />
   <meta property="og:type" content="website" />
   <style>
     :root {
@@ -297,8 +297,7 @@
       color: #5f6f86;
     }
   </style>
-  
-  
+
 
   <style id="tool-intro-style">
     .tool-intro {
@@ -373,46 +372,8 @@
       font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
     }
   </style>
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
+
+
   <script id="tool-webpage-schema" type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -468,7 +429,7 @@
       <h1>CSV to JSON Converter</h1>
       <p class="tool-intro">Convert CSV rows into JSON objects so you can inspect imported data or reuse it in API and app workflows.</p>
       <p>
-        Use this free online csv to json converter tool to process your text quickly and cleanly.
+        Paste CSV with headers and convert each row into a formatted JSON object.
       </p>
     </section>
 
@@ -483,7 +444,7 @@
             </div>
             <textarea id="inputText" placeholder="Paste your text here..."></textarea>
             <div class="actions">
-              <button class="btn-primary" id="processBtn">Process</button>
+              <button class="btn-primary" id="processBtn">Convert to JSON</button>
               <button class="btn-secondary" id="sampleBtn">Load Example</button>
               <button class="btn-secondary" id="clearBtn">Clear</button>
             </div>
@@ -496,7 +457,7 @@
           <div class="panel">
             <div class="panel-header">
               <h2>Output</h2>
-              <p>Your processed result</p>
+              <p>Formatted JSON array</p>
             </div>
             <textarea id="outputText" placeholder="Your result will appear here..."></textarea>
             <div class="actions">
@@ -514,20 +475,20 @@
       <div class="card content-section">
         <h2>How it works</h2>
         <p>
-          This tool lets users transform text quickly in the browser without sign-up or installation.
+          The first CSV row becomes the JSON object keys, and each following row becomes one object.
         </p>
         <p>
-          Replace the processing logic and supporting content for each specific tool while keeping the same page structure.
+          Quoted fields, commas inside quoted values, and escaped quotes are handled in the browser before formatting the result.
         </p>
       </div>
 
       <div class="card content-section">
         <h2>Common use cases</h2>
         <ul>
-          <li>Clean or normalize pasted text</li>
-          <li>Prepare content for forms, spreadsheets, or CMS editors</li>
-          <li>Transform text before sending to AI tools</li>
-          <li>Improve copy and paste workflows</li>
+          <li>Convert spreadsheet exports into JSON fixtures</li>
+          <li>Inspect imported CSV data before using it in scripts or APIs</li>
+          <li>Prepare small datasets for documentation or examples</li>
+          <li>Move table-shaped data into app or testing workflows</li>
         </ul>
       </div>
 
@@ -537,7 +498,7 @@
         <div class="faq-item">
           <h3>What does csv to json converter do?</h3>
           <p>
-            It processes your pasted text directly in the browser and returns the transformed result instantly.
+            It turns a CSV header row and data rows into a formatted JSON array of objects.
           </p>
         </div>
 
@@ -551,7 +512,7 @@
         <div class="faq-item">
           <h3>Does my text leave my browser?</h3>
           <p>
-            In this static version, text is processed in the browser using client-side JavaScript.
+            No. The conversion is handled locally in this static page using client-side JavaScript.
           </p>
         </div>
       </div>
@@ -579,11 +540,11 @@
       <div class="container">
         <div class="section-card">
           <h2 id="tool-howto-title">How to use</h2>
-          <p>Paste your input, run the tool, then copy the result you need.</p>
+          <p>Paste CSV with a header row, convert it, then copy the formatted JSON array.</p>
           <ol class="howto-list">
-          <li>Paste or type the text or data you want to work with.</li>
-          <li>Click the main action button to generate the result.</li>
-          <li>Review the output and copy it into your next step.</li>
+          <li>Paste CSV data that includes column names in the first row.</li>
+          <li>Click Convert to JSON to turn each data row into an object.</li>
+          <li>Review the formatted JSON and copy it into your API mock, app, or documentation.</li>
           </ol>
         </div>
       </div>
@@ -593,11 +554,11 @@
       <div class="container">
         <div class="section-card">
           <h2 id="tool-use-cases-title">Use cases</h2>
-          <p>Use this when you need a quick browser-side check before moving data into code or docs.</p>
+          <p>Use it when table-shaped data needs to move into a JSON workflow.</p>
           <ul class="use-cases-list">
-          <li>Clean up developer input before using CSV to JSON in debugging or implementation work.</li>
-          <li>Speed up routine formatting, conversion, or validation tasks directly in the browser.</li>
-          <li>Prepare data for copying into documentation, code comments, tickets, or internal tools.</li>
+          <li>Convert spreadsheet exports into objects for prototypes or fixtures.</li>
+          <li>Inspect imported CSV data before using it in an API or script.</li>
+          <li>Prepare small datasets for documentation, examples, or app testing.</li>
           </ul>
         </div>
       </div>
@@ -655,8 +616,67 @@
       outputLines.textContent = `${countLines(outputText.value)} lines`;
     }
 
+    function parseCsv(text) {
+      const rows = [];
+      let row = [];
+      let field = '';
+      let inQuotes = false;
+
+      for (let i = 0; i < text.length; i++) {
+        const char = text[i];
+        const next = text[i + 1];
+
+        if (char === '"') {
+          if (inQuotes && next === '"') {
+            field += '"';
+            i++;
+          } else {
+            inQuotes = !inQuotes;
+          }
+        } else if (char === ',' && !inQuotes) {
+          row.push(field);
+          field = '';
+        } else if ((char === '\n' || char === '\r') && !inQuotes) {
+          row.push(field);
+          rows.push(row);
+          row = [];
+          field = '';
+          if (char === '\r' && next === '\n') i++;
+        } else {
+          field += char;
+        }
+      }
+
+      if (inQuotes) {
+        throw new Error('CSV has an unterminated quoted field.');
+      }
+
+      row.push(field);
+      rows.push(row);
+
+      return rows.filter(cells => cells.some(cell => cell.trim() !== ''));
+    }
+
     function processText(text) {
-      return text;
+      const rows = parseCsv(text);
+
+      if (rows.length < 2) {
+        throw new Error('Please include a header row and at least one data row.');
+      }
+
+      const headers = rows[0].map(header => header.trim());
+      if (headers.some(header => !header)) {
+        throw new Error('CSV headers cannot be empty.');
+      }
+
+      const objects = rows.slice(1).map(cells => {
+        return headers.reduce((record, header, index) => {
+          record[header] = cells[index] ?? '';
+          return record;
+        }, {});
+      });
+
+      return JSON.stringify(objects, null, 2);
     }
 
     function setStatus(message, isSuccess = false) {
@@ -666,20 +686,28 @@
 
     processBtn.addEventListener('click', () => {
       const source = inputText.value;
-      const result = processText(source);
-      outputText.value = result;
 
       if (!source.trim()) {
+        outputText.value = '';
         setStatus('Please paste some text first.');
-      } else {
-        setStatus('Processed successfully.', true);
+        updateStats();
+        return;
+      }
+
+      try {
+        const result = processText(source);
+        outputText.value = result;
+        setStatus('CSV converted to JSON successfully.', true);
+      } catch (error) {
+        outputText.value = '';
+        setStatus(error.message);
       }
 
       updateStats();
     });
 
     sampleBtn.addEventListener('click', () => {
-      inputText.value = 'Sample text goes here. Replace this with a better example for each tool.';
+      inputText.value = 'name,age,city\nAlice,28,Seattle\nBob,35,Toronto';
       outputText.value = '';
       setStatus('Example text loaded.');
       updateStats();

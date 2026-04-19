@@ -246,6 +246,21 @@ const TOOL_TAXONOMY = {
     secondaryCategory: 'structured-extraction',
     tags: ['extraction', 'emails', 'contacts', 'data pull']
   },
+  'extract-phone-numbers': {
+    primaryCategory: 'text-extraction',
+    secondaryCategory: 'structured-extraction',
+    tags: ['extraction', 'phone numbers', 'contacts', 'data pull']
+  },
+  'extract-hashtags': {
+    primaryCategory: 'text-extraction',
+    secondaryCategory: 'structured-extraction',
+    tags: ['extraction', 'hashtags', 'social', 'data pull']
+  },
+  'extract-domains': {
+    primaryCategory: 'text-extraction',
+    secondaryCategory: 'structured-extraction',
+    tags: ['extraction', 'domains', 'urls', 'data pull']
+  },
   'json-formatter': {
     primaryCategory: 'data-json',
     secondaryCategory: 'json-validation',
@@ -255,6 +270,11 @@ const TOOL_TAXONOMY = {
     primaryCategory: 'data-json',
     secondaryCategory: 'json-validation',
     tags: ['json', 'validation', 'developer', 'data']
+  },
+  'json-minify': {
+    primaryCategory: 'data-json',
+    secondaryCategory: 'json-validation',
+    tags: ['json', 'minify', 'developer', 'data']
   },
   'json-to-csv': {
     primaryCategory: 'data-json',
@@ -300,6 +320,11 @@ const TOOL_TAXONOMY = {
     primaryCategory: 'developer-formatting',
     secondaryCategory: 'escaping-testing',
     tags: ['html', 'unescape', 'encoding', 'developer']
+  },
+  'strip-html-tags': {
+    primaryCategory: 'developer-formatting',
+    secondaryCategory: 'escaping-testing',
+    tags: ['html', 'plain text', 'markup', 'developer']
   },
   'text-diff': {
     primaryCategory: 'developer-formatting',

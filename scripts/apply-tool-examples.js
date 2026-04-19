@@ -158,6 +158,27 @@ function getExample(tool) {
     };
   }
 
+  if (slug === 'extract-phone-numbers') {
+    return {
+      input: 'US: +1 (415) 555-0199\\nUK: 020 7946 0958',
+      output: '+1 (415) 555-0199\\n020 7946 0958'
+    };
+  }
+
+  if (slug === 'extract-hashtags') {
+    return {
+      input: 'Campaign copy: #SpringLaunch #ProductUpdate #2026Goals',
+      output: '#SpringLaunch\\n#ProductUpdate\\n#2026Goals'
+    };
+  }
+
+  if (slug === 'extract-domains') {
+    return {
+      input: 'Docs: https://docs.example.com/start and team@example.org',
+      output: 'docs.example.com\\nexample.org'
+    };
+  }
+
   if (slug === 'number-lines') {
     return {
       input: 'alpha\\nbeta\\ngamma',
@@ -204,6 +225,20 @@ function getExample(tool) {
     return {
       input: 'apple banana apple carrot banana apple',
       output: 'apple: 3\\nbanana: 2\\ncarrot: 1'
+    };
+  }
+
+  if (slug === 'json-minify') {
+    return {
+      input: '{\\n  "name": "Alice",\\n  "items": [1, 2],\\n  "ok": true\\n}',
+      output: '{"name":"Alice","items":[1,2],"ok":true}'
+    };
+  }
+
+  if (slug === 'strip-html-tags') {
+    return {
+      input: '<p>Hello <strong>world</strong></p><p>Next line &amp; more.</p>',
+      output: 'Hello world\\nNext line & more.'
     };
   }
 

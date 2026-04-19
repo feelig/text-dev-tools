@@ -3,13 +3,13 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Add Quotes To Text Online - Wrap each line in quotes</title>
-  <meta name="description" content="Automatically wrap each line in double or single quotes when preparing text for code, SQL, or data formats. Free browser tool on ExtFormatTools." />
-  <link rel="canonical" href="https://extformattools.com/tools/add-quotes/" />
+  <title>Phone Number Extractor Online - Extract phone numbers from text</title>
+  <meta name="description" content="Paste messages, documents, or exports to pull phone numbers into a clean list without sorting them by hand. Free browser tool on ExtFormatTools." />
+  <link rel="canonical" href="https://extformattools.com/tools/extract-phone-numbers/" />
   <meta name="robots" content="index,follow" />
-  <meta property="og:title" content="Add Quotes To Text Online - Wrap each line in quotes" />
-  <meta property="og:description" content="Automatically wrap each line in double or single quotes when preparing text for code, SQL, or data formats. Free browser tool on ExtFormatTools." />
-  <meta property="og:url" content="https://extformattools.com/tools/add-quotes/" />
+  <meta property="og:title" content="Phone Number Extractor Online - Extract phone numbers from text" />
+  <meta property="og:description" content="Paste messages, documents, or exports to pull phone numbers into a clean list without sorting them by hand. Free browser tool on ExtFormatTools." />
+  <meta property="og:url" content="https://extformattools.com/tools/extract-phone-numbers/" />
   <meta property="og:site_name" content="ExtFormatTools" />
   <meta property="og:type" content="website" />
   <style>
@@ -352,9 +352,9 @@
 {
   "@context": "https://schema.org",
   "@type": "WebPage",
-  "name": "Add Quotes To Text Online - Wrap each line in quotes",
-  "description": "Automatically wrap each line in double or single quotes when preparing text for code, SQL, or data formats. Free browser tool on ExtFormatTools.",
-  "url": "https://extformattools.com/tools/add-quotes/",
+  "name": "Phone Number Extractor Online - Extract phone numbers from text",
+  "description": "Paste messages, documents, or exports to pull phone numbers into a clean list without sorting them by hand. Free browser tool on ExtFormatTools.",
+  "url": "https://extformattools.com/tools/extract-phone-numbers/",
   "isPartOf": {
     "@type": "WebSite",
     "name": "ExtFormatTools",
@@ -369,18 +369,18 @@
   "mainEntity": [
     {
       "@type": "Question",
-      "name": "Can I choose single or double quotes?",
+      "name": "Does it support international phone numbers?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Yes. You can select either double quotes or single quotes for each line."
+        "text": "Yes. It can detect many common phone-number formats with country codes, spaces, dashes, and parentheses."
       }
     },
     {
       "@type": "Question",
-      "name": "When is this useful?",
+      "name": "Will it keep the original formatting?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "It is useful when preparing lists for SQL, arrays in code, or data that needs string literals."
+        "text": "Yes. The extracted results stay close to the formatting found in your source text."
       }
     }
   ]
@@ -488,13 +488,13 @@
 
   <main class="container">
     <div class="breadcrumb">
-      <a href="/">Home</a> / <a href="/text-tools/">Text Tools</a> / Add Quotes
+      <a href="/">Home</a> / <a href="/text-tools/">Text Tools</a> / Extract Phone Numbers
     </div>
 
     <section class="hero">
-      <h1>Add Quotes</h1>
-      <p class="tool-intro">Automatically wrap each line in double or single quotes when preparing text for code, SQL, or data formats.</p>
-      <p>Wrap each line in quotes for lists and data exports.</p>
+      <h1>Extract Phone Numbers</h1>
+      <p class="tool-intro">Paste messages, documents, or exports to pull phone numbers into a clean list without sorting them by hand.</p>
+      <p>Extract phone numbers from text instantly online.</p>
     </section>
 
     <section class="grid">
@@ -504,19 +504,13 @@
             <div class="panel-header">
               <div>
                 <h2>Input</h2>
-                <p>Paste one item per line before wrapping each line in quotes.</p>
+                <p>Paste text, notes, or exports that contain phone numbers.</p>
               </div>
             </div>
-            <div class="control-row">
-              <label class="field-label" for="quoteType">Quote type</label>
-              <select id="quoteType">
-                <option value="double">Double quotes</option>
-                <option value="single">Single quotes</option>
-              </select>
-            </div>
-            <textarea id="inputText" placeholder="Paste one item per line here..."></textarea>
+
+            <textarea id="inputText" placeholder="Paste text with phone numbers here..."></textarea>
             <div class="actions">
-              <button class="btn-primary" id="processBtn" type="button">Add Quotes</button>
+              <button class="btn-primary" id="processBtn" type="button">Extract Phone Numbers</button>
               <button class="btn-secondary" id="sampleBtn" type="button">Load Example</button>
               <button class="btn-secondary" id="clearBtn" type="button">Clear</button>
             </div>
@@ -530,10 +524,10 @@
             <div class="panel-header">
               <div>
                 <h2>Output</h2>
-                <p>Each non-empty line will be returned as a quoted string.</p>
+                <p>Every detected phone number will be listed on its own line.</p>
               </div>
             </div>
-            <textarea id="outputText" placeholder="Quoted lines will appear here..." readonly></textarea>
+            <textarea id="outputText" placeholder="Extracted phone numbers will appear here..." readonly></textarea>
             <div class="actions">
               <button class="btn-primary" id="copyBtn" type="button">Copy Result</button>
             </div>
@@ -545,8 +539,8 @@
 
               <div class="stats-grid">
                 <div class="stat-card">
-                  <span>Quoted</span>
-                  <strong id="statItems">0</strong>
+                  <span>Matches</span>
+                  <strong id="statMatches">0</strong>
                 </div>
               </div>
           </div>
@@ -561,19 +555,19 @@
           <p>Explore more tools that work well with this page.</p>
           <div class="related-tools-grid">
 
-        <a class="related-tool-card" href="/tools/number-lines/">
-          <strong>Number Lines</strong>
-          <span>Add line numbers to every line of text instantly.</span>
+        <a class="related-tool-card" href="/tools/extract-emails/">
+          <strong>Extract Emails</strong>
+          <span>Extract all email addresses from text instantly online.</span>
         </a>
 
-        <a class="related-tool-card" href="/tools/comma-to-newline/">
-          <strong>Comma to Newline</strong>
-          <span>Convert comma-separated items to one per line instantly.</span>
+        <a class="related-tool-card" href="/tools/extract-numbers/">
+          <strong>Extract Numbers</strong>
+          <span>Extract all numbers from text instantly online.</span>
         </a>
 
-        <a class="related-tool-card" href="/tools/text-sorter/">
-          <strong>Text Sorter</strong>
-          <span>Sort lines of text alphabetically for quick cleanup and organization.</span>
+        <a class="related-tool-card" href="/tools/extract-domains/">
+          <strong>Extract Domains</strong>
+          <span>Extract domain names from text, URLs, and emails instantly online.</span>
         </a>
           </div>
         </div>
@@ -587,13 +581,13 @@
         <div class="faq-list">
 
           <div class="faq-item">
-            <h3>Can I choose single or double quotes?</h3>
-            <p>Yes. You can select either double quotes or single quotes for each line.</p>
+            <h3>Does it support international phone numbers?</h3>
+            <p>Yes. It can detect many common phone-number formats with country codes, spaces, dashes, and parentheses.</p>
           </div>
 
           <div class="faq-item">
-            <h3>When is this useful?</h3>
-            <p>It is useful when preparing lists for SQL, arrays in code, or data that needs string literals.</p>
+            <h3>Will it keep the original formatting?</h3>
+            <p>Yes. The extracted results stay close to the formatting found in your source text.</p>
           </div>
         </div>
       </div>
@@ -603,12 +597,11 @@
       <div class="container">
         <div class="section-card">
           <h2 id="tool-howto-title">How to use</h2>
-          <p>Paste the list, choose your quote type, then copy the quoted result.</p>
+          <p>Paste the source text, extract phone numbers, then copy the clean list.</p>
           <ol class="howto-list">
-          <li>Paste the text with one item per line.</li>
-          <li>Choose double or single quotes based on your format needs.</li>
-          <li>Click Add Quotes to wrap each line.</li>
-          <li>Copy the quoted output into your code or data file.</li>
+          <li>Paste the text that contains phone numbers into the input box.</li>
+          <li>Click Extract Phone Numbers to scan the text for matching values.</li>
+          <li>Copy the extracted list into your CRM, spreadsheet, or document.</li>
           </ol>
         </div>
       </div>
@@ -618,11 +611,11 @@
       <div class="container">
         <div class="section-card">
           <h2 id="tool-use-cases-title">Use cases</h2>
-          <p>Use it when converting simple lists into quoted format for SQL or code.</p>
+          <p>Use it when phone numbers are buried inside long notes, emails, or exported records.</p>
           <ul class="use-cases-list">
-          <li>Prepare lists for SQL IN clauses or WHERE conditions.</li>
-          <li>Format items as string literals for JavaScript, Python, or other code.</li>
-          <li>Create quoted CSV data or other quoted text formats.</li>
+          <li>Pull contact numbers from support logs, emails, or call notes.</li>
+          <li>Extract phone numbers from pasted CRM exports before cleanup.</li>
+          <li>Collect phone numbers from mixed text before importing into another tool.</li>
           </ul>
         </div>
       </div>
@@ -636,11 +629,11 @@
           <div class="tool-example-grid">
             <div class="example-box">
               <h3>Input</h3>
-              <pre>apple\nbanana\ncarrot</pre>
+              <pre>US: +1 (415) 555-0199\nUK: 020 7946 0958</pre>
             </div>
             <div class="example-box">
               <h3>Output</h3>
-              <pre>"apple"\n"banana"\n"carrot"</pre>
+              <pre>+1 (415) 555-0199\n020 7946 0958</pre>
             </div>
           </div>
         </div>
@@ -655,7 +648,7 @@
   </footer>
 
   <script>
-    const pageConfig = {"slug":"add-quotes","sampleText":"apple\nbanana\ncarrot","sampleState":{"quoteType":"double"},"emptyInputMessage":"Paste some text first.","requiresNonWhitespaceInput":true};
+    const pageConfig = {"slug":"extract-phone-numbers","sampleText":"US: +1 (415) 555-0199\nUK: 020 7946 0958\nOffice: +61 2 9374 4000","sampleState":{},"emptyInputMessage":"Paste some text first.","requiresNonWhitespaceInput":true};
 
     const inputText = document.getElementById('inputText');
     const outputText = document.getElementById('outputText');

@@ -10,6 +10,7 @@ const sitemapPaths = [
 ];
 
 const SITE_URL = 'https://extformattools.com';
+const INDEXABLE_STATUSES = new Set(['live', 'active', 'beta']);
 
 const tools = JSON.parse(fs.readFileSync(toolsPath, 'utf8'));
 
@@ -24,7 +25,10 @@ const staticPages = [
 ];
 
 const toolPages = tools
-  .filter(tool => tool.status === 'live' && fs.existsSync(toolFilePath(tool.slug)))
+  .filter(tool => {
+    const status = String(tool.status || '').toLowerCase();
+    return tool.indexable !== false && INDEXABLE_STATUSES.has(status) && fs.existsSync(toolFilePath(tool.slug));
+  })
   .map(tool => ({
     url: `/tools/${tool.slug}/`,
     filePath: toolFilePath(tool.slug)

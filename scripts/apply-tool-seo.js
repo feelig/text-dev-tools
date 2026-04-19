@@ -1,14 +1,14 @@
 const fs = require('fs');
 const path = require('path');
+const { SITE_NAME, buildSeoDescription, buildSeoTitle } = require('./tool-seo-utils');
 
 const root = process.cwd();
 const toolsPath = path.join(root, 'data', 'tools.json');
 const toolsDir = path.join(root, 'tools');
 const SITE_URL = 'https://extformattools.com';
-const SITE_NAME = 'ExtFormatTools';
 
 const tools = JSON.parse(fs.readFileSync(toolsPath, 'utf8'));
-const ACRONYM_WORDS = new Set(['API', 'CSV', 'HTML', 'ID', 'IDs', 'JSON', 'PDF', 'Regex', 'SQL', 'TSV', 'URL', 'URLs', 'UUID']);
+const INDEXABLE_STATUSES = new Set(['live', 'active', 'beta']);
 
 function escapeHtml(str = '') {
   return String(str)
@@ -19,104 +19,9 @@ function escapeHtml(str = '') {
 }
 
 function robotsDirective(tool) {
-  return tool.status === 'live' ? 'index,follow' : 'noindex,follow';
-}
-
-function plainToolName(tool) {
-  return String(tool.name || tool.title || tool.slug || 'Tool').replace(/\s+Tool$/i, '').trim();
-}
-
-function truncate(text, maxLength) {
-  if (text.length <= maxLength) return text;
-  return `${text.slice(0, maxLength - 1).trimEnd()}…`;
-}
-
-function trimWords(text, wordLimit) {
-  const words = text.trim().split(/\s+/);
-  if (words.length <= wordLimit) return text.trim();
-  return `${words.slice(0, wordLimit).join(' ').trim()}`;
-}
-
-function toTitlePhrase(text) {
-  return String(text)
-    .split(/\s+/)
-    .filter(Boolean)
-    .map((word) => {
-      const normalized = word.replace(/[^A-Za-z0-9/-]/g, '');
-      const upper = normalized.toUpperCase();
-      if (ACRONYM_WORDS.has(upper)) {
-        return word.replace(normalized, upper);
-      }
-      if (/^[A-Za-z0-9/-]+$/.test(normalized)) {
-        return word.replace(normalized, normalized.charAt(0).toUpperCase() + normalized.slice(1).toLowerCase());
-      }
-      return word;
-    })
-    .join(' ');
-}
-
-function preferredKeyword(tool) {
-  const keywords = Array.isArray(tool.keywords) ? tool.keywords.filter(Boolean) : [];
-  return (
-    keywords.find((keyword) => /from text|to [a-z]|to csv|to json|to slug|to newline|to comma|line numbers/i.test(keyword)) ||
-    keywords.find((keyword) => /online/i.test(keyword) && keyword.toLowerCase().includes(plainToolName(tool).toLowerCase().split(' ')[0])) ||
-    ''
-  );
-}
-
-function buildTitleHead(tool) {
-  const keyword = preferredKeyword(tool);
-  if (keyword) {
-    return /online/i.test(keyword) ? toTitlePhrase(keyword) : `${toTitlePhrase(keyword)} Online`;
-  }
-
-  const baseName = plainToolName(tool);
-  return /online/i.test(baseName) ? baseName : `${baseName} Online`;
-}
-
-function buildActionClause(tool) {
-  let text = String(tool.description || tool.intro || '').trim().replace(/\.$/, '');
-  if (!text) return '';
-
-  text = text
-    .replace(/\s+instantly online$/i, '')
-    .replace(/\s+online$/i, '')
-    .replace(/^use this tool to\s+/i, '')
-    .split(/\s+(?:for|while|without|before|when)\s+/i)[0]
-    .trim();
-
-  if (!text) return '';
-  return text.charAt(0).toUpperCase() + text.slice(1);
-}
-
-function buildSeoTitle(tool) {
-  if (tool.seoTitle) return tool.seoTitle;
-
-  const head = buildTitleHead(tool);
-  const action = buildActionClause(tool);
-
-  if (!action) return head.length <= 68 ? head : truncate(head, 68);
-
-  let title = `${head} - ${action}`;
-  if (title.length <= 68) return title;
-
-  title = `${head} - ${trimWords(action, 4)}`;
-  if (title.length <= 68) return title;
-
-  title = `${head} - ${trimWords(action, 3)}`;
-  if (title.length <= 68) return title;
-
-  return head.length <= 68 ? head : truncate(head, 68);
-}
-
-function buildSeoDescription(tool) {
-  if (tool.seoDescription) return tool.seoDescription;
-
-  const source = String(tool.intro || tool.description || `Use this free online ${plainToolName(tool)} tool in your browser.`).trim();
-  const withPeriod = /[.!?]$/.test(source) ? source : `${source}.`;
-  const branded = withPeriod.length < 132 ? `${withPeriod} Free browser tool on ${SITE_NAME}.` : withPeriod;
-
-  return truncate(branded, 158);
+  if (tool.indexable === false) return 'noindex,follow';
+  const status = String(tool.status || '').toLowerCase();
+  return INDEXABLE_STATUSES.has(status) ? 'index,follow' : 'noindex,follow';
 }
 
 function upsertTag(html, pattern, replacement, insertAfterPattern = null) {
@@ -152,14 +57,14 @@ for (const tool of tools) {
 
   html = upsertTag(
     html,
-    /<title>[\s\S]*?<\/title>/i,
+    /^[ \t]*<title>[\s\S]*?<\/title>/im,
     `  <title>${title}</title>`,
     /<head[^>]*>/i
   );
 
   if (/<meta\s+name=["']description["']/i.test(html)) {
     html = html.replace(
-      /<meta\s+name=["']description["'][^>]*>/i,
+      /^[ \t]*<meta\s+name=["']description["'][^>]*>/im,
       `  <meta name="description" content="${description}" />`
     );
   } else {
@@ -171,7 +76,7 @@ for (const tool of tools) {
 
   if (/<link\s+rel=["']canonical["']/i.test(html)) {
     html = html.replace(
-      /<link\s+rel=["']canonical["'][^>]*>/i,
+      /^[ \t]*<link\s+rel=["']canonical["'][^>]*>/im,
       `  <link rel="canonical" href="${canonicalUrl}" />`
     );
   } else if (/<meta\s+name=["']description["'][^>]*>/i.test(html)) {
@@ -183,7 +88,7 @@ for (const tool of tools) {
 
   if (/<meta\s+property=["']og:title["']/i.test(html)) {
     html = html.replace(
-      /<meta\s+property=["']og:title["'][^>]*>/i,
+      /^[ \t]*<meta\s+property=["']og:title["'][^>]*>/im,
       `  <meta property="og:title" content="${title}" />`
     );
   } else {
@@ -195,7 +100,7 @@ for (const tool of tools) {
 
   if (/<meta\s+property=["']og:description["']/i.test(html)) {
     html = html.replace(
-      /<meta\s+property=["']og:description["'][^>]*>/i,
+      /^[ \t]*<meta\s+property=["']og:description["'][^>]*>/im,
       `  <meta property="og:description" content="${description}" />`
     );
   } else {
@@ -207,7 +112,7 @@ for (const tool of tools) {
 
   if (/<meta\s+property=["']og:url["']/i.test(html)) {
     html = html.replace(
-      /<meta\s+property=["']og:url["'][^>]*>/i,
+      /^[ \t]*<meta\s+property=["']og:url["'][^>]*>/im,
       `  <meta property="og:url" content="${canonicalUrl}" />`
     );
   } else {
@@ -219,14 +124,14 @@ for (const tool of tools) {
 
   html = upsertTag(
     html,
-    /<meta\s+property=["']og:site_name["'][^>]*>/i,
+    /^[ \t]*<meta\s+property=["']og:site_name["'][^>]*>/im,
     `  <meta property="og:site_name" content="${SITE_NAME}" />`,
     /<meta\s+property=["']og:url["'][^>]*>/i
   );
 
   html = upsertTag(
     html,
-    /<meta\s+name=["']robots["'][^>]*>/i,
+    /^[ \t]*<meta\s+name=["']robots["'][^>]*>/im,
     `  <meta name="robots" content="${robots}" />`,
     /<meta\s+name=["']description["'][^>]*>/i
   );

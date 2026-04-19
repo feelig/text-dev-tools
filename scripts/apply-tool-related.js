@@ -7,6 +7,13 @@ const toolsDir = path.join(root, 'tools');
 
 const tools = JSON.parse(fs.readFileSync(toolsPath, 'utf8'));
 const bySlug = new Map(tools.map(t => [t.slug, t]));
+const INDEXABLE_STATUSES = new Set(['live', 'active', 'beta']);
+
+function isIndexableTool(tool) {
+  if (!tool || tool.indexable === false) return false;
+  const status = String(tool.status || '').toLowerCase();
+  return INDEXABLE_STATUSES.has(status);
+}
 
 function escapeHtml(str = '') {
   return String(str)
@@ -22,7 +29,7 @@ function buildRelatedHtml(tool) {
 
   const items = related
     .map(slug => bySlug.get(slug))
-    .filter(item => item && item.status === 'live')
+    .filter(item => isIndexableTool(item))
     .map(item => {
       const name = escapeHtml(item.name || item.title || item.slug);
       const desc = escapeHtml(item.description || '');

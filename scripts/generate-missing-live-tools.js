@@ -500,6 +500,58 @@ ${buildStatsGrid(config.stats || [])}
       return url.replace(/[),.;!?]+$/g, '');
     }
 
+    function extractPhoneNumberMatches(text) {
+      const candidates = normalizeNewlines(text).match(/(?:\\+?\\d[\\d().\\s-]{5,}\\d)/g) || [];
+      return candidates
+        .map((candidate) => cleanUrlMatch(candidate).trim())
+        .filter(Boolean)
+        .filter((candidate) => {
+          const digits = candidate.replace(/\\D/g, '');
+          if (digits.length < 7 || digits.length > 15) return false;
+          if (/^\\d{4}[-\\/.]\\d{1,2}[-\\/.]\\d{1,2}$/.test(candidate)) return false;
+          return true;
+        });
+    }
+
+    function extractHashtagMatches(text) {
+      const matches = [];
+      const pattern = /(^|[^\\p{L}\\p{N}_])(#[\\p{L}\\p{N}_]+)/gu;
+      for (const match of normalizeNewlines(text).matchAll(pattern)) {
+        matches.push(match[2]);
+      }
+      return matches;
+    }
+
+    function extractDomainMatches(text) {
+      const matches = [];
+      const pattern = /(?:https?:\\/\\/|ftp:\\/\\/)?(?:www\\.)?((?:[a-z0-9](?:[a-z0-9-]{0,61}[a-z0-9])?\\.)+[a-z]{2,})(?::\\d{2,5})?(?:[/?#][^\\s<>"']*)?/gi;
+      for (const match of normalizeNewlines(text).matchAll(pattern)) {
+        const domain = cleanUrlMatch(match[1] || '').toLowerCase();
+        if (domain) {
+          matches.push(domain);
+        }
+      }
+      return matches;
+    }
+
+    function stripHtmlTags(text) {
+      const withoutHiddenContent = normalizeNewlines(text)
+        .replace(/<script[\\s\\S]*?<\\/script>/gi, '')
+        .replace(/<style[\\s\\S]*?<\\/style>/gi, '');
+      const markupWithBreaks = withoutHiddenContent
+        .replace(/<br\\s*\\/?>/gi, '\\n')
+        .replace(/<\\/(p|div|section|article|li|ul|ol|blockquote|h[1-6]|tr)>/gi, '\\n')
+        .replace(/<\\/td>/gi, '\\t');
+      const parser = new DOMParser();
+      const doc = parser.parseFromString(markupWithBreaks, 'text/html');
+      const rawText = (doc.body.textContent || '').replace(/\\u00a0/g, ' ');
+      return normalizeNewlines(rawText)
+        .replace(/[ \\t]+\\n/g, '\\n')
+        .replace(/\\n[ \\t]+/g, '\\n')
+        .replace(/\\n{3,}/g, '\\n\\n')
+        .trim();
+    }
+
     function escapeQuotedLine(line, quoteMode) {
       const escapedBackslashes = line.replace(/\\\\/g, '\\\\\\\\');
       if (quoteMode === 'single') {
@@ -565,6 +617,51 @@ ${buildStatsGrid(config.stats || [])}
             : {
                 output: '',
                 status: 'No email addresses found.',
+                stats: { matches: 0 }
+              };
+        }
+        case 'extract-phone-numbers': {
+          const matches = extractPhoneNumberMatches(source);
+          return matches.length
+            ? {
+                output: matches.join('\\n'),
+                status: 'Phone numbers extracted successfully.',
+                type: 'success',
+                stats: { matches: matches.length }
+              }
+            : {
+                output: '',
+                status: 'No phone numbers found.',
+                stats: { matches: 0 }
+              };
+        }
+        case 'extract-hashtags': {
+          const matches = extractHashtagMatches(source);
+          return matches.length
+            ? {
+                output: matches.join('\\n'),
+                status: 'Hashtags extracted successfully.',
+                type: 'success',
+                stats: { matches: matches.length }
+              }
+            : {
+                output: '',
+                status: 'No hashtags found.',
+                stats: { matches: 0 }
+              };
+        }
+        case 'extract-domains': {
+          const matches = extractDomainMatches(source);
+          return matches.length
+            ? {
+                output: matches.join('\\n'),
+                status: 'Domains extracted successfully.',
+                type: 'success',
+                stats: { matches: matches.length }
+              }
+            : {
+                output: '',
+                status: 'No domains found.',
                 stats: { matches: 0 }
               };
         }
@@ -715,6 +812,33 @@ ${buildStatsGrid(config.stats || [])}
             }
           };
         }
+        case 'json-minify': {
+          try {
+            const parsed = JSON.parse(source);
+            return {
+              output: JSON.stringify(parsed),
+              status: 'JSON minified successfully.',
+              type: 'success'
+            };
+          } catch (error) {
+            throw new Error('Invalid JSON: ' + error.message);
+          }
+        }
+        case 'strip-html-tags': {
+          const tagMatches = normalizeNewlines(source).match(/<[^>]+>/g) || [];
+          if (!tagMatches.length) {
+            return {
+              output: normalizeNewlines(source).trim(),
+              status: 'No HTML tags found. Text returned unchanged.'
+            };
+          }
+
+          return {
+            output: stripHtmlTags(source),
+            status: 'HTML tags removed successfully.',
+            type: 'success'
+          };
+        }
         default:
           return {
             output: normalizeNewlines(source),
@@ -825,6 +949,33 @@ const pageConfigs = {
     sampleText: 'Sales: sales@example.com\nSupport: help@test.dev\nTeam: admin@example.org',
     stats: [{ id: 'statMatches', label: 'Matches', initial: '0' }]
   },
+  'extract-phone-numbers': {
+    processLabel: 'Extract Phone Numbers',
+    inputDescription: 'Paste text, notes, or exports that contain phone numbers.',
+    inputPlaceholder: 'Paste text with phone numbers here...',
+    outputDescription: 'Every detected phone number will be listed on its own line.',
+    outputPlaceholder: 'Extracted phone numbers will appear here...',
+    sampleText: 'US: +1 (415) 555-0199\nUK: 020 7946 0958\nOffice: +61 2 9374 4000',
+    stats: [{ id: 'statMatches', label: 'Matches', initial: '0' }]
+  },
+  'extract-hashtags': {
+    processLabel: 'Extract Hashtags',
+    inputDescription: 'Paste captions, social posts, or notes that include hashtags.',
+    inputPlaceholder: 'Paste text with hashtags here...',
+    outputDescription: 'Each detected hashtag will be listed on its own line.',
+    outputPlaceholder: 'Extracted hashtags will appear here...',
+    sampleText: 'Campaign copy: #SpringLaunch #ProductUpdate #2026Goals',
+    stats: [{ id: 'statMatches', label: 'Matches', initial: '0' }]
+  },
+  'extract-domains': {
+    processLabel: 'Extract Domains',
+    inputDescription: 'Paste text that contains URLs, email addresses, or domain names.',
+    inputPlaceholder: 'Paste text with domains here...',
+    outputDescription: 'Each detected domain will be listed on its own line.',
+    outputPlaceholder: 'Extracted domains will appear here...',
+    sampleText: 'Docs: https://docs.example.com/start\nEmail: team@example.org\nPortal: portal.test.dev/login',
+    stats: [{ id: 'statMatches', label: 'Matches', initial: '0' }]
+  },
   'number-lines': {
     processLabel: 'Number Lines',
     inputDescription: 'Paste text that should be easier to reference line by line.',
@@ -905,6 +1056,22 @@ const pageConfigs = {
       { id: 'statTopWord', label: 'Top Word', initial: '-' },
       { id: 'statTopCount', label: 'Top Count', initial: '0' }
     ]
+  },
+  'json-minify': {
+    processLabel: 'Minify JSON',
+    inputDescription: 'Paste formatted or spaced JSON that should become compact.',
+    inputPlaceholder: 'Paste JSON here...',
+    outputDescription: 'Valid JSON will be returned as a minified single-line string.',
+    outputPlaceholder: 'Minified JSON will appear here...',
+    sampleText: '{\n  "name": "Alice",\n  "items": [1, 2],\n  "ok": true\n}'
+  },
+  'strip-html-tags': {
+    processLabel: 'Strip HTML Tags',
+    inputDescription: 'Paste HTML, embed code, or markup that should become plain text.',
+    inputPlaceholder: 'Paste HTML here...',
+    outputDescription: 'Visible text will be returned without HTML tags.',
+    outputPlaceholder: 'Plain text output will appear here...',
+    sampleText: '<article><h2>Launch update</h2><p>Hello <strong>world</strong></p><p>Next line &amp; more.</p></article>'
   }
 };
 

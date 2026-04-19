@@ -65,6 +65,7 @@ for (const tool of tools) {
 
   html = stripPlaceholderAdSlots(html);
   html = stripDuplicateIntroParagraph(html);
+  html = html.replace(/^[ \t]+$/gm, '');
   html = html.replace(/\n{4,}/g, '\n\n\n');
 
   if (html !== original) {

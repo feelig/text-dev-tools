@@ -430,6 +430,8 @@
     "title": "Replace Tabs With Spaces",
     "category": "text",
     "status": "live",
+    "seoTitle": "Convert Tabs to Spaces Online - Replace tabs with spaces",
+    "seoDescription": "Convert tabs to spaces and replace each tab with four spaces for cleaner formatting in code, TSV text, and pasted content.",
     "description": "Convert every tab character into four spaces for cleaner formatting and consistent alignment.",
     "name": "Replace Tabs With Spaces",
     "intro": "Replace Tabs With Spaces is useful when pasted content, TSV data, or copied code looks uneven between apps. This version converts each tab into four spaces.",
@@ -555,6 +557,22 @@
         "a": "Yes. It works in the browser whenever you need a quick paragraph count."
       }
     ],
+    "howTo": {
+      "lead": "Paste a draft and count its paragraph blocks, words, characters, and lines.",
+      "steps": [
+        "Paste the text you want to review into the input box.",
+        "Click Count Paragraphs to calculate the paragraph and supporting text totals.",
+        "Use the counts to check document structure before editing, publishing, or submitting."
+      ]
+    },
+    "useCases": {
+      "lead": "Use it when document structure matters as much as raw word count.",
+      "items": [
+        "Check essays, articles, and reports before submitting or publishing.",
+        "Review copied text from PDFs or editors where paragraph breaks may have changed.",
+        "Compare draft structure when shortening or expanding long-form copy."
+      ]
+    },
     "related": [
       "remove-extra-spaces",
       "word-counter",
@@ -1038,6 +1056,22 @@
         "a": "Yes. It runs in the browser for quick conversion and inspection work."
       }
     ],
+    "howTo": {
+      "lead": "Paste CSV with a header row, convert it, then copy the formatted JSON array.",
+      "steps": [
+        "Paste CSV data that includes column names in the first row.",
+        "Click Convert to JSON to turn each data row into an object.",
+        "Review the formatted JSON and copy it into your API mock, app, or documentation."
+      ]
+    },
+    "useCases": {
+      "lead": "Use it when table-shaped data needs to move into a JSON workflow.",
+      "items": [
+        "Convert spreadsheet exports into objects for prototypes or fixtures.",
+        "Inspect imported CSV data before using it in an API or script.",
+        "Prepare small datasets for documentation, examples, or app testing."
+      ]
+    },
     "related": [
       "json-formatter",
       "regex-tester",
@@ -1075,6 +1109,22 @@
         "a": "Yes. It works in the browser for quick escaping while writing docs, code samples, or templates."
       }
     ],
+    "howTo": {
+      "lead": "Paste text or markup and convert reserved HTML characters into entities.",
+      "steps": [
+        "Paste the text that needs to display safely inside HTML or documentation.",
+        "Click Escape HTML to replace characters such as angle brackets, ampersands, and quotes.",
+        "Copy the escaped result into your template, docs page, comment, or CMS field."
+      ]
+    },
+    "useCases": {
+      "lead": "Use it when text should be shown literally instead of interpreted as markup.",
+      "items": [
+        "Prepare code samples for HTML documentation or blog posts.",
+        "Escape user-visible snippets before placing them in templates.",
+        "Avoid accidental rendering when sharing markup in tickets or comments."
+      ]
+    },
     "related": [
       "json-formatter",
       "regex-tester",
@@ -1112,6 +1162,22 @@
         "a": "Yes. You can use it in the browser for quick decoding while debugging or editing content."
       }
     ],
+    "howTo": {
+      "lead": "Paste escaped HTML entities and decode them back into readable text.",
+      "steps": [
+        "Paste text that contains entities such as &amp;amp;, &amp;lt;, or &amp;quot;.",
+        "Click Unescape HTML to decode the entities in the browser.",
+        "Copy the readable result for debugging, editing, or review."
+      ]
+    },
+    "useCases": {
+      "lead": "Use it when stored or copied content is hard to read because it has been entity-encoded.",
+      "items": [
+        "Inspect encoded CMS, email, or database content.",
+        "Debug escaped snippets copied from logs, templates, or API payloads.",
+        "Turn encoded examples back into readable markup while reviewing docs."
+      ]
+    },
     "related": [
       "json-formatter",
       "regex-tester",
@@ -1149,6 +1215,22 @@
         "a": "Yes. It runs in the browser for quick review of drafts, config changes, or copied snippets."
       }
     ],
+    "howTo": {
+      "lead": "Paste the original and revised text, then compare them line by line.",
+      "steps": [
+        "Paste the older version into the Original text box.",
+        "Paste the newer version into the Revised text box.",
+        "Click Compare Text to review unchanged, removed, and added lines."
+      ]
+    },
+    "useCases": {
+      "lead": "Use it when you need a quick local comparison without opening a separate diff tool.",
+      "items": [
+        "Compare draft copy, release notes, or config snippets before sharing.",
+        "Spot missing or added lines in text copied from another source.",
+        "Review small changes while writing documentation, tickets, or code comments."
+      ]
+    },
     "related": [
       "json-formatter",
       "regex-tester",
@@ -1168,6 +1250,7 @@
     "title": "Remove Blank Lines",
     "category": "text",
     "status": "active",
+    "indexable": false,
     "description": "Legacy URL for removing empty lines from text.",
     "name": "Remove Blank Lines",
     "intro": "This legacy URL now forwards visitors to Remove Empty Lines so the site has one primary tool for the same job.",
@@ -1956,6 +2039,271 @@
       "word frequency",
       "keywords",
       "content review"
+    ]
+  },
+  {
+    "slug": "extract-phone-numbers",
+    "title": "Extract Phone Numbers",
+    "category": "text",
+    "status": "live",
+    "description": "Extract phone numbers from text instantly online.",
+    "name": "Extract Phone Numbers",
+    "intro": "Paste messages, documents, or exports to pull phone numbers into a clean list without sorting them by hand.",
+    "keywords": [
+      "extract phone numbers",
+      "phone number extractor",
+      "phone number extractor online"
+    ],
+    "faq": [
+      {
+        "q": "Does it support international phone numbers?",
+        "a": "Yes. It can detect many common phone-number formats with country codes, spaces, dashes, and parentheses."
+      },
+      {
+        "q": "Will it keep the original formatting?",
+        "a": "Yes. The extracted results stay close to the formatting found in your source text."
+      }
+    ],
+    "howTo": {
+      "lead": "Paste the source text, extract phone numbers, then copy the clean list.",
+      "steps": [
+        "Paste the text that contains phone numbers into the input box.",
+        "Click Extract Phone Numbers to scan the text for matching values.",
+        "Copy the extracted list into your CRM, spreadsheet, or document."
+      ]
+    },
+    "useCases": {
+      "lead": "Use it when phone numbers are buried inside long notes, emails, or exported records.",
+      "items": [
+        "Pull contact numbers from support logs, emails, or call notes.",
+        "Extract phone numbers from pasted CRM exports before cleanup.",
+        "Collect phone numbers from mixed text before importing into another tool."
+      ]
+    },
+    "related": [
+      "extract-emails",
+      "extract-numbers",
+      "extract-domains"
+    ],
+    "primaryCategory": "text-extraction",
+    "secondaryCategory": "structured-extraction",
+    "tags": [
+      "extraction",
+      "phone numbers",
+      "contacts",
+      "data pull"
+    ]
+  },
+  {
+    "slug": "extract-hashtags",
+    "title": "Extract Hashtags",
+    "category": "text",
+    "status": "live",
+    "description": "Extract hashtags from text instantly online.",
+    "name": "Extract Hashtags",
+    "intro": "Pull hashtags out of captions, campaign drafts, or social exports so you can review and reuse them faster.",
+    "keywords": [
+      "extract hashtags",
+      "hashtag extractor",
+      "hashtag extractor online"
+    ],
+    "faq": [
+      {
+        "q": "Can it extract hashtags with numbers or underscores?",
+        "a": "Yes. It supports common hashtag formats that include letters, numbers, and underscores."
+      },
+      {
+        "q": "Does it work with non-English hashtags?",
+        "a": "Yes. It can detect hashtags built from many Unicode letter and number characters."
+      }
+    ],
+    "howTo": {
+      "lead": "Paste the text, run the extractor, then copy the hashtag list.",
+      "steps": [
+        "Paste the caption, post draft, or exported text into the input box.",
+        "Click Extract Hashtags to pull every hashtag into a vertical list.",
+        "Copy the results for review, reuse, or reporting."
+      ]
+    },
+    "useCases": {
+      "lead": "This is useful when hashtags are mixed into longer social copy and need to be reviewed separately.",
+      "items": [
+        "Pull hashtags from campaign drafts before publishing social posts.",
+        "Review hashtag usage across creator or brand copy.",
+        "Reuse cleaned hashtag sets in content calendars and briefs."
+      ]
+    },
+    "related": [
+      "word-frequency",
+      "text-to-slug",
+      "extract-urls"
+    ],
+    "primaryCategory": "text-extraction",
+    "secondaryCategory": "structured-extraction",
+    "tags": [
+      "extraction",
+      "hashtags",
+      "social",
+      "data pull"
+    ]
+  },
+  {
+    "slug": "extract-domains",
+    "title": "Extract Domains",
+    "category": "text",
+    "status": "live",
+    "description": "Extract domain names from text, URLs, and emails instantly online.",
+    "name": "Extract Domains",
+    "intro": "Find domain names inside pasted URLs, emails, notes, or exports without manually cleaning each entry.",
+    "keywords": [
+      "extract domains",
+      "domain extractor",
+      "extract domain names"
+    ],
+    "faq": [
+      {
+        "q": "Can it pull domains from both URLs and email addresses?",
+        "a": "Yes. It can extract domain names that appear in full links, plain domains, and email addresses."
+      },
+      {
+        "q": "Does it keep paths and query strings?",
+        "a": "No. It returns only the domain name so the result is easier to compare and reuse."
+      }
+    ],
+    "howTo": {
+      "lead": "Paste the source text, extract domains, then copy the cleaned list.",
+      "steps": [
+        "Paste text that contains URLs, email addresses, or plain domains.",
+        "Click Extract Domains to isolate domain names from the rest of the text.",
+        "Copy the output into your spreadsheet, audit, or review workflow."
+      ]
+    },
+    "useCases": {
+      "lead": "Use it when domain names matter more than the surrounding links or email text.",
+      "items": [
+        "Collect referring domains from pasted URLs during link audits.",
+        "Extract website domains from emails or exported contact lists.",
+        "Review domain coverage from notes, reports, or scraped text."
+      ]
+    },
+    "related": [
+      "extract-urls",
+      "extract-emails",
+      "url-encoder"
+    ],
+    "primaryCategory": "text-extraction",
+    "secondaryCategory": "structured-extraction",
+    "tags": [
+      "extraction",
+      "domains",
+      "urls",
+      "data pull"
+    ]
+  },
+  {
+    "slug": "json-minify",
+    "title": "JSON Minifier",
+    "category": "dev",
+    "status": "live",
+    "description": "Minify JSON instantly for APIs, embeds, and payload cleanup.",
+    "name": "JSON Minifier",
+    "intro": "Compress formatted JSON into a compact single-line string when you need smaller payloads or cleaner embedding.",
+    "keywords": [
+      "json minifier",
+      "minify json",
+      "json minify online"
+    ],
+    "faq": [
+      {
+        "q": "Does minifying JSON change the data?",
+        "a": "No. It removes unnecessary whitespace while keeping the same JSON structure and values."
+      },
+      {
+        "q": "Will it validate the JSON first?",
+        "a": "Yes. Invalid JSON returns an error instead of producing broken output."
+      }
+    ],
+    "howTo": {
+      "lead": "Paste formatted JSON, minify it, then copy the compact result.",
+      "steps": [
+        "Paste the JSON payload you want to compress.",
+        "Click Minify JSON to validate and remove formatting whitespace.",
+        "Copy the compact output into your API test, config, or embed."
+      ]
+    },
+    "useCases": {
+      "lead": "This is most useful when the JSON is valid but too bulky for the next step in your workflow.",
+      "items": [
+        "Prepare compact JSON payloads for API requests and testing tools.",
+        "Shrink embedded JSON before pasting it into scripts or configs.",
+        "Switch between readable JSON and compact JSON during debugging."
+      ]
+    },
+    "related": [
+      "json-formatter",
+      "json-validator",
+      "csv-to-json"
+    ],
+    "primaryCategory": "data-json",
+    "secondaryCategory": "json-validation",
+    "tags": [
+      "json",
+      "minify",
+      "developer",
+      "data"
+    ]
+  },
+  {
+    "slug": "strip-html-tags",
+    "title": "Strip HTML Tags",
+    "category": "dev",
+    "status": "live",
+    "description": "Remove HTML tags from pasted markup and keep readable text.",
+    "name": "Strip HTML Tags",
+    "intro": "Convert pasted HTML or rich markup into readable plain text when you only need the visible content.",
+    "keywords": [
+      "strip html tags",
+      "remove html tags",
+      "html to text"
+    ],
+    "faq": [
+      {
+        "q": "Does it decode HTML entities too?",
+        "a": "Yes. Common HTML entities are converted into readable text in the output."
+      },
+      {
+        "q": "Will script and style blocks stay in the result?",
+        "a": "No. Script and style content is removed so the output focuses on readable text."
+      }
+    ],
+    "howTo": {
+      "lead": "Paste the markup, strip the HTML tags, then copy the plain-text result.",
+      "steps": [
+        "Paste the HTML, embed code, or rich markup into the input box.",
+        "Click Strip HTML Tags to remove markup and preserve readable text.",
+        "Copy the plain-text result into your document, audit, or cleanup workflow."
+      ]
+    },
+    "useCases": {
+      "lead": "Use it when HTML is getting in the way and you only need the text content.",
+      "items": [
+        "Turn snippets of HTML into plain text for content review.",
+        "Clean copied markup before pasting text into docs or spreadsheets.",
+        "Remove tags from exported CMS content during audits and QA."
+      ]
+    },
+    "related": [
+      "html-escape",
+      "html-unescape",
+      "text-diff"
+    ],
+    "primaryCategory": "developer-formatting",
+    "secondaryCategory": "escaping-testing",
+    "tags": [
+      "html",
+      "plain text",
+      "markup",
+      "developer"
     ]
   }
 ]

@@ -3,14 +3,14 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-                                                <title>Text Diff Online - Compare two blocks of</title>
-                                                <meta name="description" content="Compare two text blocks side by side to spot edits, missing lines, and small wording changes faster. Free browser tool on ExtFormatTools." />
-                                              <link rel="canonical" href="https://extformattools.com/tools/text-diff/" />
-                                <meta name="robots" content="noindex,follow" />
-                                                <meta property="og:title" content="Text Diff Online - Compare two blocks of" />
-                                                <meta property="og:description" content="Compare two text blocks side by side to spot edits, missing lines, and small wording changes faster. Free browser tool on ExtFormatTools." />
-                                              <meta property="og:url" content="https://extformattools.com/tools/text-diff/" />
-    <meta property="og:site_name" content="ExtFormatTools" />
+  <title>Text Diff Online - Compare text side by side</title>
+  <meta name="description" content="Compare two text blocks side by side to spot edits, missing lines, and small wording changes faster. Free browser tool on ExtFormatTools." />
+  <link rel="canonical" href="https://extformattools.com/tools/text-diff/" />
+  <meta name="robots" content="index,follow" />
+  <meta property="og:title" content="Text Diff Online - Compare text side by side" />
+  <meta property="og:description" content="Compare two text blocks side by side to spot edits, missing lines, and small wording changes faster. Free browser tool on ExtFormatTools." />
+  <meta property="og:url" content="https://extformattools.com/tools/text-diff/" />
+  <meta property="og:site_name" content="ExtFormatTools" />
   <meta property="og:type" content="website" />
   <style>
     :root {
@@ -297,8 +297,7 @@
       color: #5f6f86;
     }
   </style>
-  
-  
+
 
   <style id="tool-intro-style">
     .tool-intro {
@@ -373,51 +372,13 @@
       font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
     }
   </style>
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
+
+
   <script id="tool-webpage-schema" type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "WebPage",
-  "name": "Text Diff Online - Compare two blocks of",
+  "name": "Text Diff Online - Compare text side by side",
   "description": "Compare two text blocks side by side to spot edits, missing lines, and small wording changes faster. Free browser tool on ExtFormatTools.",
   "url": "https://extformattools.com/tools/text-diff/",
   "isPartOf": {
@@ -468,7 +429,7 @@
       <h1>Text Diff Checker</h1>
       <p class="tool-intro">Compare two text blocks side by side to spot edits, missing lines, and small wording changes faster.</p>
       <p>
-        Use this free online text diff checker tool to process your text quickly and cleanly.
+        Paste original and revised text to generate a line-by-line comparison in your browser.
       </p>
     </section>
 
@@ -478,25 +439,30 @@
         <div class="tool-layout">
           <div class="panel">
             <div class="panel-header">
-              <h2>Input</h2>
-              <p>Paste your source text</p>
+              <h2>Text to compare</h2>
+              <p>Paste both versions</p>
             </div>
-            <textarea id="inputText" placeholder="Paste your text here..."></textarea>
+            <label class="field-label" for="inputText">Original text</label>
+            <textarea id="inputText" placeholder="Paste the original text here..."></textarea>
+            <label class="field-label" for="compareText">Revised text</label>
+            <textarea id="compareText" placeholder="Paste the revised text here..."></textarea>
             <div class="actions">
-              <button class="btn-primary" id="processBtn">Process</button>
+              <button class="btn-primary" id="processBtn">Compare Text</button>
               <button class="btn-secondary" id="sampleBtn">Load Example</button>
               <button class="btn-secondary" id="clearBtn">Clear</button>
             </div>
             <div class="meta-bar">
-              <span id="inputChars">0 characters</span>
-              <span id="inputLines">0 lines</span>
+              <span id="inputChars">0 original characters</span>
+              <span id="inputLines">0 original lines</span>
+              <span id="compareChars">0 revised characters</span>
+              <span id="compareLines">0 revised lines</span>
             </div>
           </div>
 
           <div class="panel">
             <div class="panel-header">
-              <h2>Output</h2>
-              <p>Your processed result</p>
+              <h2>Diff result</h2>
+              <p>Unchanged, removed, and added lines</p>
             </div>
             <textarea id="outputText" placeholder="Your result will appear here..."></textarea>
             <div class="actions">
@@ -514,20 +480,20 @@
       <div class="card content-section">
         <h2>How it works</h2>
         <p>
-          This tool lets users transform text quickly in the browser without sign-up or installation.
+          The diff compares the two inputs line by line and marks unchanged, removed, and added lines.
         </p>
         <p>
-          Replace the processing logic and supporting content for each specific tool while keeping the same page structure.
+          It uses the longest common subsequence of lines to keep inserted or deleted lines aligned in the result.
         </p>
       </div>
 
       <div class="card content-section">
         <h2>Common use cases</h2>
         <ul>
-          <li>Clean or normalize pasted text</li>
-          <li>Prepare content for forms, spreadsheets, or CMS editors</li>
-          <li>Transform text before sending to AI tools</li>
-          <li>Improve copy and paste workflows</li>
+          <li>Compare draft copy, release notes, or config snippets</li>
+          <li>Spot missing or added lines in copied text</li>
+          <li>Review documentation edits before sharing</li>
+          <li>Check small text changes without opening a separate diff app</li>
         </ul>
       </div>
 
@@ -537,7 +503,7 @@
         <div class="faq-item">
           <h3>What does text diff checker do?</h3>
           <p>
-            It processes your pasted text directly in the browser and returns the transformed result instantly.
+            It compares two text blocks and marks unchanged lines, removed lines, and added lines.
           </p>
         </div>
 
@@ -551,7 +517,7 @@
         <div class="faq-item">
           <h3>Does my text leave my browser?</h3>
           <p>
-            In this static version, text is processed in the browser using client-side JavaScript.
+            No. The comparison is handled locally in this static page using client-side JavaScript.
           </p>
         </div>
       </div>
@@ -579,11 +545,11 @@
       <div class="container">
         <div class="section-card">
           <h2 id="tool-howto-title">How to use</h2>
-          <p>Paste your input, run the tool, then copy the result you need.</p>
+          <p>Paste the original and revised text, then compare them line by line.</p>
           <ol class="howto-list">
-          <li>Paste or type the text or data you want to work with.</li>
-          <li>Click the main action button to generate the result.</li>
-          <li>Review the output and copy it into your next step.</li>
+          <li>Paste the older version into the Original text box.</li>
+          <li>Paste the newer version into the Revised text box.</li>
+          <li>Click Compare Text to review unchanged, removed, and added lines.</li>
           </ol>
         </div>
       </div>
@@ -593,11 +559,11 @@
       <div class="container">
         <div class="section-card">
           <h2 id="tool-use-cases-title">Use cases</h2>
-          <p>Use this when you need a quick browser-side check before moving data into code or docs.</p>
+          <p>Use it when you need a quick local comparison without opening a separate diff tool.</p>
           <ul class="use-cases-list">
-          <li>Clean up developer input before using Text Diff Checker in debugging or implementation work.</li>
-          <li>Speed up routine formatting, conversion, or validation tasks directly in the browser.</li>
-          <li>Prepare data for copying into documentation, code comments, tickets, or internal tools.</li>
+          <li>Compare draft copy, release notes, or config snippets before sharing.</li>
+          <li>Spot missing or added lines in text copied from another source.</li>
+          <li>Review small changes while writing documentation, tickets, or code comments.</li>
           </ul>
         </div>
       </div>
@@ -631,6 +597,7 @@
 
   <script>
     const inputText = document.getElementById('inputText');
+    const compareText = document.getElementById('compareText');
     const outputText = document.getElementById('outputText');
     const processBtn = document.getElementById('processBtn');
     const sampleBtn = document.getElementById('sampleBtn');
@@ -640,6 +607,8 @@
 
     const inputChars = document.getElementById('inputChars');
     const inputLines = document.getElementById('inputLines');
+    const compareChars = document.getElementById('compareChars');
+    const compareLines = document.getElementById('compareLines');
     const outputChars = document.getElementById('outputChars');
     const outputLines = document.getElementById('outputLines');
 
@@ -649,14 +618,73 @@
     }
 
     function updateStats() {
-      inputChars.textContent = `${inputText.value.length} characters`;
-      inputLines.textContent = `${countLines(inputText.value)} lines`;
+      inputChars.textContent = `${inputText.value.length} original characters`;
+      inputLines.textContent = `${countLines(inputText.value)} original lines`;
+      compareChars.textContent = `${compareText.value.length} revised characters`;
+      compareLines.textContent = `${countLines(compareText.value)} revised lines`;
       outputChars.textContent = `${outputText.value.length} characters`;
       outputLines.textContent = `${countLines(outputText.value)} lines`;
     }
 
-    function processText(text) {
-      return text;
+    function splitLines(text) {
+      if (!text) return [];
+      return text.replace(/\r\n/g, '\n').replace(/\r/g, '\n').split('\n');
+    }
+
+    function buildDiff(original, revised) {
+      const oldLines = splitLines(original);
+      const newLines = splitLines(revised);
+      const rows = Array.from({ length: oldLines.length + 1 }, () =>
+        Array(newLines.length + 1).fill(0)
+      );
+
+      for (let i = oldLines.length - 1; i >= 0; i--) {
+        for (let j = newLines.length - 1; j >= 0; j--) {
+          rows[i][j] = oldLines[i] === newLines[j]
+            ? rows[i + 1][j + 1] + 1
+            : Math.max(rows[i + 1][j], rows[i][j + 1]);
+        }
+      }
+
+      const output = [];
+      let added = 0;
+      let removed = 0;
+      let i = 0;
+      let j = 0;
+
+      while (i < oldLines.length && j < newLines.length) {
+        if (oldLines[i] === newLines[j]) {
+          output.push(`  ${oldLines[i]}`);
+          i++;
+          j++;
+        } else if (rows[i + 1][j] >= rows[i][j + 1]) {
+          output.push(`- ${oldLines[i]}`);
+          removed++;
+          i++;
+        } else {
+          output.push(`+ ${newLines[j]}`);
+          added++;
+          j++;
+        }
+      }
+
+      while (i < oldLines.length) {
+        output.push(`- ${oldLines[i]}`);
+        removed++;
+        i++;
+      }
+
+      while (j < newLines.length) {
+        output.push(`+ ${newLines[j]}`);
+        added++;
+        j++;
+      }
+
+      return {
+        text: added === 0 && removed === 0 ? 'No differences found.' : output.join('\n'),
+        added,
+        removed
+      };
     }
 
     function setStatus(message, isSuccess = false) {
@@ -665,21 +693,25 @@
     }
 
     processBtn.addEventListener('click', () => {
-      const source = inputText.value;
-      const result = processText(source);
-      outputText.value = result;
+      const original = inputText.value;
+      const revised = compareText.value;
 
-      if (!source.trim()) {
-        setStatus('Please paste some text first.');
-      } else {
-        setStatus('Processed successfully.', true);
+      if (!original.trim() && !revised.trim()) {
+        outputText.value = '';
+        setStatus('Please paste text into at least one comparison box.');
+        updateStats();
+        return;
       }
 
+      const result = buildDiff(original, revised);
+      outputText.value = result.text;
+      setStatus(`Diff ready: ${result.added} added, ${result.removed} removed.`, true);
       updateStats();
     });
 
     sampleBtn.addEventListener('click', () => {
-      inputText.value = 'Sample text goes here. Replace this with a better example for each tool.';
+      inputText.value = 'Alpha\nBeta\nGamma';
+      compareText.value = 'Alpha\nBeta updated\nGamma\nDelta';
       outputText.value = '';
       setStatus('Example text loaded.');
       updateStats();
@@ -687,6 +719,7 @@
 
     clearBtn.addEventListener('click', () => {
       inputText.value = '';
+      compareText.value = '';
       outputText.value = '';
       setStatus('');
       updateStats();
@@ -708,6 +741,7 @@
     });
 
     inputText.addEventListener('input', updateStats);
+    compareText.addEventListener('input', updateStats);
     outputText.addEventListener('input', updateStats);
 
     updateStats();

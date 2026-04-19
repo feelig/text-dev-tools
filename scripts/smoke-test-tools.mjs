@@ -55,6 +55,20 @@ const tools = [
     }
   },
   {
+    slug: 'remove-blank-lines',
+    path: '/tools/remove-blank-lines/',
+    skipBasicChecks: true,
+    async run(page) {
+      await page.waitForURL('**/tools/remove-empty-lines/', { timeout: 5000 });
+      await expectPathname(page, '/tools/remove-empty-lines/');
+      await basicChecks(page, { slug: 'remove-blank-lines redirect target' });
+      await page.locator('#inputText').fill('Apple\n\nBanana\n   \nCarrot');
+      await page.locator('#processBtn').click();
+      await expectValue(page, '#outputText', 'Apple\nBanana\nCarrot');
+      await expectText(page, '#statusMessage', 'Empty lines removed successfully.');
+    }
+  },
+  {
     slug: 'duplicate-line-remover',
     path: '/tools/duplicate-line-remover/',
     async run(page) {
@@ -170,6 +184,20 @@ const tools = [
     }
   },
   {
+    slug: 'paragraph-counter',
+    path: '/tools/paragraph-counter/',
+    async run(page) {
+      await page.locator('#inputText').fill('Alpha beta\n\nGamma\n\nDelta epsilon');
+      await page.locator('#processBtn').click();
+      await expectValue(
+        page,
+        '#outputText',
+        'Paragraphs: 3\nWords: 5\nCharacters: 32\nLines: 5'
+      );
+      await expectText(page, '#statusMessage', 'Paragraphs counted successfully.');
+    }
+  },
+  {
     slug: 'sentence-counter',
     path: '/tools/sentence-counter/',
     async run(page) {
@@ -233,6 +261,38 @@ const tools = [
       await page.locator('#inputText').fill('{"name": }');
       await page.locator('#processBtn').click();
       await expectContainsText(page, '#statusMessage', 'Unexpected token');
+    }
+  },
+  {
+    slug: 'json-to-csv',
+    path: '/tools/json-to-csv/',
+    async run(page) {
+      await page.locator('#inputText').fill('[{"name":"Alice","age":28},{"name":"Bob","age":35}]');
+      await page.locator('#convertBtn').click();
+      await expectValue(page, '#outputText', 'name,age\nAlice,28\nBob,35');
+      await expectText(page, '#statusMessage', 'JSON converted to CSV successfully.');
+
+      await page.locator('#inputText').fill('[{"name":"Alice","note":"hello, team"}]');
+      await page.locator('#convertBtn').click();
+      await expectValue(page, '#outputText', 'name,note\nAlice,"hello, team"');
+    }
+  },
+  {
+    slug: 'csv-to-json',
+    path: '/tools/csv-to-json/',
+    async run(page) {
+      await page.locator('#inputText').fill('name,age,city\nAlice,28,Seattle\nBob,35,Toronto');
+      await page.locator('#processBtn').click();
+      await expectValue(
+        page,
+        '#outputText',
+        '[\n  {\n    "name": "Alice",\n    "age": "28",\n    "city": "Seattle"\n  },\n  {\n    "name": "Bob",\n    "age": "35",\n    "city": "Toronto"\n  }\n]'
+      );
+      await expectText(page, '#statusMessage', 'CSV converted to JSON successfully.');
+
+      await page.locator('#inputText').fill('name,note\nAlice,"hello, team"');
+      await page.locator('#processBtn').click();
+      await expectValue(page, '#outputText', '[\n  {\n    "name": "Alice",\n    "note": "hello, team"\n  }\n]');
     }
   },
   {
@@ -373,6 +433,52 @@ const tools = [
     }
   },
   {
+    slug: 'timestamp-converter',
+    path: '/tools/timestamp-converter/',
+    async run(page) {
+      await page.locator('#timestampInput').fill('1700000000');
+      await page.locator('#convertBtn').click();
+      await expectContainsText(page, '#outputBox', 'ISO: 2023-11-14T22:13:20.000Z');
+      await expectContainsText(page, '#outputBox', 'Unix (seconds): 1700000000');
+      await expectText(page, '#statusMessage', 'Timestamp converted successfully.');
+    }
+  },
+  {
+    slug: 'html-escape',
+    path: '/tools/html-escape/',
+    async run(page) {
+      await page.locator('#inputText').fill(`<div class="note">Tom & Jerry's</div>`);
+      await page.locator('#processBtn').click();
+      await expectValue(
+        page,
+        '#outputText',
+        '&lt;div class=&quot;note&quot;&gt;Tom &amp; Jerry&#39;s&lt;/div&gt;'
+      );
+      await expectText(page, '#statusMessage', 'HTML escaped successfully.');
+    }
+  },
+  {
+    slug: 'html-unescape',
+    path: '/tools/html-unescape/',
+    async run(page) {
+      await page.locator('#inputText').fill('&lt;div class=&quot;note&quot;&gt;Tom &amp; Jerry&#39;s&lt;/div&gt;');
+      await page.locator('#processBtn').click();
+      await expectValue(page, '#outputText', `<div class="note">Tom & Jerry's</div>`);
+      await expectText(page, '#statusMessage', 'HTML entities decoded successfully.');
+    }
+  },
+  {
+    slug: 'text-diff',
+    path: '/tools/text-diff/',
+    async run(page) {
+      await page.locator('#inputText').fill('Alpha\nBeta\nGamma');
+      await page.locator('#compareText').fill('Alpha\nBeta updated\nGamma\nDelta');
+      await page.locator('#processBtn').click();
+      await expectValue(page, '#outputText', 'Alpha\n- Beta\n+ Beta updated\n  Gamma\n+ Delta');
+      await expectText(page, '#statusMessage', 'Diff ready: 2 added, 1 removed.');
+    }
+  },
+  {
     slug: 'extract-numbers',
     path: '/tools/extract-numbers/',
     async run(page) {
@@ -403,6 +509,39 @@ const tools = [
       await expectValue(page, '#outputText', 'sales@example.com\nhelp@test.dev');
       await expectText(page, '#statusMessage', 'Email addresses extracted successfully.');
       await expectText(page, '#statMatches', '2');
+    }
+  },
+  {
+    slug: 'extract-phone-numbers',
+    path: '/tools/extract-phone-numbers/',
+    async run(page) {
+      await page.locator('#inputText').fill('Call +1 (415) 555-0199 or 020 7946 0958 today.');
+      await page.locator('#processBtn').click();
+      await expectValue(page, '#outputText', '+1 (415) 555-0199\n020 7946 0958');
+      await expectText(page, '#statusMessage', 'Phone numbers extracted successfully.');
+      await expectText(page, '#statMatches', '2');
+    }
+  },
+  {
+    slug: 'extract-hashtags',
+    path: '/tools/extract-hashtags/',
+    async run(page) {
+      await page.locator('#inputText').fill('Launch post uses #ProductLaunch and #春季更新 today.');
+      await page.locator('#processBtn').click();
+      await expectValue(page, '#outputText', '#ProductLaunch\n#春季更新');
+      await expectText(page, '#statusMessage', 'Hashtags extracted successfully.');
+      await expectText(page, '#statMatches', '2');
+    }
+  },
+  {
+    slug: 'extract-domains',
+    path: '/tools/extract-domains/',
+    async run(page) {
+      await page.locator('#inputText').fill('Docs: https://docs.example.com/start and team@example.org plus portal.test.dev/login');
+      await page.locator('#processBtn').click();
+      await expectValue(page, '#outputText', 'docs.example.com\nexample.org\nportal.test.dev');
+      await expectText(page, '#statusMessage', 'Domains extracted successfully.');
+      await expectText(page, '#statMatches', '3');
     }
   },
   {
@@ -492,8 +631,60 @@ const tools = [
       await expectText(page, '#statTopWord', 'apple');
       await expectText(page, '#statTopCount', '3');
     }
+  },
+  {
+    slug: 'json-minify',
+    path: '/tools/json-minify/',
+    async run(page) {
+      await page.locator('#inputText').fill('{\n  "name": "Alice",\n  "items": [1, 2],\n  "ok": true\n}');
+      await page.locator('#processBtn').click();
+      await expectValue(page, '#outputText', '{"name":"Alice","items":[1,2],"ok":true}');
+      await expectText(page, '#statusMessage', 'JSON minified successfully.');
+
+      await page.locator('#inputText').fill('{"name": }');
+      await page.locator('#processBtn').click();
+      await expectContainsText(page, '#statusMessage', 'Invalid JSON:');
+    }
+  },
+  {
+    slug: 'strip-html-tags',
+    path: '/tools/strip-html-tags/',
+    async run(page) {
+      await page.locator('#inputText').fill('<p>Hello <strong>world</strong></p><p>Next line</p>');
+      await page.locator('#processBtn').click();
+      await expectValue(page, '#outputText', 'Hello world\nNext line');
+      await expectText(page, '#statusMessage', 'HTML tags removed successfully.');
+    }
   }
 ];
+
+function validateSmokeCoverage() {
+  const dataPath = path.join(ROOT_DIR, 'data', 'tools.json');
+  const dataTools = JSON.parse(fs.readFileSync(dataPath, 'utf8'));
+  const smokeSlugs = new Set();
+  const duplicateSlugs = new Set();
+
+  for (const tool of tools) {
+    if (smokeSlugs.has(tool.slug)) duplicateSlugs.add(tool.slug);
+    smokeSlugs.add(tool.slug);
+  }
+
+  const pageTools = dataTools
+    .filter(tool => tool && tool.slug && tool.status !== 'planned')
+    .filter(tool => fs.existsSync(path.join(ROOT_DIR, 'tools', tool.slug, 'index.html')))
+    .map(tool => tool.slug);
+
+  const missing = pageTools.filter(slug => !smokeSlugs.has(slug));
+  const orphaned = [...smokeSlugs].filter(slug => !pageTools.includes(slug));
+
+  if (duplicateSlugs.size || missing.length || orphaned.length) {
+    const details = [];
+    if (duplicateSlugs.size) details.push(`duplicate smoke cases: ${[...duplicateSlugs].join(', ')}`);
+    if (missing.length) details.push(`missing smoke cases: ${missing.join(', ')}`);
+    if (orphaned.length) details.push(`smoke cases without tool pages: ${orphaned.join(', ')}`);
+    throw new Error(`Smoke coverage mismatch (${details.join(' | ')})`);
+  }
+}
 
 function normalize(value) {
   return String(value ?? '').replace(/\r\n/g, '\n').trim();
@@ -610,6 +801,13 @@ async function expectContainsText(page, selector, expectedPart) {
   }
 }
 
+async function expectPathname(page, expectedPathname) {
+  const actual = new URL(page.url()).pathname;
+  if (actual !== expectedPathname) {
+    throw new Error(`Path mismatch\nExpected: ${expectedPathname}\nActual: ${actual}`);
+  }
+}
+
 async function expectDialog(page, expectedMessage, action) {
   const dialogPromise = page.waitForEvent('dialog', { timeout: 5000 });
   const actionPromise = action();
@@ -632,6 +830,8 @@ async function ensureChecked(page, selector, expected) {
 }
 
 async function run() {
+  validateSmokeCoverage();
+
   const browser = await chromium.launch({ headless: true });
   const server = await createStaticServer();
   const results = [];
@@ -654,7 +854,9 @@ async function run() {
 
       try {
         await gotoTool(page, server.baseUrl, tool);
-        await basicChecks(page, tool);
+        if (!tool.skipBasicChecks) {
+          await basicChecks(page, tool);
+        }
         await tool.run(page);
 
         if (consoleErrors.length) {

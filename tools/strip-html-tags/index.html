@@ -3,13 +3,13 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Add Quotes To Text Online - Wrap each line in quotes</title>
-  <meta name="description" content="Automatically wrap each line in double or single quotes when preparing text for code, SQL, or data formats. Free browser tool on ExtFormatTools." />
-  <link rel="canonical" href="https://extformattools.com/tools/add-quotes/" />
+  <title>HTML To Text Online - Remove HTML tags from pasted markup</title>
+  <meta name="description" content="Convert pasted HTML or rich markup into readable plain text when you only need the visible content. Free browser tool on ExtFormatTools." />
+  <link rel="canonical" href="https://extformattools.com/tools/strip-html-tags/" />
   <meta name="robots" content="index,follow" />
-  <meta property="og:title" content="Add Quotes To Text Online - Wrap each line in quotes" />
-  <meta property="og:description" content="Automatically wrap each line in double or single quotes when preparing text for code, SQL, or data formats. Free browser tool on ExtFormatTools." />
-  <meta property="og:url" content="https://extformattools.com/tools/add-quotes/" />
+  <meta property="og:title" content="HTML To Text Online - Remove HTML tags from pasted markup" />
+  <meta property="og:description" content="Convert pasted HTML or rich markup into readable plain text when you only need the visible content. Free browser tool on ExtFormatTools." />
+  <meta property="og:url" content="https://extformattools.com/tools/strip-html-tags/" />
   <meta property="og:site_name" content="ExtFormatTools" />
   <meta property="og:type" content="website" />
   <style>
@@ -352,9 +352,9 @@
 {
   "@context": "https://schema.org",
   "@type": "WebPage",
-  "name": "Add Quotes To Text Online - Wrap each line in quotes",
-  "description": "Automatically wrap each line in double or single quotes when preparing text for code, SQL, or data formats. Free browser tool on ExtFormatTools.",
-  "url": "https://extformattools.com/tools/add-quotes/",
+  "name": "HTML To Text Online - Remove HTML tags from pasted markup",
+  "description": "Convert pasted HTML or rich markup into readable plain text when you only need the visible content. Free browser tool on ExtFormatTools.",
+  "url": "https://extformattools.com/tools/strip-html-tags/",
   "isPartOf": {
     "@type": "WebSite",
     "name": "ExtFormatTools",
@@ -369,18 +369,18 @@
   "mainEntity": [
     {
       "@type": "Question",
-      "name": "Can I choose single or double quotes?",
+      "name": "Does it decode HTML entities too?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Yes. You can select either double quotes or single quotes for each line."
+        "text": "Yes. Common HTML entities are converted into readable text in the output."
       }
     },
     {
       "@type": "Question",
-      "name": "When is this useful?",
+      "name": "Will script and style blocks stay in the result?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "It is useful when preparing lists for SQL, arrays in code, or data that needs string literals."
+        "text": "No. Script and style content is removed so the output focuses on readable text."
       }
     }
   ]
@@ -488,13 +488,13 @@
 
   <main class="container">
     <div class="breadcrumb">
-      <a href="/">Home</a> / <a href="/text-tools/">Text Tools</a> / Add Quotes
+      <a href="/">Home</a> / <a href="/developer-tools/">Developer Tools</a> / Strip HTML Tags
     </div>
 
     <section class="hero">
-      <h1>Add Quotes</h1>
-      <p class="tool-intro">Automatically wrap each line in double or single quotes when preparing text for code, SQL, or data formats.</p>
-      <p>Wrap each line in quotes for lists and data exports.</p>
+      <h1>Strip HTML Tags</h1>
+      <p class="tool-intro">Convert pasted HTML or rich markup into readable plain text when you only need the visible content.</p>
+      <p>Remove HTML tags from pasted markup and keep readable text.</p>
     </section>
 
     <section class="grid">
@@ -504,19 +504,13 @@
             <div class="panel-header">
               <div>
                 <h2>Input</h2>
-                <p>Paste one item per line before wrapping each line in quotes.</p>
+                <p>Paste HTML, embed code, or markup that should become plain text.</p>
               </div>
             </div>
-            <div class="control-row">
-              <label class="field-label" for="quoteType">Quote type</label>
-              <select id="quoteType">
-                <option value="double">Double quotes</option>
-                <option value="single">Single quotes</option>
-              </select>
-            </div>
-            <textarea id="inputText" placeholder="Paste one item per line here..."></textarea>
+
+            <textarea id="inputText" placeholder="Paste HTML here..."></textarea>
             <div class="actions">
-              <button class="btn-primary" id="processBtn" type="button">Add Quotes</button>
+              <button class="btn-primary" id="processBtn" type="button">Strip HTML Tags</button>
               <button class="btn-secondary" id="sampleBtn" type="button">Load Example</button>
               <button class="btn-secondary" id="clearBtn" type="button">Clear</button>
             </div>
@@ -530,10 +524,10 @@
             <div class="panel-header">
               <div>
                 <h2>Output</h2>
-                <p>Each non-empty line will be returned as a quoted string.</p>
+                <p>Visible text will be returned without HTML tags.</p>
               </div>
             </div>
-            <textarea id="outputText" placeholder="Quoted lines will appear here..." readonly></textarea>
+            <textarea id="outputText" placeholder="Plain text output will appear here..." readonly></textarea>
             <div class="actions">
               <button class="btn-primary" id="copyBtn" type="button">Copy Result</button>
             </div>
@@ -543,12 +537,6 @@
               <span id="outputLines">0 lines</span>
             </div>
 
-              <div class="stats-grid">
-                <div class="stat-card">
-                  <span>Quoted</span>
-                  <strong id="statItems">0</strong>
-                </div>
-              </div>
           </div>
         </div>
       </div>
@@ -561,19 +549,19 @@
           <p>Explore more tools that work well with this page.</p>
           <div class="related-tools-grid">
 
-        <a class="related-tool-card" href="/tools/number-lines/">
-          <strong>Number Lines</strong>
-          <span>Add line numbers to every line of text instantly.</span>
+        <a class="related-tool-card" href="/tools/html-escape/">
+          <strong>HTML Escape</strong>
+          <span>Escape HTML special characters for safe display in markup.</span>
         </a>
 
-        <a class="related-tool-card" href="/tools/comma-to-newline/">
-          <strong>Comma to Newline</strong>
-          <span>Convert comma-separated items to one per line instantly.</span>
+        <a class="related-tool-card" href="/tools/html-unescape/">
+          <strong>HTML Unescape</strong>
+          <span>Convert escaped HTML entities back into readable characters.</span>
         </a>
 
-        <a class="related-tool-card" href="/tools/text-sorter/">
-          <strong>Text Sorter</strong>
-          <span>Sort lines of text alphabetically for quick cleanup and organization.</span>
+        <a class="related-tool-card" href="/tools/text-diff/">
+          <strong>Text Diff Checker</strong>
+          <span>Compare two blocks of text and check differences quickly.</span>
         </a>
           </div>
         </div>
@@ -587,13 +575,13 @@
         <div class="faq-list">
 
           <div class="faq-item">
-            <h3>Can I choose single or double quotes?</h3>
-            <p>Yes. You can select either double quotes or single quotes for each line.</p>
+            <h3>Does it decode HTML entities too?</h3>
+            <p>Yes. Common HTML entities are converted into readable text in the output.</p>
           </div>
 
           <div class="faq-item">
-            <h3>When is this useful?</h3>
-            <p>It is useful when preparing lists for SQL, arrays in code, or data that needs string literals.</p>
+            <h3>Will script and style blocks stay in the result?</h3>
+            <p>No. Script and style content is removed so the output focuses on readable text.</p>
           </div>
         </div>
       </div>
@@ -603,12 +591,11 @@
       <div class="container">
         <div class="section-card">
           <h2 id="tool-howto-title">How to use</h2>
-          <p>Paste the list, choose your quote type, then copy the quoted result.</p>
+          <p>Paste the markup, strip the HTML tags, then copy the plain-text result.</p>
           <ol class="howto-list">
-          <li>Paste the text with one item per line.</li>
-          <li>Choose double or single quotes based on your format needs.</li>
-          <li>Click Add Quotes to wrap each line.</li>
-          <li>Copy the quoted output into your code or data file.</li>
+          <li>Paste the HTML, embed code, or rich markup into the input box.</li>
+          <li>Click Strip HTML Tags to remove markup and preserve readable text.</li>
+          <li>Copy the plain-text result into your document, audit, or cleanup workflow.</li>
           </ol>
         </div>
       </div>
@@ -618,11 +605,11 @@
       <div class="container">
         <div class="section-card">
           <h2 id="tool-use-cases-title">Use cases</h2>
-          <p>Use it when converting simple lists into quoted format for SQL or code.</p>
+          <p>Use it when HTML is getting in the way and you only need the text content.</p>
           <ul class="use-cases-list">
-          <li>Prepare lists for SQL IN clauses or WHERE conditions.</li>
-          <li>Format items as string literals for JavaScript, Python, or other code.</li>
-          <li>Create quoted CSV data or other quoted text formats.</li>
+          <li>Turn snippets of HTML into plain text for content review.</li>
+          <li>Clean copied markup before pasting text into docs or spreadsheets.</li>
+          <li>Remove tags from exported CMS content during audits and QA.</li>
           </ul>
         </div>
       </div>
@@ -636,11 +623,11 @@
           <div class="tool-example-grid">
             <div class="example-box">
               <h3>Input</h3>
-              <pre>apple\nbanana\ncarrot</pre>
+              <pre>&lt;p&gt;Hello &lt;strong&gt;world&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;Next line &amp;amp; more.&lt;/p&gt;</pre>
             </div>
             <div class="example-box">
               <h3>Output</h3>
-              <pre>"apple"\n"banana"\n"carrot"</pre>
+              <pre>Hello world\nNext line &amp; more.</pre>
             </div>
           </div>
         </div>
@@ -655,7 +642,7 @@
   </footer>
 
   <script>
-    const pageConfig = {"slug":"add-quotes","sampleText":"apple\nbanana\ncarrot","sampleState":{"quoteType":"double"},"emptyInputMessage":"Paste some text first.","requiresNonWhitespaceInput":true};
+    const pageConfig = {"slug":"strip-html-tags","sampleText":"\u003carticle>\u003ch2>Launch update\u003c/h2>\u003cp>Hello \u003cstrong>world\u003c/strong>\u003c/p>\u003cp>Next line &amp; more.\u003c/p>\u003c/article>","sampleState":{},"emptyInputMessage":"Paste some text first.","requiresNonWhitespaceInput":true};
 
     const inputText = document.getElementById('inputText');
     const outputText = document.getElementById('outputText');

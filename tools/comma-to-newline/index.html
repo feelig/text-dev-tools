@@ -3,12 +3,12 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Comma To Newline Online - Convert comma-separated items to</title>
-    <meta name="description" content="Split comma-separated text into separate lines for readable lists and easy comparison. Free browser tool on ExtFormatTools." />
+  <title>Comma To Newline Online - Convert commas to new lines</title>
+  <meta name="description" content="Split comma-separated text into separate lines for readable lists and easy comparison. Free browser tool on ExtFormatTools." />
   <link rel="canonical" href="https://extformattools.com/tools/comma-to-newline/" />
-    <meta name="robots" content="index,follow" />
-    <meta property="og:title" content="Comma To Newline Online - Convert comma-separated items to" />
-    <meta property="og:description" content="Split comma-separated text into separate lines for readable lists and easy comparison. Free browser tool on ExtFormatTools." />
+  <meta name="robots" content="index,follow" />
+  <meta property="og:title" content="Comma To Newline Online - Convert commas to new lines" />
+  <meta property="og:description" content="Split comma-separated text into separate lines for readable lists and easy comparison. Free browser tool on ExtFormatTools." />
   <meta property="og:url" content="https://extformattools.com/tools/comma-to-newline/" />
   <meta property="og:site_name" content="ExtFormatTools" />
   <meta property="og:type" content="website" />
@@ -352,7 +352,7 @@
 {
   "@context": "https://schema.org",
   "@type": "WebPage",
-  "name": "Comma To Newline Online - Convert comma-separated items to",
+  "name": "Comma To Newline Online - Convert commas to new lines",
   "description": "Split comma-separated text into separate lines for readable lists and easy comparison. Free browser tool on ExtFormatTools.",
   "url": "https://extformattools.com/tools/comma-to-newline/",
   "isPartOf": {
@@ -547,7 +547,7 @@
         </div>
       </div>
     </section>
-  
+
     <section class="related-tools-section" aria-labelledby="related-tools-title">
       <div class="container">
         <div class="section-card">
@@ -736,6 +736,58 @@
       return url.replace(/[),.;!?]+$/g, '');
     }
 
+    function extractPhoneNumberMatches(text) {
+      const candidates = normalizeNewlines(text).match(/(?:\+?\d[\d().\s-]{5,}\d)/g) || [];
+      return candidates
+        .map((candidate) => cleanUrlMatch(candidate).trim())
+        .filter(Boolean)
+        .filter((candidate) => {
+          const digits = candidate.replace(/\D/g, '');
+          if (digits.length < 7 || digits.length > 15) return false;
+          if (/^\d{4}[-\/.]\d{1,2}[-\/.]\d{1,2}$/.test(candidate)) return false;
+          return true;
+        });
+    }
+
+    function extractHashtagMatches(text) {
+      const matches = [];
+      const pattern = /(^|[^\p{L}\p{N}_])(#[\p{L}\p{N}_]+)/gu;
+      for (const match of normalizeNewlines(text).matchAll(pattern)) {
+        matches.push(match[2]);
+      }
+      return matches;
+    }
+
+    function extractDomainMatches(text) {
+      const matches = [];
+      const pattern = /(?:https?:\/\/|ftp:\/\/)?(?:www\.)?((?:[a-z0-9](?:[a-z0-9-]{0,61}[a-z0-9])?\.)+[a-z]{2,})(?::\d{2,5})?(?:[/?#][^\s<>"']*)?/gi;
+      for (const match of normalizeNewlines(text).matchAll(pattern)) {
+        const domain = cleanUrlMatch(match[1] || '').toLowerCase();
+        if (domain) {
+          matches.push(domain);
+        }
+      }
+      return matches;
+    }
+
+    function stripHtmlTags(text) {
+      const withoutHiddenContent = normalizeNewlines(text)
+        .replace(/<script[\s\S]*?<\/script>/gi, '')
+        .replace(/<style[\s\S]*?<\/style>/gi, '');
+      const markupWithBreaks = withoutHiddenContent
+        .replace(/<br\s*\/?>/gi, '\n')
+        .replace(/<\/(p|div|section|article|li|ul|ol|blockquote|h[1-6]|tr)>/gi, '\n')
+        .replace(/<\/td>/gi, '\t');
+      const parser = new DOMParser();
+      const doc = parser.parseFromString(markupWithBreaks, 'text/html');
+      const rawText = (doc.body.textContent || '').replace(/\u00a0/g, ' ');
+      return normalizeNewlines(rawText)
+        .replace(/[ \t]+\n/g, '\n')
+        .replace(/\n[ \t]+/g, '\n')
+        .replace(/\n{3,}/g, '\n\n')
+        .trim();
+    }
+
     function escapeQuotedLine(line, quoteMode) {
       const escapedBackslashes = line.replace(/\\/g, '\\\\');
       if (quoteMode === 'single') {
@@ -801,6 +853,51 @@
             : {
                 output: '',
                 status: 'No email addresses found.',
+                stats: { matches: 0 }
+              };
+        }
+        case 'extract-phone-numbers': {
+          const matches = extractPhoneNumberMatches(source);
+          return matches.length
+            ? {
+                output: matches.join('\n'),
+                status: 'Phone numbers extracted successfully.',
+                type: 'success',
+                stats: { matches: matches.length }
+              }
+            : {
+                output: '',
+                status: 'No phone numbers found.',
+                stats: { matches: 0 }
+              };
+        }
+        case 'extract-hashtags': {
+          const matches = extractHashtagMatches(source);
+          return matches.length
+            ? {
+                output: matches.join('\n'),
+                status: 'Hashtags extracted successfully.',
+                type: 'success',
+                stats: { matches: matches.length }
+              }
+            : {
+                output: '',
+                status: 'No hashtags found.',
+                stats: { matches: 0 }
+              };
+        }
+        case 'extract-domains': {
+          const matches = extractDomainMatches(source);
+          return matches.length
+            ? {
+                output: matches.join('\n'),
+                status: 'Domains extracted successfully.',
+                type: 'success',
+                stats: { matches: matches.length }
+              }
+            : {
+                output: '',
+                status: 'No domains found.',
                 stats: { matches: 0 }
               };
         }
@@ -949,6 +1046,33 @@
               topWord: ranked[0][0],
               topCount: ranked[0][1]
             }
+          };
+        }
+        case 'json-minify': {
+          try {
+            const parsed = JSON.parse(source);
+            return {
+              output: JSON.stringify(parsed),
+              status: 'JSON minified successfully.',
+              type: 'success'
+            };
+          } catch (error) {
+            throw new Error('Invalid JSON: ' + error.message);
+          }
+        }
+        case 'strip-html-tags': {
+          const tagMatches = normalizeNewlines(source).match(/<[^>]+>/g) || [];
+          if (!tagMatches.length) {
+            return {
+              output: normalizeNewlines(source).trim(),
+              status: 'No HTML tags found. Text returned unchanged.'
+            };
+          }
+
+          return {
+            output: stripHtmlTags(source),
+            status: 'HTML tags removed successfully.',
+            type: 'success'
           };
         }
         default:

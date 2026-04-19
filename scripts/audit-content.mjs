@@ -3,6 +3,7 @@ import path from 'path';
 
 const ROOT_DIR = process.cwd();
 const tools = JSON.parse(fs.readFileSync(path.join(ROOT_DIR, 'data', 'tools.json'), 'utf8'));
+const INDEXABLE_STATUSES = new Set(['live', 'active', 'beta']);
 
 const genericPhrases = [
   'helps you clean, format, and transform text directly in your browser',
@@ -16,8 +17,35 @@ const placeholderPhrases = [
   'top ad slot',
   'middle ad slot',
   'bottom ad slot',
-  'homepage ad slot'
+  'homepage ad slot',
+  'replace the processing logic',
+  'sample text goes here'
 ];
+
+const titleTrailingStopWords = new Set([
+  'a',
+  'an',
+  'and',
+  'at',
+  'by',
+  'for',
+  'from',
+  'in',
+  'into',
+  'of',
+  'on',
+  'or',
+  'the',
+  'to',
+  'with',
+  'without'
+]);
+
+function isIndexableToolStatus(tool) {
+  if (!tool || tool.indexable === false) return false;
+  const status = String(tool.status || '').toLowerCase();
+  return INDEXABLE_STATUSES.has(status);
+}
 
 const pages = [
   {
@@ -51,7 +79,7 @@ const pages = [
       faqCountFromData: Array.isArray(tool.faq) ? tool.faq.length : 0,
       hasCustomHowTo: Boolean(tool.howTo && tool.howTo.lead && Array.isArray(tool.howTo.steps) && tool.howTo.steps.length),
       hasCustomUseCases: Boolean(tool.useCases && tool.useCases.lead && Array.isArray(tool.useCases.items) && tool.useCases.items.length),
-      expectedRobots: tool.status === 'live' ? 'index,follow' : 'noindex,follow',
+      expectedRobots: isIndexableToolStatus(tool) ? 'index,follow' : 'noindex,follow',
       thinThreshold: tool.status === 'live' ? 120 : 80
     }))
 ];
@@ -76,6 +104,15 @@ function stripHtml(html) {
 
 function countMatches(html, pattern) {
   return (html.match(pattern) || []).length;
+}
+
+function hasIncompleteTitle(title) {
+  const normalized = title.trim();
+  if (!normalized) return false;
+  if (/[,:;/-]$/.test(normalized)) return true;
+
+  const lastWord = normalized.split(/\s+/).pop().replace(/[^A-Za-z0-9/-]+$/g, '').toLowerCase();
+  return titleTrailingStopWords.has(lastWord);
 }
 
 const results = [];
@@ -113,17 +150,22 @@ for (const page of pages) {
   const placeholderHits = placeholderPhrases.reduce((count, phrase) => {
     return count + (html.toLowerCase().includes(phrase) ? 1 : 0);
   }, 0);
+  const hasNoopProcessText = /function\s+processText\s*\(\s*text\s*\)\s*\{\s*return\s+text\s*;\s*\}/.test(html);
 
   const issues = [];
   const warnings = [];
 
   if (!title) issues.push('Missing title');
+  if (title && hasIncompleteTitle(title)) issues.push('Title ends with an incomplete phrase');
   if (h1Count < 1) issues.push('Missing h1');
   if (robots !== page.expectedRobots) issues.push(`Robots mismatch: expected ${page.expectedRobots}, got ${robots || 'missing'}`);
   if (faqHeadingCount > 1) issues.push(`Duplicate FAQ headings (${faqHeadingCount})`);
   if (relatedHeadingCount > 1) issues.push(`Duplicate Related tools headings (${relatedHeadingCount})`);
   if (faqSchemaCount > 1) issues.push(`Duplicate FAQ schema blocks (${faqSchemaCount})`);
   if (placeholderHits > 0) issues.push(`Placeholder UI copy present (${placeholderHits} hits)`);
+  if (page.type === 'tool' && hasNoopProcessText) {
+    issues.push('Tool script still returns the input unchanged');
+  }
   if (page.type === 'tool' && page.status === 'live' && genericHits > 0) {
     issues.push(`Live tool still uses template wording (${genericHits} generic phrase hits)`);
   }
@@ -172,6 +214,7 @@ for (const page of pages) {
     faqSchemaCount,
     hasMain,
     genericHits,
+    hasNoopProcessText,
     issues,
     warnings
   });

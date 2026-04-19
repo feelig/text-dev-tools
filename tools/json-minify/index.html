@@ -3,13 +3,13 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Add Quotes To Text Online - Wrap each line in quotes</title>
-  <meta name="description" content="Automatically wrap each line in double or single quotes when preparing text for code, SQL, or data formats. Free browser tool on ExtFormatTools." />
-  <link rel="canonical" href="https://extformattools.com/tools/add-quotes/" />
+  <title>JSON Minify Online - Minify JSON instantly</title>
+  <meta name="description" content="Compress formatted JSON into a compact single-line string when you need smaller payloads or cleaner embedding. Free browser tool on ExtFormatTools." />
+  <link rel="canonical" href="https://extformattools.com/tools/json-minify/" />
   <meta name="robots" content="index,follow" />
-  <meta property="og:title" content="Add Quotes To Text Online - Wrap each line in quotes" />
-  <meta property="og:description" content="Automatically wrap each line in double or single quotes when preparing text for code, SQL, or data formats. Free browser tool on ExtFormatTools." />
-  <meta property="og:url" content="https://extformattools.com/tools/add-quotes/" />
+  <meta property="og:title" content="JSON Minify Online - Minify JSON instantly" />
+  <meta property="og:description" content="Compress formatted JSON into a compact single-line string when you need smaller payloads or cleaner embedding. Free browser tool on ExtFormatTools." />
+  <meta property="og:url" content="https://extformattools.com/tools/json-minify/" />
   <meta property="og:site_name" content="ExtFormatTools" />
   <meta property="og:type" content="website" />
   <style>
@@ -352,9 +352,9 @@
 {
   "@context": "https://schema.org",
   "@type": "WebPage",
-  "name": "Add Quotes To Text Online - Wrap each line in quotes",
-  "description": "Automatically wrap each line in double or single quotes when preparing text for code, SQL, or data formats. Free browser tool on ExtFormatTools.",
-  "url": "https://extformattools.com/tools/add-quotes/",
+  "name": "JSON Minify Online - Minify JSON instantly",
+  "description": "Compress formatted JSON into a compact single-line string when you need smaller payloads or cleaner embedding. Free browser tool on ExtFormatTools.",
+  "url": "https://extformattools.com/tools/json-minify/",
   "isPartOf": {
     "@type": "WebSite",
     "name": "ExtFormatTools",
@@ -369,18 +369,18 @@
   "mainEntity": [
     {
       "@type": "Question",
-      "name": "Can I choose single or double quotes?",
+      "name": "Does minifying JSON change the data?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Yes. You can select either double quotes or single quotes for each line."
+        "text": "No. It removes unnecessary whitespace while keeping the same JSON structure and values."
       }
     },
     {
       "@type": "Question",
-      "name": "When is this useful?",
+      "name": "Will it validate the JSON first?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "It is useful when preparing lists for SQL, arrays in code, or data that needs string literals."
+        "text": "Yes. Invalid JSON returns an error instead of producing broken output."
       }
     }
   ]
@@ -488,13 +488,13 @@
 
   <main class="container">
     <div class="breadcrumb">
-      <a href="/">Home</a> / <a href="/text-tools/">Text Tools</a> / Add Quotes
+      <a href="/">Home</a> / <a href="/developer-tools/">Developer Tools</a> / JSON Minifier
     </div>
 
     <section class="hero">
-      <h1>Add Quotes</h1>
-      <p class="tool-intro">Automatically wrap each line in double or single quotes when preparing text for code, SQL, or data formats.</p>
-      <p>Wrap each line in quotes for lists and data exports.</p>
+      <h1>JSON Minifier</h1>
+      <p class="tool-intro">Compress formatted JSON into a compact single-line string when you need smaller payloads or cleaner embedding.</p>
+      <p>Minify JSON instantly for APIs, embeds, and payload cleanup.</p>
     </section>
 
     <section class="grid">
@@ -504,19 +504,13 @@
             <div class="panel-header">
               <div>
                 <h2>Input</h2>
-                <p>Paste one item per line before wrapping each line in quotes.</p>
+                <p>Paste formatted or spaced JSON that should become compact.</p>
               </div>
             </div>
-            <div class="control-row">
-              <label class="field-label" for="quoteType">Quote type</label>
-              <select id="quoteType">
-                <option value="double">Double quotes</option>
-                <option value="single">Single quotes</option>
-              </select>
-            </div>
-            <textarea id="inputText" placeholder="Paste one item per line here..."></textarea>
+
+            <textarea id="inputText" placeholder="Paste JSON here..."></textarea>
             <div class="actions">
-              <button class="btn-primary" id="processBtn" type="button">Add Quotes</button>
+              <button class="btn-primary" id="processBtn" type="button">Minify JSON</button>
               <button class="btn-secondary" id="sampleBtn" type="button">Load Example</button>
               <button class="btn-secondary" id="clearBtn" type="button">Clear</button>
             </div>
@@ -530,10 +524,10 @@
             <div class="panel-header">
               <div>
                 <h2>Output</h2>
-                <p>Each non-empty line will be returned as a quoted string.</p>
+                <p>Valid JSON will be returned as a minified single-line string.</p>
               </div>
             </div>
-            <textarea id="outputText" placeholder="Quoted lines will appear here..." readonly></textarea>
+            <textarea id="outputText" placeholder="Minified JSON will appear here..." readonly></textarea>
             <div class="actions">
               <button class="btn-primary" id="copyBtn" type="button">Copy Result</button>
             </div>
@@ -543,12 +537,6 @@
               <span id="outputLines">0 lines</span>
             </div>
 
-              <div class="stats-grid">
-                <div class="stat-card">
-                  <span>Quoted</span>
-                  <strong id="statItems">0</strong>
-                </div>
-              </div>
           </div>
         </div>
       </div>
@@ -561,19 +549,19 @@
           <p>Explore more tools that work well with this page.</p>
           <div class="related-tools-grid">
 
-        <a class="related-tool-card" href="/tools/number-lines/">
-          <strong>Number Lines</strong>
-          <span>Add line numbers to every line of text instantly.</span>
+        <a class="related-tool-card" href="/tools/json-formatter/">
+          <strong>Json Formatter</strong>
+          <span>Beautify JSON for easier reading, debugging, and review.</span>
         </a>
 
-        <a class="related-tool-card" href="/tools/comma-to-newline/">
-          <strong>Comma to Newline</strong>
-          <span>Convert comma-separated items to one per line instantly.</span>
+        <a class="related-tool-card" href="/tools/json-validator/">
+          <strong>JSON Validator</strong>
+          <span>Validate JSON instantly and return formatted output when the input is valid.</span>
         </a>
 
-        <a class="related-tool-card" href="/tools/text-sorter/">
-          <strong>Text Sorter</strong>
-          <span>Sort lines of text alphabetically for quick cleanup and organization.</span>
+        <a class="related-tool-card" href="/tools/csv-to-json/">
+          <strong>CSV to JSON</strong>
+          <span>Convert CSV data into JSON format for apps and APIs.</span>
         </a>
           </div>
         </div>
@@ -587,13 +575,13 @@
         <div class="faq-list">
 
           <div class="faq-item">
-            <h3>Can I choose single or double quotes?</h3>
-            <p>Yes. You can select either double quotes or single quotes for each line.</p>
+            <h3>Does minifying JSON change the data?</h3>
+            <p>No. It removes unnecessary whitespace while keeping the same JSON structure and values.</p>
           </div>
 
           <div class="faq-item">
-            <h3>When is this useful?</h3>
-            <p>It is useful when preparing lists for SQL, arrays in code, or data that needs string literals.</p>
+            <h3>Will it validate the JSON first?</h3>
+            <p>Yes. Invalid JSON returns an error instead of producing broken output.</p>
           </div>
         </div>
       </div>
@@ -603,12 +591,11 @@
       <div class="container">
         <div class="section-card">
           <h2 id="tool-howto-title">How to use</h2>
-          <p>Paste the list, choose your quote type, then copy the quoted result.</p>
+          <p>Paste formatted JSON, minify it, then copy the compact result.</p>
           <ol class="howto-list">
-          <li>Paste the text with one item per line.</li>
-          <li>Choose double or single quotes based on your format needs.</li>
-          <li>Click Add Quotes to wrap each line.</li>
-          <li>Copy the quoted output into your code or data file.</li>
+          <li>Paste the JSON payload you want to compress.</li>
+          <li>Click Minify JSON to validate and remove formatting whitespace.</li>
+          <li>Copy the compact output into your API test, config, or embed.</li>
           </ol>
         </div>
       </div>
@@ -618,11 +605,11 @@
       <div class="container">
         <div class="section-card">
           <h2 id="tool-use-cases-title">Use cases</h2>
-          <p>Use it when converting simple lists into quoted format for SQL or code.</p>
+          <p>This is most useful when the JSON is valid but too bulky for the next step in your workflow.</p>
           <ul class="use-cases-list">
-          <li>Prepare lists for SQL IN clauses or WHERE conditions.</li>
-          <li>Format items as string literals for JavaScript, Python, or other code.</li>
-          <li>Create quoted CSV data or other quoted text formats.</li>
+          <li>Prepare compact JSON payloads for API requests and testing tools.</li>
+          <li>Shrink embedded JSON before pasting it into scripts or configs.</li>
+          <li>Switch between readable JSON and compact JSON during debugging.</li>
           </ul>
         </div>
       </div>
@@ -636,11 +623,11 @@
           <div class="tool-example-grid">
             <div class="example-box">
               <h3>Input</h3>
-              <pre>apple\nbanana\ncarrot</pre>
+              <pre>{\n  "name": "Alice",\n  "items": [1, 2],\n  "ok": true\n}</pre>
             </div>
             <div class="example-box">
               <h3>Output</h3>
-              <pre>"apple"\n"banana"\n"carrot"</pre>
+              <pre>{"name":"Alice","items":[1,2],"ok":true}</pre>
             </div>
           </div>
         </div>
@@ -655,7 +642,7 @@
   </footer>
 
   <script>
-    const pageConfig = {"slug":"add-quotes","sampleText":"apple\nbanana\ncarrot","sampleState":{"quoteType":"double"},"emptyInputMessage":"Paste some text first.","requiresNonWhitespaceInput":true};
+    const pageConfig = {"slug":"json-minify","sampleText":"{\n  \"name\": \"Alice\",\n  \"items\": [1, 2],\n  \"ok\": true\n}","sampleState":{},"emptyInputMessage":"Paste some text first.","requiresNonWhitespaceInput":true};
 
     const inputText = document.getElementById('inputText');
     const outputText = document.getElementById('outputText');

@@ -12,6 +12,10 @@
   <meta property="og:description" content="Count total lines, non-empty lines, and blank lines from pasted text before you clean or reuse it. Free browser tool on ExtFormatTools." />
   <meta property="og:url" content="https://extformattools.com/tools/line-counter/" />
   <meta property="og:site_name" content="ExtFormatTools" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Count Lines Online - Count lines in text" />
+  <meta name="twitter:description" content="Count total lines, non-empty lines, and blank lines from pasted text before you clean or reuse it. Free browser tool on ExtFormatTools." />
+  <meta name="theme-color" content="#1463ff" />
 
   <style>
     * { box-sizing: border-box; }
@@ -272,6 +276,50 @@
   }
 }
   </script>
+  <script id="tool-breadcrumb-schema" type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://extformattools.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Text Tools",
+      "item": "https://extformattools.com/text-tools/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Line Counter",
+      "item": "https://extformattools.com/tools/line-counter/"
+    }
+  ]
+}
+  </script>
+  <script id="tool-webapp-schema" type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Line Counter",
+  "url": "https://extformattools.com/tools/line-counter/",
+  "description": "Count total lines, non-empty lines, and blank lines from pasted text before you clean or reuse it. Free browser tool on ExtFormatTools.",
+  "applicationCategory": "UtilitiesApplication",
+  "operatingSystem": "Any",
+  "browserRequirements": "Requires JavaScript and a modern browser.",
+  "isAccessibleForFree": true,
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  }
+}
+  </script>
   <script id="tool-faq-schema" type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -292,6 +340,34 @@
         "@type": "Answer",
         "text": "It is useful when you need to inspect exports, logs, pasted lists, or blocks of text before cleaning them."
       }
+    }
+  ]
+}
+  </script>
+  <script id="tool-howto-schema" type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  "name": "How to use Line Counter",
+  "description": "Paste the text, count the lines, then use the totals to decide what to clean next.",
+  "step": [
+    {
+      "@type": "HowToStep",
+      "position": 1,
+      "name": "Step 1",
+      "text": "Paste the text block you want to inspect."
+    },
+    {
+      "@type": "HowToStep",
+      "position": 2,
+      "name": "Step 2",
+      "text": "Click Line Counter to calculate total, non-empty, and empty lines."
+    },
+    {
+      "@type": "HowToStep",
+      "position": 3,
+      "name": "Step 3",
+      "text": "Use the totals to review the text or copy the result into your notes."
     }
   ]
 }

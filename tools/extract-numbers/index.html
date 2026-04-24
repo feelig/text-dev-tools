@@ -11,6 +11,10 @@
   <meta property="og:description" content="Paste text to extract every number and get a clean list of all digits found. Free browser tool on ExtFormatTools." />
   <meta property="og:url" content="https://extformattools.com/tools/extract-numbers/" />
   <meta property="og:site_name" content="ExtFormatTools" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Extract Numbers From Text Online - Extract all numbers from text" />
+  <meta name="twitter:description" content="Paste text to extract every number and get a clean list of all digits found. Free browser tool on ExtFormatTools." />
+  <meta name="theme-color" content="#1463ff" />
   <meta property="og:type" content="website" />
   <style>
     :root {
@@ -362,6 +366,50 @@
   }
 }
   </script>
+  <script id="tool-breadcrumb-schema" type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://extformattools.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Text Tools",
+      "item": "https://extformattools.com/text-tools/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Extract Numbers",
+      "item": "https://extformattools.com/tools/extract-numbers/"
+    }
+  ]
+}
+  </script>
+  <script id="tool-webapp-schema" type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Extract Numbers",
+  "url": "https://extformattools.com/tools/extract-numbers/",
+  "description": "Paste text to extract every number and get a clean list of all digits found. Free browser tool on ExtFormatTools.",
+  "applicationCategory": "UtilitiesApplication",
+  "operatingSystem": "Any",
+  "browserRequirements": "Requires JavaScript and a modern browser.",
+  "isAccessibleForFree": true,
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  }
+}
+  </script>
   <script id="tool-faq-schema" type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -420,6 +468,34 @@
       color: #152033;
     }
   </style>
+  <script id="tool-howto-schema" type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  "name": "How to use Extract Numbers",
+  "description": "Paste the text, extract numbers, then copy the cleaned list.",
+  "step": [
+    {
+      "@type": "HowToStep",
+      "position": 1,
+      "name": "Step 1",
+      "text": "Paste the text that contains numbers you need to collect."
+    },
+    {
+      "@type": "HowToStep",
+      "position": 2,
+      "name": "Step 2",
+      "text": "Click Extract Numbers to pull every number from the text."
+    },
+    {
+      "@type": "HowToStep",
+      "position": 3,
+      "name": "Step 3",
+      "text": "Copy the list into your notes, spreadsheet, or workflow."
+    }
+  ]
+}
+  </script>
 
   <style id="tool-use-cases-style">
     .tool-use-cases-section {
@@ -697,6 +773,15 @@
       setStat('statLinesProcessed', 0);
       setStat('statItems', 0);
       setStat('statSlugLength', 0);
+      setStat('statTitleChars', 0);
+      setStat('statTitleWords', 0);
+      setStat('statTitleStatus', 'Ready');
+      setStat('statDescriptionChars', 0);
+      setStat('statDescriptionWords', 0);
+      setStat('statDescriptionStatus', 'Ready');
+      setStat('statUrlsCleaned', 0);
+      setStat('statLinksExtracted', 0);
+      setStat('statMetaItems', 0);
       setStat('statTotalWords', 0);
       setStat('statUniqueWords', 0);
       setStat('statRepeatedWords', 0);
@@ -710,6 +795,15 @@
       if ('linesProcessed' in stats) setStat('statLinesProcessed', stats.linesProcessed);
       if ('items' in stats) setStat('statItems', stats.items);
       if ('slugLength' in stats) setStat('statSlugLength', stats.slugLength);
+      if ('titleChars' in stats) setStat('statTitleChars', stats.titleChars);
+      if ('titleWords' in stats) setStat('statTitleWords', stats.titleWords);
+      if ('titleStatus' in stats) setStat('statTitleStatus', stats.titleStatus);
+      if ('descriptionChars' in stats) setStat('statDescriptionChars', stats.descriptionChars);
+      if ('descriptionWords' in stats) setStat('statDescriptionWords', stats.descriptionWords);
+      if ('descriptionStatus' in stats) setStat('statDescriptionStatus', stats.descriptionStatus);
+      if ('urlsCleaned' in stats) setStat('statUrlsCleaned', stats.urlsCleaned);
+      if ('linksExtracted' in stats) setStat('statLinksExtracted', stats.linksExtracted);
+      if ('metaItems' in stats) setStat('statMetaItems', stats.metaItems);
       if ('totalWords' in stats) setStat('statTotalWords', stats.totalWords);
       if ('uniqueWords' in stats) setStat('statUniqueWords', stats.uniqueWords);
       if ('repeatedWords' in stats) setStat('statRepeatedWords', stats.repeatedWords);
@@ -805,6 +899,116 @@
         .replace(/[^a-z0-9]+/g, '-')
         .replace(/^-+|-+$/g, '')
         .replace(/-{2,}/g, '-');
+    }
+
+    function normalizeInlineText(text) {
+      return normalizeNewlines(text).replace(/\s+/g, ' ').trim();
+    }
+
+    function classifyLength(length, shortMax, goodMax, okayMax) {
+      if (length <= shortMax) {
+        return {
+          label: 'Short',
+          guidance: 'Consider adding more context so the text is specific enough.'
+        };
+      }
+
+      if (length <= goodMax) {
+        return {
+          label: 'Good',
+          guidance: 'Good length for many search results.'
+        };
+      }
+
+      if (length <= okayMax) {
+        return {
+          label: 'Long',
+          guidance: 'It may still work, but trimming it could reduce truncation risk.'
+        };
+      }
+
+      return {
+        label: 'Too Long',
+        guidance: 'Consider shortening it to reduce the chance of truncation.'
+      };
+    }
+
+    function extractUrlMatches(text) {
+      return (normalizeNewlines(text).match(/(?:https?:\/\/|ftp:\/\/|www\.)[^\s<>"']+/gi) || [])
+        .map(cleanUrlMatch)
+        .filter(Boolean);
+    }
+
+    function looksLikeUrlCandidate(value) {
+      return /^(?:[a-z][a-z0-9+.-]*:\/\/)?(?:www\.)?(?:[a-z0-9-]+\.)+[a-z]{2,}(?:[/?#]|$)/i.test(value);
+    }
+
+    function normalizeUrlCandidate(value) {
+      const cleaned = cleanUrlMatch(String(value || '').trim());
+      if (!cleaned) return '';
+      if (/^[a-z][a-z0-9+.-]*:\/\//i.test(cleaned)) return cleaned;
+      if (/^www\./i.test(cleaned) || looksLikeUrlCandidate(cleaned)) {
+        return 'https://' + cleaned;
+      }
+      return '';
+    }
+
+    function buildCleanUrl(parsedUrl, original) {
+      const hadProtocol = /^[a-z][a-z0-9+.-]*:\/\//i.test(original);
+      const withoutProtocol = original.replace(/^[a-z][a-z0-9+.-]*:\/\//i, '');
+      const hasExplicitPath = /\//.test(withoutProtocol);
+      const pathValue = parsedUrl.pathname === '/' && !hasExplicitPath ? '' : parsedUrl.pathname;
+      const prefix = hadProtocol ? parsedUrl.protocol + '//' : '';
+      return prefix + parsedUrl.host + pathValue + parsedUrl.hash;
+    }
+
+    function removeUrlParametersFromValue(value) {
+      const original = cleanUrlMatch(String(value || '').trim());
+      const normalized = normalizeUrlCandidate(original);
+      if (!normalized) return '';
+
+      const parsedUrl = new URL(normalized);
+      parsedUrl.search = '';
+      return buildCleanUrl(parsedUrl, original);
+    }
+
+    function extractLinksFromHtml(text) {
+      const parser = new DOMParser();
+      const doc = parser.parseFromString(normalizeNewlines(text), 'text/html');
+      return Array.from(doc.querySelectorAll('a[href]'))
+        .map((link) => cleanUrlMatch(link.getAttribute('href') || '').trim())
+        .filter(Boolean);
+    }
+
+    function extractMetaTagItems(text) {
+      const parser = new DOMParser();
+      const doc = parser.parseFromString(normalizeNewlines(text), 'text/html');
+      const selectors = [
+        ['Title', 'title', 'text'],
+        ['Meta Description', 'meta[name="description"]', 'content'],
+        ['Robots', 'meta[name="robots"]', 'content'],
+        ['Canonical', 'link[rel~="canonical"]', 'href'],
+        ['OG Title', 'meta[property="og:title"]', 'content'],
+        ['OG Description', 'meta[property="og:description"]', 'content'],
+        ['OG URL', 'meta[property="og:url"]', 'content'],
+        ['Twitter Card', 'meta[name="twitter:card"]', 'content'],
+        ['Twitter Title', 'meta[name="twitter:title"]', 'content'],
+        ['Twitter Description', 'meta[name="twitter:description"]', 'content']
+      ];
+
+      return selectors
+        .map(([label, selector, mode]) => {
+          const node = doc.querySelector(selector);
+          if (!node) return null;
+
+          const value = mode === 'text'
+            ? normalizeInlineText(node.textContent || '')
+            : normalizeInlineText(node.getAttribute(mode) || '');
+
+          if (!value) return null;
+          return label + ': ' + value;
+        })
+        .filter(Boolean);
     }
 
     function processTool(source) {
@@ -1038,11 +1242,11 @@
 
           return {
             output: ranked.map(([word, count]) => word + ': ' + count).join('\n'),
-            status: 'Word frequency analyzed successfully.',
-            type: 'success',
-            stats: {
-              totalWords: words.length,
-              uniqueWords: counts.size,
+              status: 'Word frequency analyzed successfully.',
+              type: 'success',
+              stats: {
+                totalWords: words.length,
+                uniqueWords: counts.size,
               topWord: ranked[0][0],
               topCount: ranked[0][1]
             }
@@ -1071,9 +1275,105 @@
 
           return {
             output: stripHtmlTags(source),
-            status: 'HTML tags removed successfully.',
-            type: 'success'
+              status: 'HTML tags removed successfully.',
+              type: 'success'
+            };
+        }
+        case 'title-tag-checker': {
+          const normalized = normalizeInlineText(source);
+          const words = normalized ? normalized.split(/\s+/).filter(Boolean) : [];
+          const assessment = classifyLength(normalized.length, 30, 60, 70);
+
+          return {
+            output: [
+              'Normalized title: ' + normalized,
+              'Characters: ' + normalized.length,
+              'Words: ' + words.length,
+              'Assessment: ' + assessment.guidance
+            ].join('\n'),
+            status: 'Title tag length checked.',
+            type: 'success',
+            stats: {
+              titleChars: normalized.length,
+              titleWords: words.length,
+              titleStatus: assessment.label
+            }
           };
+        }
+        case 'meta-description-checker': {
+          const normalized = normalizeInlineText(source);
+          const words = normalized ? normalized.split(/\s+/).filter(Boolean) : [];
+          const assessment = classifyLength(normalized.length, 70, 160, 180);
+
+          return {
+            output: [
+              'Normalized description: ' + normalized,
+              'Characters: ' + normalized.length,
+              'Words: ' + words.length,
+              'Assessment: ' + assessment.guidance
+            ].join('\n'),
+            status: 'Meta description length checked.',
+            type: 'success',
+            stats: {
+              descriptionChars: normalized.length,
+              descriptionWords: words.length,
+              descriptionStatus: assessment.label
+            }
+          };
+        }
+        case 'remove-url-parameters': {
+          const extractedMatches = extractUrlMatches(source);
+          const candidates = extractedMatches.length
+            ? extractedMatches
+            : normalizeNewlines(source).split('\n').map((line) => line.trim()).filter(Boolean);
+          const cleaned = candidates
+            .map((candidate) => removeUrlParametersFromValue(candidate))
+            .filter(Boolean);
+
+          if (!cleaned.length) {
+            return {
+              output: '',
+              status: 'No URLs were found to clean.',
+              stats: { urlsCleaned: 0 }
+            };
+          }
+
+          return {
+            output: cleaned.join('\n'),
+            status: 'URL parameters removed successfully.',
+            type: 'success',
+            stats: { urlsCleaned: cleaned.length }
+          };
+        }
+        case 'extract-links-from-html': {
+          const links = extractLinksFromHtml(source);
+          return links.length
+            ? {
+                output: links.join('\n'),
+                status: 'HTML links extracted successfully.',
+                type: 'success',
+                stats: { linksExtracted: links.length }
+              }
+            : {
+                output: '',
+                status: 'No anchor links found.',
+                stats: { linksExtracted: 0 }
+              };
+        }
+        case 'extract-meta-tags': {
+          const items = extractMetaTagItems(source);
+          return items.length
+            ? {
+                output: items.join('\n'),
+                status: 'Meta tags extracted successfully.',
+                type: 'success',
+                stats: { metaItems: items.length }
+              }
+            : {
+                output: '',
+                status: 'No supported meta tags found.',
+                stats: { metaItems: 0 }
+              };
         }
         default:
           return {

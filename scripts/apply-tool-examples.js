@@ -242,6 +242,41 @@ function getExample(tool) {
     };
   }
 
+  if (slug === 'title-tag-checker') {
+    return {
+      input: 'Quick SEO title for product pages',
+      output: 'Normalized title: Quick SEO title for product pages\\nCharacters: 33\\nWords: 6\\nAssessment: Good length for many search results.'
+    };
+  }
+
+  if (slug === 'meta-description-checker') {
+    return {
+      input: 'Clean product snippets before publishing category pages and campaign landing pages.',
+      output: 'Normalized description: Clean product snippets before publishing category pages and campaign landing pages.\\nCharacters: 83\\nWords: 11\\nAssessment: Good length for many search results.'
+    };
+  }
+
+  if (slug === 'remove-url-parameters') {
+    return {
+      input: 'https://example.com/product?id=42&utm_source=newsletter\\nwww.test.dev/path?ref=campaign#pricing',
+      output: 'https://example.com/product\\nwww.test.dev/path#pricing'
+    };
+  }
+
+  if (slug === 'extract-links-from-html') {
+    return {
+      input: '<a href=\"/about\">About</a><a href=\"https://example.com/contact?src=nav\">Contact</a>',
+      output: '/about\\nhttps://example.com/contact?src=nav'
+    };
+  }
+
+  if (slug === 'extract-meta-tags') {
+    return {
+      input: '<title>Sample Page</title><meta name=\"description\" content=\"Example snippet\"><link rel=\"canonical\" href=\"https://example.com/page\">',
+      output: 'Title: Sample Page\\nMeta Description: Example snippet\\nCanonical: https://example.com/page'
+    };
+  }
+
   if ((tool.category || '').toLowerCase() === 'developer-tools') {
     return {
       input: `Sample input for ${name}`,

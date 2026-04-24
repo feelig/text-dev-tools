@@ -25,6 +25,10 @@ function pageTemplate({ title, description, canonical, body, robots = 'noindex,f
   <meta property="og:description" content="${description}" />
   <meta property="og:url" content="${canonical}" />
   <meta property="og:site_name" content="${SITE_NAME}" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="${title}" />
+  <meta name="twitter:description" content="${description}" />
+  <meta name="theme-color" content="#2563eb" />
   <style>
     :root{
       --bg:#f6f8fb;

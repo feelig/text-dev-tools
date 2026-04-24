@@ -15,6 +15,10 @@ function escapeHtml(str = '') {
     .replace(/"/g, '&quot;');
 }
 
+function safeJsonLd(data) {
+  return JSON.stringify(data, null, 2).replace(/</g, '\\u003c');
+}
+
 function getHowToData(tool) {
   const custom = tool.howTo || {};
   const steps = Array.isArray(custom.steps) ? custom.steps.filter(Boolean) : [];
@@ -56,6 +60,24 @@ ${steps}
     </section>`;
 }
 
+function buildHowToSchema(tool) {
+  const howTo = getHowToData(tool);
+  const schema = {
+    '@context': 'https://schema.org',
+    '@type': 'HowTo',
+    name: `How to use ${tool.name || tool.title || tool.slug || 'this tool'}`,
+    description: howTo.lead,
+    step: howTo.steps.map((step, index) => ({
+      '@type': 'HowToStep',
+      position: index + 1,
+      name: `Step ${index + 1}`,
+      text: step
+    }))
+  };
+
+  return `  <script id="tool-howto-schema" type="application/ld+json">\n${safeJsonLd(schema)}\n  </script>`;
+}
+
 function buildStyleBlock() {
   return `
   <style id="tool-howto-style">
@@ -95,15 +117,18 @@ for (const tool of tools) {
 
   html = html.replace(/<section class="tool-howto-section"[\s\S]*?<\/section>/i, '');
   html = html.replace(/<section[^>]*aria-labelledby="tool-howto-title"[\s\S]*?<\/section>/i, '');
+  html = html.replace(/<script id="tool-howto-schema" type="application\/ld\+json">[\s\S]*?<\/script>/i, '');
 
   if (!html.includes('id="tool-howto-style"')) {
     html = html.replace(/<\/head>/i, `${buildStyleBlock()}\n</head>`);
   }
 
   const howtoHtml = buildHowToSection(tool);
+  const howtoSchema = buildHowToSchema(tool);
 
   if (/<\/main>/i.test(html)) {
     html = html.replace(/<\/main>/i, `${howtoHtml}\n</main>`);
+    html = html.replace(/<\/head>/i, `${howtoSchema}\n</head>`);
     fs.writeFileSync(filePath, html, 'utf8');
     console.log(`✅ How to use added: tools/${tool.slug}/index.html`);
     updated++;

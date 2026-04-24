@@ -131,9 +131,37 @@ for (const tool of tools) {
 
   html = upsertTag(
     html,
+    /^[ \t]*<meta\s+name=["']twitter:card["'][^>]*>/im,
+    `  <meta name="twitter:card" content="summary" />`,
+    /<meta\s+property=["']og:site_name["'][^>]*>/i
+  );
+
+  html = upsertTag(
+    html,
+    /^[ \t]*<meta\s+name=["']twitter:title["'][^>]*>/im,
+    `  <meta name="twitter:title" content="${title}" />`,
+    /<meta\s+name=["']twitter:card["'][^>]*>/i
+  );
+
+  html = upsertTag(
+    html,
+    /^[ \t]*<meta\s+name=["']twitter:description["'][^>]*>/im,
+    `  <meta name="twitter:description" content="${description}" />`,
+    /<meta\s+name=["']twitter:title["'][^>]*>/i
+  );
+
+  html = upsertTag(
+    html,
+    /^[ \t]*<meta\s+name=["']theme-color["'][^>]*>/im,
+    `  <meta name="theme-color" content="#1463ff" />`,
+    /<meta\s+name=["']twitter:description["'][^>]*>/i
+  );
+
+  html = upsertTag(
+    html,
     /^[ \t]*<meta\s+name=["']robots["'][^>]*>/im,
     `  <meta name="robots" content="${robots}" />`,
-    /<meta\s+name=["']description["'][^>]*>/i
+    /<meta\s+name=["']theme-color["'][^>]*>/i
   );
 
   html = html.replace(/Text Dev Tools/g, SITE_NAME);

@@ -8,8 +8,11 @@ const ACRONYM_WORDS = new Map([
   ['ID', 'ID'],
   ['IDS', 'IDs'],
   ['JSON', 'JSON'],
+  ['OG', 'OG'],
   ['PDF', 'PDF'],
   ['REGEX', 'Regex'],
+  ['SEO', 'SEO'],
+  ['SERP', 'SERP'],
   ['SQL', 'SQL'],
   ['TSV', 'TSV'],
   ['URL', 'URL'],
@@ -25,17 +28,22 @@ const SHORT_ACTION_OVERRIDES = {
   'duplicate-line-remover': 'Remove duplicate lines',
   'json-validator': 'Check JSON syntax',
   'line-counter': 'Count lines in text',
+  'meta-description-checker': 'Check meta description length',
   'newline-to-comma': 'Convert lines to commas',
   'number-lines': 'Add line numbers',
   'paragraph-counter': 'Count paragraphs in text',
   'regex-tester': 'Test regular expressions',
+  'remove-url-parameters': 'Remove URL parameters',
   'sentence-counter': 'Count sentences in text',
   'text-diff': 'Compare text side by side',
   'text-reverser': 'Reverse text',
+  'title-tag-checker': 'Check SEO title length',
   'timestamp-converter': 'Convert Unix timestamps',
   'trim-lines': 'Trim whitespace on each line',
   'trim-text': 'Trim leading and trailing spaces',
-  'word-frequency': 'Analyze word frequency'
+  'word-frequency': 'Analyze word frequency',
+  'extract-links-from-html': 'Extract links from HTML',
+  'extract-meta-tags': 'Extract title, canonical, and meta tags'
 };
 
 const TRAILING_STOP_WORDS = new Set([

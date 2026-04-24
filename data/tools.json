@@ -2305,5 +2305,270 @@
       "markup",
       "developer"
     ]
+  },
+  {
+    "slug": "title-tag-checker",
+    "title": "Title Tag Checker",
+    "category": "dev",
+    "status": "live",
+    "description": "Check SEO title length and clean up titles before publishing.",
+    "name": "Title Tag Checker",
+    "intro": "Paste a page title to normalize spacing, measure length, and review quick guidance before you publish or update metadata.",
+    "keywords": [
+      "title tag checker",
+      "seo title checker",
+      "title length checker"
+    ],
+    "faq": [
+      {
+        "q": "Does this tool rewrite the title for me?",
+        "a": "No. It keeps your title text intact, normalizes extra spacing, and shows quick length guidance so you can revise it yourself."
+      },
+      {
+        "q": "Is there one perfect SEO title length?",
+        "a": "No. Search results vary, but a concise and descriptive title usually performs better than one that is vague or overloaded."
+      }
+    ],
+    "howTo": {
+      "lead": "Paste your title, check the length feedback, then revise the final wording if needed.",
+      "steps": [
+        "Paste the page title or draft headline into the input box.",
+        "Click Check Title Tag to normalize the text and review the character guidance.",
+        "Use the feedback to shorten, tighten, or confirm the title before publishing."
+      ]
+    },
+    "useCases": {
+      "lead": "This is useful when the title is written already but still needs a final SEO check.",
+      "items": [
+        "Review product, category, or blog titles before publishing.",
+        "Tighten titles that may be too short, too long, or padded with repeated words.",
+        "Quickly compare revised title options during SEO edits or content refreshes."
+      ]
+    },
+    "related": [
+      "meta-description-checker",
+      "text-to-slug",
+      "extract-meta-tags"
+    ],
+    "primaryCategory": "time-web",
+    "secondaryCategory": "web-seo",
+    "tags": [
+      "seo",
+      "title tag",
+      "metadata",
+      "serp"
+    ]
+  },
+  {
+    "slug": "meta-description-checker",
+    "title": "Meta Description Checker",
+    "category": "dev",
+    "status": "live",
+    "description": "Check meta description length and clean up snippets before publishing.",
+    "name": "Meta Description Checker",
+    "intro": "Paste a meta description to normalize spacing, count characters, and review quick snippet guidance for search listings.",
+    "keywords": [
+      "meta description checker",
+      "meta description length checker",
+      "seo description checker"
+    ],
+    "faq": [
+      {
+        "q": "Does this guarantee how Google will show the snippet?",
+        "a": "No. Search snippets can change, but checking the length and wording still helps you prepare cleaner metadata."
+      },
+      {
+        "q": "Can I use it for ecommerce and blog pages?",
+        "a": "Yes. It works well for product pages, categories, blog posts, landing pages, and other page types."
+      }
+    ],
+    "howTo": {
+      "lead": "Paste your description, run the checker, then refine the snippet if it needs tightening.",
+      "steps": [
+        "Paste the draft meta description into the input box.",
+        "Click Check Meta Description to normalize the text and review its length guidance.",
+        "Revise the copy if needed, then use the final version in your CMS or page template."
+      ]
+    },
+    "useCases": {
+      "lead": "Use it when the page summary is drafted but still needs a quick quality and length review.",
+      "items": [
+        "Check blog, category, or product page descriptions before publishing.",
+        "Clean copied snippets that contain uneven spacing or line breaks.",
+        "Compare alternative descriptions during SEO updates or content refreshes."
+      ]
+    },
+    "related": [
+      "title-tag-checker",
+      "extract-meta-tags",
+      "strip-html-tags"
+    ],
+    "primaryCategory": "time-web",
+    "secondaryCategory": "web-seo",
+    "tags": [
+      "seo",
+      "meta description",
+      "snippet",
+      "metadata"
+    ]
+  },
+  {
+    "slug": "remove-url-parameters",
+    "title": "Remove URL Parameters",
+    "category": "dev",
+    "status": "live",
+    "description": "Remove query parameters from URLs for cleaner sharing and SEO reviews.",
+    "name": "Remove URL Parameters",
+    "intro": "Paste URLs to strip query parameters while keeping the base path and any fragment that still matters.",
+    "keywords": [
+      "remove url parameters",
+      "strip url parameters",
+      "remove query string"
+    ],
+    "faq": [
+      {
+        "q": "Does it keep URL fragments like #section?",
+        "a": "Yes. The tool removes the query string but keeps the fragment so anchor targets are preserved."
+      },
+      {
+        "q": "Can I paste multiple URLs at once?",
+        "a": "Yes. Paste one URL per line or include multiple links in a text block and the tool will return the cleaned URLs line by line."
+      }
+    ],
+    "howTo": {
+      "lead": "Paste your links, remove the parameters, then copy the cleaned URLs.",
+      "steps": [
+        "Paste the URLs or text block that contains the links you want to clean.",
+        "Click Remove URL Parameters to strip the query string from each detected URL.",
+        "Copy the cleaned URLs for sharing, audits, or canonical reviews."
+      ]
+    },
+    "useCases": {
+      "lead": "This is most useful when query strings are making links noisy or hard to review.",
+      "items": [
+        "Remove tracking parameters before sharing a link with a team or client.",
+        "Review cleaner versions of URLs during SEO audits and canonical checks.",
+        "Prepare lists of base URLs before importing them into another workflow."
+      ]
+    },
+    "related": [
+      "url-encoder",
+      "text-to-slug",
+      "extract-domains"
+    ],
+    "primaryCategory": "time-web",
+    "secondaryCategory": "web-seo",
+    "tags": [
+      "seo",
+      "url",
+      "query string",
+      "canonical"
+    ]
+  },
+  {
+    "slug": "extract-links-from-html",
+    "title": "Extract Links From HTML",
+    "category": "dev",
+    "status": "live",
+    "description": "Extract href links from HTML for audits, migrations, and page reviews.",
+    "name": "Extract Links From HTML",
+    "intro": "Paste HTML markup to pull out anchor href values when you need a fast link inventory from a snippet or page source.",
+    "keywords": [
+      "extract links from html",
+      "html link extractor",
+      "extract href from html"
+    ],
+    "faq": [
+      {
+        "q": "Does it return relative links too?",
+        "a": "Yes. Relative paths are returned exactly as they appear in the HTML, which is useful during markup reviews."
+      },
+      {
+        "q": "Will it only read anchor tags?",
+        "a": "Yes. This tool focuses on href values from anchor tags, not every possible URL inside the HTML."
+      }
+    ],
+    "howTo": {
+      "lead": "Paste the HTML, extract the links, then review or export the href list.",
+      "steps": [
+        "Paste the HTML snippet or source code into the input box.",
+        "Click Extract Links From HTML to collect every anchor href value.",
+        "Copy the resulting link list into your audit, migration sheet, or crawler input."
+      ]
+    },
+    "useCases": {
+      "lead": "Use it when you need to inspect links quickly without opening a crawler or parser.",
+      "items": [
+        "Review anchor links inside page templates or CMS exports.",
+        "Pull href values from HTML before link audits or migrations.",
+        "Check whether a block of markup contains the destinations you expect."
+      ]
+    },
+    "related": [
+      "extract-meta-tags",
+      "strip-html-tags",
+      "extract-domains"
+    ],
+    "primaryCategory": "time-web",
+    "secondaryCategory": "web-seo",
+    "tags": [
+      "seo",
+      "html",
+      "links",
+      "audit"
+    ]
+  },
+  {
+    "slug": "extract-meta-tags",
+    "title": "Extract Meta Tags",
+    "category": "dev",
+    "status": "live",
+    "description": "Extract title, description, canonical, robots, and Open Graph tags from HTML.",
+    "name": "Extract Meta Tags",
+    "intro": "Paste HTML markup to pull key SEO-related tags like title, description, canonical, robots, and common Open Graph fields.",
+    "keywords": [
+      "extract meta tags",
+      "meta tag extractor",
+      "extract canonical tag"
+    ],
+    "faq": [
+      {
+        "q": "Which tags does it extract?",
+        "a": "It looks for the title tag, meta description, robots meta tag, canonical link, and common Open Graph or Twitter metadata when present."
+      },
+      {
+        "q": "Can I use a partial head snippet instead of a full page?",
+        "a": "Yes. A head snippet is enough as long as it contains the tags you want to inspect."
+      }
+    ],
+    "howTo": {
+      "lead": "Paste the HTML, extract the metadata, then review the tags you care about.",
+      "steps": [
+        "Paste the page source or head markup into the input box.",
+        "Click Extract Meta Tags to pull the supported SEO-related fields.",
+        "Copy the output into your QA notes, audit sheet, or publishing checklist."
+      ]
+    },
+    "useCases": {
+      "lead": "This is useful when metadata exists already and you want to inspect it quickly without opening developer tools.",
+      "items": [
+        "Check title, description, and canonical tags during SEO audits.",
+        "Review Open Graph metadata before sharing or publishing a page.",
+        "Compare extracted metadata from copied HTML snippets during QA."
+      ]
+    },
+    "related": [
+      "title-tag-checker",
+      "meta-description-checker",
+      "extract-links-from-html"
+    ],
+    "primaryCategory": "time-web",
+    "secondaryCategory": "web-seo",
+    "tags": [
+      "seo",
+      "meta tags",
+      "canonical",
+      "open graph"
+    ]
   }
 ]

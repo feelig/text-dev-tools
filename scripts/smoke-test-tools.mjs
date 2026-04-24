@@ -647,6 +647,89 @@ const tools = [
     }
   },
   {
+    slug: 'title-tag-checker',
+    path: '/tools/title-tag-checker/',
+    async run(page) {
+      await page.locator('#inputText').fill('  Quick SEO title for product pages  ');
+      await page.locator('#processBtn').click();
+      await expectValue(
+        page,
+        '#outputText',
+        'Normalized title: Quick SEO title for product pages\nCharacters: 33\nWords: 6\nAssessment: Good length for many search results.'
+      );
+      await expectText(page, '#statusMessage', 'Title tag length checked.');
+      await expectText(page, '#statTitleChars', '33');
+      await expectText(page, '#statTitleWords', '6');
+      await expectText(page, '#statTitleStatus', 'Good');
+    }
+  },
+  {
+    slug: 'meta-description-checker',
+    path: '/tools/meta-description-checker/',
+    async run(page) {
+      await page.locator('#inputText').fill(
+        'Clean snippets for product pages and category pages before publishing updates.'
+      );
+      await page.locator('#processBtn').click();
+      await expectValue(
+        page,
+        '#outputText',
+        'Normalized description: Clean snippets for product pages and category pages before publishing updates.\nCharacters: 78\nWords: 11\nAssessment: Good length for many search results.'
+      );
+      await expectText(page, '#statusMessage', 'Meta description length checked.');
+      await expectText(page, '#statDescriptionChars', '78');
+      await expectText(page, '#statDescriptionWords', '11');
+      await expectText(page, '#statDescriptionStatus', 'Good');
+    }
+  },
+  {
+    slug: 'remove-url-parameters',
+    path: '/tools/remove-url-parameters/',
+    async run(page) {
+      await page.locator('#inputText').fill(
+        'https://example.com/page?utm_source=google&id=7\nwww.test.dev/path?ref=abc#section'
+      );
+      await page.locator('#processBtn').click();
+      await expectValue(
+        page,
+        '#outputText',
+        'https://example.com/page\nwww.test.dev/path#section'
+      );
+      await expectText(page, '#statusMessage', 'URL parameters removed successfully.');
+      await expectText(page, '#statUrlsCleaned', '2');
+    }
+  },
+  {
+    slug: 'extract-links-from-html',
+    path: '/tools/extract-links-from-html/',
+    async run(page) {
+      await page.locator('#inputText').fill(
+        '<div><a href="/about">About</a><a href="https://example.com/contact?x=1">Contact</a></div>'
+      );
+      await page.locator('#processBtn').click();
+      await expectValue(page, '#outputText', '/about\nhttps://example.com/contact?x=1');
+      await expectText(page, '#statusMessage', 'HTML links extracted successfully.');
+      await expectText(page, '#statLinksExtracted', '2');
+    }
+  },
+  {
+    slug: 'extract-meta-tags',
+    path: '/tools/extract-meta-tags/',
+    async run(page) {
+      await page.locator('#inputText').fill(
+        '<head><title>Sample Page</title><meta name="description" content="Meta summary"><link rel="canonical" href="https://example.com/page"><meta property="og:title" content="OG Sample"></head>'
+      );
+      await page.locator('#processBtn').click();
+      await expectValue(
+        page,
+        '#outputText',
+        'Title: Sample Page\nMeta Description: Meta summary\nCanonical: https://example.com/page\nOG Title: OG Sample'
+      );
+      await expectText(page, '#statusMessage', 'Meta tags extracted successfully.');
+      await expectText(page, '#statMetaItems', '4');
+    }
+  },
+  {
     slug: 'strip-html-tags',
     path: '/tools/strip-html-tags/',
     async run(page) {

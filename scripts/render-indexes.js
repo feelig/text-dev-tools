@@ -94,7 +94,7 @@ function getRootMeta(rootKey) {
       href: '/developer-tools/',
       buttonLabel: 'Browse Developer Tools',
       description:
-        'Format JSON, test patterns, encode values, and handle quick utility work in stable categories.'
+        'Format JSON, test patterns, encode values, and review lightweight SEO or web tasks in stable categories.'
     };
   }
 
@@ -159,6 +159,9 @@ function toolSearchValue(tool) {
   return [
     searchName,
     tool.description,
+    tool.intro,
+    Array.isArray(tool.keywords) ? tool.keywords.join(' ') : '',
+    Array.isArray(tool.tags) ? tool.tags.join(' ') : '',
     primaryMeta ? primaryMeta.label : '',
     secondaryMeta ? secondaryMeta.label : ''
   ]
@@ -400,6 +403,10 @@ function layout({ title, description, canonical, body, extraHead = '', robots = 
   <meta property="og:description" content="${escapeHtml(description)}" />
   <meta property="og:url" content="${escapeHtml(canonical)}" />
   <meta property="og:site_name" content="${escapeHtml(SITE_NAME)}" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="${escapeHtml(title)}" />
+  <meta name="twitter:description" content="${escapeHtml(description)}" />
+  <meta name="theme-color" content="#1463ff" />
   <meta name="yandex-verification" content="${escapeHtml(YANDEX_VERIFICATION_TOKEN)}" />
   ${extraHead}
   <style>
@@ -1039,6 +1046,11 @@ function renderHome() {
       ['json-formatter', 'json-validator', 'regex-tester']
     ),
     taskCard(
+      'Review basic SEO markup',
+      'Check page titles, meta descriptions, and extracted tags before publishing or auditing a page.',
+      ['title-tag-checker', 'meta-description-checker', 'extract-meta-tags']
+    ),
+    taskCard(
       'Encode or generate values',
       'Handle URLs, Base64 strings, passwords, and UUIDs when you need a quick utility step.',
       ['url-encoder', 'base64-encoder', 'uuid-generator']
@@ -1069,7 +1081,7 @@ function renderHome() {
       url: `${SITE_URL}/`,
       alternateName: 'extformattools.com',
       description:
-        'Use ExtFormatTools for browser-based text cleanup, counting, extraction, JSON formatting, regex testing, and quick developer utilities.'
+        'Use ExtFormatTools for browser-based text cleanup, extraction, JSON work, regex testing, and lightweight SEO or developer utilities.'
     },
     buildItemListSchema('Available browser tools', `${SITE_URL}/#find-tools`, liveTools),
     {
@@ -1109,7 +1121,7 @@ function renderHome() {
   return layout({
     title: 'ExtFormatTools | Free Online Text and Developer Tools',
     description:
-      'Use ExtFormatTools for browser-based text cleanup, counting, extraction, JSON formatting, regex testing, and quick developer utilities.',
+      'Use ExtFormatTools for browser-based text cleanup, extraction, JSON formatting, regex testing, SEO checks, and quick developer utilities.',
     canonical: `${SITE_URL}/`,
     extraHead: homeSchemas,
     body: `
@@ -1129,7 +1141,7 @@ function renderHome() {
     <section class="hero">
       <div class="container">
         <h1>Free online text and developer tools from ${SITE_NAME}</h1>
-        <p>Open a tool, paste your input, get the result, and move on. ${SITE_NAME} keeps text cleanup, extraction, JSON work, regex checks, and quick utility tasks simple in the browser.</p>
+        <p>Open a tool, paste your input, get the result, and move on. ${SITE_NAME} keeps text cleanup, extraction, JSON work, regex checks, SEO reviews, and quick utility tasks simple in the browser.</p>
         <div class="button-row">
           <a class="button button-primary" href="#find-tools">Find a Tool</a>
           <a class="button button-secondary" href="/text-tools/">Browse Text Tools</a>
@@ -1508,14 +1520,14 @@ fs.writeFileSync(
   renderCategoryPage({
     categoryKey: 'dev',
     slug: 'developer-tools',
-    pageTitle: 'Developer Tools | JSON, Regex, Encoding, and Utility Tools | ExtFormatTools',
+    pageTitle: 'Developer Tools | JSON, Regex, SEO, and Utility Tools | ExtFormatTools',
     pageDescription:
-      'Browse ExtFormatTools developer tools for JSON, regex, encoding, IDs, timestamps, and other quick browser-based utility tasks.',
+      'Browse ExtFormatTools developer tools for JSON, regex, encoding, IDs, timestamps, SEO checks, and other quick browser-based utility tasks.',
     heroTitle: 'Developer Tools',
     heroText:
-      'Format, validate, encode, and convert developer-facing text in your browser without extra setup. ExtFormatTools keeps these utility pages organized into stable groups for easier discovery.',
-    searchPlaceholder: 'Try: json, encoding, uuid, regex, slug, timestamp',
-    featuredSlugs: ['json-formatter', 'json-validator', 'regex-tester', 'base64-encoder'],
+      'Format, validate, encode, and convert developer-facing text in your browser without extra setup. ExtFormatTools keeps these utility pages organized into stable groups for easier discovery, including quick SEO and web checks.',
+    searchPlaceholder: 'Try: json, encoding, uuid, regex, slug, title, meta, canonical',
+    featuredSlugs: ['json-formatter', 'json-validator', 'title-tag-checker', 'extract-meta-tags'],
     benefitCards: [
       {
         title: 'Check structured data quickly',
@@ -1526,12 +1538,12 @@ fs.writeFileSync(
         text: 'Encode values, generate UUIDs or passwords, and finish lightweight utility steps without leaving the browser.'
       },
       {
-        title: 'Prepare web and debugging output',
-        text: 'Test regex, escape HTML, compare text, and create slugs or timestamp conversions for technical workflows.'
+        title: 'Review web and SEO markup',
+        text: 'Check title tags, meta descriptions, links, slugs, and other lightweight page metadata during QA or audits.'
       }
     ],
     aboutPoints: [
-      'The developer tool index now has internal groups for JSON & data, encoding & IDs, developer formatting, and time & web helpers.',
+      'The developer tool index now has internal groups for JSON & data, encoding & IDs, developer formatting, and time & web or SEO helpers.',
       'Tool URLs remain unchanged, which protects current internal links, search indexing, and bookmarks.',
       'This gives you a clear path to grow toward a larger multi-category directory later without replatforming the site.'
     ],

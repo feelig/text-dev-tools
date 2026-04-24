@@ -53,7 +53,7 @@ const PRIMARY_CATEGORY_DEFINITIONS = {
     shortLabel: 'Time & Web',
     root: 'dev',
     anchor: 'group-time-web',
-    description: 'Timestamp and SEO-facing helpers for URLs and lightweight web work.'
+    description: 'Timestamp tools, URL cleanup, and SEO-facing helpers for lightweight web work.'
   }
 };
 
@@ -340,6 +340,31 @@ const TOOL_TAXONOMY = {
     primaryCategory: 'time-web',
     secondaryCategory: 'web-seo',
     tags: ['slug', 'seo', 'urls', 'web']
+  },
+  'title-tag-checker': {
+    primaryCategory: 'time-web',
+    secondaryCategory: 'web-seo',
+    tags: ['seo', 'title tag', 'metadata', 'serp']
+  },
+  'meta-description-checker': {
+    primaryCategory: 'time-web',
+    secondaryCategory: 'web-seo',
+    tags: ['seo', 'meta description', 'snippet', 'metadata']
+  },
+  'remove-url-parameters': {
+    primaryCategory: 'time-web',
+    secondaryCategory: 'web-seo',
+    tags: ['seo', 'url', 'query string', 'canonical']
+  },
+  'extract-links-from-html': {
+    primaryCategory: 'time-web',
+    secondaryCategory: 'web-seo',
+    tags: ['seo', 'html', 'links', 'audit']
+  },
+  'extract-meta-tags': {
+    primaryCategory: 'time-web',
+    secondaryCategory: 'web-seo',
+    tags: ['seo', 'meta tags', 'canonical', 'open graph']
   }
 };
 

@@ -2,265 +2,295 @@
   {
     "tool": "remove-line-breaks",
     "status": "PASS",
-    "timeMs": 592,
+    "timeMs": 584,
     "notes": ""
   },
   {
     "tool": "remove-extra-spaces",
     "status": "PASS",
-    "timeMs": 616,
+    "timeMs": 606,
     "notes": ""
   },
   {
     "tool": "remove-empty-lines",
     "status": "PASS",
-    "timeMs": 562,
+    "timeMs": 568,
     "notes": ""
   },
   {
     "tool": "remove-blank-lines",
     "status": "PASS",
-    "timeMs": 565,
+    "timeMs": 581,
     "notes": ""
   },
   {
     "tool": "duplicate-line-remover",
     "status": "PASS",
-    "timeMs": 553,
+    "timeMs": 556,
     "notes": ""
   },
   {
     "tool": "trim-lines",
     "status": "PASS",
-    "timeMs": 547,
+    "timeMs": 567,
     "notes": ""
   },
   {
     "tool": "replace-tabs-with-spaces",
     "status": "PASS",
-    "timeMs": 552,
+    "timeMs": 572,
     "notes": ""
   },
   {
     "tool": "word-counter",
     "status": "PASS",
-    "timeMs": 633,
+    "timeMs": 640,
     "notes": ""
   },
   {
     "tool": "case-converter",
     "status": "PASS",
-    "timeMs": 606,
+    "timeMs": 635,
     "notes": ""
   },
   {
     "tool": "text-sorter",
     "status": "PASS",
-    "timeMs": 593,
+    "timeMs": 612,
     "notes": ""
   },
   {
     "tool": "line-counter",
     "status": "PASS",
-    "timeMs": 562,
+    "timeMs": 566,
     "notes": ""
   },
   {
     "tool": "character-counter",
     "status": "PASS",
-    "timeMs": 628,
+    "timeMs": 679,
     "notes": ""
   },
   {
     "tool": "paragraph-counter",
     "status": "PASS",
-    "timeMs": 601,
+    "timeMs": 613,
     "notes": ""
   },
   {
     "tool": "sentence-counter",
     "status": "PASS",
-    "timeMs": 564,
+    "timeMs": 562,
     "notes": ""
   },
   {
     "tool": "json-formatter",
     "status": "PASS",
-    "timeMs": 650,
+    "timeMs": 624,
     "notes": ""
   },
   {
     "tool": "json-validator",
     "status": "PASS",
-    "timeMs": 632,
+    "timeMs": 633,
     "notes": ""
   },
   {
     "tool": "json-to-csv",
     "status": "PASS",
-    "timeMs": 624,
+    "timeMs": 625,
     "notes": ""
   },
   {
     "tool": "csv-to-json",
     "status": "PASS",
-    "timeMs": 599,
+    "timeMs": 624,
     "notes": ""
   },
   {
     "tool": "regex-tester",
     "status": "PASS",
-    "timeMs": 673,
+    "timeMs": 667,
     "notes": ""
   },
   {
     "tool": "text-reverser",
     "status": "PASS",
-    "timeMs": 552,
+    "timeMs": 549,
     "notes": ""
   },
   {
     "tool": "base64-encoder",
     "status": "PASS",
-    "timeMs": 616,
+    "timeMs": 621,
     "notes": ""
   },
   {
     "tool": "url-encoder",
     "status": "PASS",
-    "timeMs": 656,
+    "timeMs": 630,
     "notes": ""
   },
   {
     "tool": "trim-text",
     "status": "PASS",
-    "timeMs": 552,
+    "timeMs": 568,
     "notes": ""
   },
   {
     "tool": "password-generator",
     "status": "PASS",
-    "timeMs": 555,
+    "timeMs": 572,
     "notes": ""
   },
   {
     "tool": "uuid-generator",
     "status": "PASS",
-    "timeMs": 552,
+    "timeMs": 554,
     "notes": ""
   },
   {
     "tool": "timestamp-converter",
     "status": "PASS",
-    "timeMs": 551,
+    "timeMs": 556,
     "notes": ""
   },
   {
     "tool": "html-escape",
     "status": "PASS",
-    "timeMs": 551,
+    "timeMs": 570,
     "notes": ""
   },
   {
     "tool": "html-unescape",
     "status": "PASS",
-    "timeMs": 556,
+    "timeMs": 565,
     "notes": ""
   },
   {
     "tool": "text-diff",
     "status": "PASS",
-    "timeMs": 559,
+    "timeMs": 572,
     "notes": ""
   },
   {
     "tool": "extract-numbers",
     "status": "PASS",
-    "timeMs": 560,
+    "timeMs": 565,
     "notes": ""
   },
   {
     "tool": "extract-urls",
     "status": "PASS",
-    "timeMs": 551,
+    "timeMs": 552,
     "notes": ""
   },
   {
     "tool": "extract-emails",
     "status": "PASS",
-    "timeMs": 563,
+    "timeMs": 548,
     "notes": ""
   },
   {
     "tool": "extract-phone-numbers",
     "status": "PASS",
-    "timeMs": 559,
+    "timeMs": 555,
     "notes": ""
   },
   {
     "tool": "extract-hashtags",
     "status": "PASS",
-    "timeMs": 614,
+    "timeMs": 580,
     "notes": ""
   },
   {
     "tool": "extract-domains",
     "status": "PASS",
-    "timeMs": 565,
+    "timeMs": 563,
     "notes": ""
   },
   {
     "tool": "number-lines",
     "status": "PASS",
-    "timeMs": 554,
+    "timeMs": 563,
     "notes": ""
   },
   {
     "tool": "add-quotes",
     "status": "PASS",
-    "timeMs": 624,
+    "timeMs": 625,
     "notes": ""
   },
   {
     "tool": "comma-to-newline",
     "status": "PASS",
-    "timeMs": 561,
+    "timeMs": 562,
     "notes": ""
   },
   {
     "tool": "newline-to-comma",
     "status": "PASS",
-    "timeMs": 554,
+    "timeMs": 598,
     "notes": ""
   },
   {
     "tool": "count-unique-words",
     "status": "PASS",
-    "timeMs": 609,
+    "timeMs": 605,
     "notes": ""
   },
   {
     "tool": "text-to-slug",
     "status": "PASS",
-    "timeMs": 568,
+    "timeMs": 548,
     "notes": ""
   },
   {
     "tool": "word-frequency",
     "status": "PASS",
-    "timeMs": 594,
+    "timeMs": 551,
     "notes": ""
   },
   {
     "tool": "json-minify",
     "status": "PASS",
-    "timeMs": 613,
+    "timeMs": 624,
+    "notes": ""
+  },
+  {
+    "tool": "title-tag-checker",
+    "status": "PASS",
+    "timeMs": 570,
+    "notes": ""
+  },
+  {
+    "tool": "meta-description-checker",
+    "status": "PASS",
+    "timeMs": 546,
+    "notes": ""
+  },
+  {
+    "tool": "remove-url-parameters",
+    "status": "PASS",
+    "timeMs": 555,
+    "notes": ""
+  },
+  {
+    "tool": "extract-links-from-html",
+    "status": "PASS",
+    "timeMs": 568,
+    "notes": ""
+  },
+  {
+    "tool": "extract-meta-tags",
+    "status": "PASS",
+    "timeMs": 562,
     "notes": ""
   },
   {
     "tool": "strip-html-tags",
     "status": "PASS",
-    "timeMs": 550,
+    "timeMs": 563,
     "notes": ""
   }
 ]

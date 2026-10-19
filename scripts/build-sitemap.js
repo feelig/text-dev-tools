@@ -1,5 +1,6 @@
 const fs = require('fs');
 const path = require('path');
+const { execFileSync } = require('child_process');
 
 const root = process.cwd();
 const toolsPath = path.join(root, 'data', 'tools.json');
@@ -21,7 +22,18 @@ function toolFilePath(slug) {
 const staticPages = [
   { url: '/', filePath: path.join(root, 'index.html') },
   { url: '/text-tools/', filePath: path.join(root, 'text-tools', 'index.html') },
-  { url: '/developer-tools/', filePath: path.join(root, 'developer-tools', 'index.html') }
+  { url: '/developer-tools/', filePath: path.join(root, 'developer-tools', 'index.html') },
+  { url: '/text-tools/cleanup/', filePath: path.join(root, 'text-tools', 'cleanup', 'index.html') },
+  { url: '/text-tools/conversion/', filePath: path.join(root, 'text-tools', 'conversion', 'index.html') },
+  { url: '/text-tools/analysis/', filePath: path.join(root, 'text-tools', 'analysis', 'index.html') },
+  { url: '/text-tools/extraction/', filePath: path.join(root, 'text-tools', 'extraction', 'index.html') },
+  { url: '/developer-tools/json-data/', filePath: path.join(root, 'developer-tools', 'json-data', 'index.html') },
+  { url: '/developer-tools/encoding-ids/', filePath: path.join(root, 'developer-tools', 'encoding-ids', 'index.html') },
+  {
+    url: '/developer-tools/developer-formatting/',
+    filePath: path.join(root, 'developer-tools', 'developer-formatting', 'index.html')
+  },
+  { url: '/developer-tools/time-web/', filePath: path.join(root, 'developer-tools', 'time-web', 'index.html') }
 ];
 
 const toolPages = tools
@@ -38,6 +50,29 @@ const allPages = [...staticPages, ...toolPages];
 
 function formatLastMod(filePath) {
   if (!fs.existsSync(filePath)) return '';
+
+  const relativePath = path.relative(root, filePath);
+
+  try {
+    const workingTreeChange = execFileSync('git', ['status', '--porcelain', '--', relativePath], {
+      cwd: root,
+      encoding: 'utf8'
+    }).trim();
+
+    if (workingTreeChange) {
+      return new Date().toISOString().slice(0, 10);
+    }
+
+    const lastCommitDate = execFileSync('git', ['log', '-1', '--format=%cs', '--', relativePath], {
+      cwd: root,
+      encoding: 'utf8'
+    }).trim();
+
+    if (lastCommitDate) return lastCommitDate;
+  } catch (error) {
+    // Fall back to the file timestamp when the build runs outside a Git checkout.
+  }
+
   return fs.statSync(filePath).mtime.toISOString().slice(0, 10);
 }
 

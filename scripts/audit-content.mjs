@@ -134,6 +134,8 @@ for (const page of pages) {
 
   const html = fs.readFileSync(absolutePath, 'utf8');
   const title = (html.match(/<title>([\s\S]*?)<\/title>/i)?.[1] || '').trim();
+  const description =
+    (html.match(/<meta\s+name=["']description["']\s+content=["']([^"']*)["']/i)?.[1] || '').trim();
   const h1Count = countMatches(html, /<h1\b/gi);
   const robots = (html.match(/<meta\s+name=["']robots["']\s+content=["']([^"']+)["']/i)?.[1] || '').trim();
   const faqHeadingCount =
@@ -151,12 +153,15 @@ for (const page of pages) {
     return count + (html.toLowerCase().includes(phrase) ? 1 : 0);
   }, 0);
   const hasNoopProcessText = /function\s+processText\s*\(\s*text\s*\)\s*\{\s*return\s+text\s*;\s*\}/.test(html);
+  const hasLegacyDevToolsLink = /href=["']\/dev-tools\/["']/i.test(html);
 
   const issues = [];
   const warnings = [];
 
   if (!title) issues.push('Missing title');
   if (title && hasIncompleteTitle(title)) issues.push('Title ends with an incomplete phrase');
+  if (!description) issues.push('Missing meta description');
+  if (hasLegacyDevToolsLink) issues.push('Legacy /dev-tools/ internal link present');
   if (h1Count < 1) issues.push('Missing h1');
   if (robots !== page.expectedRobots) issues.push(`Robots mismatch: expected ${page.expectedRobots}, got ${robots || 'missing'}`);
   if (faqHeadingCount > 1) issues.push(`Duplicate FAQ headings (${faqHeadingCount})`);
@@ -206,6 +211,7 @@ for (const page of pages) {
     toolStatus: page.status || '',
     status,
     title,
+    description,
     robots,
     h1Count,
     wordCount,

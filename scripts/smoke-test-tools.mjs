@@ -793,6 +793,12 @@ function resolvePath(urlPath) {
 
 function createStaticServer() {
   const server = http.createServer((req, res) => {
+    if (new URL(req.url || '/', 'http://127.0.0.1').pathname === '/favicon.ico') {
+      res.writeHead(204);
+      res.end();
+      return;
+    }
+
     const filePath = resolvePath(req.url || '/');
 
     if (!filePath || !fs.existsSync(filePath) || fs.statSync(filePath).isDirectory()) {
@@ -915,7 +921,12 @@ async function ensureChecked(page, selector, expected) {
 async function run() {
   validateSmokeCoverage();
 
-  const browser = await chromium.launch({ headless: true });
+  const launchOptions = { headless: true };
+  if (process.env.PLAYWRIGHT_EXECUTABLE_PATH) {
+    launchOptions.executablePath = process.env.PLAYWRIGHT_EXECUTABLE_PATH;
+  }
+
+  const browser = await chromium.launch(launchOptions);
   const server = await createStaticServer();
   const results = [];
 

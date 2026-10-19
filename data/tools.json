@@ -965,6 +965,8 @@
     "category": "dev",
     "status": "beta",
     "description": "Convert Unix timestamps into readable dates and times.",
+    "seoTitle": "Unix Timestamp Converter – Convert Epoch to Date",
+    "seoDescription": "Convert Unix timestamps in seconds or milliseconds into readable local and UTC dates. Free browser tool for logs, APIs, and debugging.",
     "name": "Timestamp Converter",
     "intro": "Convert Unix timestamps into readable dates so you can inspect logs, event payloads, and stored time values faster.",
     "keywords": [
@@ -1198,6 +1200,8 @@
     "category": "dev",
     "status": "beta",
     "description": "Compare two blocks of text and check differences quickly.",
+    "seoTitle": "Text Diff Checker – Compare Two Texts Online Free",
+    "seoDescription": "Compare two text blocks side by side and highlight added, removed, and unchanged lines. Free browser-based diff checker with no sign-up.",
     "name": "Text Diff Checker",
     "intro": "Compare two text blocks side by side to spot edits, missing lines, and small wording changes faster.",
     "keywords": [
@@ -1831,6 +1835,8 @@
     "category": "text",
     "status": "live",
     "description": "Convert line-separated items to comma-separated format instantly.",
+    "seoTitle": "Newline to Comma Converter – Free Online Tool",
+    "seoDescription": "Convert line-separated text into comma-separated values instantly. Paste a list, join the lines, and copy the result for free with no sign-up.",
     "name": "Newline to Comma",
     "intro": "Combine lines into comma-separated format for CSV, lists, and inline data.",
     "keywords": [
@@ -1885,6 +1891,8 @@
     "category": "text",
     "status": "live",
     "description": "Count total words and unique words in your text instantly.",
+    "seoTitle": "Unique Word Counter – Count Distinct Words Online",
+    "seoDescription": "Count total and unique words in any text instantly. Compare distinct-word totals and repetition in your browser for free, with no sign-up.",
     "name": "Count Unique Words",
     "intro": "Analyze text to find how many unique words it contains and compare total vs. distinct word counts.",
     "keywords": [
@@ -2153,6 +2161,8 @@
     "category": "text",
     "status": "live",
     "description": "Extract domain names from text, URLs, and emails instantly online.",
+    "seoTitle": "Extract Domains from Text, URLs & Emails Online",
+    "seoDescription": "Extract domain names from text, URLs, and email addresses instantly. Get a clean domain list in your browser for free, with no sign-up.",
     "name": "Extract Domains",
     "intro": "Find domain names inside pasted URLs, emails, notes, or exports without manually cleaning each entry.",
     "keywords": [
